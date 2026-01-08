@@ -1,26 +1,111 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: hsl(240 10% 4%);
+  --foreground: hsl(0 0% 98%);
+
+  --card: hsl(240 10% 5%);
+  --card-foreground: hsl(0 0% 98%);
+
+  --popover: hsl(240 10% 4%);
+  --popover-foreground: hsl(0 0% 98%);
+
+  --primary: hsl(252 59% 50%);
+  --primary-foreground: hsl(0 0% 98%);
+
+  --secondary: hsl(240 4% 16%);
+  --secondary-foreground: hsl(0 0% 98%);
+
+  --muted: hsl(240 4% 16%);
+  --muted-foreground: hsl(240 5% 65%);
+
+  --accent: hsl(252 59% 50%);
+  --accent-foreground: hsl(0 0% 98%);
+
+  --destructive: hsl(0 62% 30%);
+  --destructive-foreground: hsl(0 0% 98%);
+
+  --border: hsl(240 4% 16%);
+  --input: hsl(240 4% 16%);
+  --ring: hsl(252 59% 50%);
+
+  --radius: 0.75rem;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@utility glass {
+  background-color: hsla(0, 0%, 100%, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid hsla(0, 0%, 100%, 0.08);
+}
+
+@utility glass-card {
+  background-color: hsla(240, 5%, 10%, 0.4);
+  backdrop-filter: blur(16px);
+  border: 1px solid hsla(0, 0%, 100%, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+@utility text-glow {
+  text-shadow: 0 0 20px hsla(252, 59%, 50%, 0.5);
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* Scrollbar hide utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Extra small breakpoint for mobile */
+@media (min-width: 375px) {
+  .xs\:inline {
+    display: inline;
+  }
+
+  .xs\:hidden {
+    display: none;
+  }
 }
