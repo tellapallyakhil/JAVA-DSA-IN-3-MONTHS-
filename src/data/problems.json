@@ -1,0 +1,695 @@
+[
+  {
+    "id": "1",
+    "title": "Two Sum",
+    "difficulty": "Easy",
+    "topics": [
+      "Array",
+      "HashMap"
+    ],
+    "companies": [
+      "Amazon",
+      "Microsoft",
+      "Google"
+    ],
+    "javaConcepts": [
+      "HashMap",
+      "for-loop"
+    ],
+    "link": "https://leetcode.com/problems/two-sum/"
+  },
+  {
+    "id": "2",
+    "title": "Reverse Linked List",
+    "difficulty": "Easy",
+    "topics": [
+      "LinkedList"
+    ],
+    "companies": [
+      "Amazon",
+      "Adobe"
+    ],
+    "javaConcepts": [
+      "Recursion",
+      "Iteration",
+      "Pointers"
+    ],
+    "link": "https://leetcode.com/problems/reverse-linked-list/"
+  },
+  {
+    "id": "3",
+    "title": "Detect Cycle in Linked List",
+    "difficulty": "Easy",
+    "topics": [
+      "LinkedList",
+      "Two Pointers"
+    ],
+    "companies": [
+      "Microsoft",
+      "Samsung"
+    ],
+    "javaConcepts": [
+      "Floyd's Cycle Finding"
+    ],
+    "link": "https://leetcode.com/problems/linked-list-cycle/"
+  },
+  {
+    "id": "4",
+    "title": "Valid Anagram",
+    "difficulty": "Easy",
+    "topics": [
+      "String",
+      "HashMap"
+    ],
+    "companies": [
+      "Uber",
+      "Google"
+    ],
+    "javaConcepts": [
+      "Arrays",
+      "Sorting"
+    ],
+    "link": "https://leetcode.com/problems/valid-anagram/"
+  },
+  {
+    "id": "5",
+    "title": "Group Anagrams",
+    "difficulty": "Medium",
+    "topics": [
+      "String",
+      "HashMap",
+      "Arrays & Hashing"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "HashMap",
+      "ArrayList"
+    ],
+    "link": "https://leetcode.com/problems/group-anagrams/"
+  },
+  {
+    "id": "6",
+    "title": "Maximum Subarray",
+    "difficulty": "Medium",
+    "topics": [
+      "Array",
+      "DP"
+    ],
+    "companies": [
+      "LinkedIn",
+      "Apple"
+    ],
+    "javaConcepts": [
+      "Kadane's Algorithm"
+    ],
+    "link": "https://leetcode.com/problems/maximum-subarray/"
+  },
+  {
+    "id": "7",
+    "title": "Contains Duplicate",
+    "difficulty": "Easy",
+    "topics": [
+      "Array",
+      "HashSet",
+      "Arrays & Hashing"
+    ],
+    "companies": [
+      "Apple",
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "HashSet"
+    ],
+    "link": "https://leetcode.com/problems/contains-duplicate/"
+  },
+  {
+    "id": "8",
+    "title": "Best Time to Buy and Sell Stock",
+    "difficulty": "Easy",
+    "topics": [
+      "Array",
+      "DP",
+      "Sliding Window",
+      "Two Pointers"
+    ],
+    "companies": [
+      "Amazon",
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Min-Max logic"
+    ],
+    "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"
+  },
+  {
+    "id": "9",
+    "title": "Product of Array Except Self",
+    "difficulty": "Medium",
+    "topics": [
+      "Array",
+      "Arrays & Hashing"
+    ],
+    "companies": [
+      "Amazon",
+      "Microsoft",
+      "Apple"
+    ],
+    "javaConcepts": [
+      "Prefix Sum",
+      "Suffix Sum"
+    ],
+    "link": "https://leetcode.com/problems/product-of-array-except-self/"
+  },
+  {
+    "id": "10",
+    "title": "Top K Frequent Elements",
+    "difficulty": "Medium",
+    "topics": [
+      "Arrays & Hashing",
+      "Heap"
+    ],
+    "companies": [
+      "Facebook",
+      "Netflix"
+    ],
+    "javaConcepts": [
+      "PriorityQueue",
+      "HashMap"
+    ],
+    "link": "https://leetcode.com/problems/top-k-frequent-elements/"
+  },
+  {
+    "id": "11",
+    "title": "Longest Consecutive Sequence",
+    "difficulty": "Medium",
+    "topics": [
+      "Arrays & Hashing",
+      "HashSet"
+    ],
+    "companies": [
+      "Google",
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "HashSet",
+      "Iteration"
+    ],
+    "link": "https://leetcode.com/problems/longest-consecutive-sequence/"
+  },
+  {
+    "id": "12",
+    "title": "Valid Palindrome",
+    "difficulty": "Easy",
+    "topics": [
+      "Two Pointers",
+      "String"
+    ],
+    "companies": [
+      "Facebook",
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "Two Pointers",
+      "Character Handling"
+    ],
+    "link": "https://leetcode.com/problems/valid-palindrome/"
+  },
+  {
+    "id": "13",
+    "title": "3Sum",
+    "difficulty": "Medium",
+    "topics": [
+      "Two Pointers",
+      "Array"
+    ],
+    "companies": [
+      "Facebook",
+      "Amazon",
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "Sorting",
+      "Two Pointers"
+    ],
+    "link": "https://leetcode.com/problems/3sum/"
+  },
+  {
+    "id": "14",
+    "title": "Container With Most Water",
+    "difficulty": "Medium",
+    "topics": [
+      "Two Pointers",
+      "Array"
+    ],
+    "companies": [
+      "Google",
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Greedy",
+      "Two Pointers"
+    ],
+    "link": "https://leetcode.com/problems/container-with-most-water/"
+  },
+  {
+    "id": "15",
+    "title": "Merge Two Sorted Lists",
+    "difficulty": "Easy",
+    "topics": [
+      "Linked Lists"
+    ],
+    "companies": [
+      "Amazon",
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "Recursion",
+      "Dummy Node"
+    ],
+    "link": "https://leetcode.com/problems/merge-two-sorted-lists/"
+  },
+  {
+    "id": "16",
+    "title": "Remove Nth Node From End of List",
+    "difficulty": "Medium",
+    "topics": [
+      "Linked Lists",
+      "Two Pointers"
+    ],
+    "companies": [
+      "Facebook",
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Two Pointers"
+    ],
+    "link": "https://leetcode.com/problems/remove-nth-node-from-end-of-list/"
+  },
+  {
+    "id": "17",
+    "title": "Climbing Stairs",
+    "difficulty": "Easy",
+    "topics": [
+      "Dynamic Programming Basics"
+    ],
+    "companies": [
+      "Amazon",
+      "Google"
+    ],
+    "javaConcepts": [
+      "Memoization",
+      "Bottom-Up"
+    ],
+    "link": "https://leetcode.com/problems/climbing-stairs/"
+  },
+  {
+    "id": "18",
+    "title": "House Robber",
+    "difficulty": "Medium",
+    "topics": [
+      "Dynamic Programming Basics"
+    ],
+    "companies": [
+      "Google",
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "DP Array"
+    ],
+    "link": "https://leetcode.com/problems/house-robber/"
+  },
+  {
+    "id": "19",
+    "title": "Invert Binary Tree",
+    "difficulty": "Easy",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "Google",
+      "Homebrew"
+    ],
+    "javaConcepts": [
+      "Recursion"
+    ],
+    "link": "https://leetcode.com/problems/invert-binary-tree/"
+  },
+  {
+    "id": "20",
+    "title": "Maximum Depth of Binary Tree",
+    "difficulty": "Easy",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "LinkedIn",
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "DFS",
+      "Recursion"
+    ],
+    "link": "https://leetcode.com/problems/maximum-depth-of-binary-tree/"
+  },
+  {
+    "id": "21",
+    "title": "Diameter of Binary Tree",
+    "difficulty": "Easy",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "Facebook",
+      "Google"
+    ],
+    "javaConcepts": [
+      "DFS",
+      "Global Variable"
+    ],
+    "link": "https://leetcode.com/problems/diameter-of-binary-tree/"
+  },
+  {
+    "id": "22",
+    "title": "Balanced Binary Tree",
+    "difficulty": "Easy",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "Amazon",
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "Bottom-up Recursion"
+    ],
+    "link": "https://leetcode.com/problems/balanced-binary-tree/"
+  },
+  {
+    "id": "23",
+    "title": "Same Tree",
+    "difficulty": "Easy",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "LinkedIn"
+    ],
+    "javaConcepts": [
+      "Recursion"
+    ],
+    "link": "https://leetcode.com/problems/same-tree/"
+  },
+  {
+    "id": "24",
+    "title": "Subtree of Another Tree",
+    "difficulty": "Easy",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "Facebook",
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Serialization",
+      "Recursion"
+    ],
+    "link": "https://leetcode.com/problems/subtree-of-another-tree/"
+  },
+  {
+    "id": "25",
+    "title": "Lowest Common Ancestor of a BST",
+    "difficulty": "Medium",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "Amazon",
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "BST Property",
+      "Recursion"
+    ],
+    "link": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/"
+  },
+  {
+    "id": "26",
+    "title": "Binary Tree Level Order Traversal",
+    "difficulty": "Medium",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "Amazon",
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "BFS",
+      "Queue"
+    ],
+    "link": "https://leetcode.com/problems/binary-tree-level-order-traversal/"
+  },
+  {
+    "id": "27",
+    "title": "Validate Binary Search Tree",
+    "difficulty": "Medium",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "Bloomberg",
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "DFS",
+      "Range Validation"
+    ],
+    "link": "https://leetcode.com/problems/validate-binary-search-tree/"
+  },
+  {
+    "id": "28",
+    "title": "Kth Smallest Element in a BST",
+    "difficulty": "Medium",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "Uber",
+      "Google"
+    ],
+    "javaConcepts": [
+      "Inorder Traversal"
+    ],
+    "link": "https://leetcode.com/problems/kth-smallest-element-in-a-bst/"
+  },
+  {
+    "id": "29",
+    "title": "Construct Binary Tree from Preorder and Inorder",
+    "difficulty": "Medium",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "Amazon",
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "Recursion",
+      "HashMap"
+    ],
+    "link": "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/"
+  },
+  {
+    "id": "30",
+    "title": "Implement Trie (Prefix Tree)",
+    "difficulty": "Medium",
+    "topics": [
+      "Trees",
+      "Trie"
+    ],
+    "companies": [
+      "Google",
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "TrieNode",
+      "Array"
+    ],
+    "link": "https://leetcode.com/problems/implement-trie-prefix-tree/"
+  },
+  {
+    "id": "31",
+    "title": "Number of Islands",
+    "difficulty": "Medium",
+    "topics": [
+      "Graphs"
+    ],
+    "companies": [
+      "Amazon",
+      "Google",
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "DFS",
+      "BFS",
+      "Grid"
+    ],
+    "link": "https://leetcode.com/problems/number-of-islands/"
+  },
+  {
+    "id": "32",
+    "title": "Clone Graph",
+    "difficulty": "Medium",
+    "topics": [
+      "Graphs"
+    ],
+    "companies": [
+      "Facebook",
+      "Google"
+    ],
+    "javaConcepts": [
+      "HashMap",
+      "DFS"
+    ],
+    "link": "https://leetcode.com/problems/clone-graph/"
+  },
+  {
+    "id": "33",
+    "title": "Max Area of Island",
+    "difficulty": "Medium",
+    "topics": [
+      "Graphs"
+    ],
+    "companies": [
+      "Amazon",
+      "DoorDash"
+    ],
+    "javaConcepts": [
+      "DFS",
+      "Grid"
+    ],
+    "link": "https://leetcode.com/problems/max-area-of-island/"
+  },
+  {
+    "id": "34",
+    "title": "Pacific Atlantic Water Flow",
+    "difficulty": "Medium",
+    "topics": [
+      "Graphs"
+    ],
+    "companies": [
+      "Google",
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "DFS",
+      "Grid"
+    ],
+    "link": "https://leetcode.com/problems/pacific-atlantic-water-flow/"
+  },
+  {
+    "id": "35",
+    "title": "Surrounded Regions",
+    "difficulty": "Medium",
+    "topics": [
+      "Graphs"
+    ],
+    "companies": [
+      "Google",
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "DFS",
+      "Boundary Check"
+    ],
+    "link": "https://leetcode.com/problems/surrounded-regions/"
+  },
+  {
+    "id": "36",
+    "title": "Rotting Oranges",
+    "difficulty": "Medium",
+    "topics": [
+      "Graphs"
+    ],
+    "companies": [
+      "Amazon",
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "BFS",
+      "Level Tracking"
+    ],
+    "link": "https://leetcode.com/problems/rotting-oranges/"
+  },
+  {
+    "id": "37",
+    "title": "Course Schedule",
+    "difficulty": "Medium",
+    "topics": [
+      "Graphs"
+    ],
+    "companies": [
+      "Amazon",
+      "Google"
+    ],
+    "javaConcepts": [
+      "Topological Sort",
+      "DFS"
+    ],
+    "link": "https://leetcode.com/problems/course-schedule/"
+  },
+  {
+    "id": "38",
+    "title": "Course Schedule II",
+    "difficulty": "Medium",
+    "topics": [
+      "Graphs"
+    ],
+    "companies": [
+      "Amazon",
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Topological Sort",
+      "Kahn's Algo"
+    ],
+    "link": "https://leetcode.com/problems/course-schedule-ii/"
+  },
+  {
+    "id": "39",
+    "title": "Redundant Connection",
+    "difficulty": "Medium",
+    "topics": [
+      "Graphs"
+    ],
+    "companies": [
+      "Google",
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Union-Find"
+    ],
+    "link": "https://leetcode.com/problems/redundant-connection/"
+  },
+  {
+    "id": "40",
+    "title": "Word Ladder",
+    "difficulty": "Hard",
+    "topics": [
+      "Graphs"
+    ],
+    "companies": [
+      "Amazon",
+      "Google",
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "BFS",
+      "Queue"
+    ],
+    "link": "https://leetcode.com/problems/word-ladder/"
+  }
+]

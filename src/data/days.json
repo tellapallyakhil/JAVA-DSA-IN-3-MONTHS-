@@ -1,0 +1,3451 @@
+[
+    {
+        "day": 1,
+        "title": "Arrays & Hashing Basics",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Arrays & Hashing",
+            "description": "Understand array memory layout and HashMap fundamentals.",
+            "problems": [
+                "1",
+                "4",
+                "7"
+            ],
+            "concepts": [
+                "Array declaration",
+                "HashMap methods",
+                "Complexity"
+            ]
+        },
+        "aptitude": {
+            "topic": "Numbers & Decimal Fractions",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Coding Decoding",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Time Complexity of array access?",
+                "back": "O(1) - Constant time using index offset calculation."
+            },
+            {
+                "front": "HashMap collision handling?",
+                "back": "Chaining (LinkedList). Java 8+ uses Red-Black Tree if chain > 8."
+            }
+        ]
+    },
+    {
+        "day": 2,
+        "title": "Arrays & Hashing Deep Dive",
+        "type": "Holiday",
+        "javaDSA": {
+            "topic": "Arrays & Hashing",
+            "description": "Advanced hashing patterns and frequency counting.",
+            "problems": [
+                "5",
+                "9",
+                "10",
+                "11",
+                "7",
+                "1"
+            ],
+            "concepts": [
+                "Prefix Sum",
+                "Frequency Map",
+                "HashSet"
+            ]
+        },
+        "aptitude": {
+            "topic": "Numbers & Decimal Fractions",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Coding Decoding",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Difference between HashMap and HashSet?",
+                "back": "HashMap stores key-value pairs. HashSet only stores unique keys (no values)."
+            }
+        ]
+    },
+    {
+        "day": 3,
+        "title": "Two Pointers Introduction",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Two Pointers",
+            "description": "Learn the classic two-pointer technique for sorted arrays.",
+            "problems": [
+                "12",
+                "8",
+                "13"
+            ],
+            "concepts": [
+                "Opposite direction pointers",
+                "Slow-fast pointers"
+            ]
+        },
+        "aptitude": {
+            "topic": "HCF & LCM",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Blood Relations",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "When to use Two Pointers?",
+                "back": "Sorted arrays, pair searching, in-place modifications."
+            }
+        ]
+    },
+    {
+        "day": 4,
+        "title": "Two Pointers Mastery",
+        "type": "Holiday",
+        "javaDSA": {
+            "topic": "Two Pointers",
+            "description": "Advanced applications including container problems.",
+            "problems": [
+                "12",
+                "13",
+                "14",
+                "8",
+                "9",
+                "11"
+            ],
+            "concepts": [
+                "Container problems",
+                "Area maximization"
+            ]
+        },
+        "aptitude": {
+            "topic": "HCF & LCM",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Blood Relations",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Container With Most Water approach?",
+                "back": "Two pointers at ends, move the shorter one inward."
+            }
+        ]
+    },
+    {
+        "day": 5,
+        "title": "Sliding Window Basics",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Sliding Window",
+            "description": "Fixed and variable size window patterns.",
+            "problems": [
+                "8",
+                "6",
+                "1"
+            ],
+            "concepts": [
+                "Fixed window",
+                "Variable window",
+                "Window expansion"
+            ]
+        },
+        "aptitude": {
+            "topic": "Percentages",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Direction Sense",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Fixed vs Variable window?",
+                "back": "Fixed: window size constant. Variable: expands/contracts based on condition."
+            }
+        ]
+    },
+    {
+        "day": 6,
+        "title": "Sliding Window Advanced",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Sliding Window",
+            "description": "Complex window problems with HashMap tracking.",
+            "problems": [
+                "6",
+                "8",
+                "9"
+            ],
+            "concepts": [
+                "Window with HashMap",
+                "Substring problems"
+            ]
+        },
+        "aptitude": {
+            "topic": "Percentages",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Direction Sense",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Longest Substring Without Repeating approach?",
+                "back": "Expand right, shrink left when duplicate found using HashSet."
+            }
+        ]
+    },
+    {
+        "day": 7,
+        "title": "Week 1 Revision",
+        "type": "Holiday",
+        "javaDSA": {
+            "topic": "Arrays & Hashing",
+            "description": "Revise all Week 1 concepts with mixed problems.",
+            "problems": [
+                "1",
+                "4",
+                "7",
+                "12",
+                "8",
+                "6"
+            ],
+            "concepts": [
+                "Revision",
+                "Mixed practice"
+            ]
+        },
+        "aptitude": {
+            "topic": "Numbers & Decimal Fractions",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Coding Decoding",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Key Week 1 takeaway?",
+                "back": "Master array traversal patterns before moving to complex DS."
+            }
+        ]
+    },
+    {
+        "day": 8,
+        "title": "Stack Fundamentals",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Stack",
+            "description": "LIFO principle and basic stack operations.",
+            "problems": [
+                "1",
+                "4",
+                "7"
+            ],
+            "concepts": [
+                "Push/Pop",
+                "Peek",
+                "isEmpty"
+            ]
+        },
+        "aptitude": {
+            "topic": "Profit & Loss",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Seating Arrangement",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Stack time complexity for push/pop?",
+                "back": "O(1) for both operations."
+            }
+        ]
+    },
+    {
+        "day": 9,
+        "title": "Monotonic Stack",
+        "type": "Holiday",
+        "javaDSA": {
+            "topic": "Stack",
+            "description": "Next Greater Element and monotonic patterns.",
+            "problems": [
+                "1",
+                "4",
+                "7",
+                "5",
+                "9",
+                "10"
+            ],
+            "concepts": [
+                "Monotonic increasing",
+                "Monotonic decreasing",
+                "NGE pattern"
+            ]
+        },
+        "aptitude": {
+            "topic": "Profit & Loss",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Seating Arrangement",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "What is a Monotonic Stack?",
+                "back": "Stack maintaining either increasing or decreasing order from bottom to top."
+            }
+        ]
+    },
+    {
+        "day": 10,
+        "title": "Binary Search Basics",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Binary Search",
+            "description": "Classic binary search on sorted arrays.",
+            "problems": [
+                "1",
+                "4",
+                "7"
+            ],
+            "concepts": [
+                "Left bound",
+                "Right bound",
+                "Search space"
+            ]
+        },
+        "aptitude": {
+            "topic": "Simple Interest",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Syllogism",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Binary Search time complexity?",
+                "back": "O(log n) - halves search space each iteration."
+            }
+        ]
+    },
+    {
+        "day": 11,
+        "title": "Binary Search on Answer",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Binary Search",
+            "description": "Binary search on answer space, not array.",
+            "problems": [
+                "1",
+                "6",
+                "8"
+            ],
+            "concepts": [
+                "Search on answer",
+                "Feasibility check"
+            ]
+        },
+        "aptitude": {
+            "topic": "Simple Interest",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Syllogism",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "When to use Binary Search on Answer?",
+                "back": "When asked min/max of something with a feasibility check function."
+            }
+        ]
+    },
+    {
+        "day": 12,
+        "title": "Linked List Basics",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Linked Lists",
+            "description": "Node structure, traversal, basic operations.",
+            "problems": [
+                "2",
+                "3",
+                "15"
+            ],
+            "concepts": [
+                "ListNode class",
+                "Traversal",
+                "Dummy node"
+            ]
+        },
+        "aptitude": {
+            "topic": "Compound Interest",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Inequality",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Why use dummy node?",
+                "back": "Simplifies edge cases when head might change."
+            }
+        ]
+    },
+    {
+        "day": 13,
+        "title": "Linked List Reversal",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Linked Lists",
+            "description": "Iterative and recursive reversal techniques.",
+            "problems": [
+                "2",
+                "15",
+                "16"
+            ],
+            "concepts": [
+                "Iterative reversal",
+                "Recursive reversal"
+            ]
+        },
+        "aptitude": {
+            "topic": "Compound Interest",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Inequality",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Iterative reversal key variables?",
+                "back": "prev, curr, next - reassign pointers in order."
+            }
+        ]
+    },
+    {
+        "day": 14,
+        "title": "Week 2 Revision",
+        "type": "Holiday",
+        "javaDSA": {
+            "topic": "Stack",
+            "description": "Revise Stack and Binary Search concepts.",
+            "problems": [
+                "1",
+                "2",
+                "3",
+                "15",
+                "16",
+                "6"
+            ],
+            "concepts": [
+                "Revision",
+                "Mixed practice"
+            ]
+        },
+        "aptitude": {
+            "topic": "Profit & Loss",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Seating Arrangement",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Week 2 focus areas?",
+                "back": "Stack patterns and Binary Search variations."
+            }
+        ]
+    },
+    {
+        "day": 15,
+        "title": "Fast & Slow Pointers",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Linked Lists",
+            "description": "Floyd's algorithm for cycle detection.",
+            "problems": [
+                "3",
+                "2",
+                "15"
+            ],
+            "concepts": [
+                "Floyd's algorithm",
+                "Cycle detection",
+                "Middle finding"
+            ]
+        },
+        "aptitude": {
+            "topic": "Ratio & Proportion",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Data Sufficiency",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Floyd's Cycle Detection?",
+                "back": "Fast moves 2x, slow moves 1x. If they meet, cycle exists."
+            }
+        ]
+    },
+    {
+        "day": 16,
+        "title": "Trees Introduction",
+        "type": "Holiday",
+        "javaDSA": {
+            "topic": "Trees",
+            "description": "Binary tree structure and basic traversals.",
+            "problems": [
+                "19",
+                "20",
+                "23"
+            ],
+            "concepts": [
+                "TreeNode",
+                "Inorder",
+                "Preorder",
+                "Postorder"
+            ]
+        },
+        "aptitude": {
+            "topic": "Ratio & Proportion",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Data Sufficiency",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Inorder traversal order?",
+                "back": "Left -> Root -> Right. Gives sorted order for BST."
+            }
+        ]
+    },
+    {
+        "day": 17,
+        "title": "Tree DFS",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Trees",
+            "description": "Depth-first search patterns on trees.",
+            "problems": [
+                "21",
+                "22",
+                "24"
+            ],
+            "concepts": [
+                "Recursive DFS",
+                "Path finding"
+            ]
+        },
+        "aptitude": {
+            "topic": "Partnership",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Puzzles",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "DFS on tree time complexity?",
+                "back": "O(n) - visits each node exactly once."
+            }
+        ]
+    },
+    {
+        "day": 18,
+        "title": "Tree BFS",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Trees",
+            "description": "Breadth-first search and level-order traversal.",
+            "problems": [
+                "26",
+                "20",
+                "19"
+            ],
+            "concepts": [
+                "Queue-based BFS",
+                "Level tracking"
+            ]
+        },
+        "aptitude": {
+            "topic": "Partnership",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Puzzles",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "BFS space complexity?",
+                "back": "O(w) where w is max width of tree."
+            }
+        ]
+    },
+    {
+        "day": 19,
+        "title": "BST Properties",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Trees",
+            "description": "Binary Search Tree operations and validation.",
+            "problems": [
+                "25",
+                "27",
+                "28"
+            ],
+            "concepts": [
+                "BST invariant",
+                "Search",
+                "Insert"
+            ]
+        },
+        "aptitude": {
+            "topic": "Time & Work",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Input Output",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "BST property?",
+                "back": "Left subtree < Root < Right subtree for all nodes."
+            }
+        ]
+    },
+    {
+        "day": 20,
+        "title": "BST Advanced",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Trees",
+            "description": "BST deletion and balancing concepts.",
+            "problems": [
+                "29",
+                "30",
+                "24"
+            ],
+            "concepts": [
+                "Deletion",
+                "Successor finding"
+            ]
+        },
+        "aptitude": {
+            "topic": "Time & Work",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Input Output",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "BST deletion cases?",
+                "back": "Leaf: remove. One child: replace. Two children: find successor."
+            }
+        ]
+    },
+    {
+        "day": 21,
+        "title": "Week 3 Revision",
+        "type": "Holiday",
+        "javaDSA": {
+            "topic": "Trees",
+            "description": "Complete tree problem revision.",
+            "problems": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6"
+            ],
+            "concepts": [
+                "Revision",
+                "Mixed trees"
+            ]
+        },
+        "aptitude": {
+            "topic": "Time & Work",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Puzzles",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Week 3 key concept?",
+                "back": "Tree recursion patterns and traversal variations."
+            }
+        ]
+    },
+    {
+        "day": 22,
+        "title": "Heap Basics",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Heap",
+            "description": "Priority Queue and heap properties.",
+            "problems": [
+                "10",
+                "1",
+                "4"
+            ],
+            "concepts": [
+                "Min heap",
+                "Max heap",
+                "PriorityQueue"
+            ]
+        },
+        "aptitude": {
+            "topic": "Pipes & Cisterns",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Statement Arguments",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Heap insertion complexity?",
+                "back": "O(log n) due to heapify up operation."
+            }
+        ]
+    },
+    {
+        "day": 23,
+        "title": "Top K Problems",
+        "type": "Holiday",
+        "javaDSA": {
+            "topic": "Heap",
+            "description": "Top K frequent, Kth largest patterns.",
+            "problems": [
+                "10",
+                "1",
+                "4",
+                "5",
+                "6",
+                "7"
+            ],
+            "concepts": [
+                "Top K pattern",
+                "K-sized heap"
+            ]
+        },
+        "aptitude": {
+            "topic": "Pipes & Cisterns",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Statement Arguments",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Top K Frequent approach?",
+                "back": "Use HashMap for frequency, then min-heap of size K."
+            }
+        ]
+    },
+    {
+        "day": 24,
+        "title": "Backtracking Intro",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Backtracking",
+            "description": "Recursive exploration with backtrack.",
+            "problems": [
+                "1",
+                "4",
+                "7"
+            ],
+            "concepts": [
+                "Choice explore unchoice",
+                "State space tree"
+            ]
+        },
+        "aptitude": {
+            "topic": "Boats & Streams",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Course of Action",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Backtracking template?",
+                "back": "Make choice -> Recurse -> Undo choice (backtrack)."
+            }
+        ]
+    },
+    {
+        "day": 25,
+        "title": "Subsets & Permutations",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Backtracking",
+            "description": "Generate all subsets and permutations.",
+            "problems": [
+                "1",
+                "4",
+                "6"
+            ],
+            "concepts": [
+                "Power set",
+                "Permutation generation"
+            ]
+        },
+        "aptitude": {
+            "topic": "Boats & Streams",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Course of Action",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Subsets count for n elements?",
+                "back": "2^n subsets including empty set."
+            }
+        ]
+    },
+    {
+        "day": 26,
+        "title": "Combination Sum",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Backtracking",
+            "description": "Finding combinations that sum to target.",
+            "problems": [
+                "1",
+                "4",
+                "7"
+            ],
+            "concepts": [
+                "Combination sum",
+                "Pruning"
+            ]
+        },
+        "aptitude": {
+            "topic": "Trains",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Statement Assumptions",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Key pruning technique?",
+                "back": "If current sum > target, stop exploring that branch."
+            }
+        ]
+    },
+    {
+        "day": 27,
+        "title": "N-Queens & Sudoku",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Backtracking",
+            "description": "Classic constraint satisfaction problems.",
+            "problems": [
+                "1",
+                "4",
+                "6"
+            ],
+            "concepts": [
+                "Constraint checking",
+                "Board problems"
+            ]
+        },
+        "aptitude": {
+            "topic": "Trains",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Statement Assumptions",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "N-Queens constraint?",
+                "back": "No two queens on same row, column, or diagonal."
+            }
+        ]
+    },
+    {
+        "day": 28,
+        "title": "Month 1 Revision",
+        "type": "Holiday",
+        "javaDSA": {
+            "topic": "Mixed",
+            "description": "Complete Month 1 revision with all topics.",
+            "problems": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6"
+            ],
+            "concepts": [
+                "Full revision",
+                "Weak areas"
+            ]
+        },
+        "aptitude": {
+            "topic": "Numbers & Decimal Fractions",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Coding Decoding",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Month 1 achievement?",
+                "back": "Mastered arrays, linked lists, trees, and backtracking basics."
+            }
+        ]
+    },
+    {
+        "day": 29,
+        "title": "Graph Representation",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Graphs",
+            "description": "Adjacency list and matrix representations.",
+            "problems": [
+                "31",
+                "32",
+                "33"
+            ],
+            "concepts": [
+                "Adjacency list",
+                "Adjacency matrix",
+                "Edge list"
+            ]
+        },
+        "aptitude": {
+            "topic": "Averages",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Cause & Effect",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Adjacency list space?",
+                "back": "O(V + E) - efficient for sparse graphs."
+            }
+        ]
+    },
+    {
+        "day": 30,
+        "title": "Graph BFS",
+        "type": "Holiday",
+        "javaDSA": {
+            "topic": "Graphs",
+            "description": "BFS traversal and shortest path in unweighted graphs.",
+            "problems": [
+                "36",
+                "31",
+                "34",
+                "35",
+                "33",
+                "32"
+            ],
+            "concepts": [
+                "Queue-based BFS",
+                "Level by level",
+                "Shortest path"
+            ]
+        },
+        "aptitude": {
+            "topic": "Averages",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Cause & Effect",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "BFS gives shortest path when?",
+                "back": "In unweighted graphs - first visit is shortest."
+            }
+        ]
+    },
+    {
+        "day": 31,
+        "title": "Graph DFS",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Graphs",
+            "description": "DFS traversal and path finding.",
+            "problems": [
+                "33",
+                "34",
+                "35"
+            ],
+            "concepts": [
+                "Recursive DFS",
+                "Iterative DFS",
+                "Visited tracking"
+            ]
+        },
+        "aptitude": {
+            "topic": "Problems on Ages",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Logical Sequence",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "DFS vs BFS space?",
+                "back": "DFS: O(h) stack. BFS: O(w) queue. h=height, w=width."
+            }
+        ]
+    },
+    {
+        "day": 32,
+        "title": "Connected Components",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Graphs",
+            "description": "Finding connected components in undirected graphs.",
+            "problems": [
+                "31",
+                "39",
+                "32"
+            ],
+            "concepts": [
+                "Component counting",
+                "Union Find basics"
+            ]
+        },
+        "aptitude": {
+            "topic": "Problems on Ages",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Logical Sequence",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Count components approach?",
+                "back": "Run DFS/BFS from unvisited nodes, increment counter each time."
+            }
+        ]
+    },
+    {
+        "day": 33,
+        "title": "Cycle Detection",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Graphs",
+            "description": "Detecting cycles in directed and undirected graphs.",
+            "problems": [
+                "37",
+                "39",
+                "32"
+            ],
+            "concepts": [
+                "Back edge",
+                "Coloring method"
+            ]
+        },
+        "aptitude": {
+            "topic": "Mixtures & Alligations",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Number Series",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Cycle in directed graph?",
+                "back": "Use coloring: white (unvisited), gray (in-stack), black (done)."
+            }
+        ]
+    },
+    {
+        "day": 34,
+        "title": "Topological Sort",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Graphs",
+            "description": "Ordering vertices in DAG.",
+            "problems": [
+                "37",
+                "38",
+                "40"
+            ],
+            "concepts": [
+                "Kahn's algorithm",
+                "DFS-based topo sort"
+            ]
+        },
+        "aptitude": {
+            "topic": "Mixtures & Alligations",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Number Series",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Topological sort only works on?",
+                "back": "Directed Acyclic Graphs (DAGs)."
+            }
+        ]
+    },
+    {
+        "day": 35,
+        "title": "Week 5 Revision",
+        "type": "Holiday",
+        "javaDSA": {
+            "topic": "Graphs",
+            "description": "Graph algorithms revision.",
+            "problems": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6"
+            ],
+            "concepts": [
+                "Revision",
+                "Graph patterns"
+            ]
+        },
+        "aptitude": {
+            "topic": "Averages",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Number Series",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Week 5 key learning?",
+                "back": "Graph traversals and their applications."
+            }
+        ]
+    },
+    {
+        "day": 36,
+        "title": "Dijkstra's Algorithm",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Graphs",
+            "description": "Shortest path in weighted graphs.",
+            "problems": [
+                "1",
+                "4",
+                "7"
+            ],
+            "concepts": [
+                "Priority queue",
+                "Relaxation",
+                "Greedy"
+            ]
+        },
+        "aptitude": {
+            "topic": "Probability",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Alphabet Series",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Dijkstra's limitation?",
+                "back": "Doesn't work with negative edge weights."
+            }
+        ]
+    },
+    {
+        "day": 37,
+        "title": "Bellman-Ford",
+        "type": "Holiday",
+        "javaDSA": {
+            "topic": "Graphs",
+            "description": "Shortest path with negative weights.",
+            "problems": [
+                "1",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8"
+            ],
+            "concepts": [
+                "Relaxation",
+                "Negative cycle detection"
+            ]
+        },
+        "aptitude": {
+            "topic": "Probability",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Alphabet Series",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Bellman-Ford time complexity?",
+                "back": "O(V * E) - slower than Dijkstra."
+            }
+        ]
+    },
+    {
+        "day": 38,
+        "title": "Union Find",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Graphs",
+            "description": "Disjoint Set Union data structure.",
+            "problems": [
+                "1",
+                "4",
+                "7"
+            ],
+            "concepts": [
+                "Find with path compression",
+                "Union by rank"
+            ]
+        },
+        "aptitude": {
+            "topic": "Permutation & Combination",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Mirror Image",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Union Find operations?",
+                "back": "Find: O(α(n)) ≈ O(1). Union: O(α(n)) ≈ O(1)."
+            }
+        ]
+    },
+    {
+        "day": 39,
+        "title": "MST Algorithms",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Graphs",
+            "description": "Minimum Spanning Tree - Kruskal and Prim.",
+            "problems": [
+                "1",
+                "4",
+                "6"
+            ],
+            "concepts": [
+                "Kruskal's",
+                "Prim's",
+                "Edge sorting"
+            ]
+        },
+        "aptitude": {
+            "topic": "Permutation & Combination",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Mirror Image",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Kruskal's uses which DS?",
+                "back": "Union Find for cycle detection."
+            }
+        ]
+    },
+    {
+        "day": 40,
+        "title": "DP Introduction",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Dynamic Programming Basics",
+            "description": "Understanding DP fundamentals.",
+            "problems": [
+                "17",
+                "18",
+                "6"
+            ],
+            "concepts": [
+                "Memoization",
+                "Tabulation",
+                "State definition"
+            ]
+        },
+        "aptitude": {
+            "topic": "Geometry",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Water Image",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "DP vs Recursion?",
+                "back": "DP = Recursion + Caching (avoids recomputation)."
+            }
+        ]
+    },
+    {
+        "day": 41,
+        "title": "1D DP Problems",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Dynamic Programming Basics",
+            "description": "Climbing stairs, house robber patterns.",
+            "problems": [
+                "17",
+                "18",
+                "1"
+            ],
+            "concepts": [
+                "1D state",
+                "Fibonacci pattern"
+            ]
+        },
+        "aptitude": {
+            "topic": "Geometry",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Water Image",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Climbing Stairs recurrence?",
+                "back": "dp[i] = dp[i-1] + dp[i-2]"
+            }
+        ]
+    },
+    {
+        "day": 42,
+        "title": "Week 6 Revision",
+        "type": "Holiday",
+        "javaDSA": {
+            "topic": "Dynamic Programming Basics",
+            "description": "DP basics revision.",
+            "problems": [
+                "17",
+                "18",
+                "1",
+                "4",
+                "5",
+                "6"
+            ],
+            "concepts": [
+                "Revision",
+                "Pattern recognition"
+            ]
+        },
+        "aptitude": {
+            "topic": "Geometry",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Water Image",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Week 6 focus?",
+                "back": "DP state definition and transitions."
+            }
+        ]
+    },
+    {
+        "day": 43,
+        "title": "2D DP Basics",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "2D DP",
+            "description": "Grid-based DP problems.",
+            "problems": [
+                "1",
+                "4",
+                "7"
+            ],
+            "concepts": [
+                "Grid traversal",
+                "Unique paths"
+            ]
+        },
+        "aptitude": {
+            "topic": "Mensuration",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Paper Cutting",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Unique Paths recurrence?",
+                "back": "dp[i][j] = dp[i-1][j] + dp[i][j-1]"
+            }
+        ]
+    },
+    {
+        "day": 44,
+        "title": "LCS Problem",
+        "type": "Holiday",
+        "javaDSA": {
+            "topic": "2D DP",
+            "description": "Longest Common Subsequence.",
+            "problems": [
+                "1",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8"
+            ],
+            "concepts": [
+                "LCS",
+                "String DP"
+            ]
+        },
+        "aptitude": {
+            "topic": "Mensuration",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Paper Cutting",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "LCS time complexity?",
+                "back": "O(m * n) where m, n are string lengths."
+            }
+        ]
+    },
+    {
+        "day": 45,
+        "title": "Edit Distance",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "2D DP",
+            "description": "String transformation with min operations.",
+            "problems": [
+                "1",
+                "4",
+                "7"
+            ],
+            "concepts": [
+                "Insert",
+                "Delete",
+                "Replace"
+            ]
+        },
+        "aptitude": {
+            "topic": "Clocks",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Cube & Dice",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Edit Distance operations?",
+                "back": "Insert, Delete, Replace - each costs 1."
+            }
+        ]
+    },
+    {
+        "day": 46,
+        "title": "Knapsack 0/1",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "DP Patterns",
+            "description": "Classic 0/1 Knapsack problem.",
+            "problems": [
+                "1",
+                "4",
+                "6"
+            ],
+            "concepts": [
+                "Take or skip",
+                "Weight constraint"
+            ]
+        },
+        "aptitude": {
+            "topic": "Clocks",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Cube & Dice",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "0/1 Knapsack recurrence?",
+                "back": "dp[i][w] = max(dp[i-1][w], dp[i-1][w-wt[i]] + val[i])"
+            }
+        ]
+    },
+    {
+        "day": 47,
+        "title": "Unbounded Knapsack",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "DP Patterns",
+            "description": "Coin change and unbounded variants.",
+            "problems": [
+                "1",
+                "4",
+                "7"
+            ],
+            "concepts": [
+                "Unbounded selection",
+                "Coin change"
+            ]
+        },
+        "aptitude": {
+            "topic": "Calendar",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Analytical Reasoning",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Unbounded vs 0/1 Knapsack?",
+                "back": "Unbounded: can take same item multiple times."
+            }
+        ]
+    },
+    {
+        "day": 48,
+        "title": "Partition DP",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "DP Patterns",
+            "description": "Subset sum and partition problems.",
+            "problems": [
+                "1",
+                "4",
+                "6"
+            ],
+            "concepts": [
+                "Subset sum",
+                "Equal partition"
+            ]
+        },
+        "aptitude": {
+            "topic": "Calendar",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Analytical Reasoning",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Partition Equal Subset Sum?",
+                "back": "Find if subset with sum = total/2 exists."
+            }
+        ]
+    },
+    {
+        "day": 49,
+        "title": "Week 7 Revision",
+        "type": "Holiday",
+        "javaDSA": {
+            "topic": "DP Patterns",
+            "description": "Advanced DP revision.",
+            "problems": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6"
+            ],
+            "concepts": [
+                "Revision",
+                "DP patterns"
+            ]
+        },
+        "aptitude": {
+            "topic": "Calendar",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Analytical Reasoning",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Week 7 mastery?",
+                "back": "2D DP and classic DP patterns."
+            }
+        ]
+    },
+    {
+        "day": 50,
+        "title": "LIS Problem",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "DP Patterns",
+            "description": "Longest Increasing Subsequence.",
+            "problems": [
+                "1",
+                "4",
+                "7"
+            ],
+            "concepts": [
+                "LIS O(n^2)",
+                "LIS O(n log n)"
+            ]
+        },
+        "aptitude": {
+            "topic": "Stocks & Shares",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Critical Reasoning",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "LIS optimal complexity?",
+                "back": "O(n log n) using binary search with patience sorting."
+            }
+        ]
+    },
+    {
+        "day": 51,
+        "title": "Matrix Chain Multiplication",
+        "type": "Holiday",
+        "javaDSA": {
+            "topic": "DP Patterns",
+            "description": "Optimal parenthesization.",
+            "problems": [
+                "1",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8"
+            ],
+            "concepts": [
+                "MCM pattern",
+                "Interval DP"
+            ]
+        },
+        "aptitude": {
+            "topic": "Stocks & Shares",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Critical Reasoning",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "MCM pattern?",
+                "back": "Try all possible split points, find minimum."
+            }
+        ]
+    },
+    {
+        "day": 52,
+        "title": "Intervals I",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Intervals",
+            "description": "Merge and insert intervals.",
+            "problems": [
+                "1",
+                "4",
+                "7"
+            ],
+            "concepts": [
+                "Sorting",
+                "Overlap detection"
+            ]
+        },
+        "aptitude": {
+            "topic": "True Discount",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Verbal Reasoning",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Key to interval problems?",
+                "back": "Sort by start time, then process linearly."
+            }
+        ]
+    },
+    {
+        "day": 53,
+        "title": "Intervals II",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Intervals",
+            "description": "Non-overlapping intervals, meeting rooms.",
+            "problems": [
+                "1",
+                "4",
+                "6"
+            ],
+            "concepts": [
+                "Greedy selection",
+                "Meeting rooms"
+            ]
+        },
+        "aptitude": {
+            "topic": "True Discount",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Verbal Reasoning",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Meeting Rooms II approach?",
+                "back": "Min-heap for end times, count max overlaps."
+            }
+        ]
+    },
+    {
+        "day": 54,
+        "title": "Greedy Basics",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Greedy",
+            "description": "Greedy algorithm fundamentals.",
+            "problems": [
+                "1",
+                "4",
+                "7"
+            ],
+            "concepts": [
+                "Local optimal",
+                "Proof of correctness"
+            ]
+        },
+        "aptitude": {
+            "topic": "Banker's Discount",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Reading Comprehension",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "When does Greedy work?",
+                "back": "When local optimal leads to global optimal (greedy choice property)."
+            }
+        ]
+    },
+    {
+        "day": 55,
+        "title": "Greedy Scheduling",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Greedy",
+            "description": "Activity selection and job scheduling.",
+            "problems": [
+                "1",
+                "4",
+                "6"
+            ],
+            "concepts": [
+                "Activity selection",
+                "Job scheduling"
+            ]
+        },
+        "aptitude": {
+            "topic": "Banker's Discount",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Reading Comprehension",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Activity Selection approach?",
+                "back": "Sort by end time, always pick earliest ending."
+            }
+        ]
+    },
+    {
+        "day": 56,
+        "title": "Month 2 Revision",
+        "type": "Holiday",
+        "javaDSA": {
+            "topic": "Mixed",
+            "description": "Complete Month 2 revision.",
+            "problems": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6"
+            ],
+            "concepts": [
+                "Full revision",
+                "Graphs & DP"
+            ]
+        },
+        "aptitude": {
+            "topic": "All Topics",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "All Topics",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Month 2 achievement?",
+                "back": "Mastered Graphs and Dynamic Programming."
+            }
+        ]
+    },
+    {
+        "day": 57,
+        "title": "Bit Manipulation I",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Bit Manipulation",
+            "description": "Bitwise operators and common tricks.",
+            "problems": [
+                "1",
+                "4",
+                "7"
+            ],
+            "concepts": [
+                "AND OR XOR",
+                "Left/Right shift"
+            ]
+        },
+        "aptitude": {
+            "topic": "Numbers",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Coding Decoding",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Check if number is power of 2?",
+                "back": "n & (n-1) == 0 (only one bit set)."
+            }
+        ]
+    },
+    {
+        "day": 58,
+        "title": "Bit Manipulation II",
+        "type": "Holiday",
+        "javaDSA": {
+            "topic": "Bit Manipulation",
+            "description": "Advanced bit tricks and problems.",
+            "problems": [
+                "1",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8"
+            ],
+            "concepts": [
+                "Single number",
+                "Counting bits"
+            ]
+        },
+        "aptitude": {
+            "topic": "Numbers",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Coding Decoding",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Find single number in array?",
+                "back": "XOR all elements - duplicates cancel out."
+            }
+        ]
+    },
+    {
+        "day": 59,
+        "title": "Math Problems I",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Math & Geometry",
+            "description": "GCD, primes, and number theory.",
+            "problems": [
+                "1",
+                "4",
+                "7"
+            ],
+            "concepts": [
+                "Euclidean GCD",
+                "Prime check",
+                "Sieve"
+            ]
+        },
+        "aptitude": {
+            "topic": "HCF & LCM",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Blood Relations",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Euclidean GCD formula?",
+                "back": "GCD(a, b) = GCD(b, a % b), base: GCD(a, 0) = a"
+            }
+        ]
+    },
+    {
+        "day": 60,
+        "title": "Math Problems II",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Math & Geometry",
+            "description": "Geometry and coordinate problems.",
+            "problems": [
+                "1",
+                "4",
+                "6"
+            ],
+            "concepts": [
+                "Line equations",
+                "Distance formulas"
+            ]
+        },
+        "aptitude": {
+            "topic": "HCF & LCM",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Blood Relations",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Distance between two points?",
+                "back": "sqrt((x2-x1)^2 + (y2-y1)^2)"
+            }
+        ]
+    },
+    {
+        "day": 61,
+        "title": "Trie Introduction",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Trie",
+            "description": "Prefix tree fundamentals.",
+            "problems": [
+                "1",
+                "4",
+                "7"
+            ],
+            "concepts": [
+                "TrieNode",
+                "Insert",
+                "Search"
+            ]
+        },
+        "aptitude": {
+            "topic": "Percentages",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Direction Sense",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Trie advantage over HashMap?",
+                "back": "Efficient prefix queries and autocomplete."
+            }
+        ]
+    },
+    {
+        "day": 62,
+        "title": "Trie Applications",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Trie",
+            "description": "Word search and autocomplete.",
+            "problems": [
+                "1",
+                "4",
+                "6"
+            ],
+            "concepts": [
+                "Word dictionary",
+                "Prefix matching"
+            ]
+        },
+        "aptitude": {
+            "topic": "Percentages",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Direction Sense",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Trie search complexity?",
+                "back": "O(m) where m is word length."
+            }
+        ]
+    },
+    {
+        "day": 63,
+        "title": "Week 9 Revision",
+        "type": "Holiday",
+        "javaDSA": {
+            "topic": "Trie",
+            "description": "Trie and bit manipulation revision.",
+            "problems": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6"
+            ],
+            "concepts": [
+                "Revision",
+                "Mixed problems"
+            ]
+        },
+        "aptitude": {
+            "topic": "Percentages",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Direction Sense",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Week 9 summary?",
+                "back": "Trie for strings, bits for optimization."
+            }
+        ]
+    },
+    {
+        "day": 64,
+        "title": "Segment Tree Basics",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Segment Tree",
+            "description": "Range query fundamentals.",
+            "problems": [
+                "1",
+                "4",
+                "7"
+            ],
+            "concepts": [
+                "Build",
+                "Query",
+                "Update"
+            ]
+        },
+        "aptitude": {
+            "topic": "Profit & Loss",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Seating Arrangement",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Segment Tree query complexity?",
+                "back": "O(log n) for range queries."
+            }
+        ]
+    },
+    {
+        "day": 65,
+        "title": "Fenwick Tree",
+        "type": "Holiday",
+        "javaDSA": {
+            "topic": "Segment Tree",
+            "description": "Binary Indexed Tree for range sums.",
+            "problems": [
+                "1",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8"
+            ],
+            "concepts": [
+                "BIT",
+                "Prefix sums",
+                "Point update"
+            ]
+        },
+        "aptitude": {
+            "topic": "Profit & Loss",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Seating Arrangement",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "BIT vs Segment Tree?",
+                "back": "BIT: simpler, less space. ST: more flexible."
+            }
+        ]
+    },
+    {
+        "day": 66,
+        "title": "Advanced Strings I",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Strings",
+            "description": "KMP pattern matching.",
+            "problems": [
+                "1",
+                "4",
+                "7"
+            ],
+            "concepts": [
+                "KMP",
+                "Failure function"
+            ]
+        },
+        "aptitude": {
+            "topic": "Simple Interest",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Syllogism",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "KMP advantage?",
+                "back": "O(n+m) pattern matching vs O(n*m) naive."
+            }
+        ]
+    },
+    {
+        "day": 67,
+        "title": "Advanced Strings II",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Strings",
+            "description": "Rabin-Karp and Z-algorithm.",
+            "problems": [
+                "1",
+                "4",
+                "6"
+            ],
+            "concepts": [
+                "Rolling hash",
+                "Z-array"
+            ]
+        },
+        "aptitude": {
+            "topic": "Simple Interest",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Syllogism",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Rabin-Karp approach?",
+                "back": "Use rolling hash for O(1) substring comparison."
+            }
+        ]
+    },
+    {
+        "day": 68,
+        "title": "Design Problems I",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "System Design",
+            "description": "LRU Cache implementation.",
+            "problems": [
+                "1",
+                "4",
+                "7"
+            ],
+            "concepts": [
+                "HashMap + DLL",
+                "Eviction policy"
+            ]
+        },
+        "aptitude": {
+            "topic": "Compound Interest",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Inequality",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "LRU Cache data structures?",
+                "back": "HashMap for O(1) lookup, Doubly Linked List for O(1) eviction."
+            }
+        ]
+    },
+    {
+        "day": 69,
+        "title": "Design Problems II",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "System Design",
+            "description": "Min Stack and other designs.",
+            "problems": [
+                "1",
+                "4",
+                "6"
+            ],
+            "concepts": [
+                "Min Stack",
+                "All O(1)"
+            ]
+        },
+        "aptitude": {
+            "topic": "Compound Interest",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Inequality",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Min Stack approach?",
+                "back": "Store (value, currentMin) pairs or use auxiliary stack."
+            }
+        ]
+    },
+    {
+        "day": 70,
+        "title": "Week 10 Revision",
+        "type": "Holiday",
+        "javaDSA": {
+            "topic": "Mixed",
+            "description": "Advanced topics revision.",
+            "problems": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6"
+            ],
+            "concepts": [
+                "Revision",
+                "Interview prep"
+            ]
+        },
+        "aptitude": {
+            "topic": "Mixed",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Mixed",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Week 10 progress?",
+                "back": "Advanced DS and design patterns mastered."
+            }
+        ]
+    },
+    {
+        "day": 71,
+        "title": "Mock Interview I",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Mock Interview",
+            "description": "Timed problem solving.",
+            "problems": [
+                "1",
+                "8",
+                "17"
+            ],
+            "concepts": [
+                "Time management",
+                "Communication"
+            ]
+        },
+        "aptitude": {
+            "topic": "Mixed",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Mixed",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Interview tip #1?",
+                "back": "Always clarify requirements before coding."
+            }
+        ]
+    },
+    {
+        "day": 72,
+        "title": "Mock Interview II",
+        "type": "Holiday",
+        "javaDSA": {
+            "topic": "Mock Interview",
+            "description": "Full mock with behavioral.",
+            "problems": [
+                "2",
+                "13",
+                "18",
+                "1",
+                "4",
+                "5"
+            ],
+            "concepts": [
+                "STAR method",
+                "Technical depth"
+            ]
+        },
+        "aptitude": {
+            "topic": "Mixed",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Mixed",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "STAR method?",
+                "back": "Situation, Task, Action, Result for behavioral Qs."
+            }
+        ]
+    },
+    {
+        "day": 73,
+        "title": "Amazon Focus",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Company Prep",
+            "description": "Amazon frequently asked.",
+            "problems": [
+                "1",
+                "6",
+                "8"
+            ],
+            "concepts": [
+                "Leadership principles",
+                "System design"
+            ]
+        },
+        "aptitude": {
+            "topic": "Mixed",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Mixed",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Amazon LP focus?",
+                "back": "Customer Obsession, Ownership, Bias for Action."
+            }
+        ]
+    },
+    {
+        "day": 74,
+        "title": "Google Focus",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Company Prep",
+            "description": "Google coding style.",
+            "problems": [
+                "4",
+                "9",
+                "10"
+            ],
+            "concepts": [
+                "Algorithm depth",
+                "Edge cases"
+            ]
+        },
+        "aptitude": {
+            "topic": "Mixed",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Mixed",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Google interview style?",
+                "back": "Deep algorithmic thinking, multiple approaches."
+            }
+        ]
+    },
+    {
+        "day": 75,
+        "title": "Microsoft Focus",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Company Prep",
+            "description": "Microsoft problem patterns.",
+            "problems": [
+                "2",
+                "15",
+                "16"
+            ],
+            "concepts": [
+                "Linked list heavy",
+                "Design"
+            ]
+        },
+        "aptitude": {
+            "topic": "Mixed",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Mixed",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Microsoft focus areas?",
+                "back": "Linked lists, Trees, System Design."
+            }
+        ]
+    },
+    {
+        "day": 76,
+        "title": "Meta Focus",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Company Prep",
+            "description": "Meta coding patterns.",
+            "problems": [
+                "12",
+                "13",
+                "14"
+            ],
+            "concepts": [
+                "Graph problems",
+                "String manipulation"
+            ]
+        },
+        "aptitude": {
+            "topic": "Mixed",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Mixed",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Meta interview tip?",
+                "back": "Focus on clean code and optimal solutions."
+            }
+        ]
+    },
+    {
+        "day": 77,
+        "title": "Week 11 Revision",
+        "type": "Holiday",
+        "javaDSA": {
+            "topic": "Company Prep",
+            "description": "Company-specific revision.",
+            "problems": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6"
+            ],
+            "concepts": [
+                "Revision",
+                "Company focus"
+            ]
+        },
+        "aptitude": {
+            "topic": "Mixed",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Mixed",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Week 11 summary?",
+                "back": "Company-specific patterns identified."
+            }
+        ]
+    },
+    {
+        "day": 78,
+        "title": "System Design Basics",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "System Design",
+            "description": "Scalability fundamentals.",
+            "problems": [
+                "1",
+                "4",
+                "7"
+            ],
+            "concepts": [
+                "Load balancing",
+                "Caching"
+            ]
+        },
+        "aptitude": {
+            "topic": "Mixed",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Mixed",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "CAP Theorem?",
+                "back": "Consistency, Availability, Partition tolerance - pick 2."
+            }
+        ]
+    },
+    {
+        "day": 79,
+        "title": "Database Design",
+        "type": "Holiday",
+        "javaDSA": {
+            "topic": "System Design",
+            "description": "SQL vs NoSQL decisions.",
+            "problems": [
+                "1",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8"
+            ],
+            "concepts": [
+                "Schema design",
+                "Indexing"
+            ]
+        },
+        "aptitude": {
+            "topic": "Mixed",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Mixed",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "When to use NoSQL?",
+                "back": "High write volume, flexible schema, horizontal scaling."
+            }
+        ]
+    },
+    {
+        "day": 80,
+        "title": "Final Sprint I",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Final Prep",
+            "description": "High frequency problems.",
+            "problems": [
+                "1",
+                "8",
+                "17"
+            ],
+            "concepts": [
+                "Top 50",
+                "Weak areas"
+            ]
+        },
+        "aptitude": {
+            "topic": "Mixed",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Mixed",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Final week focus?",
+                "back": "Revise top patterns, practice verbal explanation."
+            }
+        ]
+    },
+    {
+        "day": 81,
+        "title": "Final Sprint II",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Final Prep",
+            "description": "Medium-hard problems.",
+            "problems": [
+                "5",
+                "9",
+                "18"
+            ],
+            "concepts": [
+                "Time pressure",
+                "Accuracy"
+            ]
+        },
+        "aptitude": {
+            "topic": "Mixed",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Mixed",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Managing interview stress?",
+                "back": "Take a breath, think aloud, ask clarifying Qs."
+            }
+        ]
+    },
+    {
+        "day": 82,
+        "title": "Final Sprint III",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Final Prep",
+            "description": "Hard problems practice.",
+            "problems": [
+                "10",
+                "11",
+                "13"
+            ],
+            "concepts": [
+                "Complex problems",
+                "Multiple steps"
+            ]
+        },
+        "aptitude": {
+            "topic": "Mixed",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Mixed",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Hard problem approach?",
+                "back": "Break into subproblems, solve incrementally."
+            }
+        ]
+    },
+    {
+        "day": 83,
+        "title": "Final Sprint IV",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Final Prep",
+            "description": "DP marathon.",
+            "problems": [
+                "17",
+                "18",
+                "6"
+            ],
+            "concepts": [
+                "DP patterns",
+                "State optimization"
+            ]
+        },
+        "aptitude": {
+            "topic": "Mixed",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Mixed",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "DP interview tip?",
+                "back": "Start with brute force, then optimize with memo."
+            }
+        ]
+    },
+    {
+        "day": 84,
+        "title": "Month 3 Week 12 Revision",
+        "type": "Holiday",
+        "javaDSA": {
+            "topic": "Final Prep",
+            "description": "Complete revision.",
+            "problems": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6"
+            ],
+            "concepts": [
+                "Full revision",
+                "Confidence building"
+            ]
+        },
+        "aptitude": {
+            "topic": "All Topics",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "All Topics",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Week 12 milestone?",
+                "back": "Ready for final assessments!"
+            }
+        ]
+    },
+    {
+        "day": 85,
+        "title": "Mock Assessment I",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Assessment",
+            "description": "Timed coding test.",
+            "problems": [
+                "1",
+                "8",
+                "18"
+            ],
+            "concepts": [
+                "Speed",
+                "Accuracy"
+            ]
+        },
+        "aptitude": {
+            "topic": "All Topics",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "All Topics",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Assessment strategy?",
+                "back": "Easy first, then medium, hard if time permits."
+            }
+        ]
+    },
+    {
+        "day": 86,
+        "title": "Mock Assessment II",
+        "type": "Holiday",
+        "javaDSA": {
+            "topic": "Assessment",
+            "description": "Full-length mock.",
+            "problems": [
+                "4",
+                "9",
+                "17",
+                "5",
+                "6",
+                "10"
+            ],
+            "concepts": [
+                "Endurance",
+                "Focus"
+            ]
+        },
+        "aptitude": {
+            "topic": "All Topics",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "All Topics",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "After mock assessment?",
+                "back": "Review mistakes, note weak patterns."
+            }
+        ]
+    },
+    {
+        "day": 87,
+        "title": "Weak Area Focus I",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Revision",
+            "description": "Address weak topics.",
+            "problems": [
+                "1",
+                "4",
+                "7"
+            ],
+            "concepts": [
+                "Personalized",
+                "Gap filling"
+            ]
+        },
+        "aptitude": {
+            "topic": "Weak Topics",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Weak Topics",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Identifying weak areas?",
+                "back": "Track problems you couldn't solve in one try."
+            }
+        ]
+    },
+    {
+        "day": 88,
+        "title": "Weak Area Focus II",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Revision",
+            "description": "Continue weak area work.",
+            "problems": [
+                "2",
+                "15",
+                "16"
+            ],
+            "concepts": [
+                "Deep practice",
+                "Understanding"
+            ]
+        },
+        "aptitude": {
+            "topic": "Weak Topics",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Weak Topics",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Deep understanding?",
+                "back": "Know multiple approaches, not just one solution."
+            }
+        ]
+    },
+    {
+        "day": 89,
+        "title": "Pre-Interview Rest",
+        "type": "Work",
+        "javaDSA": {
+            "topic": "Light Review",
+            "description": "Light revision only.",
+            "problems": [
+                "1",
+                "4",
+                "6"
+            ],
+            "concepts": [
+                "Rest",
+                "Mental prep"
+            ]
+        },
+        "aptitude": {
+            "topic": "Light Review",
+            "questionIds": [
+                "q1"
+            ]
+        },
+        "reasoning": {
+            "topic": "Light Review",
+            "questionIds": [
+                "r1"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Day before interview?",
+                "back": "Light review, good sleep, stay confident."
+            }
+        ]
+    },
+    {
+        "day": 90,
+        "title": "You're Ready! 🎉",
+        "type": "Holiday",
+        "javaDSA": {
+            "topic": "Celebration",
+            "description": "You've completed the 90-day plan!",
+            "problems": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6"
+            ],
+            "concepts": [
+                "Celebration",
+                "Confidence"
+            ]
+        },
+        "aptitude": {
+            "topic": "Celebration",
+            "questionIds": [
+                "q1",
+                "q2"
+            ]
+        },
+        "reasoning": {
+            "topic": "Celebration",
+            "questionIds": [
+                "r1",
+                "r2"
+            ]
+        },
+        "flashcards": [
+            {
+                "front": "Final message?",
+                "back": "You've put in the work. Trust yourself. Go ace that interview! 🚀"
+            }
+        ]
+    }
+]

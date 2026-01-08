@@ -1,0 +1,366 @@
+[
+    {
+        "id": "q1",
+        "topic": "Numbers & Decimal Fractions",
+        "question": "The sum of two numbers is 25 and their difference is 13. Find their product.",
+        "options": [
+            "104",
+            "114",
+            "315",
+            "325"
+        ],
+        "answer": "114",
+        "explanation": "Let x+y=25, x-y=13. Adding: 2x=38, x=19, y=6. Product=19×6=114."
+    },
+    {
+        "id": "q2",
+        "topic": "Numbers & Decimal Fractions",
+        "question": "What is the smallest number to be added to 1000 so that 45 divides the sum exactly?",
+        "options": [
+            "35",
+            "80",
+            "20",
+            "10"
+        ],
+        "answer": "35",
+        "explanation": "1000÷45=22 remainder 10. To make divisible: 45-10=35."
+    },
+    {
+        "id": "q3",
+        "topic": "HCF & LCM",
+        "question": "Find the HCF of 72 and 120.",
+        "options": [
+            "12",
+            "24",
+            "36",
+            "48"
+        ],
+        "answer": "24",
+        "explanation": "72=2³×3², 120=2³×3×5. HCF=2³×3=24."
+    },
+    {
+        "id": "q4",
+        "topic": "HCF & LCM",
+        "question": "LCM of 12, 16, and 24 is:",
+        "options": [
+            "48",
+            "96",
+            "144",
+            "192"
+        ],
+        "answer": "48",
+        "explanation": "12=2²×3, 16=2⁴, 24=2³×3. LCM=2⁴×3=48."
+    },
+    {
+        "id": "q5",
+        "topic": "Percentages",
+        "question": "If 40% of a number is 200, what is 25% of that number?",
+        "options": [
+            "100",
+            "125",
+            "150",
+            "175"
+        ],
+        "answer": "125",
+        "explanation": "Number=200/0.4=500. 25% of 500=125."
+    },
+    {
+        "id": "q6",
+        "topic": "Percentages",
+        "question": "A shopkeeper marks goods 35% above cost price but allows 20% discount. Find his profit percentage.",
+        "options": [
+            "8%",
+            "10%",
+            "12%",
+            "15%"
+        ],
+        "answer": "8%",
+        "explanation": "Let CP=100. MP=135. SP=135×0.8=108. Profit=8%."
+    },
+    {
+        "id": "q7",
+        "topic": "Profit & Loss",
+        "question": "A man buys an article for ₹800 and sells it for ₹1000. His profit percentage is:",
+        "options": [
+            "20%",
+            "25%",
+            "30%",
+            "35%"
+        ],
+        "answer": "25%",
+        "explanation": "Profit=1000-800=200. Profit%=(200/800)×100=25%."
+    },
+    {
+        "id": "q8",
+        "topic": "Profit & Loss",
+        "question": "By selling a watch for ₹720, a man loses 10%. The cost price is:",
+        "options": [
+            "₹800",
+            "₹850",
+            "₹900",
+            "₹648"
+        ],
+        "answer": "₹800",
+        "explanation": "SP=CP×0.9, CP=720/0.9=₹800."
+    },
+    {
+        "id": "q9",
+        "topic": "Simple Interest",
+        "question": "Find SI on ₹5000 at 8% per annum for 3 years.",
+        "options": [
+            "₹1000",
+            "₹1200",
+            "₹1400",
+            "₹1600"
+        ],
+        "answer": "₹1200",
+        "explanation": "SI=PRT/100=5000×8×3/100=₹1200."
+    },
+    {
+        "id": "q10",
+        "topic": "Simple Interest",
+        "question": "At what rate will ₹1500 become ₹1800 in 2 years (SI)?",
+        "options": [
+            "8%",
+            "10%",
+            "12%",
+            "15%"
+        ],
+        "answer": "10%",
+        "explanation": "SI=300, R=100×300/(1500×2)=10%."
+    },
+    {
+        "id": "q11",
+        "topic": "Compound Interest",
+        "question": "Find CI on ₹10000 at 10% for 2 years compounded annually.",
+        "options": [
+            "₹2000",
+            "₹2100",
+            "₹2200",
+            "₹2500"
+        ],
+        "answer": "₹2100",
+        "explanation": "A=10000(1.1)²=12100. CI=12100-10000=₹2100."
+    },
+    {
+        "id": "q12",
+        "topic": "Time & Work",
+        "question": "A can do a work in 10 days, B in 15 days. Together they finish in:",
+        "options": [
+            "5 days",
+            "6 days",
+            "7 days",
+            "8 days"
+        ],
+        "answer": "6 days",
+        "explanation": "A's rate=1/10, B's=1/15. Together=1/10+1/15=1/6. Days=6."
+    },
+    {
+        "id": "q13",
+        "topic": "Time & Work",
+        "question": "If 8 men can do a work in 12 days, 6 men can do it in:",
+        "options": [
+            "14 days",
+            "16 days",
+            "18 days",
+            "20 days"
+        ],
+        "answer": "16 days",
+        "explanation": "Total work=8×12=96 man-days. 6 men=96/6=16 days."
+    },
+    {
+        "id": "q14",
+        "topic": "Ratio & Proportion",
+        "question": "Divide ₹1200 in ratio 3:5.",
+        "options": [
+            "₹450, ₹750",
+            "₹400, ₹800",
+            "₹500, ₹700",
+            "₹360, ₹840"
+        ],
+        "answer": "₹450, ₹750",
+        "explanation": "Total parts=8. First=1200×3/8=450, Second=1200×5/8=750."
+    },
+    {
+        "id": "q15",
+        "topic": "Averages",
+        "question": "Average of 5 numbers is 20. If one number is excluded, average becomes 18. The excluded number is:",
+        "options": [
+            "24",
+            "26",
+            "28",
+            "30"
+        ],
+        "answer": "28",
+        "explanation": "Sum=5×20=100. New sum=4×18=72. Excluded=100-72=28."
+    },
+    {
+        "id": "q16",
+        "topic": "Probability",
+        "question": "Two dice are thrown. Probability of getting sum 7 is:",
+        "options": [
+            "1/6",
+            "5/36",
+            "1/9",
+            "7/36"
+        ],
+        "answer": "1/6",
+        "explanation": "Sum 7: (1,6),(2,5),(3,4),(4,3),(5,2),(6,1)=6 ways. P=6/36=1/6."
+    },
+    {
+        "id": "r1",
+        "topic": "Coding Decoding",
+        "question": "If TEACHER is coded as VGCEJGT, how is CHILDREN coded?",
+        "options": [
+            "EJKNEGTP",
+            "EJKNFGTO",
+            "EJKNFGTP",
+            "EJKNEGTO"
+        ],
+        "answer": "EJKNFGTP",
+        "explanation": "Each letter +2. C→E, H→J, I→K, L→N, D→F, R→T, E→G, N→P."
+    },
+    {
+        "id": "r2",
+        "topic": "Coding Decoding",
+        "question": "In a code, ROAD is URDG. How is SWAN written?",
+        "options": [
+            "VZDQ",
+            "VXDQ",
+            "VZCQ",
+            "VZDP"
+        ],
+        "answer": "VZDQ",
+        "explanation": "Each letter +3. S→V, W→Z, A→D, N→Q."
+    },
+    {
+        "id": "r3",
+        "topic": "Blood Relations",
+        "question": "A is B's sister. C is B's mother. D is C's father. E is D's mother. How is A related to D?",
+        "options": [
+            "Grandmother",
+            "Grandfather",
+            "Granddaughter",
+            "Daughter"
+        ],
+        "answer": "Granddaughter",
+        "explanation": "A is B's sister, C is their mother, D is grandfather. A is D's granddaughter."
+    },
+    {
+        "id": "r4",
+        "topic": "Blood Relations",
+        "question": "Pointing to a photo, A says 'His mother is the only daughter of my mother.' How is the person in photo related to A?",
+        "options": [
+            "Nephew",
+            "Son",
+            "Brother",
+            "Uncle"
+        ],
+        "answer": "Son",
+        "explanation": "Only daughter of A's mother = A herself. So person's mother = A. Person is A's son."
+    },
+    {
+        "id": "r5",
+        "topic": "Direction Sense",
+        "question": "A man walks 5km South, turns left, walks 3km, turns left, walks 5km. Which direction is he facing?",
+        "options": [
+            "North",
+            "South",
+            "East",
+            "West"
+        ],
+        "answer": "North",
+        "explanation": "South→Left=East→Left=North. Facing North."
+    },
+    {
+        "id": "r6",
+        "topic": "Direction Sense",
+        "question": "From a point, A walks 10m North, turns right, walks 20m, turns right, walks 10m. How far is A from start?",
+        "options": [
+            "10m",
+            "20m",
+            "30m",
+            "40m"
+        ],
+        "answer": "20m",
+        "explanation": "Forms a 'П' shape. Final position 20m East of start."
+    },
+    {
+        "id": "r7",
+        "topic": "Syllogism",
+        "question": "All cats are dogs. All dogs are mammals. Conclusion: All cats are mammals.",
+        "options": [
+            "True",
+            "False",
+            "Cannot be determined",
+            "None"
+        ],
+        "answer": "True",
+        "explanation": "If A⊂B and B⊂C, then A⊂C. Valid syllogism."
+    },
+    {
+        "id": "r8",
+        "topic": "Number Series",
+        "question": "Find next: 2, 6, 12, 20, 30, ?",
+        "options": [
+            "40",
+            "42",
+            "44",
+            "46"
+        ],
+        "answer": "42",
+        "explanation": "Differences: 4,6,8,10,12. Next=30+12=42."
+    },
+    {
+        "id": "r9",
+        "topic": "Number Series",
+        "question": "Find next: 3, 9, 27, 81, ?",
+        "options": [
+            "162",
+            "243",
+            "324",
+            "729"
+        ],
+        "answer": "243",
+        "explanation": "Each term ×3. 81×3=243."
+    },
+    {
+        "id": "r10",
+        "topic": "Alphabet Series",
+        "question": "Find next: AZ, BY, CX, DW, ?",
+        "options": [
+            "EV",
+            "EU",
+            "EW",
+            "FV"
+        ],
+        "answer": "EV",
+        "explanation": "First letter +1, second letter -1. E, V."
+    },
+    {
+        "id": "r11",
+        "topic": "Seating Arrangement",
+        "question": "6 people sit in a circle. A is 2nd to left of B. C is 3rd to right of A. Who sits opposite to B?",
+        "options": [
+            "A",
+            "C",
+            "D",
+            "Cannot determine"
+        ],
+        "answer": "C",
+        "explanation": "In circle of 6: opposite is 3 positions away. If A is 2 left of B, C is 3 right of A=opposite B."
+    },
+    {
+        "id": "r12",
+        "topic": "Logical Sequence",
+        "question": "Arrange: Seed, Plant, Flower, Fruit, Tree",
+        "options": [
+            "Seed,Plant,Tree,Flower,Fruit",
+            "Seed,Tree,Plant,Flower,Fruit",
+            "Seed,Plant,Flower,Tree,Fruit",
+            "Seed,Flower,Plant,Tree,Fruit"
+        ],
+        "answer": "Seed,Plant,Tree,Flower,Fruit",
+        "explanation": "Logical growth sequence: Seed→Plant→Tree→Flower→Fruit."
+    }
+]
