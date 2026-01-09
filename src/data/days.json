@@ -39,6 +39,14 @@
             {
                 "front": "HashMap collision handling?",
                 "back": "Chaining (LinkedList). Java 8+ uses Red-Black Tree if chain > 8."
+            },
+            {
+                "front": "Time complexity of checking if an element exists in a HashSet?",
+                "back": "O(1) on average."
+            },
+            {
+                "front": "Time complexity of sorting an array using Arrays.sort() in Java?",
+                "back": "O(n log n) using Dual-Pivot Quicksort."
             }
         ]
     },
@@ -81,6 +89,22 @@
             {
                 "front": "Difference between HashMap and HashSet?",
                 "back": "HashMap stores key-value pairs. HashSet only stores unique keys (no values)."
+            },
+            {
+                "front": "Space complexity of a frequency map for a string of lowercase english letters?",
+                "back": "O(1) or O(26), as the size is fixed."
+            },
+            {
+                "front": "What is a major advantage of HashMap over an Array?",
+                "back": "O(1) access by non-integer keys and sparse data efficiency."
+            },
+            {
+                "front": "In Java, what method converts an array to a List?",
+                "back": "Arrays.asList() (fixed size) or new ArrayList<>(Arrays.asList())."
+            },
+            {
+                "front": "What is the prefix sum technique?",
+                "back": "Precomputing cumulative sums to calculate subarray sums in O(1)."
             }
         ]
     },
@@ -117,6 +141,14 @@
             {
                 "front": "When to use Two Pointers?",
                 "back": "Sorted arrays, pair searching, in-place modifications."
+            },
+            {
+                "front": "Prerequisite for using Two Pointers for pair finding?",
+                "back": "The array typically needs to be sorted."
+            },
+            {
+                "front": "Time complexity of Two Sum with sorted array and Two Pointers?",
+                "back": "O(n)."
             }
         ]
     },
@@ -158,6 +190,22 @@
             {
                 "front": "Container With Most Water approach?",
                 "back": "Two pointers at ends, move the shorter one inward."
+            },
+            {
+                "front": "In '3Sum', why do we sort the array first?",
+                "back": "To easily skip duplicates and use the two-pointer technique effectively."
+            },
+            {
+                "front": "How do you move pointers in 'Container With Most Water'?",
+                "back": "Move the pointer pointing to the shorter line inward."
+            },
+            {
+                "front": "What is the space complexity advantage of Two Pointers?",
+                "back": "It often solves problems in O(1) auxiliary space."
+            },
+            {
+                "front": "Can Two Pointers solve 'Palindrome Validation'?",
+                "back": "Yes, one pointer at start, one at end, compare and move inward."
             }
         ]
     },
@@ -169,9 +217,9 @@
             "topic": "Sliding Window",
             "description": "Fixed and variable size window patterns.",
             "problems": [
+                "55",
                 "8",
-                "6",
-                "1"
+                "57"
             ],
             "concepts": [
                 "Fixed window",
@@ -195,6 +243,14 @@
             {
                 "front": "Fixed vs Variable window?",
                 "back": "Fixed: window size constant. Variable: expands/contracts based on condition."
+            },
+            {
+                "front": "Difference between subarray and subsequence?",
+                "back": "Subarray is contiguous. Subsequence is not necessarily contiguous."
+            },
+            {
+                "front": "Time complexity of 'Sliding Window' usually?",
+                "back": "O(n), as each element is added and removed at most once."
             }
         ]
     },
@@ -206,9 +262,9 @@
             "topic": "Sliding Window",
             "description": "Complex window problems with HashMap tracking.",
             "problems": [
-                "6",
-                "8",
-                "9"
+                "56",
+                "58",
+                "59"
             ],
             "concepts": [
                 "Window with HashMap",
@@ -233,6 +289,14 @@
             {
                 "front": "Longest Substring Without Repeating approach?",
                 "back": "Expand right, shrink left when duplicate found using HashSet."
+            },
+            {
+                "front": "When do you shrink the window in a variable sliding window?",
+                "back": "When the current window becomes invalid (e.g., duplicates exist)."
+            },
+            {
+                "front": "What data structure helps find max in sliding window efficiently?",
+                "back": "Monotonic Deque (Decreasing) - O(n) time."
             }
         ]
     },
@@ -274,6 +338,22 @@
             {
                 "front": "Key Week 1 takeaway?",
                 "back": "Master array traversal patterns before moving to complex DS."
+            },
+            {
+                "front": "How do you handle collisions in a Hash Table (theory)?",
+                "back": "Chaining (linked lists) or Open Addressing (probing)."
+            },
+            {
+                "front": "Worst case time complexity of HashMap get/put?",
+                "back": "O(n) if all keys collide (though O(log n) in Java 8+)."
+            },
+            {
+                "front": "What is the maximum subarray sum algorithm called?",
+                "back": "Kadane's Algorithm."
+            },
+            {
+                "front": "Is iterating a generic HashMap order-guaranteed?",
+                "back": "No, order is not guaranteed. Use LinkedHashMap for insertion order."
             }
         ]
     },
@@ -285,9 +365,9 @@
             "topic": "Stack",
             "description": "LIFO principle and basic stack operations.",
             "problems": [
-                "1",
-                "4",
-                "7"
+                "41",
+                "42",
+                "44"
             ],
             "concepts": [
                 "Push/Pop",
@@ -311,6 +391,14 @@
             {
                 "front": "Stack time complexity for push/pop?",
                 "back": "O(1) for both operations."
+            },
+            {
+                "front": "What real-world undo operation uses?",
+                "back": "Stack (LIFO)."
+            },
+            {
+                "front": "Time complexity to find minimum element in Min-Stack?",
+                "back": "O(1) by maintaining an auxiliary min-stack."
             }
         ]
     },
@@ -322,12 +410,10 @@
             "topic": "Stack",
             "description": "Next Greater Element and monotonic patterns.",
             "problems": [
-                "1",
-                "4",
-                "7",
-                "5",
-                "9",
-                "10"
+                "45",
+                "46",
+                "47",
+                "43"
             ],
             "concepts": [
                 "Monotonic increasing",
@@ -353,6 +439,22 @@
             {
                 "front": "What is a Monotonic Stack?",
                 "back": "Stack maintaining either increasing or decreasing order from bottom to top."
+            },
+            {
+                "front": "Checking balanced parentheses uses what DS?",
+                "back": "Stack: push open, pop matching closed."
+            },
+            {
+                "front": "What is a Monotonic Increasing Stack used for?",
+                "back": "Finding the Next Smaller Element (NSE) or Previous Smaller Element."
+            },
+            {
+                "front": "What is a Monotonic Decreasing Stack used for?",
+                "back": "Finding the Next Greater Element (NGE)."
+            },
+            {
+                "front": "Reverse Polish Notation evaluation uses which order?",
+                "back": "Post-order logic using a Stack."
             }
         ]
     },
@@ -364,9 +466,9 @@
             "topic": "Binary Search",
             "description": "Classic binary search on sorted arrays.",
             "problems": [
-                "1",
-                "4",
-                "7"
+                "48",
+                "49",
+                "51"
             ],
             "concepts": [
                 "Left bound",
@@ -390,6 +492,14 @@
             {
                 "front": "Binary Search time complexity?",
                 "back": "O(log n) - halves search space each iteration."
+            },
+            {
+                "front": "Formula for mid index to avoid overflow?",
+                "back": "mid = left + (right - left) / 2."
+            },
+            {
+                "front": "Condition to break typical while loop in Binary Search?",
+                "back": "while (left <= right) then return -1."
             }
         ]
     },
@@ -401,9 +511,9 @@
             "topic": "Binary Search",
             "description": "Binary search on answer space, not array.",
             "problems": [
-                "1",
-                "6",
-                "8"
+                "50",
+                "53",
+                "52"
             ],
             "concepts": [
                 "Search on answer",
@@ -428,6 +538,14 @@
             {
                 "front": "When to use Binary Search on Answer?",
                 "back": "When asked min/max of something with a feasibility check function."
+            },
+            {
+                "front": "Time complexity of searching in a sorted rotated array?",
+                "back": "O(log n)."
+            },
+            {
+                "front": "Can Binary Search work on unsorted arrays?",
+                "back": "Generall no, unless checking for a peak or specific property."
             }
         ]
     },
@@ -465,6 +583,14 @@
             {
                 "front": "Why use dummy node?",
                 "back": "Simplifies edge cases when head might change."
+            },
+            {
+                "front": "Time complexity to access the k-th element?",
+                "back": "O(k) or O(n) worst case. Not O(1)."
+            },
+            {
+                "front": "Detecting a cycle uses which algorithm?",
+                "back": "Floyd's Cycle-Finding Algorithm (Tortoise and Hare)."
             }
         ]
     },
@@ -503,6 +629,14 @@
             {
                 "front": "Iterative reversal key variables?",
                 "back": "prev, curr, next - reassign pointers in order."
+            },
+            {
+                "front": "How to reverse a Linked List in place?",
+                "back": "Swap next pointers: curr.next = prev."
+            },
+            {
+                "front": "Space complexity of recursive reverse?",
+                "back": "O(n) due to stack. Iterative is O(1)."
             }
         ]
     },
@@ -544,6 +678,22 @@
             {
                 "front": "Week 2 focus areas?",
                 "back": "Stack patterns and Binary Search variations."
+            },
+            {
+                "front": "Space complexity of recursive function calls?",
+                "back": "O(depth) due to the system call stack."
+            },
+            {
+                "front": "How to implement a Queue using Stacks?",
+                "back": "Use two stacks: 'input' for push, 'output' for pop/peek."
+            },
+            {
+                "front": "What real-world undo operation uses?",
+                "back": "Stack (LIFO)."
+            },
+            {
+                "front": "Time complexity to find minimum element in Min-Stack?",
+                "back": "O(1) by maintaining an auxiliary min-stack."
             }
         ]
     },
@@ -581,6 +731,14 @@
             {
                 "front": "Floyd's Cycle Detection?",
                 "back": "Fast moves 2x, slow moves 1x. If they meet, cycle exists."
+            },
+            {
+                "front": "Intersection of two generic LLs?",
+                "back": "Calculate lengths or switch heads pointers at ends to align."
+            },
+            {
+                "front": "Merge K Sorted Lists time complexity?",
+                "back": "O(N log K) using a Min-Heap."
             }
         ]
     },
@@ -621,6 +779,22 @@
             {
                 "front": "Inorder traversal order?",
                 "back": "Left -> Root -> Right. Gives sorted order for BST."
+            },
+            {
+                "front": "Max nodes in a binary tree of height h?",
+                "back": "2^(h+1) - 1."
+            },
+            {
+                "front": "Height of a balanced binary tree?",
+                "back": "O(log n)."
+            },
+            {
+                "front": "Inorder traversal of a BST yields?",
+                "back": "Sorted sequence of values."
+            },
+            {
+                "front": "Difference between Full and Complete Binary Tree?",
+                "back": "Full: 0 or 2 children. Complete: filled left-to-right."
             }
         ]
     },
@@ -657,6 +831,14 @@
             {
                 "front": "DFS on tree time complexity?",
                 "back": "O(n) - visits each node exactly once."
+            },
+            {
+                "front": "LCA in a BST vs Normal Tree?",
+                "back": "BST: use value ranges (split point). Normal: recursion needed."
+            },
+            {
+                "front": "What is serialization of a tree?",
+                "back": "Converting tree structure to a string/array for storage."
             }
         ]
     },
@@ -695,6 +877,14 @@
             {
                 "front": "BFS space complexity?",
                 "back": "O(w) where w is max width of tree."
+            },
+            {
+                "front": "Diameter of a tree definition?",
+                "back": "Longest path between any two nodes (may not pass through root)."
+            },
+            {
+                "front": "Time complexity to validate a BST?",
+                "back": "O(n), must visit every node."
             }
         ]
     },
@@ -732,6 +922,14 @@
             {
                 "front": "BST property?",
                 "back": "Left subtree < Root < Right subtree for all nodes."
+            },
+            {
+                "front": "Max nodes in a binary tree of height h?",
+                "back": "2^(h+1) - 1."
+            },
+            {
+                "front": "Height of a balanced binary tree?",
+                "back": "O(log n)."
             }
         ]
     },
@@ -770,6 +968,14 @@
             {
                 "front": "BST deletion cases?",
                 "back": "Leaf: remove. One child: replace. Two children: find successor."
+            },
+            {
+                "front": "Inorder traversal of a BST yields?",
+                "back": "Sorted sequence of values."
+            },
+            {
+                "front": "Difference between Full and Complete Binary Tree?",
+                "back": "Full: 0 or 2 children. Complete: filled left-to-right."
             }
         ]
     },
@@ -811,6 +1017,22 @@
             {
                 "front": "Week 3 key concept?",
                 "back": "Tree recursion patterns and traversal variations."
+            },
+            {
+                "front": "LCA in a BST vs Normal Tree?",
+                "back": "BST: use value ranges (split point). Normal: recursion needed."
+            },
+            {
+                "front": "What is serialization of a tree?",
+                "back": "Converting tree structure to a string/array for storage."
+            },
+            {
+                "front": "Diameter of a tree definition?",
+                "back": "Longest path between any two nodes (may not pass through root)."
+            },
+            {
+                "front": "Time complexity to validate a BST?",
+                "back": "O(n), must visit every node."
             }
         ]
     },
@@ -848,6 +1070,14 @@
             {
                 "front": "Heap insertion complexity?",
                 "back": "O(log n) due to heapify up operation."
+            },
+            {
+                "front": "Time complexity to insert into a Heap?",
+                "back": "O(log n)."
+            },
+            {
+                "front": "Time complexity to get min/max from Heap?",
+                "back": "O(1)."
             }
         ]
     },
@@ -889,6 +1119,22 @@
             {
                 "front": "Top K Frequent approach?",
                 "back": "Use HashMap for frequency, then min-heap of size K."
+            },
+            {
+                "front": "Heapify time complexity for an array?",
+                "back": "O(n) - purely linear."
+            },
+            {
+                "front": "Data structure for 'Kth Largest Element'?",
+                "back": "Min-Heap of size K. Root is the answer."
+            },
+            {
+                "front": "Finding median from data stream efficiently?",
+                "back": "Two Heaps: Max-Heap (lower half) and Min-Heap (upper half)."
+            },
+            {
+                "front": "Java's implementation of Heap?",
+                "back": "PriorityQueue (Min-Heap by default)."
             }
         ]
     },
@@ -925,6 +1171,14 @@
             {
                 "front": "Backtracking template?",
                 "back": "Make choice -> Recurse -> Undo choice (backtrack)."
+            },
+            {
+                "front": "What defines Backtracking?",
+                "back": "DFS + Undo step (reverting state) to explore all paths."
+            },
+            {
+                "front": "Time complexity of generating all subsets?",
+                "back": "O(2^n)."
             }
         ]
     },
@@ -963,6 +1217,14 @@
             {
                 "front": "Subsets count for n elements?",
                 "back": "2^n subsets including empty set."
+            },
+            {
+                "front": "Time complexity of generating permutations?",
+                "back": "O(n!)."
+            },
+            {
+                "front": "N-Queens optimization?",
+                "back": "Use boolean arrays for cols, diag, anti-diag to check safety in O(1)."
             }
         ]
     },
@@ -999,6 +1261,14 @@
             {
                 "front": "Key pruning technique?",
                 "back": "If current sum > target, stop exploring that branch."
+            },
+            {
+                "front": "Combination Sum approach?",
+                "back": "Sort candidates, recurse with target - value, loop from current index."
+            },
+            {
+                "front": "Difference between Permutations and Combinations?",
+                "back": "Order matters in Permutations; order doesn't matter in Combinations."
             }
         ]
     },
@@ -1037,6 +1307,14 @@
             {
                 "front": "N-Queens constraint?",
                 "back": "No two queens on same row, column, or diagonal."
+            },
+            {
+                "front": "What defines Backtracking?",
+                "back": "DFS + Undo step (reverting state) to explore all paths."
+            },
+            {
+                "front": "Time complexity of generating all subsets?",
+                "back": "O(2^n)."
             }
         ]
     },
@@ -1115,6 +1393,14 @@
             {
                 "front": "Adjacency list space?",
                 "back": "O(V + E) - efficient for sparse graphs."
+            },
+            {
+                "front": "BFS usually requires which data structure?",
+                "back": "Queue."
+            },
+            {
+                "front": "DFS usually requires which data structure?",
+                "back": "Stack or Recursion."
             }
         ]
     },
@@ -1157,6 +1443,22 @@
             {
                 "front": "BFS gives shortest path when?",
                 "back": "In unweighted graphs - first visit is shortest."
+            },
+            {
+                "front": "Detecting cycle in directed graph?",
+                "back": "DFS with 'visiting' (recursion stack) set. Or Topological Sort (Kahn's)."
+            },
+            {
+                "front": "Dijkstra's Algorithm finds what?",
+                "back": "Shortest path in weighted graph (no negative weights)."
+            },
+            {
+                "front": "Time complexity of BFS/DFS (Adjacency List)?",
+                "back": "O(V + E)."
+            },
+            {
+                "front": "Topological Sort condition?",
+                "back": "Directed Acyclic Graph (DAG)."
             }
         ]
     },
@@ -1194,6 +1496,14 @@
             {
                 "front": "DFS vs BFS space?",
                 "back": "DFS: O(h) stack. BFS: O(w) queue. h=height, w=width."
+            },
+            {
+                "front": "Union-Find 'Find' complexity with compression?",
+                "back": "Nearly O(1) (Inverse Ackermann function)."
+            },
+            {
+                "front": "Bellman-Ford use case?",
+                "back": "Shortest path with negative edge weights."
             }
         ]
     },
@@ -1232,6 +1542,14 @@
             {
                 "front": "Count components approach?",
                 "back": "Run DFS/BFS from unvisited nodes, increment counter each time."
+            },
+            {
+                "front": "Number of Islands logic?",
+                "back": "Visit land ('1'), increment count, trigger BFS/DFS to sink connected land."
+            },
+            {
+                "front": "BFS usually requires which data structure?",
+                "back": "Queue."
             }
         ]
     },
@@ -1268,6 +1586,14 @@
             {
                 "front": "Cycle in directed graph?",
                 "back": "Use coloring: white (unvisited), gray (in-stack), black (done)."
+            },
+            {
+                "front": "DFS usually requires which data structure?",
+                "back": "Stack or Recursion."
+            },
+            {
+                "front": "Detecting cycle in directed graph?",
+                "back": "DFS with 'visiting' (recursion stack) set. Or Topological Sort (Kahn's)."
             }
         ]
     },
@@ -1306,6 +1632,14 @@
             {
                 "front": "Topological sort only works on?",
                 "back": "Directed Acyclic Graphs (DAGs)."
+            },
+            {
+                "front": "Dijkstra's Algorithm finds what?",
+                "back": "Shortest path in weighted graph (no negative weights)."
+            },
+            {
+                "front": "Time complexity of BFS/DFS (Adjacency List)?",
+                "back": "O(V + E)."
             }
         ]
     },
@@ -1347,6 +1681,22 @@
             {
                 "front": "Week 5 key learning?",
                 "back": "Graph traversals and their applications."
+            },
+            {
+                "front": "Topological Sort condition?",
+                "back": "Directed Acyclic Graph (DAG)."
+            },
+            {
+                "front": "Union-Find 'Find' complexity with compression?",
+                "back": "Nearly O(1) (Inverse Ackermann function)."
+            },
+            {
+                "front": "Bellman-Ford use case?",
+                "back": "Shortest path with negative edge weights."
+            },
+            {
+                "front": "Number of Islands logic?",
+                "back": "Visit land ('1'), increment count, trigger BFS/DFS to sink connected land."
             }
         ]
     },
@@ -1384,6 +1734,14 @@
             {
                 "front": "Dijkstra's limitation?",
                 "back": "Doesn't work with negative edge weights."
+            },
+            {
+                "front": "BFS usually requires which data structure?",
+                "back": "Queue."
+            },
+            {
+                "front": "DFS usually requires which data structure?",
+                "back": "Stack or Recursion."
             }
         ]
     },
@@ -1425,6 +1783,22 @@
             {
                 "front": "Bellman-Ford time complexity?",
                 "back": "O(V * E) - slower than Dijkstra."
+            },
+            {
+                "front": "Detecting cycle in directed graph?",
+                "back": "DFS with 'visiting' (recursion stack) set. Or Topological Sort (Kahn's)."
+            },
+            {
+                "front": "Dijkstra's Algorithm finds what?",
+                "back": "Shortest path in weighted graph (no negative weights)."
+            },
+            {
+                "front": "Time complexity of BFS/DFS (Adjacency List)?",
+                "back": "O(V + E)."
+            },
+            {
+                "front": "Topological Sort condition?",
+                "back": "Directed Acyclic Graph (DAG)."
             }
         ]
     },
@@ -1460,7 +1834,15 @@
         "flashcards": [
             {
                 "front": "Union Find operations?",
-                "back": "Find: O(α(n)) ≈ O(1). Union: O(α(n)) ≈ O(1)."
+                "back": "Find: O(\u00ce\u00b1(n)) \u00e2\u2030\u02c6 O(1). Union: O(\u00ce\u00b1(n)) \u00e2\u2030\u02c6 O(1)."
+            },
+            {
+                "front": "Union-Find 'Find' complexity with compression?",
+                "back": "Nearly O(1) (Inverse Ackermann function)."
+            },
+            {
+                "front": "Bellman-Ford use case?",
+                "back": "Shortest path with negative edge weights."
             }
         ]
     },
@@ -1500,6 +1882,14 @@
             {
                 "front": "Kruskal's uses which DS?",
                 "back": "Union Find for cycle detection."
+            },
+            {
+                "front": "Number of Islands logic?",
+                "back": "Visit land ('1'), increment count, trigger BFS/DFS to sink connected land."
+            },
+            {
+                "front": "BFS usually requires which data structure?",
+                "back": "Queue."
             }
         ]
     },
@@ -1537,6 +1927,14 @@
             {
                 "front": "DP vs Recursion?",
                 "back": "DP = Recursion + Caching (avoids recomputation)."
+            },
+            {
+                "front": "Two main properties for DP?",
+                "back": "Overlapping Subproblems and Optimal Substructure."
+            },
+            {
+                "front": "Top-down vs Bottom-up?",
+                "back": "Top-down: Recursion + Memo. Bottom-up: Iteration + Tables."
             }
         ]
     },
@@ -1575,6 +1973,14 @@
             {
                 "front": "Climbing Stairs recurrence?",
                 "back": "dp[i] = dp[i-1] + dp[i-2]"
+            },
+            {
+                "front": "Climbing Stairs logic?",
+                "back": "dp[i] = dp[i-1] + dp[i-2] (Fibonacci)."
+            },
+            {
+                "front": "0/1 Knapsack recurrence?",
+                "back": "Max of (include item, exclude item)."
             }
         ]
     },
@@ -1616,6 +2022,22 @@
             {
                 "front": "Week 6 focus?",
                 "back": "DP state definition and transitions."
+            },
+            {
+                "front": "Longest Increasing Subsequence time complexity?",
+                "back": "O(n^2) normally, O(n log n) with Binary Search."
+            },
+            {
+                "front": "Rod Cutting basic approach?",
+                "back": "Unbounded Knapsack variation."
+            },
+            {
+                "front": "Edit Distance key operations?",
+                "back": "Insert, Delete, Replace."
+            },
+            {
+                "front": "Coin Change (min coins) recurrence?",
+                "back": "dp[amount] = min(dp[amount], dp[amount - coin] + 1)."
             }
         ]
     },
@@ -1652,6 +2074,14 @@
             {
                 "front": "Unique Paths recurrence?",
                 "back": "dp[i][j] = dp[i-1][j] + dp[i][j-1]"
+            },
+            {
+                "front": "Two main properties for DP?",
+                "back": "Overlapping Subproblems and Optimal Substructure."
+            },
+            {
+                "front": "Top-down vs Bottom-up?",
+                "back": "Top-down: Recursion + Memo. Bottom-up: Iteration + Tables."
             }
         ]
     },
@@ -1693,6 +2123,22 @@
             {
                 "front": "LCS time complexity?",
                 "back": "O(m * n) where m, n are string lengths."
+            },
+            {
+                "front": "Climbing Stairs logic?",
+                "back": "dp[i] = dp[i-1] + dp[i-2] (Fibonacci)."
+            },
+            {
+                "front": "0/1 Knapsack recurrence?",
+                "back": "Max of (include item, exclude item)."
+            },
+            {
+                "front": "Longest Increasing Subsequence time complexity?",
+                "back": "O(n^2) normally, O(n log n) with Binary Search."
+            },
+            {
+                "front": "Rod Cutting basic approach?",
+                "back": "Unbounded Knapsack variation."
             }
         ]
     },
@@ -1730,6 +2176,14 @@
             {
                 "front": "Edit Distance operations?",
                 "back": "Insert, Delete, Replace - each costs 1."
+            },
+            {
+                "front": "Edit Distance key operations?",
+                "back": "Insert, Delete, Replace."
+            },
+            {
+                "front": "Coin Change (min coins) recurrence?",
+                "back": "dp[amount] = min(dp[amount], dp[amount - coin] + 1)."
             }
         ]
     },
@@ -1768,6 +2222,14 @@
             {
                 "front": "0/1 Knapsack recurrence?",
                 "back": "dp[i][w] = max(dp[i-1][w], dp[i-1][w-wt[i]] + val[i])"
+            },
+            {
+                "front": "Two main properties for DP?",
+                "back": "Overlapping Subproblems and Optimal Substructure."
+            },
+            {
+                "front": "Top-down vs Bottom-up?",
+                "back": "Top-down: Recursion + Memo. Bottom-up: Iteration + Tables."
             }
         ]
     },
@@ -1804,6 +2266,14 @@
             {
                 "front": "Unbounded vs 0/1 Knapsack?",
                 "back": "Unbounded: can take same item multiple times."
+            },
+            {
+                "front": "Climbing Stairs logic?",
+                "back": "dp[i] = dp[i-1] + dp[i-2] (Fibonacci)."
+            },
+            {
+                "front": "0/1 Knapsack recurrence?",
+                "back": "Max of (include item, exclude item)."
             }
         ]
     },
@@ -1842,6 +2312,14 @@
             {
                 "front": "Partition Equal Subset Sum?",
                 "back": "Find if subset with sum = total/2 exists."
+            },
+            {
+                "front": "Longest Increasing Subsequence time complexity?",
+                "back": "O(n^2) normally, O(n log n) with Binary Search."
+            },
+            {
+                "front": "Rod Cutting basic approach?",
+                "back": "Unbounded Knapsack variation."
             }
         ]
     },
@@ -1883,6 +2361,22 @@
             {
                 "front": "Week 7 mastery?",
                 "back": "2D DP and classic DP patterns."
+            },
+            {
+                "front": "Edit Distance key operations?",
+                "back": "Insert, Delete, Replace."
+            },
+            {
+                "front": "Coin Change (min coins) recurrence?",
+                "back": "dp[amount] = min(dp[amount], dp[amount - coin] + 1)."
+            },
+            {
+                "front": "Two main properties for DP?",
+                "back": "Overlapping Subproblems and Optimal Substructure."
+            },
+            {
+                "front": "Top-down vs Bottom-up?",
+                "back": "Top-down: Recursion + Memo. Bottom-up: Iteration + Tables."
             }
         ]
     },
@@ -1919,6 +2413,14 @@
             {
                 "front": "LIS optimal complexity?",
                 "back": "O(n log n) using binary search with patience sorting."
+            },
+            {
+                "front": "Climbing Stairs logic?",
+                "back": "dp[i] = dp[i-1] + dp[i-2] (Fibonacci)."
+            },
+            {
+                "front": "0/1 Knapsack recurrence?",
+                "back": "Max of (include item, exclude item)."
             }
         ]
     },
@@ -1960,6 +2462,22 @@
             {
                 "front": "MCM pattern?",
                 "back": "Try all possible split points, find minimum."
+            },
+            {
+                "front": "Longest Increasing Subsequence time complexity?",
+                "back": "O(n^2) normally, O(n log n) with Binary Search."
+            },
+            {
+                "front": "Rod Cutting basic approach?",
+                "back": "Unbounded Knapsack variation."
+            },
+            {
+                "front": "Edit Distance key operations?",
+                "back": "Insert, Delete, Replace."
+            },
+            {
+                "front": "Coin Change (min coins) recurrence?",
+                "back": "dp[amount] = min(dp[amount], dp[amount - coin] + 1)."
             }
         ]
     },
@@ -1996,6 +2514,14 @@
             {
                 "front": "Key to interval problems?",
                 "back": "Sort by start time, then process linearly."
+            },
+            {
+                "front": "First step for most Interval problems?",
+                "back": "Sort by start times."
+            },
+            {
+                "front": "Merge Intervals logic?",
+                "back": "If curr.start <= prev.end, merge (max end). Else add new."
             }
         ]
     },
@@ -2034,6 +2560,14 @@
             {
                 "front": "Meeting Rooms II approach?",
                 "back": "Min-heap for end times, count max overlaps."
+            },
+            {
+                "front": "Meeting Rooms II (Min heap approach)?",
+                "back": "Sort starts. Min-Heap stores end times. Add room if heap.min > start."
+            },
+            {
+                "front": "First step for most Interval problems?",
+                "back": "Sort by start times."
             }
         ]
     },
@@ -2070,6 +2604,14 @@
             {
                 "front": "When does Greedy work?",
                 "back": "When local optimal leads to global optimal (greedy choice property)."
+            },
+            {
+                "front": "Core concept of Greedy?",
+                "back": "Make locally optimal choice at each step hoping for global optimum."
+            },
+            {
+                "front": "Activity Selection problem strategy?",
+                "back": "Sort by finish times, pick first non-overlapping."
             }
         ]
     },
@@ -2108,6 +2650,14 @@
             {
                 "front": "Activity Selection approach?",
                 "back": "Sort by end time, always pick earliest ending."
+            },
+            {
+                "front": "Huffman Coding uses?",
+                "back": "Greedy approach to build optimal prefix tree for compression."
+            },
+            {
+                "front": "Jump Game logic?",
+                "back": "Track 'max reachable' index. If current > max, unreachable."
             }
         ]
     },
@@ -2185,6 +2735,10 @@
             {
                 "front": "Check if number is power of 2?",
                 "back": "n & (n-1) == 0 (only one bit set)."
+            },
+            {
+                "front": "XOR property used for 'Single Number'?",
+                "back": "x ^ x = 0 and x ^ 0 = x."
             }
         ]
     },
@@ -2226,6 +2780,22 @@
             {
                 "front": "Find single number in array?",
                 "back": "XOR all elements - duplicates cancel out."
+            },
+            {
+                "front": "Turn off rightmost set bit?",
+                "back": "n & (n - 1)."
+            },
+            {
+                "front": "Count set bits nickname?",
+                "back": "Hamming Weight."
+            },
+            {
+                "front": "Brian Kernighan's Algorithm?",
+                "back": "Counts set bits in O(set_bits) time using n & (n-1)."
+            },
+            {
+                "front": "XOR property used for 'Single Number'?",
+                "back": "x ^ x = 0 and x ^ 0 = x."
             }
         ]
     },
@@ -2263,6 +2833,14 @@
             {
                 "front": "Euclidean GCD formula?",
                 "back": "GCD(a, b) = GCD(b, a % b), base: GCD(a, 0) = a"
+            },
+            {
+                "front": "GCD algorithm name?",
+                "back": "Euclidean Algorithm."
+            },
+            {
+                "front": "Check if number is prime (naive)?",
+                "back": "Loop 2 to sqrt(n)."
             }
         ]
     },
@@ -2301,6 +2879,14 @@
             {
                 "front": "Distance between two points?",
                 "back": "sqrt((x2-x1)^2 + (y2-y1)^2)"
+            },
+            {
+                "front": "Rotate Image means?",
+                "back": "Transpose matrix, then reverse rows (for 90 deg clockwise)."
+            },
+            {
+                "front": "Happy Number cycle detection?",
+                "back": "Use HashSet or Floyd's slow/fast pointers."
             }
         ]
     },
@@ -2338,6 +2924,14 @@
             {
                 "front": "Trie advantage over HashMap?",
                 "back": "Efficient prefix queries and autocomplete."
+            },
+            {
+                "front": "Main use case for Trie?",
+                "back": "Prefix matching, autocomplete, spell check."
+            },
+            {
+                "front": "Time complexity to insert word of length L?",
+                "back": "O(L)."
             }
         ]
     },
@@ -2376,6 +2970,14 @@
             {
                 "front": "Trie search complexity?",
                 "back": "O(m) where m is word length."
+            },
+            {
+                "front": "Space complexity of Trie?",
+                "back": "O(Total characters * Alphabet size)."
+            },
+            {
+                "front": "Marking end of word in Trie?",
+                "back": "Boolean flag 'isEndOfWord' in the node."
             }
         ]
     },
@@ -2417,6 +3019,22 @@
             {
                 "front": "Week 9 summary?",
                 "back": "Trie for strings, bits for optimization."
+            },
+            {
+                "front": "Main use case for Trie?",
+                "back": "Prefix matching, autocomplete, spell check."
+            },
+            {
+                "front": "Time complexity to insert word of length L?",
+                "back": "O(L)."
+            },
+            {
+                "front": "Space complexity of Trie?",
+                "back": "O(Total characters * Alphabet size)."
+            },
+            {
+                "front": "Marking end of word in Trie?",
+                "back": "Boolean flag 'isEndOfWord' in the node."
             }
         ]
     },
@@ -3409,7 +4027,7 @@
     },
     {
         "day": 90,
-        "title": "You're Ready! 🎉",
+        "title": "You're Ready! \u00f0\u0178\u017d\u2030",
         "type": "Holiday",
         "javaDSA": {
             "topic": "Celebration",
@@ -3444,7 +4062,7 @@
         "flashcards": [
             {
                 "front": "Final message?",
-                "back": "You've put in the work. Trust yourself. Go ace that interview! 🚀"
+                "back": "You've put in the work. Trust yourself. Go ace that interview! \u00f0\u0178\u0161\u20ac"
             }
         ]
     }
