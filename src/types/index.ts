@@ -52,6 +52,7 @@ export interface Progress {
     activityDates: string[]; // ISO date strings of days with activity
     // 1-4-7 Spaced Repetition System
     revisionItems: RevisionItem[];
+    lastUpdated?: number; // Timestamp for sync conflict resolution
 }
 
 // Track items for 1-4-7 revision
