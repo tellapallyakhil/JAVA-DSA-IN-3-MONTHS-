@@ -20,7 +20,8 @@ const defaultProgress: Progress = {
     aptitudeDone: [],
     reasoningDone: [],
     activityDates: [],
-    revisionItems: []
+    revisionItems: [],
+    lastUpdated: 0
 };
 
 // Helper function to get today's date string
@@ -91,6 +92,19 @@ export function useProgress() {
     useEffect(() => {
         setIsClient(true);
 
+        const getLocalProgress = (userId?: string): Progress | null => {
+            const stored = localStorage.getItem(getStorageKey(userId));
+            if (stored) {
+                try {
+                    const parsed = JSON.parse(stored);
+                    return { ...defaultProgress, ...parsed };
+                } catch (e) {
+                    console.error("Failed to parse progress", e);
+                }
+            }
+            return null;
+        };
+
         const init = async () => {
             try {
                 // Add timeout to Supabase call to prevent hanging
@@ -105,45 +119,55 @@ export function useProgress() {
 
                 setUser(session?.user ?? null);
 
+                let cloudProgress: Progress | null = null;
+                let localProgress: Progress | null = null;
+
+                // 1. Get Local Data
+                localProgress = getLocalProgress(session?.user?.id);
+
+                // 2. Get Cloud Data if logged in
                 if (session?.user) {
-                    // Load from Supabase
                     try {
-                        const { data, error } = await supabase
+                        const { data } = await supabase
                             .from('profiles')
                             .select('progress')
                             .eq('id', session.user.id)
                             .single();
 
-                        if (data && data.progress) {
-                            setProgress(data.progress);
+                        if (data?.progress) {
+                            cloudProgress = data.progress;
                         }
                     } catch (e) {
-                        console.warn("Could not load progress from Supabase, using local storage");
-                        loadFromLocalStorage();
+                        console.warn("Could not load progress from Supabase", e);
                     }
-                } else {
-                    loadFromLocalStorage();
                 }
+
+                // 3. Conflict Resolution: Last Write Wins
+                if (cloudProgress && localProgress) {
+                    const cloudTime = cloudProgress.lastUpdated || 0;
+                    const localTime = localProgress.lastUpdated || 0;
+
+                    if (localTime > cloudTime) {
+                        // Local is newer, keep local (it will sync to cloud via useEffect)
+                        setProgress(localProgress);
+                    } else {
+                        // Cloud is newer (or equal), use cloud
+                        setProgress(cloudProgress);
+                    }
+                } else if (cloudProgress) {
+                    setProgress(cloudProgress);
+                } else if (localProgress) {
+                    setProgress(localProgress);
+                } else {
+                    setProgress(defaultProgress); // Start fresh
+                }
+
             } catch (e) {
                 console.warn("Auth check failed, using local storage", e);
-                loadFromLocalStorage();
+                const local = getLocalProgress();
+                setProgress(local || defaultProgress);
             } finally {
                 setLoading(false);
-            }
-        };
-
-        const loadFromLocalStorage = (userId?: string) => {
-            const stored = localStorage.getItem(getStorageKey(userId));
-            if (stored) {
-                try {
-                    const parsed = JSON.parse(stored);
-                    setProgress({ ...defaultProgress, ...parsed });
-                } catch (e) {
-                    console.error("Failed to parse progress", e);
-                }
-            } else {
-                // No data found, start fresh
-                setProgress(defaultProgress);
             }
         };
 
@@ -151,19 +175,16 @@ export function useProgress() {
 
         const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_event, session) => {
             setUser(session?.user ?? null);
+            // On auth change, we mostly rely on init or reload, but for SPA feel:
             if (session?.user) {
-                // Re-fetch on login - load user-specific data
-                const { data } = await supabase.from('profiles').select('progress').eq('id', session.user.id).single();
-                if (data?.progress) {
-                    setProgress(data.progress);
-                } else {
-                    // No cloud data, check for user-specific local storage
-                    loadFromLocalStorage(session.user.id);
-                }
+                // Try to load user data again to be safe
+                const local = getLocalProgress(session.user.id);
+                if (local) setProgress(local);
+                // We could fetch cloud here too, but simple is better for now
             } else {
-                // User logged out - reset to guest progress
-                setProgress(defaultProgress);
-                loadFromLocalStorage(); // Load guest progress if any
+                // User logged out - load guest or default
+                const guest = getLocalProgress();
+                setProgress(guest || defaultProgress);
             }
         });
 
@@ -217,7 +238,8 @@ export function useProgress() {
                 completedProblems: exists
                     ? prev.completedProblems.filter(p => p !== id)
                     : [...prev.completedProblems, id],
-                activityDates: exists ? prev.activityDates : recordActivity(prev)
+                activityDates: exists ? prev.activityDates : recordActivity(prev),
+                lastUpdated: Date.now()
             };
         });
     };
@@ -229,7 +251,8 @@ export function useProgress() {
                 ...prev,
                 aptitudeDone: exists
                     ? prev.aptitudeDone.filter(a => a.day !== day)
-                    : [...prev.aptitudeDone, { day, count: 1 }]
+                    : [...prev.aptitudeDone, { day, count: 1 }],
+                lastUpdated: Date.now()
             };
         });
     };
@@ -241,7 +264,8 @@ export function useProgress() {
                 ...prev,
                 reasoningDone: exists
                     ? prev.reasoningDone.filter(r => r.day !== day)
-                    : [...prev.reasoningDone, { day, count: 1 }]
+                    : [...prev.reasoningDone, { day, count: 1 }],
+                lastUpdated: Date.now()
             };
         });
     };
@@ -255,7 +279,8 @@ export function useProgress() {
                 completedQuestions: exists
                     ? questions.filter(q => q !== id)
                     : [...questions, id],
-                activityDates: exists ? prev.activityDates : recordActivity(prev)
+                activityDates: exists ? prev.activityDates : recordActivity(prev),
+                lastUpdated: Date.now()
             };
         });
     };
@@ -280,7 +305,8 @@ export function useProgress() {
                     learnedDate: today,
                     revisionsDone: 0,
                     nextRevisionDate: nextRevision.toISOString().split('T')[0]
-                }]
+                }],
+                lastUpdated: Date.now()
             };
         });
     };
@@ -310,7 +336,8 @@ export function useProgress() {
                         nextRevisionDate: nextRevision.toISOString().split('T')[0]
                     };
                 }).filter(Boolean) as typeof items,
-                activityDates: recordActivity(prev)
+                activityDates: recordActivity(prev),
+                lastUpdated: Date.now()
             };
         });
     };
