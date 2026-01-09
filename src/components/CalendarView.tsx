@@ -81,40 +81,41 @@ export default function CalendarView({ days, completedDays = [] }: CalendarViewP
     const goToNextMonth = () => setCurrentMonthOffset(prev => Math.min(prev + 1, 2)); // 3 months max
 
     return (
-        <div className="glass-card p-6 rounded-2xl">
+        <div className="glass-card p-3 sm:p-6 rounded-2xl w-full">
             {/* Header */}
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center justify-between mb-4 sm:mb-6">
                 <button
                     onClick={goToPrevMonth}
                     disabled={currentMonthOffset === 0}
-                    className="p-2 rounded-lg hover:bg-white/5 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                    className="p-1.5 sm:p-2 rounded-lg hover:bg-white/5 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
                 >
-                    <ChevronLeft />
+                    <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
                 </button>
-                <h2 className="text-2xl font-bold flex items-center gap-2">
-                    <Calendar className="text-primary" />
-                    {MONTHS[month]} {year}
+                <h2 className="text-lg sm:text-2xl font-bold flex items-center gap-2">
+                    <Calendar className="text-primary w-5 h-5 sm:w-6 sm:h-6" />
+                    <span className="shrink-0">{MONTHS[month]} {year}</span>
                 </h2>
                 <button
                     onClick={goToNextMonth}
                     disabled={currentMonthOffset === 2}
-                    className="p-2 rounded-lg hover:bg-white/5 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                    className="p-1.5 sm:p-2 rounded-lg hover:bg-white/5 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
                 >
-                    <ChevronRight />
+                    <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
                 </button>
             </div>
 
             {/* Weekday Headers */}
-            <div className="grid grid-cols-7 gap-2 mb-2">
-                {WEEKDAYS.map(day => (
-                    <div key={day} className="text-center text-xs font-semibold text-muted-foreground py-2">
-                        {day}
+            <div className="grid grid-cols-7 gap-1 sm:gap-2 mb-2">
+                {WEEKDAYS.map((day, i) => (
+                    <div key={day} className="text-center text-[10px] sm:text-xs font-semibold text-muted-foreground py-2">
+                        <span className="hidden sm:inline">{day}</span>
+                        <span className="sm:hidden">{day.charAt(0)}</span>
                     </div>
                 ))}
             </div>
 
             {/* Calendar Grid */}
-            <div className="grid grid-cols-7 gap-2">
+            <div className="grid grid-cols-7 gap-1 sm:gap-2">
                 {calendarCells.flat().map((cell, index) => {
                     if (!cell) {
                         return <div key={`empty-${index}`} className="aspect-square" />;
@@ -136,41 +137,41 @@ export default function CalendarView({ days, completedDays = [] }: CalendarViewP
                                 <Link
                                     href={`/day/${task.day}`}
                                     className={`
-                                        w-full h-full rounded-xl flex flex-col items-center justify-center relative
+                                        w-full h-full rounded-lg sm:rounded-xl flex flex-col items-center justify-center relative
                                         transition-all duration-200 border
                                         ${isCompleted
                                             ? 'bg-green-500/20 border-green-500/40 text-green-400'
                                             : isToday
-                                                ? 'bg-primary/20 border-primary ring-2 ring-primary/50 text-white'
+                                                ? 'bg-primary/20 border-primary ring-1 sm:ring-2 ring-primary/50 text-white'
                                                 : isHoliday
                                                     ? 'bg-purple-500/10 border-purple-500/30 hover:bg-purple-500/20 text-purple-300'
                                                     : 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20 text-white'
                                         }
                                     `}
                                 >
-                                    <span className="text-lg font-bold">{date}</span>
-                                    <span className="text-[9px] uppercase tracking-wider opacity-70">Day {task.day}</span>
+                                    <span className="text-sm sm:text-lg font-bold">{date}</span>
+                                    <span className="hidden sm:block text-[9px] uppercase tracking-wider opacity-70">Day {task.day}</span>
 
                                     {isCompleted && (
-                                        <div className="absolute top-1 right-1">
-                                            <Check size={12} className="text-green-500" />
+                                        <div className="absolute top-0.5 right-0.5 sm:top-1 sm:right-1">
+                                            <Check className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-green-500" />
                                         </div>
                                     )}
                                     {isHoliday && !isCompleted && (
-                                        <div className="absolute top-1 left-1">
-                                            <PartyPopper size={10} className="text-purple-400" />
+                                        <div className="absolute top-0.5 left-0.5 sm:top-1 sm:left-1">
+                                            <PartyPopper className="w-2.5 h-2.5 sm:w-[10px] sm:h-[10px] text-purple-400" />
                                         </div>
                                     )}
                                     {!isHoliday && !isCompleted && (
-                                        <div className="absolute top-1 left-1">
-                                            <Briefcase size={10} className="text-blue-400" />
+                                        <div className="absolute top-0.5 left-0.5 sm:top-1 sm:left-1">
+                                            <Briefcase className="w-2.5 h-2.5 sm:w-[10px] sm:h-[10px] text-blue-400" />
                                         </div>
                                     )}
                                 </Link>
                             ) : (
                                 <div className={`
-                                    w-full h-full rounded-xl flex items-center justify-center
-                                    ${isPast ? 'text-zinc-600' : 'text-zinc-500'} text-sm
+                                    w-full h-full rounded-lg sm:rounded-xl flex items-center justify-center
+                                    ${isPast ? 'text-zinc-600' : 'text-zinc-500'} text-xs sm:text-sm
                                     bg-white/[0.02] border border-transparent
                                 `}>
                                     {date}
@@ -182,22 +183,22 @@ export default function CalendarView({ days, completedDays = [] }: CalendarViewP
             </div>
 
             {/* Legend */}
-            <div className="flex flex-wrap items-center justify-center gap-4 mt-6 text-xs text-muted-foreground">
+            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 mt-4 sm:mt-6 text-[10px] sm:text-xs text-muted-foreground">
                 <div className="flex items-center gap-1.5">
-                    <div className="w-3 h-3 rounded bg-primary/50"></div>
+                    <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded bg-primary/50"></div>
                     <span>Today</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                    <Briefcase size={12} className="text-blue-400" />
-                    <span>Work Day</span>
+                    <Briefcase className="w-3 h-3 sm:w-[12px] sm:h-[12px] text-blue-400" />
+                    <span>Work</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                    <PartyPopper size={12} className="text-purple-400" />
-                    <span>Holiday (More Practice)</span>
+                    <PartyPopper className="w-3 h-3 sm:w-[12px] sm:h-[12px] text-purple-400" />
+                    <span>Holiday</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                    <div className="w-3 h-3 rounded bg-green-500/50"></div>
-                    <span>Completed</span>
+                    <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded bg-green-500/50"></div>
+                    <span>Done</span>
                 </div>
             </div>
         </div>

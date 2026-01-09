@@ -691,5 +691,3741 @@
       "Queue"
     ],
     "link": "https://leetcode.com/problems/word-ladder/"
+  },
+  {
+    "id": "41",
+    "title": "Valid Parentheses",
+    "difficulty": "Easy",
+    "topics": [
+      "Stack"
+    ],
+    "companies": [
+      "Facebook",
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Stack"
+    ],
+    "link": "https://leetcode.com/problems/valid-parentheses/"
+  },
+  {
+    "id": "42",
+    "title": "Min Stack",
+    "difficulty": "Medium",
+    "topics": [
+      "Stack"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Stack",
+      "Pairs"
+    ],
+    "link": "https://leetcode.com/problems/min-stack/"
+  },
+  {
+    "id": "43",
+    "title": "Evaluate Reverse Polish Notation",
+    "difficulty": "Medium",
+    "topics": [
+      "Stack"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Stack",
+      "Parsing"
+    ],
+    "link": "https://leetcode.com/problems/evaluate-reverse-polish-notation/"
+  },
+  {
+    "id": "44",
+    "title": "Generate Parentheses",
+    "difficulty": "Medium",
+    "topics": [
+      "Stack",
+      "Backtracking"
+    ],
+    "companies": [
+      "Amazon",
+      "Google",
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Recursion",
+      "Stack"
+    ],
+    "link": "https://leetcode.com/problems/generate-parentheses/"
+  },
+  {
+    "id": "45",
+    "title": "Daily Temperatures",
+    "difficulty": "Medium",
+    "topics": [
+      "Stack",
+      "Monotonic Stack"
+    ],
+    "companies": [
+      "Meta",
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Stack"
+    ],
+    "link": "https://leetcode.com/problems/daily-temperatures/"
+  },
+  {
+    "id": "46",
+    "title": "Car Fleet",
+    "difficulty": "Medium",
+    "topics": [
+      "Stack",
+      "Monotonic Stack"
+    ],
+    "companies": [
+      "Google",
+      "Uber"
+    ],
+    "javaConcepts": [
+      "Sorting",
+      "Stack"
+    ],
+    "link": "https://leetcode.com/problems/car-fleet/"
+  },
+  {
+    "id": "47",
+    "title": "Largest Rectangle in Histogram",
+    "difficulty": "Hard",
+    "topics": [
+      "Stack",
+      "Monotonic Stack"
+    ],
+    "companies": [
+      "Google",
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Stack"
+    ],
+    "link": "https://leetcode.com/problems/largest-rectangle-in-histogram/"
+  },
+  {
+    "id": "48",
+    "title": "Binary Search",
+    "difficulty": "Easy",
+    "topics": [
+      "Binary Search"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Binary Search"
+    ],
+    "link": "https://leetcode.com/problems/binary-search/"
+  },
+  {
+    "id": "49",
+    "title": "Search a 2D Matrix",
+    "difficulty": "Medium",
+    "topics": [
+      "Binary Search",
+      "Matrix"
+    ],
+    "companies": [
+      "Amazon",
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "Binary Search",
+      "Coordinate Mapping"
+    ],
+    "link": "https://leetcode.com/problems/search-a-2d-matrix/"
+  },
+  {
+    "id": "50",
+    "title": "Koko Eating Bananas",
+    "difficulty": "Medium",
+    "topics": [
+      "Binary Search"
+    ],
+    "companies": [
+      "Google",
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Binary Search on Answer"
+    ],
+    "link": "https://leetcode.com/problems/koko-eating-bananas/"
+  },
+  {
+    "id": "51",
+    "title": "Find Minimum in Rotated Sorted Array",
+    "difficulty": "Medium",
+    "topics": [
+      "Binary Search"
+    ],
+    "companies": [
+      "Facebook",
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "Binary Search"
+    ],
+    "link": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/"
+  },
+  {
+    "id": "52",
+    "title": "Search in Rotated Sorted Array",
+    "difficulty": "Medium",
+    "topics": [
+      "Binary Search"
+    ],
+    "companies": [
+      "Amazon",
+      "Google",
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Binary Search"
+    ],
+    "link": "https://leetcode.com/problems/search-in-rotated-sorted-array/"
+  },
+  {
+    "id": "53",
+    "title": "Time Based Key-Value Store",
+    "difficulty": "Medium",
+    "topics": [
+      "Binary Search",
+      "HashMap"
+    ],
+    "companies": [
+      "Google",
+      "Netflix"
+    ],
+    "javaConcepts": [
+      "HashMap",
+      "Binary Search"
+    ],
+    "link": "https://leetcode.com/problems/time-based-key-value-store/"
+  },
+  {
+    "id": "54",
+    "title": "Median of Two Sorted Arrays",
+    "difficulty": "Hard",
+    "topics": [
+      "Binary Search"
+    ],
+    "companies": [
+      "Google",
+      "Amazon",
+      "Apple"
+    ],
+    "javaConcepts": [
+      "Binary Search"
+    ],
+    "link": "https://leetcode.com/problems/median-of-two-sorted-arrays/"
+  },
+  {
+    "id": "55",
+    "title": "Longest Substring Without Repeating Characters",
+    "difficulty": "Medium",
+    "topics": [
+      "Sliding Window"
+    ],
+    "companies": [
+      "Amazon",
+      "Google",
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "HashSet",
+      "Sliding Window"
+    ],
+    "link": "https://leetcode.com/problems/longest-substring-without-repeating-characters/"
+  },
+  {
+    "id": "56",
+    "title": "Longest Repeating Character Replacement",
+    "difficulty": "Medium",
+    "topics": [
+      "Sliding Window"
+    ],
+    "companies": [
+      "Google",
+      "Uber"
+    ],
+    "javaConcepts": [
+      "HashMap",
+      "Sliding Window"
+    ],
+    "link": "https://leetcode.com/problems/longest-repeating-character-replacement/"
+  },
+  {
+    "id": "57",
+    "title": "Permutation in String",
+    "difficulty": "Medium",
+    "topics": [
+      "Sliding Window"
+    ],
+    "companies": [
+      "Microsoft",
+      "Google"
+    ],
+    "javaConcepts": [
+      "Frequency Array",
+      "Sliding Window"
+    ],
+    "link": "https://leetcode.com/problems/permutation-in-string/"
+  },
+  {
+    "id": "58",
+    "title": "Minimum Window Substring",
+    "difficulty": "Hard",
+    "topics": [
+      "Sliding Window"
+    ],
+    "companies": [
+      "Facebook",
+      "Google"
+    ],
+    "javaConcepts": [
+      "HashMap",
+      "Sliding Window"
+    ],
+    "link": "https://leetcode.com/problems/minimum-window-substring/"
+  },
+  {
+    "id": "59",
+    "title": "Sliding Window Maximum",
+    "difficulty": "Hard",
+    "topics": [
+      "Sliding Window",
+      "Deque"
+    ],
+    "companies": [
+      "Google",
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Deque",
+      "Sliding Window"
+    ],
+    "link": "https://leetcode.com/problems/sliding-window-maximum/"
+  },
+  {
+    "id": "60",
+    "title": "Merge k Sorted Lists",
+    "difficulty": "Hard",
+    "topics": [
+      "Heap",
+      "LinkedList"
+    ],
+    "companies": [
+      "Facebook",
+      "Microsoft",
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "PriorityQueue",
+      "Merge Sort"
+    ],
+    "link": "https://leetcode.com/problems/merge-k-sorted-lists/"
+  },
+  {
+    "id": "61",
+    "title": "Maximum Subarray Sum Circular",
+    "difficulty": "Medium",
+    "topics": [
+      "Greedy",
+      "Array"
+    ],
+    "companies": [
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "Kadane's Algorithm"
+    ],
+    "link": "https://leetcode.com/problems/maximum-sum-circular-subarray/"
+  },
+  {
+    "id": "62",
+    "title": "Jump Game",
+    "difficulty": "Medium",
+    "topics": [
+      "Greedy",
+      "DP"
+    ],
+    "companies": [
+      "Amazon",
+      "Apple"
+    ],
+    "javaConcepts": [
+      "Linear Scan"
+    ],
+    "link": "https://leetcode.com/problems/jump-game/"
+  },
+  {
+    "id": "63",
+    "title": "Jump Game II",
+    "difficulty": "Medium",
+    "topics": [
+      "Greedy",
+      "DP"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "BFS-like Greedy"
+    ],
+    "link": "https://leetcode.com/problems/jump-game-ii/"
+  },
+  {
+    "id": "64",
+    "title": "Gas Station",
+    "difficulty": "Medium",
+    "topics": [
+      "Greedy"
+    ],
+    "companies": [
+      "Google",
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "One Pass"
+    ],
+    "link": "https://leetcode.com/problems/gas-station/"
+  },
+  {
+    "id": "65",
+    "title": "Hand of Straights",
+    "difficulty": "Medium",
+    "topics": [
+      "Greedy",
+      "Heap"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "TreeMap"
+    ],
+    "link": "https://leetcode.com/problems/hand-of-straights/"
+  },
+  {
+    "id": "66",
+    "title": "Merge Triplets to Form Target Triplet",
+    "difficulty": "Medium",
+    "topics": [
+      "Greedy"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Filter"
+    ],
+    "link": "https://leetcode.com/problems/merge-triplets-to-form-target-triplet/"
+  },
+  {
+    "id": "67",
+    "title": "Partition Labels",
+    "difficulty": "Medium",
+    "topics": [
+      "Greedy",
+      "Two Pointers"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Last Index Map"
+    ],
+    "link": "https://leetcode.com/problems/partition-labels/"
+  },
+  {
+    "id": "68",
+    "title": "Valid Parenthesis String",
+    "difficulty": "Medium",
+    "topics": [
+      "Greedy",
+      "String"
+    ],
+    "companies": [
+      "Lockheed Martin"
+    ],
+    "javaConcepts": [
+      "Count Range"
+    ],
+    "link": "https://leetcode.com/problems/valid-parenthesis-string/"
+  },
+  {
+    "id": "69",
+    "title": "Insert Interval",
+    "difficulty": "Medium",
+    "topics": [
+      "Intervals"
+    ],
+    "companies": [
+      "Google",
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Linear Scan"
+    ],
+    "link": "https://leetcode.com/problems/insert-interval/"
+  },
+  {
+    "id": "70",
+    "title": "Merge Intervals",
+    "difficulty": "Medium",
+    "topics": [
+      "Intervals"
+    ],
+    "companies": [
+      "Google",
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "Sorting"
+    ],
+    "link": "https://leetcode.com/problems/merge-intervals/"
+  },
+  {
+    "id": "71",
+    "title": "Non-overlapping Intervals",
+    "difficulty": "Medium",
+    "topics": [
+      "Intervals"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Sorting",
+      "Greedy"
+    ],
+    "link": "https://leetcode.com/problems/non-overlapping-intervals/"
+  },
+  {
+    "id": "72",
+    "title": "Meeting Rooms",
+    "difficulty": "Easy",
+    "topics": [
+      "Intervals"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Sorting"
+    ],
+    "link": "https://leetcode.com/problems/meeting-rooms/"
+  },
+  {
+    "id": "73",
+    "title": "Meeting Rooms II",
+    "difficulty": "Medium",
+    "topics": [
+      "Intervals",
+      "Heap"
+    ],
+    "companies": [
+      "Facebook",
+      "Google"
+    ],
+    "javaConcepts": [
+      "Min-Heap"
+    ],
+    "link": "https://leetcode.com/problems/meeting-rooms-ii/"
+  },
+  {
+    "id": "74",
+    "title": "Reorder List",
+    "difficulty": "Medium",
+    "topics": [
+      "Linked List"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Two Pointers",
+      "Reverse"
+    ],
+    "link": "https://leetcode.com/problems/reorder-list/"
+  },
+  {
+    "id": "75",
+    "title": "Remove Nth Node From End of List",
+    "difficulty": "Medium",
+    "topics": [
+      "Linked List"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Two Pointers"
+    ],
+    "link": "https://leetcode.com/problems/remove-nth-node-from-end-of-list/"
+  },
+  {
+    "id": "76",
+    "title": "Copy List with Random Pointer",
+    "difficulty": "Medium",
+    "topics": [
+      "Linked List"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "HashMap"
+    ],
+    "link": "https://leetcode.com/problems/copy-list-with-random-pointer/"
+  },
+  {
+    "id": "77",
+    "title": "Add Two Numbers",
+    "difficulty": "Medium",
+    "topics": [
+      "Linked List"
+    ],
+    "companies": [
+      "Amazon",
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "Math"
+    ],
+    "link": "https://leetcode.com/problems/add-two-numbers/"
+  },
+  {
+    "id": "78",
+    "title": "Linked List Cycle II",
+    "difficulty": "Medium",
+    "topics": [
+      "Linked List"
+    ],
+    "companies": [
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "Floyd's Algo"
+    ],
+    "link": "https://leetcode.com/problems/linked-list-cycle-ii/"
+  },
+  {
+    "id": "79",
+    "title": "Find the Duplicate Number",
+    "difficulty": "Medium",
+    "topics": [
+      "Linked List",
+      "Binary Search"
+    ],
+    "companies": [
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "Floyd's Cycle Finding"
+    ],
+    "link": "https://leetcode.com/problems/find-the-duplicate-number/"
+  },
+  {
+    "id": "80",
+    "title": "LRU Cache",
+    "difficulty": "Medium",
+    "topics": [
+      "Linked List",
+      "Design"
+    ],
+    "companies": [
+      "Amazon",
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "Doubly Linked List",
+      "HashMap"
+    ],
+    "link": "https://leetcode.com/problems/lru-cache/"
+  },
+  {
+    "id": "81",
+    "title": "Reverse Nodes in k-Group",
+    "difficulty": "Hard",
+    "topics": [
+      "Linked List"
+    ],
+    "companies": [
+      "Microsoft",
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Recursion",
+      "Iteration"
+    ],
+    "link": "https://leetcode.com/problems/reverse-nodes-in-k-group/"
+  },
+  {
+    "id": "82",
+    "title": "Serialize and Deserialize Binary Tree",
+    "difficulty": "Hard",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "BFS",
+      "DFS"
+    ],
+    "link": "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/"
+  },
+  {
+    "id": "83",
+    "title": "Binary Tree Maximum Path Sum",
+    "difficulty": "Hard",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Recursion",
+      "DFS"
+    ],
+    "link": "https://leetcode.com/problems/binary-tree-maximum-path-sum/"
+  },
+  {
+    "id": "84",
+    "title": "Construct Binary Tree from Preorder and Inorder Traversal",
+    "difficulty": "Medium",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "HashMap",
+      "Recursion"
+    ],
+    "link": "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/"
+  },
+  {
+    "id": "85",
+    "title": "Binary Tree Right Side View",
+    "difficulty": "Medium",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "BFS"
+    ],
+    "link": "https://leetcode.com/problems/binary-tree-right-side-view/"
+  },
+  {
+    "id": "86",
+    "title": "Count Good Nodes in Binary Tree",
+    "difficulty": "Medium",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "DFS"
+    ],
+    "link": "https://leetcode.com/problems/count-good-nodes-in-binary-tree/"
+  },
+  {
+    "id": "87",
+    "title": "Kth Smallest Element in a BST",
+    "difficulty": "Medium",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Inorder Traversal"
+    ],
+    "link": "https://leetcode.com/problems/kth-smallest-element-in-a-bst/"
+  },
+  {
+    "id": "88",
+    "title": "Subsets",
+    "difficulty": "Medium",
+    "topics": [
+      "Backtracking"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Recursion"
+    ],
+    "link": "https://leetcode.com/problems/subsets/"
+  },
+  {
+    "id": "89",
+    "title": "Combination Sum",
+    "difficulty": "Medium",
+    "topics": [
+      "Backtracking"
+    ],
+    "companies": [
+      "Facebook",
+      "Airbnb"
+    ],
+    "javaConcepts": [
+      "Recursion"
+    ],
+    "link": "https://leetcode.com/problems/combination-sum/"
+  },
+  {
+    "id": "90",
+    "title": "Permutations",
+    "difficulty": "Medium",
+    "topics": [
+      "Backtracking"
+    ],
+    "companies": [
+      "Microsoft",
+      "Google"
+    ],
+    "javaConcepts": [
+      "Recursion"
+    ],
+    "link": "https://leetcode.com/problems/permutations/"
+  },
+  {
+    "id": "91",
+    "title": "Subsets II",
+    "difficulty": "Medium",
+    "topics": [
+      "Backtracking"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Sorting",
+      "Recursion"
+    ],
+    "link": "https://leetcode.com/problems/subsets-ii/"
+  },
+  {
+    "id": "92",
+    "title": "Combination Sum II",
+    "difficulty": "Medium",
+    "topics": [
+      "Backtracking"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Sorting",
+      "Recursion"
+    ],
+    "link": "https://leetcode.com/problems/combination-sum-ii/"
+  },
+  {
+    "id": "93",
+    "title": "Word Search",
+    "difficulty": "Medium",
+    "topics": [
+      "Backtracking"
+    ],
+    "companies": [
+      "Amazon",
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "DFS"
+    ],
+    "link": "https://leetcode.com/problems/word-search/"
+  },
+  {
+    "id": "94",
+    "title": "Palindrome Partitioning",
+    "difficulty": "Medium",
+    "topics": [
+      "Backtracking"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "DP",
+      "DFS"
+    ],
+    "link": "https://leetcode.com/problems/palindrome-partitioning/"
+  },
+  {
+    "id": "95",
+    "title": "Letter Combinations of a Phone Number",
+    "difficulty": "Medium",
+    "topics": [
+      "Backtracking"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Recursion"
+    ],
+    "link": "https://leetcode.com/problems/letter-combinations-of-a-phone-number/"
+  },
+  {
+    "id": "96",
+    "title": "N-Queens",
+    "difficulty": "Hard",
+    "topics": [
+      "Backtracking"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Recursion",
+      "Bitmask"
+    ],
+    "link": "https://leetcode.com/problems/n-queens/"
+  },
+  {
+    "id": "97",
+    "title": "Design Add and Search Words Data Structure",
+    "difficulty": "Medium",
+    "topics": [
+      "Trie"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "DFS"
+    ],
+    "link": "https://leetcode.com/problems/design-add-and-search-words-data-structure/"
+  },
+  {
+    "id": "98",
+    "title": "Word Search II",
+    "difficulty": "Hard",
+    "topics": [
+      "Trie",
+      "Backtracking"
+    ],
+    "companies": [
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "DFS",
+      "Trie"
+    ],
+    "link": "https://leetcode.com/problems/word-search-ii/"
+  },
+  {
+    "id": "99",
+    "title": "Kth Largest Element in a Stream",
+    "difficulty": "Easy",
+    "topics": [
+      "Heap"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Min-Heap"
+    ],
+    "link": "https://leetcode.com/problems/kth-largest-element-in-a-stream/"
+  },
+  {
+    "id": "100",
+    "title": "Last Stone Weight",
+    "difficulty": "Easy",
+    "topics": [
+      "Heap"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Max-Heap"
+    ],
+    "link": "https://leetcode.com/problems/last-stone-weight/"
+  },
+  {
+    "id": "101",
+    "title": "K Closest Points to Origin",
+    "difficulty": "Medium",
+    "topics": [
+      "Heap"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Max-Heap",
+      "QuickSelect"
+    ],
+    "link": "https://leetcode.com/problems/k-closest-points-to-origin/"
+  },
+  {
+    "id": "102",
+    "title": "Kth Largest Element in an Array",
+    "difficulty": "Medium",
+    "topics": [
+      "Heap"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Min-Heap",
+      "QuickSelect"
+    ],
+    "link": "https://leetcode.com/problems/kth-largest-element-in-an-array/"
+  },
+  {
+    "id": "103",
+    "title": "Task Scheduler",
+    "difficulty": "Medium",
+    "topics": [
+      "Heap",
+      "Greedy"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Math",
+      "PriorityQueue"
+    ],
+    "link": "https://leetcode.com/problems/task-scheduler/"
+  },
+  {
+    "id": "104",
+    "title": "Design Twitter",
+    "difficulty": "Medium",
+    "topics": [
+      "Heap",
+      "Design"
+    ],
+    "companies": [
+      "Twitter"
+    ],
+    "javaConcepts": [
+      "HashMap",
+      "PriorityQueue"
+    ],
+    "link": "https://leetcode.com/problems/design-twitter/"
+  },
+  {
+    "id": "105",
+    "title": "Find Median from Data Stream",
+    "difficulty": "Hard",
+    "topics": [
+      "Heap"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Two Heaps"
+    ],
+    "link": "https://leetcode.com/problems/find-median-from-data-stream/"
+  },
+  {
+    "id": "106",
+    "title": "Graph Valid Tree",
+    "difficulty": "Medium",
+    "topics": [
+      "Graphs"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Union-Find",
+      "DFS"
+    ],
+    "link": "https://leetcode.com/problems/graph-valid-tree/"
+  },
+  {
+    "id": "107",
+    "title": "Number of Connected Components in an Undirected Graph",
+    "difficulty": "Medium",
+    "topics": [
+      "Graphs"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Union-Find",
+      "BFS"
+    ],
+    "link": "https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/"
+  },
+  {
+    "id": "108",
+    "title": "Alien Dictionary",
+    "difficulty": "Hard",
+    "topics": [
+      "Graphs"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Topological Sort"
+    ],
+    "link": "https://leetcode.com/problems/alien-dictionary/"
+  },
+  {
+    "id": "109",
+    "title": "Cheapest Flights Within K Stops",
+    "difficulty": "Medium",
+    "topics": [
+      "Graphs"
+    ],
+    "companies": [
+      "Airbnb",
+      "expedia"
+    ],
+    "javaConcepts": [
+      "Bellman-Ford",
+      "Dijkstra"
+    ],
+    "link": "https://leetcode.com/problems/cheapest-flights-within-k-stops/"
+  },
+  {
+    "id": "110",
+    "title": "Reconstruct Itinerary",
+    "difficulty": "Hard",
+    "topics": [
+      "Graphs"
+    ],
+    "companies": [
+      "Uber"
+    ],
+    "javaConcepts": [
+      "Eulerian Path",
+      "DFS"
+    ],
+    "link": "https://leetcode.com/problems/reconstruct-itinerary/"
+  },
+  {
+    "id": "111",
+    "title": "Min Cost to Connect All Points",
+    "difficulty": "Medium",
+    "topics": [
+      "Graphs"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Prim's Algo"
+    ],
+    "link": "https://leetcode.com/problems/min-cost-to-connect-all-points/"
+  },
+  {
+    "id": "112",
+    "title": "Network Delay Time",
+    "difficulty": "Medium",
+    "topics": [
+      "Graphs"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Dijkstra"
+    ],
+    "link": "https://leetcode.com/problems/network-delay-time/"
+  },
+  {
+    "id": "113",
+    "title": "Swim in Rising Water",
+    "difficulty": "Hard",
+    "topics": [
+      "Graphs"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Dijkstra",
+      "Binary Search"
+    ],
+    "link": "https://leetcode.com/problems/swim-in-rising-water/"
+  },
+  {
+    "id": "114",
+    "title": "Climbing Stairs",
+    "difficulty": "Easy",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Fibonacci"
+    ],
+    "link": "https://leetcode.com/problems/climbing-stairs/"
+  },
+  {
+    "id": "115",
+    "title": "Min Cost Climbing Stairs",
+    "difficulty": "Easy",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Array"
+    ],
+    "link": "https://leetcode.com/problems/min-cost-climbing-stairs/"
+  },
+  {
+    "id": "116",
+    "title": "House Robber II",
+    "difficulty": "Medium",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "Array"
+    ],
+    "link": "https://leetcode.com/problems/house-robber-ii/"
+  },
+  {
+    "id": "117",
+    "title": "Longest Palindromic Substring",
+    "difficulty": "Medium",
+    "topics": [
+      "DP",
+      "String"
+    ],
+    "companies": [
+      "Microsoft",
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Expand Around Center"
+    ],
+    "link": "https://leetcode.com/problems/longest-palindromic-substring/"
+  },
+  {
+    "id": "118",
+    "title": "Palindromic Substrings",
+    "difficulty": "Medium",
+    "topics": [
+      "DP",
+      "String"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Expand Around Center"
+    ],
+    "link": "https://leetcode.com/problems/palindromic-substrings/"
+  },
+  {
+    "id": "119",
+    "title": "Decode Ways",
+    "difficulty": "Medium",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Iterative"
+    ],
+    "link": "https://leetcode.com/problems/decode-ways/"
+  },
+  {
+    "id": "120",
+    "title": "Coin Change",
+    "difficulty": "Medium",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Bottom-Up"
+    ],
+    "link": "https://leetcode.com/problems/coin-change/"
+  },
+  {
+    "id": "121",
+    "title": "Maximum Product Subarray",
+    "difficulty": "Medium",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "LinkedIn"
+    ],
+    "javaConcepts": [
+      "Kadane's Variant"
+    ],
+    "link": "https://leetcode.com/problems/maximum-product-subarray/"
+  },
+  {
+    "id": "122",
+    "title": "Word Break",
+    "difficulty": "Medium",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Amazon",
+      "Google"
+    ],
+    "javaConcepts": [
+      "Trie",
+      "DP"
+    ],
+    "link": "https://leetcode.com/problems/word-break/"
+  },
+  {
+    "id": "123",
+    "title": "Longest Increasing Subsequence",
+    "difficulty": "Medium",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Binary Search"
+    ],
+    "link": "https://leetcode.com/problems/longest-increasing-subsequence/"
+  },
+  {
+    "id": "124",
+    "title": "Partition Equal Subset Sum",
+    "difficulty": "Medium",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "0/1 Knapsack"
+    ],
+    "link": "https://leetcode.com/problems/partition-equal-subset-sum/"
+  },
+  {
+    "id": "125",
+    "title": "Unique Paths",
+    "difficulty": "Medium",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Grid"
+    ],
+    "link": "https://leetcode.com/problems/unique-paths/"
+  },
+  {
+    "id": "126",
+    "title": "Longest Common Subsequence",
+    "difficulty": "Medium",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "2D Array"
+    ],
+    "link": "https://leetcode.com/problems/longest-common-subsequence/"
+  },
+  {
+    "id": "127",
+    "title": "Best Time to Buy and Sell Stock with Cooldown",
+    "difficulty": "Medium",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "State Machine"
+    ],
+    "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/"
+  },
+  {
+    "id": "128",
+    "title": "Coin Change II",
+    "difficulty": "Medium",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Unbounded Knapsack"
+    ],
+    "link": "https://leetcode.com/problems/coin-change-ii/"
+  },
+  {
+    "id": "129",
+    "title": "Target Sum",
+    "difficulty": "Medium",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "0/1 Knapsack"
+    ],
+    "link": "https://leetcode.com/problems/target-sum/"
+  },
+  {
+    "id": "130",
+    "title": "Interleaving String",
+    "difficulty": "Medium",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "2D Grid"
+    ],
+    "link": "https://leetcode.com/problems/interleaving-string/"
+  },
+  {
+    "id": "131",
+    "title": "Longest Increasing Path in a Matrix",
+    "difficulty": "Hard",
+    "topics": [
+      "DP",
+      "Graph"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "DFS",
+      "Memoization"
+    ],
+    "link": "https://leetcode.com/problems/longest-increasing-path-in-a-matrix/"
+  },
+  {
+    "id": "132",
+    "title": "Distinct Subsequences",
+    "difficulty": "Hard",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "2D Array"
+    ],
+    "link": "https://leetcode.com/problems/distinct-subsequences/"
+  },
+  {
+    "id": "133",
+    "title": "Edit Distance",
+    "difficulty": "Hard",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "2D Array"
+    ],
+    "link": "https://leetcode.com/problems/edit-distance/"
+  },
+  {
+    "id": "134",
+    "title": "Burst Balloons",
+    "difficulty": "Hard",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Interval DP"
+    ],
+    "link": "https://leetcode.com/problems/burst-balloons/"
+  },
+  {
+    "id": "135",
+    "title": "Regular Expression Matching",
+    "difficulty": "Hard",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Recursion"
+    ],
+    "link": "https://leetcode.com/problems/regular-expression-matching/"
+  },
+  {
+    "id": "136",
+    "title": "Single Number",
+    "difficulty": "Easy",
+    "topics": [
+      "Bit Manipulation"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "XOR"
+    ],
+    "link": "https://leetcode.com/problems/single-number/"
+  },
+  {
+    "id": "137",
+    "title": "Number of 1 Bits",
+    "difficulty": "Easy",
+    "topics": [
+      "Bit Manipulation"
+    ],
+    "companies": [
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "Bit Shift"
+    ],
+    "link": "https://leetcode.com/problems/number-of-1-bits/"
+  },
+  {
+    "id": "138",
+    "title": "Counting Bits",
+    "difficulty": "Easy",
+    "topics": [
+      "Bit Manipulation"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "DP"
+    ],
+    "link": "https://leetcode.com/problems/counting-bits/"
+  },
+  {
+    "id": "139",
+    "title": "Reverse Bits",
+    "difficulty": "Easy",
+    "topics": [
+      "Bit Manipulation"
+    ],
+    "companies": [
+      "Apple"
+    ],
+    "javaConcepts": [
+      "Bit Logic"
+    ],
+    "link": "https://leetcode.com/problems/reverse-bits/"
+  },
+  {
+    "id": "140",
+    "title": "Missing Number",
+    "difficulty": "Easy",
+    "topics": [
+      "Bit Manipulation"
+    ],
+    "companies": [
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "XOR",
+      "Sum"
+    ],
+    "link": "https://leetcode.com/problems/missing-number/"
+  },
+  {
+    "id": "141",
+    "title": "Sum of Two Integers",
+    "difficulty": "Medium",
+    "topics": [
+      "Bit Manipulation"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Carry Logic"
+    ],
+    "link": "https://leetcode.com/problems/sum-of-two-integers/"
+  },
+  {
+    "id": "142",
+    "title": "Reverse Integer",
+    "difficulty": "Medium",
+    "topics": [
+      "Math"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Modulo"
+    ],
+    "link": "https://leetcode.com/problems/reverse-integer/"
+  },
+  {
+    "id": "143",
+    "title": "Rotate Image",
+    "difficulty": "Medium",
+    "topics": [
+      "Math",
+      "Matrix"
+    ],
+    "companies": [
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "Transpose"
+    ],
+    "link": "https://leetcode.com/problems/rotate-image/"
+  },
+  {
+    "id": "144",
+    "title": "Spiral Matrix",
+    "difficulty": "Medium",
+    "topics": [
+      "Math",
+      "Matrix"
+    ],
+    "companies": [
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "Simulation"
+    ],
+    "link": "https://leetcode.com/problems/spiral-matrix/"
+  },
+  {
+    "id": "145",
+    "title": "Set Matrix Zeroes",
+    "difficulty": "Medium",
+    "topics": [
+      "Math",
+      "Matrix"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "In-place"
+    ],
+    "link": "https://leetcode.com/problems/set-matrix-zeroes/"
+  },
+  {
+    "id": "146",
+    "title": "Happy Number",
+    "difficulty": "Easy",
+    "topics": [
+      "Math"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Floyd's Cycle Finding"
+    ],
+    "link": "https://leetcode.com/problems/happy-number/"
+  },
+  {
+    "id": "147",
+    "title": "Plus One",
+    "difficulty": "Easy",
+    "topics": [
+      "Math"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Array"
+    ],
+    "link": "https://leetcode.com/problems/plus-one/"
+  },
+  {
+    "id": "148",
+    "title": "Pow(x, n)",
+    "difficulty": "Medium",
+    "topics": [
+      "Math"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Recursion"
+    ],
+    "link": "https://leetcode.com/problems/powx-n/"
+  },
+  {
+    "id": "149",
+    "title": "Multiply Strings",
+    "difficulty": "Medium",
+    "topics": [
+      "Math"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "String"
+    ],
+    "link": "https://leetcode.com/problems/multiply-strings/"
+  },
+  {
+    "id": "150",
+    "title": "Detect Squares",
+    "difficulty": "Medium",
+    "topics": [
+      "Math",
+      "Geometry"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "HashMap"
+    ],
+    "link": "https://leetcode.com/problems/detect-squares/"
+  },
+  {
+    "id": "151",
+    "title": "Find Pivot Index",
+    "difficulty": "Easy",
+    "topics": [
+      "Array"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Prefix Sum"
+    ],
+    "link": "https://leetcode.com/problems/find-pivot-index/"
+  },
+  {
+    "id": "152",
+    "title": "Range Sum Query - Immutable",
+    "difficulty": "Easy",
+    "topics": [
+      "Array",
+      "DP"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Prefix Sum"
+    ],
+    "link": "https://leetcode.com/problems/range-sum-query-immutable/"
+  },
+  {
+    "id": "153",
+    "title": "Range Sum Query 2D - Immutable",
+    "difficulty": "Medium",
+    "topics": [
+      "Array",
+      "DP"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "2D Prefix Sum"
+    ],
+    "link": "https://leetcode.com/problems/range-sum-query-2d-immutable/"
+  },
+  {
+    "id": "154",
+    "title": "Subarray Sum Equals K",
+    "difficulty": "Medium",
+    "topics": [
+      "Array",
+      "HashMap"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Prefix Sum"
+    ],
+    "link": "https://leetcode.com/problems/subarray-sum-equals-k/"
+  },
+  {
+    "id": "155",
+    "title": "Continuous Subarray Sum",
+    "difficulty": "Medium",
+    "topics": [
+      "Array",
+      "HashMap"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Modulo"
+    ],
+    "link": "https://leetcode.com/problems/continuous-subarray-sum/"
+  },
+  {
+    "id": "156",
+    "title": "Sort Colors",
+    "difficulty": "Medium",
+    "topics": [
+      "Array"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Dutch National Flag"
+    ],
+    "link": "https://leetcode.com/problems/sort-colors/"
+  },
+  {
+    "id": "157",
+    "title": "Longest Common Prefix",
+    "difficulty": "Easy",
+    "topics": [
+      "String"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Scanning"
+    ],
+    "link": "https://leetcode.com/problems/longest-common-prefix/"
+  },
+  {
+    "id": "158",
+    "title": "Valid Palindrome II",
+    "difficulty": "Easy",
+    "topics": [
+      "String",
+      "Two Pointers"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Greedy"
+    ],
+    "link": "https://leetcode.com/problems/valid-palindrome-ii/"
+  },
+  {
+    "id": "159",
+    "title": "Palindrome Number",
+    "difficulty": "Easy",
+    "topics": [
+      "Math"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Math"
+    ],
+    "link": "https://leetcode.com/problems/palindrome-number/"
+  },
+  {
+    "id": "160",
+    "title": "Length of Last Word",
+    "difficulty": "Easy",
+    "topics": [
+      "String"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Traverse"
+    ],
+    "link": "https://leetcode.com/problems/length-of-last-word/"
+  },
+  {
+    "id": "161",
+    "title": "Is Subsequence",
+    "difficulty": "Easy",
+    "topics": [
+      "String"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Two Pointers"
+    ],
+    "link": "https://leetcode.com/problems/is-subsequence/"
+  },
+  {
+    "id": "162",
+    "title": "Reverse String",
+    "difficulty": "Easy",
+    "topics": [
+      "String"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Two Pointers"
+    ],
+    "link": "https://leetcode.com/problems/reverse-string/"
+  },
+  {
+    "id": "163",
+    "title": "Word Pattern",
+    "difficulty": "Easy",
+    "topics": [
+      "HashMap"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Bi-Map"
+    ],
+    "link": "https://leetcode.com/problems/word-pattern/"
+  },
+  {
+    "id": "164",
+    "title": "Isomorphic Strings",
+    "difficulty": "Easy",
+    "topics": [
+      "HashMap"
+    ],
+    "companies": [
+      "LinkedIn"
+    ],
+    "javaConcepts": [
+      "Bi-Map"
+    ],
+    "link": "https://leetcode.com/problems/isomorphic-strings/"
+  },
+  {
+    "id": "165",
+    "title": "Ransom Note",
+    "difficulty": "Easy",
+    "topics": [
+      "HashMap"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Counting"
+    ],
+    "link": "https://leetcode.com/problems/ransom-note/"
+  },
+  {
+    "id": "166",
+    "title": "First Unique Character in a String",
+    "difficulty": "Easy",
+    "topics": [
+      "String"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Frequency Map"
+    ],
+    "link": "https://leetcode.com/problems/first-unique-character-in-a-string/"
+  },
+  {
+    "id": "167",
+    "title": "Find All Anagrams in a String",
+    "difficulty": "Medium",
+    "topics": [
+      "Sliding Window"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Frequency Map"
+    ],
+    "link": "https://leetcode.com/problems/find-all-anagrams-in-a-string/"
+  },
+  {
+    "id": "168",
+    "title": "Zigzag Conversion",
+    "difficulty": "Medium",
+    "topics": [
+      "String"
+    ],
+    "companies": [
+      "PayPal"
+    ],
+    "javaConcepts": [
+      "Simulation"
+    ],
+    "link": "https://leetcode.com/problems/zigzag-conversion/"
+  },
+  {
+    "id": "169",
+    "title": "String to Integer (atoi)",
+    "difficulty": "Medium",
+    "topics": [
+      "String"
+    ],
+    "companies": [
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "Parsing"
+    ],
+    "link": "https://leetcode.com/problems/string-to-integer-atoi/"
+  },
+  {
+    "id": "170",
+    "title": "Count-and-Say",
+    "difficulty": "Medium",
+    "topics": [
+      "String"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Recursion"
+    ],
+    "link": "https://leetcode.com/problems/count-and-say/"
+  },
+  {
+    "id": "171",
+    "title": "Text Justification",
+    "difficulty": "Hard",
+    "topics": [
+      "String"
+    ],
+    "companies": [
+      "LinkedIn"
+    ],
+    "javaConcepts": [
+      "Simulation"
+    ],
+    "link": "https://leetcode.com/problems/text-justification/"
+  },
+  {
+    "id": "172",
+    "title": "Remove Duplicates from Sorted Array",
+    "difficulty": "Easy",
+    "topics": [
+      "Array"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Two Pointers"
+    ],
+    "link": "https://leetcode.com/problems/remove-duplicates-from-sorted-array/"
+  },
+  {
+    "id": "173",
+    "title": "Remove Element",
+    "difficulty": "Easy",
+    "topics": [
+      "Array"
+    ],
+    "companies": [
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "Two Pointers"
+    ],
+    "link": "https://leetcode.com/problems/remove-element/"
+  },
+  {
+    "id": "174",
+    "title": "Search Insert Position",
+    "difficulty": "Easy",
+    "topics": [
+      "Binary Search"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Binary Search"
+    ],
+    "link": "https://leetcode.com/problems/search-insert-position/"
+  },
+  {
+    "id": "175",
+    "title": "Pascals Triangle",
+    "difficulty": "Easy",
+    "topics": [
+      "Array"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "DP"
+    ],
+    "link": "https://leetcode.com/problems/pascals-triangle/"
+  },
+  {
+    "id": "176",
+    "title": "Pascals Triangle II",
+    "difficulty": "Easy",
+    "topics": [
+      "Array"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Math"
+    ],
+    "link": "https://leetcode.com/problems/pascals-triangle-ii/"
+  },
+  {
+    "id": "177",
+    "title": "Majority Element",
+    "difficulty": "Easy",
+    "topics": [
+      "Array"
+    ],
+    "companies": [
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "Boyer-Moore"
+    ],
+    "link": "https://leetcode.com/problems/majority-element/"
+  },
+  {
+    "id": "178",
+    "title": "Rotate Array",
+    "difficulty": "Medium",
+    "topics": [
+      "Array"
+    ],
+    "companies": [
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "Reverse"
+    ],
+    "link": "https://leetcode.com/problems/rotate-array/"
+  },
+  {
+    "id": "179",
+    "title": "Best Time to Buy and Sell Stock II",
+    "difficulty": "Medium",
+    "topics": [
+      "Array",
+      "Greedy"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Greedy"
+    ],
+    "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/"
+  },
+  {
+    "id": "180",
+    "title": "H-Index",
+    "difficulty": "Medium",
+    "topics": [
+      "Array"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Sorting"
+    ],
+    "link": "https://leetcode.com/problems/h-index/"
+  },
+  {
+    "id": "181",
+    "title": "Insert Delete GetRandom O(1)",
+    "difficulty": "Medium",
+    "topics": [
+      "Array",
+      "HashMap"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "HashMap",
+      "ArrayList"
+    ],
+    "link": "https://leetcode.com/problems/insert-delete-getrandom-o1/"
+  },
+  {
+    "id": "182",
+    "title": "Product of Array Except Self",
+    "difficulty": "Medium",
+    "topics": [
+      "Array"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Prefix/Suffix"
+    ],
+    "link": "https://leetcode.com/problems/product-of-array-except-self/"
+  },
+  {
+    "id": "183",
+    "title": "Gas Station",
+    "difficulty": "Medium",
+    "topics": [
+      "Greedy"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Linear Scan"
+    ],
+    "link": "https://leetcode.com/problems/gas-station/"
+  },
+  {
+    "id": "184",
+    "title": "Candy",
+    "difficulty": "Hard",
+    "topics": [
+      "Greedy"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Two Pass"
+    ],
+    "link": "https://leetcode.com/problems/candy/"
+  },
+  {
+    "id": "185",
+    "title": "Trapping Rain Water",
+    "difficulty": "Hard",
+    "topics": [
+      "Array"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Two Pointers"
+    ],
+    "link": "https://leetcode.com/problems/trapping-rain-water/"
+  },
+  {
+    "id": "186",
+    "title": "Two Sum II - Input Array Is Sorted",
+    "difficulty": "Medium",
+    "topics": [
+      "Two Pointers"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Two Pointers"
+    ],
+    "link": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/"
+  },
+  {
+    "id": "187",
+    "title": "Contains Duplicate II",
+    "difficulty": "Easy",
+    "topics": [
+      "HashMap"
+    ],
+    "companies": [
+      "Airbnb"
+    ],
+    "javaConcepts": [
+      "Sliding Window"
+    ],
+    "link": "https://leetcode.com/problems/contains-duplicate-ii/"
+  },
+  {
+    "id": "188",
+    "title": "Longest Substring with At Least K Repeating Characters",
+    "difficulty": "Medium",
+    "topics": [
+      "Sliding Window"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Divide & Conquer"
+    ],
+    "link": "https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/"
+  },
+  {
+    "id": "189",
+    "title": "Top K Frequent Words",
+    "difficulty": "Medium",
+    "topics": [
+      "Heap"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Min-Heap"
+    ],
+    "link": "https://leetcode.com/problems/top-k-frequent-words/"
+  },
+  {
+    "id": "190",
+    "title": "Merge Sorted Array",
+    "difficulty": "Easy",
+    "topics": [
+      "Array"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Two Pointers"
+    ],
+    "link": "https://leetcode.com/problems/merge-sorted-array/"
+  },
+  {
+    "id": "191",
+    "title": "First Bad Version",
+    "difficulty": "Easy",
+    "topics": [
+      "Binary Search"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Binary Search"
+    ],
+    "link": "https://leetcode.com/problems/first-bad-version/"
+  },
+  {
+    "id": "192",
+    "title": "Peak Index in a Mountain Array",
+    "difficulty": "Easy",
+    "topics": [
+      "Binary Search"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Binary Search"
+    ],
+    "link": "https://leetcode.com/problems/peak-index-in-a-mountain-array/"
+  },
+  {
+    "id": "193",
+    "title": "Find Peak Element",
+    "difficulty": "Medium",
+    "topics": [
+      "Binary Search"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Binary Search"
+    ],
+    "link": "https://leetcode.com/problems/find-peak-element/"
+  },
+  {
+    "id": "194",
+    "title": "First and Last Position of Element in Sorted Array",
+    "difficulty": "Medium",
+    "topics": [
+      "Binary Search"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Binary Search"
+    ],
+    "link": "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/"
+  },
+  {
+    "id": "195",
+    "title": "Search a 2D Matrix II",
+    "difficulty": "Medium",
+    "topics": [
+      "Binary Search"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Step-wise Search"
+    ],
+    "link": "https://leetcode.com/problems/search-a-2d-matrix-ii/"
+  },
+  {
+    "id": "196",
+    "title": "Kth Smallest Element in a Sorted Matrix",
+    "difficulty": "Medium",
+    "topics": [
+      "Heap"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Binary Search"
+    ],
+    "link": "https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/"
+  },
+  {
+    "id": "197",
+    "title": "Find K Closest Elements",
+    "difficulty": "Medium",
+    "topics": [
+      "Binary Search"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Binary Search",
+      "Sliding Window"
+    ],
+    "link": "https://leetcode.com/problems/find-k-closest-elements/"
+  },
+  {
+    "id": "198",
+    "title": "Single Element in a Sorted Array",
+    "difficulty": "Medium",
+    "topics": [
+      "Binary Search"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Binary Search"
+    ],
+    "link": "https://leetcode.com/problems/single-element-in-a-sorted-array/"
+  },
+  {
+    "id": "199",
+    "title": "Capacity To Ship Packages Within D Days",
+    "difficulty": "Medium",
+    "topics": [
+      "Binary Search"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Binary Search on Answer"
+    ],
+    "link": "https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/"
+  },
+  {
+    "id": "200",
+    "title": "Split Array Largest Sum",
+    "difficulty": "Hard",
+    "topics": [
+      "Binary Search"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Binary Search on Answer"
+    ],
+    "link": "https://leetcode.com/problems/split-array-largest-sum/"
+  },
+  {
+    "id": "201",
+    "title": "Palindrome Linked List",
+    "difficulty": "Easy",
+    "topics": [
+      "Linked List"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Two Pointers"
+    ],
+    "link": "https://leetcode.com/problems/palindrome-linked-list/"
+  },
+  {
+    "id": "202",
+    "title": "Intersection of Two Linked Lists",
+    "difficulty": "Easy",
+    "topics": [
+      "Linked List"
+    ],
+    "companies": [
+      "Airbnb"
+    ],
+    "javaConcepts": [
+      "Two Pointers"
+    ],
+    "link": "https://leetcode.com/problems/intersection-of-two-linked-lists/"
+  },
+  {
+    "id": "203",
+    "title": "Remove Linked List Elements",
+    "difficulty": "Easy",
+    "topics": [
+      "Linked List"
+    ],
+    "companies": [
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "Pointer"
+    ],
+    "link": "https://leetcode.com/problems/remove-linked-list-elements/"
+  },
+  {
+    "id": "204",
+    "title": "Swap Nodes in Pairs",
+    "difficulty": "Medium",
+    "topics": [
+      "Linked List"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Recursion"
+    ],
+    "link": "https://leetcode.com/problems/swap-nodes-in-pairs/"
+  },
+  {
+    "id": "205",
+    "title": "Odd Even Linked List",
+    "difficulty": "Medium",
+    "topics": [
+      "Linked List"
+    ],
+    "companies": [
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "Pointer"
+    ],
+    "link": "https://leetcode.com/problems/odd-even-linked-list/"
+  },
+  {
+    "id": "206",
+    "title": "Sort List",
+    "difficulty": "Medium",
+    "topics": [
+      "Linked List"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Merge Sort"
+    ],
+    "link": "https://leetcode.com/problems/sort-list/"
+  },
+  {
+    "id": "207",
+    "title": "Rotate List",
+    "difficulty": "Medium",
+    "topics": [
+      "Linked List"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Pointer"
+    ],
+    "link": "https://leetcode.com/problems/rotate-list/"
+  },
+  {
+    "id": "208",
+    "title": "Partition List",
+    "difficulty": "Medium",
+    "topics": [
+      "Linked List"
+    ],
+    "companies": [
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "Two Pointers"
+    ],
+    "link": "https://leetcode.com/problems/partition-list/"
+  },
+  {
+    "id": "209",
+    "title": "Reverse Linked List II",
+    "difficulty": "Medium",
+    "topics": [
+      "Linked List"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Iteration"
+    ],
+    "link": "https://leetcode.com/problems/reverse-linked-list-ii/"
+  },
+  {
+    "id": "210",
+    "title": "Symmetric Tree",
+    "difficulty": "Easy",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Recursion"
+    ],
+    "link": "https://leetcode.com/problems/symmetric-tree/"
+  },
+  {
+    "id": "211",
+    "title": "Path Sum",
+    "difficulty": "Easy",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Recursion"
+    ],
+    "link": "https://leetcode.com/problems/path-sum/"
+  },
+  {
+    "id": "212",
+    "title": "Path Sum II",
+    "difficulty": "Medium",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "DFS"
+    ],
+    "link": "https://leetcode.com/problems/path-sum-ii/"
+  },
+  {
+    "id": "213",
+    "title": "Path Sum III",
+    "difficulty": "Medium",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Prefix Sum"
+    ],
+    "link": "https://leetcode.com/problems/path-sum-iii/"
+  },
+  {
+    "id": "214",
+    "title": "Sum Root to Leaf Numbers",
+    "difficulty": "Medium",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "DFS"
+    ],
+    "link": "https://leetcode.com/problems/sum-root-to-leaf-numbers/"
+  },
+  {
+    "id": "215",
+    "title": "Binary Tree Zigzag Level Order Traversal",
+    "difficulty": "Medium",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "BFS"
+    ],
+    "link": "https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/"
+  },
+  {
+    "id": "216",
+    "title": "Populating Next Right Pointers in Each Node",
+    "difficulty": "Medium",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "BFS"
+    ],
+    "link": "https://leetcode.com/problems/populating-next-right-pointers-in-each-node/"
+  },
+  {
+    "id": "217",
+    "title": "Flatten Binary Tree to Linked List",
+    "difficulty": "Medium",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "DFS"
+    ],
+    "link": "https://leetcode.com/problems/flatten-binary-tree-to-linked-list/"
+  },
+  {
+    "id": "218",
+    "title": "Convert Sorted Array to Binary Search Tree",
+    "difficulty": "Easy",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "Airbnb"
+    ],
+    "javaConcepts": [
+      "Recursion"
+    ],
+    "link": "https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/"
+  },
+  {
+    "id": "219",
+    "title": "Convert Sorted List to Binary Search Tree",
+    "difficulty": "Medium",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Recursion"
+    ],
+    "link": "https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/"
+  },
+  {
+    "id": "220",
+    "title": "Minimum Absolute Difference in BST",
+    "difficulty": "Easy",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Inorder"
+    ],
+    "link": "https://leetcode.com/problems/minimum-absolute-difference-in-bst/"
+  },
+  {
+    "id": "221",
+    "title": "Two Sum IV - Input is a BST",
+    "difficulty": "Easy",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "HashSet"
+    ],
+    "link": "https://leetcode.com/problems/two-sum-iv-input-is-a-bst/"
+  },
+  {
+    "id": "222",
+    "title": "Trim a Binary Search Tree",
+    "difficulty": "Medium",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Recursion"
+    ],
+    "link": "https://leetcode.com/problems/trim-a-binary-search-tree/"
+  },
+  {
+    "id": "223",
+    "title": "Delete Node in a BST",
+    "difficulty": "Medium",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "Recursion"
+    ],
+    "link": "https://leetcode.com/problems/delete-node-in-a-bst/"
+  },
+  {
+    "id": "224",
+    "title": "All Nodes Distance K in Binary Tree",
+    "difficulty": "Medium",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "BFS"
+    ],
+    "link": "https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/"
+  },
+  {
+    "id": "225",
+    "title": "Diameter of Binary Tree",
+    "difficulty": "Easy",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "DFS"
+    ],
+    "link": "https://leetcode.com/problems/diameter-of-binary-tree/"
+  },
+  {
+    "id": "226",
+    "title": "Maximum Width of Binary Tree",
+    "difficulty": "Medium",
+    "topics": [
+      "Trees"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "BFS"
+    ],
+    "link": "https://leetcode.com/problems/maximum-width-of-binary-tree/"
+  },
+  {
+    "id": "227",
+    "title": "Flood Fill",
+    "difficulty": "Easy",
+    "topics": [
+      "Graphs"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "DFS"
+    ],
+    "link": "https://leetcode.com/problems/flood-fill/"
+  },
+  {
+    "id": "228",
+    "title": "01 Matrix",
+    "difficulty": "Medium",
+    "topics": [
+      "Graphs"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "BFS"
+    ],
+    "link": "https://leetcode.com/problems/01-matrix/"
+  },
+  {
+    "id": "229",
+    "title": "Clone Graph",
+    "difficulty": "Medium",
+    "topics": [
+      "Graphs"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "DFS"
+    ],
+    "link": "https://leetcode.com/problems/clone-graph/"
+  },
+  {
+    "id": "230",
+    "title": "Is Graph Bipartite?",
+    "difficulty": "Medium",
+    "topics": [
+      "Graphs"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "BFS"
+    ],
+    "link": "https://leetcode.com/problems/is-graph-bipartite/"
+  },
+  {
+    "id": "231",
+    "title": "Possible Bipartition",
+    "difficulty": "Medium",
+    "topics": [
+      "Graphs"
+    ],
+    "companies": [
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "DFS"
+    ],
+    "link": "https://leetcode.com/problems/possible-bipartition/"
+  },
+  {
+    "id": "232",
+    "title": "Keys and Rooms",
+    "difficulty": "Medium",
+    "topics": [
+      "Graphs"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "DFS"
+    ],
+    "link": "https://leetcode.com/problems/keys-and-rooms/"
+  },
+  {
+    "id": "233",
+    "title": "Find the Town Judge",
+    "difficulty": "Easy",
+    "topics": [
+      "Graphs"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Indegree"
+    ],
+    "link": "https://leetcode.com/problems/find-the-town-judge/"
+  },
+  {
+    "id": "234",
+    "title": "Minimum Number of Vertices to Reach All Nodes",
+    "difficulty": "Medium",
+    "topics": [
+      "Graphs"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Indegree"
+    ],
+    "link": "https://leetcode.com/problems/minimum-number-of-vertices-to-reach-all-nodes/"
+  },
+  {
+    "id": "235",
+    "title": "Course Schedule II",
+    "difficulty": "Medium",
+    "topics": [
+      "Graphs"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Topological Sort"
+    ],
+    "link": "https://leetcode.com/problems/course-schedule-ii/"
+  },
+  {
+    "id": "236",
+    "title": "Fibonacci Number",
+    "difficulty": "Easy",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Recursion"
+    ],
+    "link": "https://leetcode.com/problems/fibonacci-number/"
+  },
+  {
+    "id": "237",
+    "title": "N-th Tribonacci Number",
+    "difficulty": "Easy",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "DP"
+    ],
+    "link": "https://leetcode.com/problems/n-th-tribonacci-number/"
+  },
+  {
+    "id": "238",
+    "title": "Divisor Game",
+    "difficulty": "Easy",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Math"
+    ],
+    "link": "https://leetcode.com/problems/divisor-game/"
+  },
+  {
+    "id": "239",
+    "title": "Counting Bits",
+    "difficulty": "Easy",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Bitmask"
+    ],
+    "link": "https://leetcode.com/problems/counting-bits/"
+  },
+  {
+    "id": "240",
+    "title": "Is Subsequence",
+    "difficulty": "Easy",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Two Pointers"
+    ],
+    "link": "https://leetcode.com/problems/is-subsequence/"
+  },
+  {
+    "id": "241",
+    "title": "Longest Palindromic Subsequence",
+    "difficulty": "Medium",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "2D DP"
+    ],
+    "link": "https://leetcode.com/problems/longest-palindromic-subsequence/"
+  },
+  {
+    "id": "242",
+    "title": "Minimum Path Sum",
+    "difficulty": "Medium",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Grid DP"
+    ],
+    "link": "https://leetcode.com/problems/minimum-path-sum/"
+  },
+  {
+    "id": "243",
+    "title": "Triangle",
+    "difficulty": "Medium",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Bottom-up"
+    ],
+    "link": "https://leetcode.com/problems/triangle/"
+  },
+  {
+    "id": "244",
+    "title": "Maximal Square",
+    "difficulty": "Medium",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "2D DP"
+    ],
+    "link": "https://leetcode.com/problems/maximal-square/"
+  },
+  {
+    "id": "245",
+    "title": "Maximal Rectangle",
+    "difficulty": "Hard",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Stack"
+    ],
+    "link": "https://leetcode.com/problems/maximal-rectangle/"
+  },
+  {
+    "id": "246",
+    "title": "Ones and Zeroes",
+    "difficulty": "Medium",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Knapsack"
+    ],
+    "link": "https://leetcode.com/problems/ones-and-zeroes/"
+  },
+  {
+    "id": "247",
+    "title": "Last Stone Weight II",
+    "difficulty": "Medium",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Knapsack"
+    ],
+    "link": "https://leetcode.com/problems/last-stone-weight-ii/"
+  },
+  {
+    "id": "248",
+    "title": "Combination Sum IV",
+    "difficulty": "Medium",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "DP"
+    ],
+    "link": "https://leetcode.com/problems/combination-sum-iv/"
+  },
+  {
+    "id": "249",
+    "title": "Perfect Squares",
+    "difficulty": "Medium",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "BFS",
+      "DP"
+    ],
+    "link": "https://leetcode.com/problems/perfect-squares/"
+  },
+  {
+    "id": "250",
+    "title": "Integer Break",
+    "difficulty": "Medium",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Math",
+      "DP"
+    ],
+    "link": "https://leetcode.com/problems/integer-break/"
+  },
+  {
+    "id": "251",
+    "title": "Wiggle Subsequence",
+    "difficulty": "Medium",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Greedy"
+    ],
+    "link": "https://leetcode.com/problems/wiggle-subsequence/"
+  },
+  {
+    "id": "252",
+    "title": "Longest Common Subsequence",
+    "difficulty": "Medium",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "2D DP"
+    ],
+    "link": "https://leetcode.com/problems/longest-common-subsequence/"
+  },
+  {
+    "id": "253",
+    "title": "Uncrossed Lines",
+    "difficulty": "Medium",
+    "topics": [
+      "DP"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "LCS"
+    ],
+    "link": "https://leetcode.com/problems/uncrossed-lines/"
+  },
+  {
+    "id": "254",
+    "title": "Relative Ranks",
+    "difficulty": "Easy",
+    "topics": [
+      "Heap"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Sorting"
+    ],
+    "link": "https://leetcode.com/problems/relative-ranks/"
+  },
+  {
+    "id": "255",
+    "title": "Last Stone Weight",
+    "difficulty": "Easy",
+    "topics": [
+      "Heap"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "PriorityQueue"
+    ],
+    "link": "https://leetcode.com/problems/last-stone-weight/"
+  },
+  {
+    "id": "256",
+    "title": "The K Weakest Rows in a Matrix",
+    "difficulty": "Easy",
+    "topics": [
+      "Heap"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Sorting"
+    ],
+    "link": "https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/"
+  },
+  {
+    "id": "257",
+    "title": "Kth Largest Element in a Stream",
+    "difficulty": "Easy",
+    "topics": [
+      "Heap"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Min-Heap"
+    ],
+    "link": "https://leetcode.com/problems/kth-largest-element-in-a-stream/"
+  },
+  {
+    "id": "258",
+    "title": "Find K Pairs with Smallest Sums",
+    "difficulty": "Medium",
+    "topics": [
+      "Heap"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Min-Heap"
+    ],
+    "link": "https://leetcode.com/problems/find-k-pairs-with-smallest-sums/"
+  },
+  {
+    "id": "259",
+    "title": "Reorganize String",
+    "difficulty": "Medium",
+    "topics": [
+      "Heap"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Max-Heap"
+    ],
+    "link": "https://leetcode.com/problems/reorganize-string/"
+  },
+  {
+    "id": "260",
+    "title": "Furthest Building You Can Reach",
+    "difficulty": "Medium",
+    "topics": [
+      "Heap"
+    ],
+    "companies": [
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "Min-Heap"
+    ],
+    "link": "https://leetcode.com/problems/furthest-building-you-can-reach/"
+  },
+  {
+    "id": "261",
+    "title": "Min Stack",
+    "difficulty": "Easy",
+    "topics": [
+      "Design",
+      "Stack"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Two Stacks"
+    ],
+    "link": "https://leetcode.com/problems/min-stack/"
+  },
+  {
+    "id": "262",
+    "title": "Implement Queue using Stacks",
+    "difficulty": "Easy",
+    "topics": [
+      "Design",
+      "Stack"
+    ],
+    "companies": [
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "Two Stacks"
+    ],
+    "link": "https://leetcode.com/problems/implement-queue-using-stacks/"
+  },
+  {
+    "id": "263",
+    "title": "Implement Stack using Queues",
+    "difficulty": "Easy",
+    "topics": [
+      "Design",
+      "Queue"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "One Queue"
+    ],
+    "link": "https://leetcode.com/problems/implement-stack-using-queues/"
+  },
+  {
+    "id": "264",
+    "title": "Design HashMap",
+    "difficulty": "Easy",
+    "topics": [
+      "Design",
+      "Array"
+    ],
+    "companies": [
+      "LinkedIn"
+    ],
+    "javaConcepts": [
+      "Chaining"
+    ],
+    "link": "https://leetcode.com/problems/design-hashmap/"
+  },
+  {
+    "id": "265",
+    "title": "Design HashSet",
+    "difficulty": "Easy",
+    "topics": [
+      "Design",
+      "Array"
+    ],
+    "companies": [
+      "LinkedIn"
+    ],
+    "javaConcepts": [
+      "Chaining"
+    ],
+    "link": "https://leetcode.com/problems/design-hashset/"
+  },
+  {
+    "id": "266",
+    "title": "Design Browser History",
+    "difficulty": "Medium",
+    "topics": [
+      "Design",
+      "Stack"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Two Stacks"
+    ],
+    "link": "https://leetcode.com/problems/design-browser-history/"
+  },
+  {
+    "id": "267",
+    "title": "Design Underground System",
+    "difficulty": "Medium",
+    "topics": [
+      "Design",
+      "HashMap"
+    ],
+    "companies": [
+      "Bloomberg"
+    ],
+    "javaConcepts": [
+      "HashMap"
+    ],
+    "link": "https://leetcode.com/problems/design-underground-system/"
+  },
+  {
+    "id": "268",
+    "title": "Single Number II",
+    "difficulty": "Medium",
+    "topics": [
+      "Bit Manipulation"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Bit Logic"
+    ],
+    "link": "https://leetcode.com/problems/single-number-ii/"
+  },
+  {
+    "id": "269",
+    "title": "Single Number III",
+    "difficulty": "Medium",
+    "topics": [
+      "Bit Manipulation"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "XOR"
+    ],
+    "link": "https://leetcode.com/problems/single-number-iii/"
+  },
+  {
+    "id": "270",
+    "title": "Bitwise AND of Numbers Range",
+    "difficulty": "Medium",
+    "topics": [
+      "Bit Manipulation"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Common Prefix"
+    ],
+    "link": "https://leetcode.com/problems/bitwise-and-of-numbers-range/"
+  },
+  {
+    "id": "271",
+    "title": "Total Hamming Distance",
+    "difficulty": "Medium",
+    "topics": [
+      "Bit Manipulation"
+    ],
+    "companies": [
+      "Facebook"
+    ],
+    "javaConcepts": [
+      "Bit Counting"
+    ],
+    "link": "https://leetcode.com/problems/total-hamming-distance/"
+  },
+  {
+    "id": "272",
+    "title": "Roman to Integer",
+    "difficulty": "Easy",
+    "topics": [
+      "Math"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "HashMap"
+    ],
+    "link": "https://leetcode.com/problems/roman-to-integer/"
+  },
+  {
+    "id": "273",
+    "title": "Integer to Roman",
+    "difficulty": "Medium",
+    "topics": [
+      "Math"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Greedy"
+    ],
+    "link": "https://leetcode.com/problems/integer-to-roman/"
+  },
+  {
+    "id": "274",
+    "title": "Excel Sheet Column Title",
+    "difficulty": "Easy",
+    "topics": [
+      "Math"
+    ],
+    "companies": [
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "Modulo"
+    ],
+    "link": "https://leetcode.com/problems/excel-sheet-column-title/"
+  },
+  {
+    "id": "275",
+    "title": "Excel Sheet Column Number",
+    "difficulty": "Easy",
+    "topics": [
+      "Math"
+    ],
+    "companies": [
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "Base-26"
+    ],
+    "link": "https://leetcode.com/problems/excel-sheet-column-number/"
+  },
+  {
+    "id": "276",
+    "title": "Factorial Trailing Zeroes",
+    "difficulty": "Medium",
+    "topics": [
+      "Math"
+    ],
+    "companies": [
+      "Microsoft"
+    ],
+    "javaConcepts": [
+      "Counting Factors"
+    ],
+    "link": "https://leetcode.com/problems/factorial-trailing-zeroes/"
+  },
+  {
+    "id": "277",
+    "title": "Sqrt(x)",
+    "difficulty": "Easy",
+    "topics": [
+      "Math",
+      "Binary Search"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "Binary Search"
+    ],
+    "link": "https://leetcode.com/problems/sqrtx/"
+  },
+  {
+    "id": "278",
+    "title": "Max Points on a Line",
+    "difficulty": "Hard",
+    "topics": [
+      "Math",
+      "Geometry"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "GCD",
+      "HashMap"
+    ],
+    "link": "https://leetcode.com/problems/max-points-on-a-line/"
+  },
+  {
+    "id": "279",
+    "title": "Valid Sudoku",
+    "difficulty": "Medium",
+    "topics": [
+      "Array",
+      "HashTable"
+    ],
+    "companies": [
+      "Amazon"
+    ],
+    "javaConcepts": [
+      "HashSet"
+    ],
+    "link": "https://leetcode.com/problems/valid-sudoku/"
+  },
+  {
+    "id": "280",
+    "title": "Sudoku Solver",
+    "difficulty": "Hard",
+    "topics": [
+      "Backtracking"
+    ],
+    "companies": [
+      "Uber"
+    ],
+    "javaConcepts": [
+      "Recursion"
+    ],
+    "link": "https://leetcode.com/problems/sudoku-solver/"
+  },
+  {
+    "id": "281",
+    "title": "Next Permutation",
+    "difficulty": "Medium",
+    "topics": [
+      "Array"
+    ],
+    "companies": [
+      "Google"
+    ],
+    "javaConcepts": [
+      "Two Pointers"
+    ],
+    "link": "https://leetcode.com/problems/next-permutation/"
   }
 ]
