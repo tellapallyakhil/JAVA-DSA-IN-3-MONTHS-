@@ -1,11 +1,17 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { supabase } from '@/lib/supabaseClient';
 import { User } from '@supabase/supabase-js';
 import { Progress } from '@/types';
 
-const STORAGE_KEY = 'dsa_tracker_progress_v1';
+const STORAGE_KEY_PREFIX = 'dsa_tracker_progress_';
+const GUEST_STORAGE_KEY = 'dsa_tracker_progress_guest';
+
+// Get storage key based on user ID (for user-specific progress)
+function getStorageKey(userId?: string): string {
+    return userId ? `${STORAGE_KEY_PREFIX}${userId}` : GUEST_STORAGE_KEY;
+}
 
 const defaultProgress: Progress = {
     completedDays: [],
@@ -86,37 +92,59 @@ export function useProgress() {
         setIsClient(true);
 
         const init = async () => {
-            const { data: { session } } = await supabase.auth.getSession();
-            setUser(session?.user ?? null);
+            try {
+                // Add timeout to Supabase call to prevent hanging
+                const timeoutPromise = new Promise((_, reject) =>
+                    setTimeout(() => reject(new Error('Supabase timeout')), 3000)
+                );
 
-            if (session?.user) {
-                // Load from Supabase
-                const { data, error } = await supabase
-                    .from('profiles')
-                    .select('progress')
-                    .eq('id', session.user.id)
-                    .single();
+                const sessionPromise = supabase.auth.getSession();
 
-                if (data && data.progress) {
-                    setProgress(data.progress);
+                const result = await Promise.race([sessionPromise, timeoutPromise]) as any;
+                const session = result?.data?.session;
+
+                setUser(session?.user ?? null);
+
+                if (session?.user) {
+                    // Load from Supabase
+                    try {
+                        const { data, error } = await supabase
+                            .from('profiles')
+                            .select('progress')
+                            .eq('id', session.user.id)
+                            .single();
+
+                        if (data && data.progress) {
+                            setProgress(data.progress);
+                        }
+                    } catch (e) {
+                        console.warn("Could not load progress from Supabase, using local storage");
+                        loadFromLocalStorage();
+                    }
                 } else {
-                    // If no cloud data, maybe sync local to cloud? Or just start fresh. 
-                    // Let's assume start fresh or use what we have in memory if we merged (not doing specific merge logic now for simplicity)
+                    loadFromLocalStorage();
+                }
+            } catch (e) {
+                console.warn("Auth check failed, using local storage", e);
+                loadFromLocalStorage();
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        const loadFromLocalStorage = (userId?: string) => {
+            const stored = localStorage.getItem(getStorageKey(userId));
+            if (stored) {
+                try {
+                    const parsed = JSON.parse(stored);
+                    setProgress({ ...defaultProgress, ...parsed });
+                } catch (e) {
+                    console.error("Failed to parse progress", e);
                 }
             } else {
-                // Load from LocalStorage
-                const stored = localStorage.getItem(STORAGE_KEY);
-                if (stored) {
-                    try {
-                        const parsed = JSON.parse(stored);
-                        // Merge with defaults to ensure all fields exist (handles migration)
-                        setProgress({ ...defaultProgress, ...parsed });
-                    } catch (e) {
-                        console.error("Failed to parse progress", e);
-                    }
-                }
+                // No data found, start fresh
+                setProgress(defaultProgress);
             }
-            setLoading(false);
         };
 
         init();
@@ -124,24 +152,31 @@ export function useProgress() {
         const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_event, session) => {
             setUser(session?.user ?? null);
             if (session?.user) {
-                // Re-fetch on login
+                // Re-fetch on login - load user-specific data
                 const { data } = await supabase.from('profiles').select('progress').eq('id', session.user.id).single();
-                if (data?.progress) setProgress(data.progress);
+                if (data?.progress) {
+                    setProgress(data.progress);
+                } else {
+                    // No cloud data, check for user-specific local storage
+                    loadFromLocalStorage(session.user.id);
+                }
             } else {
-                // Reset to local on logout or clear
-                // Ideally we might keep the local state or reload page.
+                // User logged out - reset to guest progress
+                setProgress(defaultProgress);
+                loadFromLocalStorage(); // Load guest progress if any
             }
         });
 
         return () => subscription.unsubscribe();
     }, []);
 
-    // 2. Save logic: If User -> Save Cloud. Always Save Local as backup/cache.
+    // 2. Save logic: If User -> Save Cloud. Always Save Local with user-specific key.
     useEffect(() => {
         if (!isClient || loading) return;
 
-        // Always save local
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+        // Save to user-specific localStorage
+        const storageKey = getStorageKey(user?.id);
+        localStorage.setItem(storageKey, JSON.stringify(progress));
 
         // If logged in, save to cloud debounce?
         // For simplicity, we save immediately. In prod, use debounce.

@@ -115,6 +115,56 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Spaced Repetition Rule */}
+      <section className="glass-card p-6 sm:p-8 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
+        <div className="relative z-10">
+          <h2 className="text-xl sm:text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="p-1.5 bg-green-500/20 rounded-md text-green-400">🧠</span>
+            The 1-4-7 Revision Rule
+          </h2>
+          <div className="grid md:grid-cols-[2fr,1fr] gap-6 items-center">
+            <div className="space-y-4">
+              <p className="text-muted-foreground leading-relaxed">
+                To move concepts from short-term to long-term memory, we strictly follow the
+                <span className="text-white font-bold"> Spaced Repetition</span> method.
+                Never forget a concept again by following this review schedule:
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <div className="flex items-center gap-3 bg-white/5 px-4 py-2 rounded-lg border border-white/10">
+                  <div className="w-8 h-8 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-sm">1</div>
+                  <div className="text-sm">
+                    <span className="block font-bold text-white">Day 1</span>
+                    <span className="text-white/60">Learn Concept</span>
+                  </div>
+                </div>
+                <div className="text-muted-foreground self-center">→</div>
+                <div className="flex items-center gap-3 bg-white/5 px-4 py-2 rounded-lg border border-white/10">
+                  <div className="w-8 h-8 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold text-sm">4</div>
+                  <div className="text-sm">
+                    <span className="block font-bold text-white">Day 4</span>
+                    <span className="text-white/60">First Review</span>
+                  </div>
+                </div>
+                <div className="text-muted-foreground self-center">→</div>
+                <div className="flex items-center gap-3 bg-white/5 px-4 py-2 rounded-lg border border-white/10">
+                  <div className="w-8 h-8 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-sm">7</div>
+                  <div className="text-sm">
+                    <span className="block font-bold text-white">Day 7</span>
+                    <span className="text-white/60">Final Mastery</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-black/20 p-4 rounded-xl border border-white/5 text-sm space-y-2">
+              <div className="font-bold text-green-400 mb-2">Why it works?</div>
+              <p className="text-white/70">The brain forgets 40% of new info within 24 hours.</p>
+              <p className="text-white/70">Reviewing at specific intervals resets the "Forgetting Curve" and strengthens neural connections.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Months Overview */}
       <section>
         <h2 className="text-3xl font-bold mb-8 flex items-center gap-2"><Target className="text-primary" /> The 3-Month Plan</h2>

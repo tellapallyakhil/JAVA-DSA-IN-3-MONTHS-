@@ -5,10 +5,10 @@ import { useProgress } from '@/hooks/useProgress';
 import { CheckCircle2, Circle, Code, Brain, BookOpen, Sword, Layers, Lightbulb, PenTool } from 'lucide-react';
 
 import { useState } from 'react';
-import ReactMarkdown from 'react-markdown';
 import ProblemCard from '@/components/ProblemCard';
 import FlashcardDeck from '@/components/FlashcardDeck';
 import QuizView from '@/components/QuizView';
+import ShortNotes from '@/components/ShortNotes';
 
 interface DayViewProps {
     day: DailyTask;
@@ -46,7 +46,7 @@ export default function DayView({ day, problems, extraProblems = [], notes, ques
                             onClick={() => setActiveTab('notes')}
                             className={`px-3 sm:px-4 py-2 sm:py-3 flex items-center gap-1.5 sm:gap-2 border-b-2 transition-colors whitespace-nowrap text-sm sm:text-base ${activeTab === 'notes' ? 'border-primary text-primary' : 'border-transparent text-muted-foreground hover:text-white'}`}
                         >
-                            <BookOpen size={16} className="sm:w-[18px] sm:h-[18px]" /> Notes
+                            <BookOpen size={16} className="sm:w-[18px] sm:h-[18px]" /> Short Notes
                         </button>
                     )}
                     {questions.length > 0 && (
@@ -125,15 +125,14 @@ export default function DayView({ day, problems, extraProblems = [], notes, ques
             {activeTab === 'notes' && notes && (
                 <div className="space-y-8">
                     {flashcards.length > 0 && (
-                        <div className="glass p-8 rounded-xl bg-gradient-to-br from-zinc-900 to-black">
-                            <h3 className="text-center text-xl font-bold mb-2 flex items-center justify-center gap-2"><Lightbulb className="text-yellow-400" /> Flashcards</h3>
-                            <p className="text-center text-muted-foreground mb-4">Flip to reveal the answer.</p>
+                        <div className="glass p-6 sm:p-8 rounded-xl bg-gradient-to-br from-zinc-900 to-black border border-yellow-500/20">
+                            <h3 className="text-center text-xl font-bold mb-2 flex items-center justify-center gap-2"><Lightbulb className="text-yellow-400" /> Quick Flashcards</h3>
+                            <p className="text-center text-muted-foreground text-sm mb-4">Tap card to flip • Quick revision before deep dive</p>
                             <FlashcardDeck cards={flashcards} />
                         </div>
                     )}
-                    <div className="glass-card p-8 prose prose-invert prose-headings:text-primary prose-a:text-blue-400 max-w-none">
-                        <h2 className='mt-0'>{notes.title}</h2>
-                        <ReactMarkdown>{notes.content}</ReactMarkdown>
+                    <div className="glass-card p-6 sm:p-8 overflow-hidden">
+                        <ShortNotes title={notes.title} content={notes.content} />
                     </div>
                 </div>
             )}
