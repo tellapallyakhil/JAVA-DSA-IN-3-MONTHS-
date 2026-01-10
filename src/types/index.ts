@@ -53,6 +53,7 @@ export interface Progress {
     // 1-4-7 Spaced Repetition System
     revisionItems: RevisionItem[];
     lastUpdated?: number; // Timestamp for sync conflict resolution
+    startDate?: string; // ISO date string when user starts their journey (Day 1)
 }
 
 // Track items for 1-4-7 revision

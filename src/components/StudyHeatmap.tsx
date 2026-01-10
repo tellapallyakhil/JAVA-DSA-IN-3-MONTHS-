@@ -180,7 +180,7 @@ export default function StudyHeatmap() {
     }
 
     return (
-        <div className="glass-card p-6 relative overflow-hidden">
+        <div className="glass-card p-4 sm:p-6 relative overflow-hidden">
             {/* Background decorations */}
             <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-green-500/10 to-transparent rounded-full blur-3xl -mr-24 -mt-24 pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-emerald-500/10 to-transparent rounded-full blur-2xl -ml-16 -mb-16 pointer-events-none" />
@@ -254,8 +254,12 @@ export default function StudyHeatmap() {
                 </div>
 
                 {/* Heatmap */}
-                <div className="overflow-x-auto pb-2">
-                    <div className="min-w-[750px]">
+                <div className="overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0">
+                    {/* Mobile scroll hint */}
+                    <div className="sm:hidden flex items-center justify-center gap-2 text-[10px] text-muted-foreground mb-2">
+                        <span>← Swipe to see all months →</span>
+                    </div>
+                    <div className="min-w-[700px]">
                         {/* Month Labels */}
                         <div className="relative h-5 mb-1 ml-8">
                             {monthLabels.map((m, i) => (
@@ -324,6 +328,10 @@ export default function StudyHeatmap() {
                             </div>
                         </div>
                     </div>
+                </div>
+                {/* Mobile scroll hint at bottom */}
+                <div className="sm:hidden flex items-center justify-center gap-2 text-[10px] text-muted-foreground/50 mt-2">
+                    <span>Scroll →</span>
                 </div>
             </div>
 

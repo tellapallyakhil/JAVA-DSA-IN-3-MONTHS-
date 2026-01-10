@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import { ArrowRight, Code2, BrainCircuit, Calendar, Zap, Target } from 'lucide-react';
 import { getAllDays } from '@/lib/api';
-import CalendarView from '@/components/CalendarView';
+import CalendarSection from '@/components/CalendarSection';
 import PomodoroTimer from '@/components/PomodoroTimer';
 import StudyHeatmap from '@/components/StudyHeatmap';
 import InterviewSimulator from '@/components/InterviewSimulator';
 import RevisionReminder from '@/components/RevisionReminder';
+import StartButton from '@/components/StartButton';
 
 export default function Home() {
   const days = getAllDays();
@@ -65,9 +66,7 @@ export default function Home() {
           A structured 3-month roadmap dedicating 2 hours to Java+DSA and 2 hours to Aptitude daily.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-4">
-          <Link href="/day/1" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg transition-all flex items-center justify-center gap-2 shadow-[0_0_40px_-10px_rgba(124,58,237,0.5)] hover:shadow-[0_0_60px_-15px_rgba(124,58,237,0.6)]">
-            Start Day 1 <ArrowRight size={20} />
-          </Link>
+          <StartButton />
           <Link href="#calendar" className="w-full sm:w-auto border border-white/20 hover:border-white/40 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg transition-all flex items-center justify-center gap-2">
             View Calendar
           </Link>
@@ -187,10 +186,7 @@ export default function Home() {
       </section>
 
       {/* Calendar View */}
-      <section id="calendar">
-        <h2 className="text-3xl font-bold mb-8 flex items-center gap-2"><Calendar className="text-primary" /> 90-Day Calendar</h2>
-        <CalendarView days={days} />
-      </section>
+      <CalendarSection days={days} />
 
       {/* Feature Grid */}
       <section className="space-y-8 py-8">
@@ -212,9 +208,9 @@ export default function Home() {
           <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
             Commit to 4 hours daily for 90 days and transform your coding & aptitude skills. Your dream placement awaits!
           </p>
-          <Link href="/day/1" className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-[0_0_40px_-10px_rgba(124,58,237,0.5)]">
+          <StartButton className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-[0_0_40px_-10px_rgba(124,58,237,0.5)]">
             Start Today <ArrowRight />
-          </Link>
+          </StartButton>
         </div>
       </section>
 

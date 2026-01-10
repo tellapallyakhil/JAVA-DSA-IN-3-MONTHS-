@@ -4427,5 +4427,763 @@
       "Two Pointers"
     ],
     "link": "https://leetcode.com/problems/next-permutation/"
+  },
+  {
+    "id": "282",
+    "title": "Rotate Array",
+    "difficulty": "Easy",
+    "topics": [
+      "Array"
+    ],
+    "companies": [
+      "Accenture",
+      "Infosys"
+    ],
+    "javaConcepts": [
+      "Reversal Algorithm"
+    ],
+    "link": "https://leetcode.com/problems/rotate-array/"
+  },
+  {
+    "id": "283",
+    "title": "Find Missing Number",
+    "difficulty": "Easy",
+    "topics": [
+      "Array",
+      "Math"
+    ],
+    "companies": [
+      "Accenture",
+      "Infosys",
+      "Zoho"
+    ],
+    "javaConcepts": [
+      "XOR",
+      "Sum Formula"
+    ],
+    "link": "https://leetcode.com/problems/missing-number/"
+  },
+  {
+    "id": "284",
+    "title": "Find Duplicate Number",
+    "difficulty": "Medium",
+    "topics": [
+      "Array",
+      "Two Pointers"
+    ],
+    "companies": [
+      "Zoho",
+      "Accenture"
+    ],
+    "javaConcepts": [
+      "Floyd's Cycle Detection"
+    ],
+    "link": "https://leetcode.com/problems/find-the-duplicate-number/"
+  },
+  {
+    "id": "285",
+    "title": "Move Zeroes",
+    "difficulty": "Easy",
+    "topics": [
+      "Array",
+      "Two Pointers"
+    ],
+    "companies": [
+      "Accenture",
+      "Infosys"
+    ],
+    "javaConcepts": [
+      "In-place Swap"
+    ],
+    "link": "https://leetcode.com/problems/move-zeroes/"
+  },
+  {
+    "id": "286",
+    "title": "Remove Duplicates from Sorted Array",
+    "difficulty": "Easy",
+    "topics": [
+      "Array",
+      "Two Pointers"
+    ],
+    "companies": [
+      "Accenture",
+      "Infosys",
+      "Zoho"
+    ],
+    "javaConcepts": [
+      "Two Pointers"
+    ],
+    "link": "https://leetcode.com/problems/remove-duplicates-from-sorted-array/"
+  },
+  {
+    "id": "287",
+    "title": "Reverse String",
+    "difficulty": "Easy",
+    "topics": [
+      "String",
+      "Two Pointers"
+    ],
+    "companies": [
+      "Accenture",
+      "Infosys"
+    ],
+    "javaConcepts": [
+      "StringBuilder",
+      "Two Pointers"
+    ],
+    "link": "https://leetcode.com/problems/reverse-string/"
+  },
+  {
+    "id": "288",
+    "title": "Palindrome Check",
+    "difficulty": "Easy",
+    "topics": [
+      "String"
+    ],
+    "companies": [
+      "Accenture",
+      "Infosys",
+      "Zoho"
+    ],
+    "javaConcepts": [
+      "Character Comparison"
+    ],
+    "link": "https://leetcode.com/problems/valid-palindrome/"
+  },
+  {
+    "id": "289",
+    "title": "First Unique Character in String",
+    "difficulty": "Easy",
+    "topics": [
+      "String",
+      "HashMap"
+    ],
+    "companies": [
+      "Zoho",
+      "Accenture"
+    ],
+    "javaConcepts": [
+      "HashMap",
+      "Frequency Count"
+    ],
+    "link": "https://leetcode.com/problems/first-unique-character-in-a-string/"
+  },
+  {
+    "id": "290",
+    "title": "Longest Common Prefix",
+    "difficulty": "Easy",
+    "topics": [
+      "String"
+    ],
+    "companies": [
+      "Zoho",
+      "Accenture",
+      "Infosys"
+    ],
+    "javaConcepts": [
+      "String Comparison"
+    ],
+    "link": "https://leetcode.com/problems/longest-common-prefix/"
+  },
+  {
+    "id": "291",
+    "title": "Count and Say",
+    "difficulty": "Medium",
+    "topics": [
+      "String"
+    ],
+    "companies": [
+      "Zoho"
+    ],
+    "javaConcepts": [
+      "String Building",
+      "Pattern Recognition"
+    ],
+    "link": "https://leetcode.com/problems/count-and-say/"
+  },
+  {
+    "id": "292",
+    "title": "Roman to Integer",
+    "difficulty": "Easy",
+    "topics": [
+      "String",
+      "HashMap"
+    ],
+    "companies": [
+      "Accenture",
+      "Infosys"
+    ],
+    "javaConcepts": [
+      "HashMap"
+    ],
+    "link": "https://leetcode.com/problems/roman-to-integer/"
+  },
+  {
+    "id": "293",
+    "title": "Integer to Roman",
+    "difficulty": "Medium",
+    "topics": [
+      "String",
+      "Math"
+    ],
+    "companies": [
+      "Zoho"
+    ],
+    "javaConcepts": [
+      "Greedy"
+    ],
+    "link": "https://leetcode.com/problems/integer-to-roman/"
+  },
+  {
+    "id": "294",
+    "title": "Fizz Buzz",
+    "difficulty": "Easy",
+    "topics": [
+      "Math",
+      "String"
+    ],
+    "companies": [
+      "Accenture",
+      "Infosys",
+      "Zoho"
+    ],
+    "javaConcepts": [
+      "Modulo",
+      "Control Flow"
+    ],
+    "link": "https://leetcode.com/problems/fizz-buzz/"
+  },
+  {
+    "id": "295",
+    "title": "Reverse Integer",
+    "difficulty": "Medium",
+    "topics": [
+      "Math"
+    ],
+    "companies": [
+      "Accenture",
+      "Infosys"
+    ],
+    "javaConcepts": [
+      "Overflow Check"
+    ],
+    "link": "https://leetcode.com/problems/reverse-integer/"
+  },
+  {
+    "id": "296",
+    "title": "Power of Two",
+    "difficulty": "Easy",
+    "topics": [
+      "Math",
+      "Bit Manipulation"
+    ],
+    "companies": [
+      "Accenture"
+    ],
+    "javaConcepts": [
+      "Bit Manipulation"
+    ],
+    "link": "https://leetcode.com/problems/power-of-two/"
+  },
+  {
+    "id": "297",
+    "title": "Count Primes",
+    "difficulty": "Medium",
+    "topics": [
+      "Math"
+    ],
+    "companies": [
+      "Zoho",
+      "Accenture"
+    ],
+    "javaConcepts": [
+      "Sieve of Eratosthenes"
+    ],
+    "link": "https://leetcode.com/problems/count-primes/"
+  },
+  {
+    "id": "298",
+    "title": "GCD of Two Numbers",
+    "difficulty": "Easy",
+    "topics": [
+      "Math"
+    ],
+    "companies": [
+      "Infosys",
+      "Accenture"
+    ],
+    "javaConcepts": [
+      "Euclidean Algorithm"
+    ],
+    "link": "https://leetcode.com/problems/find-greatest-common-divisor-of-array/"
+  },
+  {
+    "id": "299",
+    "title": "LCM of Two Numbers",
+    "difficulty": "Easy",
+    "topics": [
+      "Math"
+    ],
+    "companies": [
+      "Infosys",
+      "Accenture"
+    ],
+    "javaConcepts": [
+      "GCD",
+      "Math"
+    ],
+    "link": "https://leetcode.com/problems/find-greatest-common-divisor-of-array/"
+  },
+  {
+    "id": "300",
+    "title": "Armstrong Number",
+    "difficulty": "Easy",
+    "topics": [
+      "Math"
+    ],
+    "companies": [
+      "Accenture",
+      "Infosys"
+    ],
+    "javaConcepts": [
+      "Math.pow",
+      "Digit Extraction"
+    ],
+    "link": "https://leetcode.com/problems/armstrong-number/"
+  },
+  {
+    "id": "301",
+    "title": "Fibonacci Number",
+    "difficulty": "Easy",
+    "topics": [
+      "Math",
+      "DP"
+    ],
+    "companies": [
+      "Accenture",
+      "Infosys",
+      "Zoho"
+    ],
+    "javaConcepts": [
+      "Recursion",
+      "Memoization"
+    ],
+    "link": "https://leetcode.com/problems/fibonacci-number/"
+  },
+  {
+    "id": "302",
+    "title": "Pascal's Triangle",
+    "difficulty": "Easy",
+    "topics": [
+      "Array",
+      "DP"
+    ],
+    "companies": [
+      "Zoho",
+      "Infosys"
+    ],
+    "javaConcepts": [
+      "2D Array",
+      "Pattern"
+    ],
+    "link": "https://leetcode.com/problems/pascals-triangle/"
+  },
+  {
+    "id": "303",
+    "title": "Excel Sheet Column Number",
+    "difficulty": "Easy",
+    "topics": [
+      "Math",
+      "String"
+    ],
+    "companies": [
+      "Zoho"
+    ],
+    "javaConcepts": [
+      "Base Conversion"
+    ],
+    "link": "https://leetcode.com/problems/excel-sheet-column-number/"
+  },
+  {
+    "id": "304",
+    "title": "Excel Sheet Column Title",
+    "difficulty": "Easy",
+    "topics": [
+      "Math",
+      "String"
+    ],
+    "companies": [
+      "Zoho"
+    ],
+    "javaConcepts": [
+      "Base Conversion"
+    ],
+    "link": "https://leetcode.com/problems/excel-sheet-column-title/"
+  },
+  {
+    "id": "305",
+    "title": "Single Number",
+    "difficulty": "Easy",
+    "topics": [
+      "Bit Manipulation"
+    ],
+    "companies": [
+      "Accenture",
+      "Infosys"
+    ],
+    "javaConcepts": [
+      "XOR"
+    ],
+    "link": "https://leetcode.com/problems/single-number/"
+  },
+  {
+    "id": "306",
+    "title": "Number of 1 Bits",
+    "difficulty": "Easy",
+    "topics": [
+      "Bit Manipulation"
+    ],
+    "companies": [
+      "Accenture"
+    ],
+    "javaConcepts": [
+      "Bit Counting"
+    ],
+    "link": "https://leetcode.com/problems/number-of-1-bits/"
+  },
+  {
+    "id": "307",
+    "title": "Reverse Bits",
+    "difficulty": "Easy",
+    "topics": [
+      "Bit Manipulation"
+    ],
+    "companies": [
+      "Accenture"
+    ],
+    "javaConcepts": [
+      "Bit Shifting"
+    ],
+    "link": "https://leetcode.com/problems/reverse-bits/"
+  },
+  {
+    "id": "308",
+    "title": "Merge Sorted Array",
+    "difficulty": "Easy",
+    "topics": [
+      "Array",
+      "Two Pointers"
+    ],
+    "companies": [
+      "Accenture",
+      "Infosys",
+      "Zoho"
+    ],
+    "javaConcepts": [
+      "Two Pointers"
+    ],
+    "link": "https://leetcode.com/problems/merge-sorted-array/"
+  },
+  {
+    "id": "309",
+    "title": "Plus One",
+    "difficulty": "Easy",
+    "topics": [
+      "Array",
+      "Math"
+    ],
+    "companies": [
+      "Accenture"
+    ],
+    "javaConcepts": [
+      "Carry Handling"
+    ],
+    "link": "https://leetcode.com/problems/plus-one/"
+  },
+  {
+    "id": "310",
+    "title": "Add Binary",
+    "difficulty": "Easy",
+    "topics": [
+      "String",
+      "Math"
+    ],
+    "companies": [
+      "Infosys"
+    ],
+    "javaConcepts": [
+      "StringBuilder",
+      "Carry"
+    ],
+    "link": "https://leetcode.com/problems/add-binary/"
+  },
+  {
+    "id": "311",
+    "title": "Majority Element",
+    "difficulty": "Easy",
+    "topics": [
+      "Array",
+      "HashMap"
+    ],
+    "companies": [
+      "Accenture",
+      "Infosys",
+      "Zoho"
+    ],
+    "javaConcepts": [
+      "Boyer-Moore Voting"
+    ],
+    "link": "https://leetcode.com/problems/majority-element/"
+  },
+  {
+    "id": "312",
+    "title": "Find Peak Element",
+    "difficulty": "Medium",
+    "topics": [
+      "Array",
+      "Binary Search"
+    ],
+    "companies": [
+      "Zoho"
+    ],
+    "javaConcepts": [
+      "Binary Search"
+    ],
+    "link": "https://leetcode.com/problems/find-peak-element/"
+  },
+  {
+    "id": "313",
+    "title": "Search in Rotated Sorted Array",
+    "difficulty": "Medium",
+    "topics": [
+      "Array",
+      "Binary Search"
+    ],
+    "companies": [
+      "Zoho",
+      "Accenture"
+    ],
+    "javaConcepts": [
+      "Binary Search"
+    ],
+    "link": "https://leetcode.com/problems/search-in-rotated-sorted-array/"
+  },
+  {
+    "id": "314",
+    "title": "Find Minimum in Rotated Sorted Array",
+    "difficulty": "Medium",
+    "topics": [
+      "Array",
+      "Binary Search"
+    ],
+    "companies": [
+      "Zoho"
+    ],
+    "javaConcepts": [
+      "Binary Search"
+    ],
+    "link": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/"
+  },
+  {
+    "id": "315",
+    "title": "Sort Colors (Dutch National Flag)",
+    "difficulty": "Medium",
+    "topics": [
+      "Array",
+      "Two Pointers"
+    ],
+    "companies": [
+      "Zoho",
+      "Infosys"
+    ],
+    "javaConcepts": [
+      "Three Pointers"
+    ],
+    "link": "https://leetcode.com/problems/sort-colors/"
+  },
+  {
+    "id": "316",
+    "title": "Kth Largest Element in Array",
+    "difficulty": "Medium",
+    "topics": [
+      "Array",
+      "Heap"
+    ],
+    "companies": [
+      "Zoho"
+    ],
+    "javaConcepts": [
+      "PriorityQueue",
+      "QuickSelect"
+    ],
+    "link": "https://leetcode.com/problems/kth-largest-element-in-an-array/"
+  },
+  {
+    "id": "317",
+    "title": "Intersection of Two Arrays",
+    "difficulty": "Easy",
+    "topics": [
+      "Array",
+      "HashSet"
+    ],
+    "companies": [
+      "Accenture",
+      "Infosys"
+    ],
+    "javaConcepts": [
+      "HashSet"
+    ],
+    "link": "https://leetcode.com/problems/intersection-of-two-arrays/"
+  },
+  {
+    "id": "318",
+    "title": "Union of Two Arrays",
+    "difficulty": "Easy",
+    "topics": [
+      "Array",
+      "HashSet"
+    ],
+    "companies": [
+      "Accenture",
+      "Infosys"
+    ],
+    "javaConcepts": [
+      "HashSet"
+    ],
+    "link": "https://www.geeksforgeeks.org/union-and-intersection-of-two-sorted-arrays-2/"
+  },
+  {
+    "id": "319",
+    "title": "Subarray Sum Equals K",
+    "difficulty": "Medium",
+    "topics": [
+      "Array",
+      "HashMap"
+    ],
+    "companies": [
+      "Zoho"
+    ],
+    "javaConcepts": [
+      "Prefix Sum",
+      "HashMap"
+    ],
+    "link": "https://leetcode.com/problems/subarray-sum-equals-k/"
+  },
+  {
+    "id": "320",
+    "title": "Longest Palindromic Substring",
+    "difficulty": "Medium",
+    "topics": [
+      "String",
+      "DP"
+    ],
+    "companies": [
+      "Zoho"
+    ],
+    "javaConcepts": [
+      "Expand Around Center"
+    ],
+    "link": "https://leetcode.com/problems/longest-palindromic-substring/"
+  },
+  {
+    "id": "321",
+    "title": "String to Integer (atoi)",
+    "difficulty": "Medium",
+    "topics": [
+      "String"
+    ],
+    "companies": [
+      "Zoho"
+    ],
+    "javaConcepts": [
+      "Parsing",
+      "Edge Cases"
+    ],
+    "link": "https://leetcode.com/problems/string-to-integer-atoi/"
+  },
+  {
+    "id": "322",
+    "title": "Implement strStr()",
+    "difficulty": "Easy",
+    "topics": [
+      "String"
+    ],
+    "companies": [
+      "Accenture",
+      "Infosys"
+    ],
+    "javaConcepts": [
+      "String Methods",
+      "Two Pointers"
+    ],
+    "link": "https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/"
+  },
+  {
+    "id": "323",
+    "title": "Letter Combinations of Phone Number",
+    "difficulty": "Medium",
+    "topics": [
+      "String",
+      "Backtracking"
+    ],
+    "companies": [
+      "Zoho"
+    ],
+    "javaConcepts": [
+      "Recursion",
+      "HashMap"
+    ],
+    "link": "https://leetcode.com/problems/letter-combinations-of-a-phone-number/"
+  },
+  {
+    "id": "324",
+    "title": "Spiral Matrix",
+    "difficulty": "Medium",
+    "topics": [
+      "Array",
+      "Matrix"
+    ],
+    "companies": [
+      "Zoho",
+      "Infosys"
+    ],
+    "javaConcepts": [
+      "Boundary Tracking"
+    ],
+    "link": "https://leetcode.com/problems/spiral-matrix/"
+  },
+  {
+    "id": "325",
+    "title": "Rotate Image",
+    "difficulty": "Medium",
+    "topics": [
+      "Array",
+      "Matrix"
+    ],
+    "companies": [
+      "Zoho"
+    ],
+    "javaConcepts": [
+      "Transpose",
+      "Reverse"
+    ],
+    "link": "https://leetcode.com/problems/rotate-image/"
+  },
+  {
+    "id": "326",
+    "title": "Set Matrix Zeroes",
+    "difficulty": "Medium",
+    "topics": [
+      "Array",
+      "Matrix"
+    ],
+    "companies": [
+      "Zoho"
+    ],
+    "javaConcepts": [
+      "In-place",
+      "Space Optimization"
+    ],
+    "link": "https://leetcode.com/problems/set-matrix-zeroes/"
   }
 ]

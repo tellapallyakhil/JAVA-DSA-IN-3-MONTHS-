@@ -60,10 +60,10 @@ export function calculateStreak(activityDates: string[]): { current: number; lon
         }
     }
 
-    // Calculate longest streak
+    // Calculate longest streak (create a separate copy for ascending order)
     let longestStreak = 0;
     let tempStreak = 1;
-    const ascDates = sortedDates.reverse();
+    const ascDates = [...sortedDates].reverse(); // Create a copy before reversing
 
     for (let i = 1; i < ascDates.length; i++) {
         const prevDate = new Date(ascDates[i - 1]);
@@ -348,6 +348,50 @@ export function useProgress() {
         return items.filter(item => item.nextRevisionDate <= today);
     };
 
+    // Set the start date when user begins their journey
+    const setStartDate = (date?: string) => {
+        setProgress(prev => {
+            // Only set if not already set
+            if (prev.startDate) return prev;
+
+            // If there are existing activity dates, use the earliest one
+            let startDateValue = date || getTodayString();
+            if (prev.activityDates && prev.activityDates.length > 0) {
+                const sortedDates = [...prev.activityDates].sort();
+                const earliestActivity = sortedDates[0];
+                if (earliestActivity < startDateValue) {
+                    startDateValue = earliestActivity;
+                }
+            }
+
+            return {
+                ...prev,
+                startDate: startDateValue,
+                activityDates: recordActivity(prev),
+                lastUpdated: Date.now()
+            };
+        });
+    };
+
+    // Reset start date (for recalibration - uses earliest activity or today)
+    const resetStartDate = () => {
+        setProgress(prev => {
+            let newStartDate = getTodayString();
+
+            // Use earliest activity date if available
+            if (prev.activityDates && prev.activityDates.length > 0) {
+                const sortedDates = [...prev.activityDates].sort();
+                newStartDate = sortedDates[0];
+            }
+
+            return {
+                ...prev,
+                startDate: newStartDate,
+                lastUpdated: Date.now()
+            };
+        });
+    };
+
     return {
         progress,
         toggleProblem,
@@ -357,10 +401,13 @@ export function useProgress() {
         addToRevision,
         markRevisionDone,
         getRevisionsDueToday,
+        setStartDate,
+        resetStartDate,
         isProblemCompleted: (id: string) => progress.completedProblems.includes(id),
         isAptitudeCompleted: (day: number) => progress.aptitudeDone.some(a => a.day === day),
         isReasoningCompleted: (day: number) => progress.reasoningDone.some(r => r.day === day),
         isQuestionCompleted: (id: string) => (progress.completedQuestions || []).includes(id),
+        startDate: progress.startDate,
         isClient,
         user,
         loading
