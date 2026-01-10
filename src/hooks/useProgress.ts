@@ -45,17 +45,32 @@ export function calculateStreak(activityDates: string[]): { current: number; lon
 
     // Calculate current streak
     let currentStreak = 0;
-    let checkDate = new Date(today);
 
-    // Check if there's activity today or yesterday to start the streak
-    if (sortedDates[0] === today || sortedDates[0] === yesterdayString) {
-        for (const dateStr of sortedDates) {
-            const expectedDate = checkDate.toISOString().split('T')[0];
-            if (dateStr === expectedDate) {
-                currentStreak++;
-                checkDate.setDate(checkDate.getDate() - 1);
-            } else if (dateStr < expectedDate) {
-                break;
+    // Check if the most recent activity is today or yesterday
+    if (sortedDates.length > 0) {
+        const lastActivity = sortedDates[0];
+
+        if (lastActivity === today) {
+            let checkDate = new Date(today);
+            for (const dateStr of sortedDates) {
+                const expectedDate = checkDate.toISOString().split('T')[0];
+                if (dateStr === expectedDate) {
+                    currentStreak++;
+                    checkDate.setDate(checkDate.getDate() - 1);
+                } else if (dateStr < expectedDate) {
+                    break;
+                }
+            }
+        } else if (lastActivity === yesterdayString) {
+            let checkDate = new Date(yesterday); // Start checking from yesterday
+            for (const dateStr of sortedDates) {
+                const expectedDate = checkDate.toISOString().split('T')[0];
+                if (dateStr === expectedDate) {
+                    currentStreak++;
+                    checkDate.setDate(checkDate.getDate() - 1);
+                } else if (dateStr < expectedDate) {
+                    break;
+                }
             }
         }
     }
@@ -143,24 +158,35 @@ export function useProgress() {
                 }
 
                 // 3. Conflict Resolution: Last Write Wins
+                let resolvedProgress = defaultProgress;
+
+                // 3. Conflict Resolution: Last Write Wins
                 if (cloudProgress && localProgress) {
                     const cloudTime = cloudProgress.lastUpdated || 0;
                     const localTime = localProgress.lastUpdated || 0;
 
                     if (localTime > cloudTime) {
-                        // Local is newer, keep local (it will sync to cloud via useEffect)
-                        setProgress(localProgress);
+                        resolvedProgress = localProgress;
                     } else {
-                        // Cloud is newer (or equal), use cloud
-                        setProgress(cloudProgress);
+                        resolvedProgress = cloudProgress;
                     }
                 } else if (cloudProgress) {
-                    setProgress(cloudProgress);
+                    resolvedProgress = cloudProgress;
                 } else if (localProgress) {
-                    setProgress(localProgress);
-                } else {
-                    setProgress(defaultProgress); // Start fresh
+                    resolvedProgress = localProgress;
                 }
+
+                // 4. Data Repair: Ensure startDate exists if there is activity
+                if (resolvedProgress.activityDates && resolvedProgress.activityDates.length > 0 && !resolvedProgress.startDate) {
+                    const sortedDates = [...resolvedProgress.activityDates].sort();
+                    resolvedProgress = {
+                        ...resolvedProgress,
+                        startDate: sortedDates[0],
+                        lastUpdated: Date.now() // Mark as updated to trigger sync
+                    };
+                }
+
+                setProgress(resolvedProgress);
 
             } catch (e) {
                 console.warn("Auth check failed, using local storage", e);
