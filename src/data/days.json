@@ -72,17 +72,17 @@
             ]
         },
         "aptitude": {
-            "topic": "Numbers & Decimal Fractions",
+            "topic": "Ages",
             "questionIds": [
-                "q1",
-                "q2"
+                "q17",
+                "q18"
             ]
         },
         "reasoning": {
-            "topic": "Coding Decoding",
+            "topic": "Analogy",
             "questionIds": [
-                "r2",
-                "r1"
+                "r13",
+                "r14"
             ]
         },
         "flashcards": [
@@ -175,17 +175,17 @@
             ]
         },
         "aptitude": {
-            "topic": "HCF & LCM",
+            "topic": "Time Speed Distance",
             "questionIds": [
-                "q4",
-                "q3"
+                "q19",
+                "q20"
             ]
         },
         "reasoning": {
-            "topic": "Blood Relations",
+            "topic": "Classification",
             "questionIds": [
-                "r4",
-                "r3"
+                "r16",
+                "r17"
             ]
         },
         "flashcards": [
@@ -276,17 +276,17 @@
             ]
         },
         "aptitude": {
-            "topic": "Percentages",
+            "topic": "Pipes & Cisterns",
             "questionIds": [
-                "q5",
-                "q6"
+                "q22",
+                "q23"
             ]
         },
         "reasoning": {
-            "topic": "Direction Sense",
+            "topic": "Statement Conclusion",
             "questionIds": [
-                "r6",
-                "r5"
+                "r18",
+                "r19"
             ]
         },
         "flashcards": [
@@ -325,17 +325,17 @@
             ]
         },
         "aptitude": {
-            "topic": "Numbers & Decimal Fractions",
+            "topic": "Mixtures",
             "questionIds": [
-                "q1",
-                "q2"
+                "q24",
+                "q25"
             ]
         },
         "reasoning": {
-            "topic": "Coding Decoding",
+            "topic": "Mirror Image",
             "questionIds": [
-                "r1",
-                "r2"
+                "r20",
+                "r21"
             ]
         },
         "flashcards": [
@@ -427,16 +427,17 @@
             ]
         },
         "aptitude": {
-            "topic": "Profit & Loss",
+            "topic": "Clock",
             "questionIds": [
-                "q8",
-                "q7"
+                "q26",
+                "q27"
             ]
         },
         "reasoning": {
-            "topic": "Seating Arrangement",
+            "topic": "Venn Diagram",
             "questionIds": [
-                "r11"
+                "r22",
+                "r23"
             ]
         },
         "flashcards": [
@@ -526,16 +527,17 @@
             ]
         },
         "aptitude": {
-            "topic": "Simple Interest",
+            "topic": "Calendar",
             "questionIds": [
-                "q10",
-                "q9"
+                "q28",
+                "q29"
             ]
         },
         "reasoning": {
-            "topic": "Syllogism",
+            "topic": "Ranking",
             "questionIds": [
-                "r7"
+                "r24",
+                "r25"
             ]
         },
         "flashcards": [
@@ -572,15 +574,17 @@
             ]
         },
         "aptitude": {
-            "topic": "Compound Interest",
+            "topic": "Boats & Streams",
             "questionIds": [
-                "q11"
+                "q30",
+                "q31"
             ]
         },
         "reasoning": {
-            "topic": "Inequality",
+            "topic": "Puzzle",
             "questionIds": [
-                "r1"
+                "r26",
+                "r27"
             ]
         },
         "flashcards": [
@@ -616,16 +620,17 @@
             ]
         },
         "aptitude": {
-            "topic": "Compound Interest",
+            "topic": "Permutation Combination",
             "questionIds": [
-                "q11"
+                "q32",
+                "q33"
             ]
         },
         "reasoning": {
-            "topic": "Inequality",
+            "topic": "Cubes",
             "questionIds": [
-                "r1",
-                "r2"
+                "r29",
+                "r30"
             ]
         },
         "flashcards": [

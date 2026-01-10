@@ -50,6 +50,10 @@ export default function ProfilePage() {
     const reasoningDone = progress.reasoningDone.length;
     const questionsAnswered = progress.completedQuestions?.length || 0;
 
+    // Calculate percentages safely (avoid division by zero)
+    const aptitudePercentage = totalDays ? Math.round((aptitudeDone / totalDays) * 100) : 0;
+    const reasoningPercentage = totalDays ? Math.round((reasoningDone / totalDays) * 100) : 0;
+
     // Calculate actual streaks from activity data
     const streakData = calculateStreak(progress.activityDates || []);
     const currentStreak = streakData.current;
@@ -296,19 +300,19 @@ export default function ProfilePage() {
                     <div>
                         <div className="flex items-center justify-between text-sm mb-2">
                             <span>Aptitude Days</span>
-                            <span className="text-purple-400">{Math.round((aptitudeDone / totalDays) * 100)}%</span>
+                            <span className="text-purple-400">{aptitudePercentage}%</span>
                         </div>
                         <div className="w-full bg-white/5 h-3 rounded-full overflow-hidden">
-                            <div className="bg-gradient-to-r from-purple-500 to-pink-400 h-full transition-all duration-1000 ease-out rounded-full" style={{ width: `${(aptitudeDone / totalDays) * 100}%` }} />
+                            <div className="bg-gradient-to-r from-purple-500 to-pink-400 h-full transition-all duration-1000 ease-out rounded-full" style={{ width: `${aptitudePercentage}%` }} />
                         </div>
                     </div>
                     <div>
                         <div className="flex items-center justify-between text-sm mb-2">
                             <span>Reasoning Days</span>
-                            <span className="text-pink-400">{Math.round((reasoningDone / totalDays) * 100)}%</span>
+                            <span className="text-pink-400">{reasoningPercentage}%</span>
                         </div>
                         <div className="w-full bg-white/5 h-3 rounded-full overflow-hidden">
-                            <div className="bg-gradient-to-r from-pink-500 to-red-400 h-full transition-all duration-1000 ease-out rounded-full" style={{ width: `${(reasoningDone / totalDays) * 100}%` }} />
+                            <div className="bg-gradient-to-r from-pink-500 to-red-400 h-full transition-all duration-1000 ease-out rounded-full" style={{ width: `${reasoningPercentage}%` }} />
                         </div>
                     </div>
                 </div>

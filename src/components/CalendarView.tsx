@@ -12,19 +12,25 @@ const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 interface CalendarViewProps {
     days: DailyTask[];
     completedDays?: number[];
+    startDateStr?: string; // ISO date string when user started their journey
 }
 
-export default function CalendarView({ days, completedDays = [] }: CalendarViewProps) {
+export default function CalendarView({ days, completedDays = [], startDateStr }: CalendarViewProps) {
     const [isClient, setIsClient] = useState(false);
     const [currentMonthOffset, setCurrentMonthOffset] = useState(0);
 
-    // Fixed start date to avoid hydration mismatch
+    // Use user's start date or default to today
     const startDate = useMemo(() => {
-        // Use a fixed date for SSR, will be same on client
-        const date = new Date(2026, 0, 9); // January 9, 2026
+        if (startDateStr) {
+            const date = new Date(startDateStr);
+            date.setHours(0, 0, 0, 0);
+            return date;
+        }
+        // Default to today if no start date is set
+        const date = new Date();
         date.setHours(0, 0, 0, 0);
         return date;
-    }, []);
+    }, [startDateStr]);
 
     useEffect(() => {
         setIsClient(true);
@@ -78,7 +84,7 @@ export default function CalendarView({ days, completedDays = [] }: CalendarViewP
     }
 
     const goToPrevMonth = () => setCurrentMonthOffset(prev => Math.max(prev - 1, 0));
-    const goToNextMonth = () => setCurrentMonthOffset(prev => Math.min(prev + 1, 2)); // 3 months max
+    const goToNextMonth = () => setCurrentMonthOffset(prev => Math.min(prev + 1, 3)); // 4 months max (90 days can span 4 months)
 
     return (
         <div className="glass-card p-3 sm:p-6 rounded-2xl w-full">
@@ -97,7 +103,7 @@ export default function CalendarView({ days, completedDays = [] }: CalendarViewP
                 </h2>
                 <button
                     onClick={goToNextMonth}
-                    disabled={currentMonthOffset === 2}
+                    disabled={currentMonthOffset === 3}
                     className="p-1.5 sm:p-2 rounded-lg hover:bg-white/5 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
                 >
                     <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />

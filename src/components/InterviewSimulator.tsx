@@ -488,12 +488,12 @@ export default function InterviewSimulator({ fullPage = false }: InterviewSimula
                     {/* Difficulty Selection */}
                     <div className="mb-4 sm:mb-6">
                         <h3 className="text-xs sm:text-sm font-semibold mb-2 sm:mb-3 text-muted-foreground uppercase tracking-wider">Difficulty Level</h3>
-                        <div className="flex gap-2 sm:gap-3">
+                        <div className="flex gap-1.5 sm:gap-3">
                             {DIFFICULTY_OPTIONS.map((option) => (
                                 <button
                                     key={option.value}
                                     onClick={() => setDifficulty(option.value)}
-                                    className={`flex-1 px-4 py-3 rounded-xl border transition-all font-medium ${difficulty === option.value
+                                    className={`flex-1 px-2 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl border transition-all font-medium text-xs sm:text-sm ${difficulty === option.value
                                         ? option.color + ' border-current'
                                         : 'bg-white/5 border-white/10 hover:bg-white/10 text-white/70'
                                         }`}
