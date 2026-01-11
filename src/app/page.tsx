@@ -7,6 +7,7 @@ import StudyHeatmap from '@/components/StudyHeatmap';
 import InterviewSimulator from '@/components/InterviewSimulator';
 import RevisionReminder from '@/components/RevisionReminder';
 import StartButton from '@/components/StartButton';
+import FocusAreasWidget from '@/components/FocusAreasWidget';
 
 export default function Home() {
   const days = getAllDays();
@@ -194,9 +195,15 @@ export default function Home() {
           <span className="p-2 bg-purple-500/20 rounded-lg text-purple-400">🚀</span>
           Study Tools
         </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <StudyHeatmap />
-          <InterviewSimulator />
+        <div className="space-y-8">
+          {/* Focus Areas - Full Width on Top */}
+          <FocusAreasWidget />
+
+          {/* Heatmap and Interview Simulator side by side */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <StudyHeatmap />
+            <InterviewSimulator />
+          </div>
         </div>
       </section>
 
