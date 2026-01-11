@@ -1,0 +1,1487 @@
+{
+    "topics": {
+        "arrays": {
+            "id": "arrays",
+            "name": "Arrays",
+            "icon": "📊",
+            "theoryRecap": "An array is a collection of elements stored at contiguous memory locations. It allows random access using indices (0-based in most languages). Arrays have fixed size in languages like Java (use ArrayList for dynamic sizing). Key operations: Access O(1), Search O(n), Insert/Delete O(n) due to shifting.",
+            "patterns": [
+                {
+                    "name": "Two Pointers",
+                    "description": "Use two pointers moving towards each other or in the same direction to solve problems in O(n) time.",
+                    "whenToUse": "Sorted arrays, finding pairs, palindrome checks, removing duplicates",
+                    "example": "Two Sum II (sorted), Container With Most Water, Remove Duplicates"
+                },
+                {
+                    "name": "Sliding Window",
+                    "description": "Maintain a window of elements and slide it across the array to find subarrays meeting certain conditions.",
+                    "whenToUse": "Finding subarrays with specific sum, longest/shortest subarray with condition",
+                    "example": "Maximum Subarray, Minimum Window Substring, Longest Substring Without Repeating"
+                },
+                {
+                    "name": "Prefix Sum",
+                    "description": "Precompute cumulative sums to answer range sum queries in O(1).",
+                    "whenToUse": "Range sum queries, subarray sum equals K",
+                    "example": "Range Sum Query, Subarray Sum Equals K, Product of Array Except Self"
+                },
+                {
+                    "name": "Kadane's Algorithm",
+                    "description": "Track maximum sum ending at each position to find maximum subarray sum in O(n).",
+                    "whenToUse": "Maximum subarray problems",
+                    "example": "Maximum Subarray, Maximum Product Subarray"
+                }
+            ],
+            "codeTemplates": [
+                {
+                    "name": "Two Pointers Template",
+                    "code": "int left = 0, right = arr.length - 1;\nwhile (left < right) {\n    // Process arr[left] and arr[right]\n    if (/* condition to move left */) {\n        left++;\n    } else {\n        right--;\n    }\n}"
+                },
+                {
+                    "name": "Sliding Window Template",
+                    "code": "int left = 0, windowSum = 0;\nfor (int right = 0; right < arr.length; right++) {\n    windowSum += arr[right];  // Expand window\n    \n    while (/* window invalid */) {\n        windowSum -= arr[left];  // Shrink window\n        left++;\n    }\n    // Update result\n}"
+                },
+                {
+                    "name": "Prefix Sum Template",
+                    "code": "int[] prefix = new int[arr.length + 1];\nfor (int i = 0; i < arr.length; i++) {\n    prefix[i + 1] = prefix[i] + arr[i];\n}\n// Sum from index i to j = prefix[j+1] - prefix[i]"
+                }
+            ],
+            "analogies": [
+                {
+                    "concept": "Array",
+                    "analogy": "A row of lockers in a school - each locker has a number (index) and you can directly go to any locker without checking others."
+                },
+                {
+                    "concept": "Two Pointers",
+                    "analogy": "Two people searching for each other in a hallway - one starts from left, one from right, they walk towards each other until they meet."
+                },
+                {
+                    "concept": "Sliding Window",
+                    "analogy": "Looking through a magnifying glass that you slide across a newspaper - you can only see a portion at a time, but you move it to see everything."
+                }
+            ],
+            "cheatSheet": {
+                "timeComplexity": {
+                    "access": "O(1)",
+                    "search": "O(n)",
+                    "insert": "O(n)",
+                    "delete": "O(n)"
+                },
+                "spaceComplexity": "O(n)",
+                "bestFor": [
+                    "Random access",
+                    "Cache-friendly operations",
+                    "Known fixed size"
+                ],
+                "avoidWhen": [
+                    "Frequent insertions/deletions",
+                    "Unknown size",
+                    "Need fast search"
+                ],
+                "javaClasses": [
+                    "int[]",
+                    "ArrayList<>",
+                    "Arrays.sort()",
+                    "Arrays.binarySearch()"
+                ]
+            },
+            "commonMistakes": [
+                {
+                    "mistake": "Off-by-one errors",
+                    "description": "Using <= instead of < in loops, or starting from 1 instead of 0",
+                    "fix": "Always double-check loop bounds. arr.length gives count, last index is arr.length - 1"
+                },
+                {
+                    "mistake": "Not handling empty arrays",
+                    "description": "Accessing arr[0] when array might be empty causes ArrayIndexOutOfBoundsException",
+                    "fix": "Always check if (arr == null || arr.length == 0) at the start"
+                },
+                {
+                    "mistake": "Modifying array while iterating",
+                    "description": "Removing elements while looping forward causes skipped elements",
+                    "fix": "Iterate backwards when removing, or use iterator.remove()"
+                },
+                {
+                    "mistake": "Integer overflow in mid calculation",
+                    "description": "Using (left + right) / 2 can overflow for large values",
+                    "fix": "Use left + (right - left) / 2 instead"
+                }
+            ],
+            "flashcards": [
+                {
+                    "front": "Time complexity to access element at index i?",
+                    "back": "O(1) - Direct access using memory address calculation"
+                },
+                {
+                    "front": "Why is insertion O(n) in arrays?",
+                    "back": "All elements after insertion point must be shifted right"
+                },
+                {
+                    "front": "What is the Two Pointer technique?",
+                    "back": "Using two indices that move towards each other or in same direction to solve problems efficiently"
+                },
+                {
+                    "front": "When to use Sliding Window?",
+                    "back": "When finding subarrays/substrings with specific properties (sum, length, contents)"
+                },
+                {
+                    "front": "What does prefix[j] - prefix[i] give?",
+                    "back": "Sum of elements from index i to j-1 in the original array"
+                }
+            ],
+            "levels": [
+                {
+                    "level": 1,
+                    "name": "Basics",
+                    "problems": [
+                        "Two Sum",
+                        "Contains Duplicate",
+                        "Valid Anagram"
+                    ]
+                },
+                {
+                    "level": 2,
+                    "name": "Two Pointers",
+                    "problems": [
+                        "Two Sum II",
+                        "3Sum",
+                        "Container With Most Water"
+                    ]
+                },
+                {
+                    "level": 3,
+                    "name": "Sliding Window",
+                    "problems": [
+                        "Maximum Subarray",
+                        "Minimum Size Subarray Sum",
+                        "Longest Substring Without Repeating"
+                    ]
+                },
+                {
+                    "level": 4,
+                    "name": "Advanced",
+                    "problems": [
+                        "Trapping Rain Water",
+                        "First Missing Positive",
+                        "Median of Two Sorted Arrays"
+                    ]
+                }
+            ]
+        },
+        "strings": {
+            "id": "strings",
+            "name": "Strings",
+            "icon": "📝",
+            "theoryRecap": "Strings are sequences of characters. In Java, strings are immutable - any modification creates a new string. Use StringBuilder for efficient concatenation. Common operations involve character frequency counting, substring matching, and palindrome checking.",
+            "patterns": [
+                {
+                    "name": "Character Frequency",
+                    "description": "Count occurrences of each character using array[26] for lowercase or HashMap for any characters.",
+                    "whenToUse": "Anagrams, character counting, finding duplicates",
+                    "example": "Valid Anagram, First Unique Character, Group Anagrams"
+                },
+                {
+                    "name": "Two Pointers for Strings",
+                    "description": "Use left and right pointers for palindrome checks or string reversal.",
+                    "whenToUse": "Palindrome verification, string reversal, comparing characters from both ends",
+                    "example": "Valid Palindrome, Reverse String"
+                },
+                {
+                    "name": "Sliding Window for Substrings",
+                    "description": "Track characters in current window to find substrings with specific properties.",
+                    "whenToUse": "Longest substring problems, minimum window problems",
+                    "example": "Longest Substring Without Repeating Characters, Minimum Window Substring"
+                }
+            ],
+            "codeTemplates": [
+                {
+                    "name": "Character Frequency Array",
+                    "code": "int[] freq = new int[26];\nfor (char c : str.toCharArray()) {\n    freq[c - 'a']++;\n}\n// freq[0] = count of 'a', freq[1] = count of 'b', ..."
+                },
+                {
+                    "name": "Palindrome Check",
+                    "code": "boolean isPalindrome(String s) {\n    int left = 0, right = s.length() - 1;\n    while (left < right) {\n        if (s.charAt(left) != s.charAt(right)) return false;\n        left++;\n        right--;\n    }\n    return true;\n}"
+                },
+                {
+                    "name": "StringBuilder for Concatenation",
+                    "code": "StringBuilder sb = new StringBuilder();\nfor (String word : words) {\n    sb.append(word);\n}\nString result = sb.toString();"
+                }
+            ],
+            "analogies": [
+                {
+                    "concept": "String Immutability",
+                    "analogy": "Like a printed book - you can't change a word on a page, you have to print a new book with the change."
+                },
+                {
+                    "concept": "StringBuilder",
+                    "analogy": "Like a whiteboard - you can erase and write new things without creating a new board."
+                },
+                {
+                    "concept": "Anagram",
+                    "analogy": "Like rearranging letter tiles in Scrabble - same letters, different arrangement."
+                }
+            ],
+            "cheatSheet": {
+                "timeComplexity": {
+                    "access": "O(1)",
+                    "search": "O(n)",
+                    "concatenation": "O(n) per operation",
+                    "substring": "O(n)"
+                },
+                "spaceComplexity": "O(n)",
+                "bestFor": [
+                    "Text processing",
+                    "Pattern matching",
+                    "Character manipulation"
+                ],
+                "avoidWhen": [
+                    "Heavy concatenation (use StringBuilder)",
+                    "Frequent modifications"
+                ],
+                "javaClasses": [
+                    "String",
+                    "StringBuilder",
+                    "StringBuffer",
+                    "Character"
+                ]
+            },
+            "commonMistakes": [
+                {
+                    "mistake": "Using == instead of .equals()",
+                    "description": "== compares references, not content",
+                    "fix": "Always use str1.equals(str2) for content comparison"
+                },
+                {
+                    "mistake": "Concatenating in loops with +",
+                    "description": "Creates new String object each iteration - O(n²) total",
+                    "fix": "Use StringBuilder.append() in loops"
+                },
+                {
+                    "mistake": "Not handling null strings",
+                    "description": "Calling methods on null string causes NullPointerException",
+                    "fix": "Check if (str != null && !str.isEmpty()) first"
+                }
+            ],
+            "flashcards": [
+                {
+                    "front": "Why are Java strings immutable?",
+                    "back": "Security, thread-safety, and string pool optimization"
+                },
+                {
+                    "front": "Difference between String and StringBuilder?",
+                    "back": "String is immutable (new object per change), StringBuilder is mutable (same object)"
+                },
+                {
+                    "front": "How to check if two strings are anagrams?",
+                    "back": "Compare sorted characters or character frequency arrays"
+                },
+                {
+                    "front": "Time complexity of String concatenation?",
+                    "back": "O(n) per operation - it creates a new string each time"
+                }
+            ],
+            "levels": [
+                {
+                    "level": 1,
+                    "name": "Basics",
+                    "problems": [
+                        "Valid Anagram",
+                        "Reverse String",
+                        "First Unique Character"
+                    ]
+                },
+                {
+                    "level": 2,
+                    "name": "Intermediate",
+                    "problems": [
+                        "Longest Palindromic Substring",
+                        "Group Anagrams",
+                        "String to Integer"
+                    ]
+                },
+                {
+                    "level": 3,
+                    "name": "Sliding Window",
+                    "problems": [
+                        "Longest Substring Without Repeating",
+                        "Minimum Window Substring"
+                    ]
+                },
+                {
+                    "level": 4,
+                    "name": "Advanced",
+                    "problems": [
+                        "Regular Expression Matching",
+                        "Wildcard Matching"
+                    ]
+                }
+            ]
+        },
+        "hashmaps": {
+            "id": "hashmaps",
+            "name": "HashMap & HashSet",
+            "icon": "🗂️",
+            "theoryRecap": "HashMap stores key-value pairs with O(1) average time for get/put operations. It uses hashing to compute the index where values are stored. HashSet is similar but only stores unique keys (no values). Collisions are handled via chaining or open addressing.",
+            "patterns": [
+                {
+                    "name": "Frequency Counting",
+                    "description": "Count occurrences of elements using map.getOrDefault()",
+                    "whenToUse": "Finding duplicates, top K frequent, word count",
+                    "example": "Top K Frequent Elements, First Unique Character"
+                },
+                {
+                    "name": "Two Sum Pattern",
+                    "description": "Store complement values to find pairs in O(n)",
+                    "whenToUse": "Finding pairs that sum to target, finding matching elements",
+                    "example": "Two Sum, 4Sum, Subarray Sum Equals K"
+                },
+                {
+                    "name": "Grouping/Bucketing",
+                    "description": "Group elements by a computed key",
+                    "whenToUse": "Grouping anagrams, grouping by property",
+                    "example": "Group Anagrams, Repeated DNA Sequences"
+                }
+            ],
+            "codeTemplates": [
+                {
+                    "name": "Frequency Counter",
+                    "code": "Map<Integer, Integer> freq = new HashMap<>();\nfor (int num : nums) {\n    freq.put(num, freq.getOrDefault(num, 0) + 1);\n}"
+                },
+                {
+                    "name": "Two Sum Pattern",
+                    "code": "Map<Integer, Integer> seen = new HashMap<>();\nfor (int i = 0; i < nums.length; i++) {\n    int complement = target - nums[i];\n    if (seen.containsKey(complement)) {\n        return new int[]{seen.get(complement), i};\n    }\n    seen.put(nums[i], i);\n}"
+                },
+                {
+                    "name": "HashSet for Duplicates",
+                    "code": "Set<Integer> seen = new HashSet<>();\nfor (int num : nums) {\n    if (!seen.add(num)) {\n        // num is a duplicate\n    }\n}"
+                }
+            ],
+            "analogies": [
+                {
+                    "concept": "HashMap",
+                    "analogy": "Like a library catalog - you have the book title (key) and it instantly tells you the shelf location (value)."
+                },
+                {
+                    "concept": "Hashing",
+                    "analogy": "Like assigning students to lockers based on their roll number - each number maps to a specific locker."
+                },
+                {
+                    "concept": "Collision",
+                    "analogy": "Two students assigned the same locker - they need to share or find another way (chaining)."
+                }
+            ],
+            "cheatSheet": {
+                "timeComplexity": {
+                    "get": "O(1) average, O(n) worst",
+                    "put": "O(1) average, O(n) worst",
+                    "remove": "O(1) average",
+                    "containsKey": "O(1) average"
+                },
+                "spaceComplexity": "O(n)",
+                "bestFor": [
+                    "Fast lookups",
+                    "Counting",
+                    "Caching",
+                    "Removing duplicates"
+                ],
+                "avoidWhen": [
+                    "Need ordered data (use TreeMap)",
+                    "Memory constrained"
+                ],
+                "javaClasses": [
+                    "HashMap",
+                    "HashSet",
+                    "LinkedHashMap",
+                    "TreeMap"
+                ]
+            },
+            "commonMistakes": [
+                {
+                    "mistake": "Using mutable objects as keys",
+                    "description": "If key object changes, hash changes, can't find the value",
+                    "fix": "Use immutable keys (String, Integer) or don't modify key objects"
+                },
+                {
+                    "mistake": "Forgetting null handling",
+                    "description": "map.get() returns null for missing keys",
+                    "fix": "Use getOrDefault() or containsKey() check"
+                },
+                {
+                    "mistake": "Not overriding hashCode with equals",
+                    "description": "Custom objects won't work correctly in HashMap",
+                    "fix": "Always override both hashCode() and equals() together"
+                }
+            ],
+            "flashcards": [
+                {
+                    "front": "Average time complexity of HashMap get()?",
+                    "back": "O(1) - direct access via hash computation"
+                },
+                {
+                    "front": "What happens during a hash collision?",
+                    "back": "Multiple entries stored at same index using chaining (linked list) or probing"
+                },
+                {
+                    "front": "HashMap vs TreeMap?",
+                    "back": "HashMap: O(1) unordered. TreeMap: O(log n) sorted by keys"
+                },
+                {
+                    "front": "When does HashMap become O(n)?",
+                    "back": "When all keys hash to same bucket (worst case collision)"
+                }
+            ],
+            "levels": [
+                {
+                    "level": 1,
+                    "name": "Basics",
+                    "problems": [
+                        "Two Sum",
+                        "Contains Duplicate",
+                        "Valid Anagram"
+                    ]
+                },
+                {
+                    "level": 2,
+                    "name": "Frequency",
+                    "problems": [
+                        "Top K Frequent Elements",
+                        "First Unique Character",
+                        "Majority Element"
+                    ]
+                },
+                {
+                    "level": 3,
+                    "name": "Advanced",
+                    "problems": [
+                        "Group Anagrams",
+                        "Subarray Sum Equals K",
+                        "Longest Consecutive Sequence"
+                    ]
+                },
+                {
+                    "level": 4,
+                    "name": "Design",
+                    "problems": [
+                        "LRU Cache",
+                        "Design HashMap",
+                        "Insert Delete GetRandom O(1)"
+                    ]
+                }
+            ]
+        },
+        "linkedlist": {
+            "id": "linkedlist",
+            "name": "Linked List",
+            "icon": "🔗",
+            "theoryRecap": "A linked list is a linear data structure where elements (nodes) are connected via pointers. Each node contains data and a reference to the next node. Unlike arrays, linked lists allow efficient O(1) insertions/deletions at known positions but have O(n) access time.",
+            "patterns": [
+                {
+                    "name": "Two Pointers (Fast & Slow)",
+                    "description": "Use two pointers moving at different speeds to detect cycles or find middle.",
+                    "whenToUse": "Cycle detection, finding middle, finding nth from end",
+                    "example": "Linked List Cycle, Middle of Linked List, Remove Nth Node From End"
+                },
+                {
+                    "name": "Dummy Head",
+                    "description": "Create a dummy node before head to simplify edge cases.",
+                    "whenToUse": "When head might change, merging lists, removing nodes",
+                    "example": "Merge Two Sorted Lists, Remove Duplicates, Partition List"
+                },
+                {
+                    "name": "Reversal",
+                    "description": "Reverse links by changing next pointers iteratively or recursively.",
+                    "whenToUse": "Reverse entire list or portions of it",
+                    "example": "Reverse Linked List, Reverse Nodes in k-Group"
+                }
+            ],
+            "codeTemplates": [
+                {
+                    "name": "Fast & Slow Pointer (Cycle Detection)",
+                    "code": "ListNode slow = head, fast = head;\nwhile (fast != null && fast.next != null) {\n    slow = slow.next;\n    fast = fast.next.next;\n    if (slow == fast) return true; // Cycle exists\n}\nreturn false;"
+                },
+                {
+                    "name": "Reverse Linked List",
+                    "code": "ListNode prev = null, curr = head;\nwhile (curr != null) {\n    ListNode next = curr.next;\n    curr.next = prev;\n    prev = curr;\n    curr = next;\n}\nreturn prev; // New head"
+                },
+                {
+                    "name": "Dummy Head Pattern",
+                    "code": "ListNode dummy = new ListNode(0);\ndummy.next = head;\nListNode curr = dummy;\n// ... process list\nreturn dummy.next; // Return actual head"
+                }
+            ],
+            "analogies": [
+                {
+                    "concept": "Linked List",
+                    "analogy": "Like a treasure hunt - each clue (node) tells you where the next clue is located."
+                },
+                {
+                    "concept": "Doubly Linked List",
+                    "analogy": "Like a train - each car knows both the car in front and behind it."
+                },
+                {
+                    "concept": "Fast & Slow Pointers",
+                    "analogy": "Like a race track - if there's a loop, the faster runner will eventually catch up to the slower one."
+                }
+            ],
+            "cheatSheet": {
+                "timeComplexity": {
+                    "access": "O(n)",
+                    "search": "O(n)",
+                    "insertAtHead": "O(1)",
+                    "insertAtEnd": "O(n) or O(1) with tail pointer",
+                    "delete": "O(1) if node given, O(n) to find"
+                },
+                "spaceComplexity": "O(n)",
+                "bestFor": [
+                    "Frequent insertions/deletions",
+                    "Unknown size",
+                    "Implementation of stacks/queues"
+                ],
+                "avoidWhen": [
+                    "Need random access",
+                    "Cache-friendly operations needed"
+                ],
+                "javaClasses": [
+                    "LinkedList",
+                    "Custom ListNode class"
+                ]
+            },
+            "commonMistakes": [
+                {
+                    "mistake": "Losing reference to head",
+                    "description": "Moving head pointer without saving it first",
+                    "fix": "Use a separate curr pointer to traverse, keep head intact"
+                },
+                {
+                    "mistake": "NullPointerException on next",
+                    "description": "Accessing node.next.next without checking node.next",
+                    "fix": "Always check if (node != null && node.next != null)"
+                },
+                {
+                    "mistake": "Not handling single node",
+                    "description": "Code breaks when list has only 1 element",
+                    "fix": "Test edge cases: empty list, single node, two nodes"
+                }
+            ],
+            "flashcards": [
+                {
+                    "front": "Time to access nth element in linked list?",
+                    "back": "O(n) - must traverse from head"
+                },
+                {
+                    "front": "What's the fast & slow pointer technique?",
+                    "back": "Two pointers moving at different speeds to detect cycles or find middle"
+                },
+                {
+                    "front": "How to reverse a linked list in-place?",
+                    "back": "Use three pointers: prev, curr, next. Change curr.next to prev, move all forward"
+                },
+                {
+                    "front": "Array vs LinkedList for insertions?",
+                    "back": "LinkedList O(1) at known position, Array O(n) due to shifting"
+                }
+            ],
+            "levels": [
+                {
+                    "level": 1,
+                    "name": "Basics",
+                    "problems": [
+                        "Reverse Linked List",
+                        "Middle of Linked List",
+                        "Merge Two Sorted Lists"
+                    ]
+                },
+                {
+                    "level": 2,
+                    "name": "Two Pointers",
+                    "problems": [
+                        "Linked List Cycle",
+                        "Remove Nth Node From End",
+                        "Intersection of Two Lists"
+                    ]
+                },
+                {
+                    "level": 3,
+                    "name": "Advanced",
+                    "problems": [
+                        "Reorder List",
+                        "Copy List with Random Pointer",
+                        "LRU Cache"
+                    ]
+                },
+                {
+                    "level": 4,
+                    "name": "Hard",
+                    "problems": [
+                        "Reverse Nodes in k-Group",
+                        "Merge k Sorted Lists"
+                    ]
+                }
+            ]
+        },
+        "stacks": {
+            "id": "stacks",
+            "name": "Stack",
+            "icon": "📚",
+            "theoryRecap": "A stack is a LIFO (Last In, First Out) data structure. Think of a stack of plates - you add and remove from the top only. Main operations: push (add to top), pop (remove from top), peek (view top). Stacks are used for function calls, undo operations, and expression evaluation.",
+            "patterns": [
+                {
+                    "name": "Monotonic Stack",
+                    "description": "Maintain a stack where elements are in increasing or decreasing order.",
+                    "whenToUse": "Next greater/smaller element, stock span, histogram problems",
+                    "example": "Next Greater Element, Daily Temperatures, Largest Rectangle in Histogram"
+                },
+                {
+                    "name": "Matching Pairs",
+                    "description": "Use stack to match opening and closing elements.",
+                    "whenToUse": "Valid parentheses, HTML tag matching, expression evaluation",
+                    "example": "Valid Parentheses, Decode String, Basic Calculator"
+                },
+                {
+                    "name": "Expression Evaluation",
+                    "description": "Use stack(s) to evaluate infix, prefix, or postfix expressions.",
+                    "whenToUse": "Calculator problems, parsing expressions",
+                    "example": "Evaluate Reverse Polish Notation, Basic Calculator II"
+                }
+            ],
+            "codeTemplates": [
+                {
+                    "name": "Valid Parentheses",
+                    "code": "Stack<Character> stack = new Stack<>();\nfor (char c : s.toCharArray()) {\n    if (c == '(' || c == '[' || c == '{') {\n        stack.push(c);\n    } else {\n        if (stack.isEmpty()) return false;\n        char top = stack.pop();\n        if (!isMatch(top, c)) return false;\n    }\n}\nreturn stack.isEmpty();"
+                },
+                {
+                    "name": "Monotonic Stack (Next Greater)",
+                    "code": "int[] result = new int[n];\nStack<Integer> stack = new Stack<>(); // stores indices\nfor (int i = n - 1; i >= 0; i--) {\n    while (!stack.isEmpty() && nums[stack.peek()] <= nums[i]) {\n        stack.pop();\n    }\n    result[i] = stack.isEmpty() ? -1 : nums[stack.peek()];\n    stack.push(i);\n}"
+                }
+            ],
+            "analogies": [
+                {
+                    "concept": "Stack",
+                    "analogy": "Stack of plates in a cafeteria - you can only take from or add to the top."
+                },
+                {
+                    "concept": "Function Call Stack",
+                    "analogy": "Like nested Russian dolls - you must close the inner one before closing the outer one."
+                },
+                {
+                    "concept": "Undo Operation",
+                    "analogy": "Like Ctrl+Z in a text editor - it undoes the most recent action first."
+                }
+            ],
+            "cheatSheet": {
+                "timeComplexity": {
+                    "push": "O(1)",
+                    "pop": "O(1)",
+                    "peek": "O(1)",
+                    "search": "O(n)"
+                },
+                "spaceComplexity": "O(n)",
+                "bestFor": [
+                    "LIFO access",
+                    "Backtracking",
+                    "Expression parsing",
+                    "Undo operations"
+                ],
+                "avoidWhen": [
+                    "Need random access",
+                    "FIFO required"
+                ],
+                "javaClasses": [
+                    "Stack",
+                    "Deque (preferred)",
+                    "ArrayDeque"
+                ]
+            },
+            "commonMistakes": [
+                {
+                    "mistake": "Popping from empty stack",
+                    "description": "EmptyStackException if stack.pop() on empty stack",
+                    "fix": "Always check !stack.isEmpty() before pop()"
+                },
+                {
+                    "mistake": "Using Stack class (legacy)",
+                    "description": "Java Stack class is synchronized and slower",
+                    "fix": "Use Deque<> stack = new ArrayDeque<>(); instead"
+                }
+            ],
+            "flashcards": [
+                {
+                    "front": "What does LIFO mean?",
+                    "back": "Last In, First Out - most recently added element is removed first"
+                },
+                {
+                    "front": "Time complexity of push and pop?",
+                    "back": "Both O(1) - operations only happen at top"
+                },
+                {
+                    "front": "What is a monotonic stack?",
+                    "back": "A stack maintaining elements in sorted order (all increasing or all decreasing)"
+                },
+                {
+                    "front": "Real-world use of stacks?",
+                    "back": "Browser back button, undo/redo, function call stack"
+                }
+            ],
+            "levels": [
+                {
+                    "level": 1,
+                    "name": "Basics",
+                    "problems": [
+                        "Valid Parentheses",
+                        "Min Stack",
+                        "Implement Queue using Stacks"
+                    ]
+                },
+                {
+                    "level": 2,
+                    "name": "Monotonic",
+                    "problems": [
+                        "Daily Temperatures",
+                        "Next Greater Element",
+                        "Online Stock Span"
+                    ]
+                },
+                {
+                    "level": 3,
+                    "name": "Advanced",
+                    "problems": [
+                        "Largest Rectangle in Histogram",
+                        "Trapping Rain Water",
+                        "Basic Calculator"
+                    ]
+                }
+            ]
+        },
+        "queues": {
+            "id": "queues",
+            "name": "Queue",
+            "icon": "🚶",
+            "theoryRecap": "A queue is a FIFO (First In, First Out) data structure. Think of a line at a store - first person in line is first to be served. Main operations: enqueue (add to back), dequeue (remove from front). Used in BFS, task scheduling, and buffering.",
+            "patterns": [
+                {
+                    "name": "BFS with Queue",
+                    "description": "Use queue to explore nodes level by level.",
+                    "whenToUse": "Shortest path in unweighted graph, level order traversal",
+                    "example": "Binary Tree Level Order, Shortest Path in Binary Matrix, Rotting Oranges"
+                },
+                {
+                    "name": "Sliding Window Maximum",
+                    "description": "Use deque to maintain candidates for maximum in current window.",
+                    "whenToUse": "Finding max/min in sliding window efficiently",
+                    "example": "Sliding Window Maximum, Shortest Subarray with Sum at Least K"
+                }
+            ],
+            "codeTemplates": [
+                {
+                    "name": "BFS Template",
+                    "code": "Queue<Node> queue = new LinkedList<>();\nqueue.offer(start);\nSet<Node> visited = new HashSet<>();\nvisited.add(start);\n\nwhile (!queue.isEmpty()) {\n    Node curr = queue.poll();\n    // process curr\n    for (Node neighbor : curr.neighbors) {\n        if (!visited.contains(neighbor)) {\n            visited.add(neighbor);\n            queue.offer(neighbor);\n        }\n    }\n}"
+                },
+                {
+                    "name": "Level Order Traversal",
+                    "code": "Queue<TreeNode> queue = new LinkedList<>();\nqueue.offer(root);\nwhile (!queue.isEmpty()) {\n    int levelSize = queue.size();\n    for (int i = 0; i < levelSize; i++) {\n        TreeNode node = queue.poll();\n        // process node\n        if (node.left != null) queue.offer(node.left);\n        if (node.right != null) queue.offer(node.right);\n    }\n}"
+                }
+            ],
+            "analogies": [
+                {
+                    "concept": "Queue",
+                    "analogy": "Line at a movie theater - first person in line gets served first."
+                },
+                {
+                    "concept": "BFS",
+                    "analogy": "Like ripples in water - explore all nearby points before going further."
+                },
+                {
+                    "concept": "Priority Queue",
+                    "analogy": "Hospital ER - patients treated by urgency, not arrival time."
+                }
+            ],
+            "cheatSheet": {
+                "timeComplexity": {
+                    "enqueue": "O(1)",
+                    "dequeue": "O(1)",
+                    "peek": "O(1)"
+                },
+                "spaceComplexity": "O(n)",
+                "bestFor": [
+                    "FIFO access",
+                    "BFS",
+                    "Task scheduling",
+                    "Buffering"
+                ],
+                "avoidWhen": [
+                    "LIFO needed",
+                    "Random access required"
+                ],
+                "javaClasses": [
+                    "Queue (interface)",
+                    "LinkedList",
+                    "ArrayDeque",
+                    "PriorityQueue"
+                ]
+            },
+            "commonMistakes": [
+                {
+                    "mistake": "Using add() instead of offer()",
+                    "description": "add() throws exception on failure, offer() returns false",
+                    "fix": "Use offer() for safer code, especially with bounded queues"
+                },
+                {
+                    "mistake": "Forgetting to mark visited in BFS",
+                    "description": "Causes infinite loops in graphs with cycles",
+                    "fix": "Always mark node as visited when adding to queue, not when processing"
+                }
+            ],
+            "flashcards": [
+                {
+                    "front": "What does FIFO mean?",
+                    "back": "First In, First Out - first element added is first removed"
+                },
+                {
+                    "front": "Difference between offer() and add()?",
+                    "back": "offer() returns false on failure, add() throws exception"
+                },
+                {
+                    "front": "When to use Queue vs Stack?",
+                    "back": "Queue for BFS/level order, Stack for DFS/backtracking"
+                },
+                {
+                    "front": "What is a Priority Queue?",
+                    "back": "Queue where elements are ordered by priority, not insertion order"
+                }
+            ],
+            "levels": [
+                {
+                    "level": 1,
+                    "name": "Basics",
+                    "problems": [
+                        "Implement Stack using Queues",
+                        "Number of Recent Calls"
+                    ]
+                },
+                {
+                    "level": 2,
+                    "name": "BFS",
+                    "problems": [
+                        "Binary Tree Level Order",
+                        "Rotting Oranges",
+                        "Open the Lock"
+                    ]
+                },
+                {
+                    "level": 3,
+                    "name": "Advanced",
+                    "problems": [
+                        "Sliding Window Maximum",
+                        "Design Hit Counter"
+                    ]
+                }
+            ]
+        },
+        "trees": {
+            "id": "trees",
+            "name": "Binary Trees",
+            "icon": "🌳",
+            "theoryRecap": "A binary tree is a hierarchical data structure where each node has at most two children (left and right). Key concepts: root (top node), leaf (no children), height (longest path to leaf), depth (distance from root). Traversals: Inorder (L-Root-R), Preorder (Root-L-R), Postorder (L-R-Root).",
+            "patterns": [
+                {
+                    "name": "DFS Traversal",
+                    "description": "Explore as deep as possible before backtracking. Use recursion or explicit stack.",
+                    "whenToUse": "Path problems, tree structure problems, serialization",
+                    "example": "Maximum Depth, Path Sum, Same Tree"
+                },
+                {
+                    "name": "BFS Level Order",
+                    "description": "Explore all nodes at current level before moving to next level using queue.",
+                    "whenToUse": "Level-wise processing, finding minimum depth, zigzag traversal",
+                    "example": "Level Order Traversal, Minimum Depth, Right Side View"
+                },
+                {
+                    "name": "Recursive Structure",
+                    "description": "Solve problem for subtrees and combine results.",
+                    "whenToUse": "Most tree problems - think of base case and how to combine left/right results",
+                    "example": "Maximum Depth, Balanced Tree, Diameter"
+                }
+            ],
+            "codeTemplates": [
+                {
+                    "name": "Recursive DFS Template",
+                    "code": "public int solve(TreeNode node) {\n    if (node == null) return 0; // base case\n    \n    int left = solve(node.left);\n    int right = solve(node.right);\n    \n    // combine results\n    return Math.max(left, right) + 1;\n}"
+                },
+                {
+                    "name": "Inorder Traversal",
+                    "code": "void inorder(TreeNode node, List<Integer> result) {\n    if (node == null) return;\n    inorder(node.left, result);\n    result.add(node.val);  // Process node\n    inorder(node.right, result);\n}"
+                },
+                {
+                    "name": "Level Order BFS",
+                    "code": "List<List<Integer>> levels = new ArrayList<>();\nQueue<TreeNode> queue = new LinkedList<>();\nqueue.offer(root);\n\nwhile (!queue.isEmpty()) {\n    int size = queue.size();\n    List<Integer> level = new ArrayList<>();\n    for (int i = 0; i < size; i++) {\n        TreeNode node = queue.poll();\n        level.add(node.val);\n        if (node.left != null) queue.offer(node.left);\n        if (node.right != null) queue.offer(node.right);\n    }\n    levels.add(level);\n}"
+                }
+            ],
+            "analogies": [
+                {
+                    "concept": "Binary Tree",
+                    "analogy": "Family tree - each person (node) can have at most two children."
+                },
+                {
+                    "concept": "Recursion on Trees",
+                    "analogy": "Delegating work - 'Ask my left and right children for their answers, then combine.'"
+                },
+                {
+                    "concept": "BST",
+                    "analogy": "Organized bookshelf - smaller books on left, larger on right, making search fast."
+                }
+            ],
+            "cheatSheet": {
+                "timeComplexity": {
+                    "search": "O(n) general, O(log n) BST balanced",
+                    "insert": "O(n) general, O(log n) BST balanced",
+                    "traversal": "O(n)"
+                },
+                "spaceComplexity": "O(h) for recursion stack, h = height",
+                "bestFor": [
+                    "Hierarchical data",
+                    "Binary Search Tree for sorted data",
+                    "Expression trees"
+                ],
+                "avoidWhen": [
+                    "Simple linear data",
+                    "Need constant time access"
+                ],
+                "javaClasses": [
+                    "TreeNode (custom)",
+                    "TreeMap",
+                    "TreeSet"
+                ]
+            },
+            "commonMistakes": [
+                {
+                    "mistake": "Forgetting null check",
+                    "description": "NullPointerException when accessing node.left or node.val on null",
+                    "fix": "Always check if (node == null) return ... at start of recursive function"
+                },
+                {
+                    "mistake": "Confusing traversal orders",
+                    "description": "Mixing up inorder (L-N-R), preorder (N-L-R), postorder (L-R-N)",
+                    "fix": "Remember: 'in' = node in middle, 'pre' = node first, 'post' = node last"
+                },
+                {
+                    "mistake": "Not using return value in recursion",
+                    "description": "Recursive call made but result ignored",
+                    "fix": "return solve(node.left) - don't forget to capture/use the returned value"
+                }
+            ],
+            "flashcards": [
+                {
+                    "front": "What is inorder traversal order?",
+                    "back": "Left → Node → Right. For BST, this gives sorted order."
+                },
+                {
+                    "front": "Height vs Depth of a node?",
+                    "back": "Height: distance to farthest leaf. Depth: distance from root."
+                },
+                {
+                    "front": "Time complexity to find element in BST?",
+                    "back": "O(log n) average (balanced), O(n) worst (skewed)"
+                },
+                {
+                    "front": "When to use BFS vs DFS on trees?",
+                    "back": "BFS for level-wise problems, DFS for path/depth problems"
+                }
+            ],
+            "levels": [
+                {
+                    "level": 1,
+                    "name": "Basics",
+                    "problems": [
+                        "Maximum Depth",
+                        "Same Tree",
+                        "Invert Binary Tree"
+                    ]
+                },
+                {
+                    "level": 2,
+                    "name": "Traversal",
+                    "problems": [
+                        "Level Order Traversal",
+                        "Zigzag Level Order",
+                        "Inorder Traversal"
+                    ]
+                },
+                {
+                    "level": 3,
+                    "name": "Path Problems",
+                    "problems": [
+                        "Path Sum",
+                        "Path Sum II",
+                        "Binary Tree Maximum Path Sum"
+                    ]
+                },
+                {
+                    "level": 4,
+                    "name": "Construction",
+                    "problems": [
+                        "Build Tree from Inorder/Preorder",
+                        "Serialize and Deserialize"
+                    ]
+                }
+            ]
+        },
+        "dp": {
+            "id": "dp",
+            "name": "Dynamic Programming",
+            "icon": "🧩",
+            "theoryRecap": "Dynamic Programming solves complex problems by breaking them into overlapping subproblems, solving each once, and storing the results. Two approaches: Top-down (recursion + memoization) and Bottom-up (iterative with table). Key: identify the state, recurrence relation, and base cases.",
+            "patterns": [
+                {
+                    "name": "1D DP",
+                    "description": "State depends on previous elements in a single dimension.",
+                    "whenToUse": "Climbing stairs, house robber, fibonacci-like problems",
+                    "example": "Climbing Stairs, House Robber, Decode Ways"
+                },
+                {
+                    "name": "2D DP",
+                    "description": "State depends on two dimensions (often two strings or a grid).",
+                    "whenToUse": "String matching, grid paths, subsequence problems",
+                    "example": "Longest Common Subsequence, Edit Distance, Unique Paths"
+                },
+                {
+                    "name": "Knapsack Pattern",
+                    "description": "Select items with constraints (weight/capacity) to maximize value.",
+                    "whenToUse": "Subset sum, coin change, partition problems",
+                    "example": "0/1 Knapsack, Coin Change, Partition Equal Subset Sum"
+                },
+                {
+                    "name": "Interval DP",
+                    "description": "Combine results from subproblems within intervals.",
+                    "whenToUse": "Matrix chain multiplication, burst balloons, palindrome partitioning",
+                    "example": "Burst Balloons, Palindrome Partitioning II"
+                }
+            ],
+            "codeTemplates": [
+                {
+                    "name": "1D DP Template",
+                    "code": "int[] dp = new int[n + 1];\ndp[0] = 0; // base case\ndp[1] = 1; // base case\n\nfor (int i = 2; i <= n; i++) {\n    dp[i] = dp[i-1] + dp[i-2]; // recurrence\n}\nreturn dp[n];"
+                },
+                {
+                    "name": "2D DP Template (LCS)",
+                    "code": "int[][] dp = new int[m + 1][n + 1];\nfor (int i = 1; i <= m; i++) {\n    for (int j = 1; j <= n; j++) {\n        if (s1.charAt(i-1) == s2.charAt(j-1)) {\n            dp[i][j] = dp[i-1][j-1] + 1;\n        } else {\n            dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);\n        }\n    }\n}\nreturn dp[m][n];"
+                },
+                {
+                    "name": "Memoization Template",
+                    "code": "int[] memo = new int[n + 1];\nArrays.fill(memo, -1);\n\nint solve(int i) {\n    if (i <= 1) return i; // base case\n    if (memo[i] != -1) return memo[i]; // already computed\n    \n    memo[i] = solve(i-1) + solve(i-2); // compute and store\n    return memo[i];\n}"
+                }
+            ],
+            "analogies": [
+                {
+                    "concept": "Memoization",
+                    "analogy": "Like writing down answers to math problems - if asked again, just look it up instead of recalculating."
+                },
+                {
+                    "concept": "Overlapping Subproblems",
+                    "analogy": "Like fib(5) needing fib(3) and fib(4), but fib(4) also needs fib(3) - same subproblem appears multiple times."
+                },
+                {
+                    "concept": "Optimal Substructure",
+                    "analogy": "If the best route from A to C goes through B, it must use the best route from A to B."
+                }
+            ],
+            "cheatSheet": {
+                "timeComplexity": {
+                    "general": "O(n × m) for 2D, O(n) for 1D",
+                    "depends": "On number of states × time per state"
+                },
+                "spaceComplexity": "O(states), often can be optimized",
+                "steps": [
+                    "1. Define state (what dp[i] means)",
+                    "2. Find recurrence relation",
+                    "3. Identify base cases",
+                    "4. Decide order of computation",
+                    "5. Return answer"
+                ],
+                "bestFor": [
+                    "Optimization problems",
+                    "Counting problems",
+                    "Decision problems"
+                ],
+                "avoidWhen": [
+                    "Greedy works",
+                    "No overlapping subproblems"
+                ]
+            },
+            "commonMistakes": [
+                {
+                    "mistake": "Not defining state clearly",
+                    "description": "Unclear what dp[i] represents leads to wrong recurrence",
+                    "fix": "Write down in words: 'dp[i] = maximum profit using first i items'"
+                },
+                {
+                    "mistake": "Wrong base case",
+                    "description": "Forgetting dp[0] initialization or edge cases",
+                    "fix": "Think: what's the answer for smallest valid input?"
+                },
+                {
+                    "mistake": "Wrong iteration order",
+                    "description": "Computing dp[i] before its dependencies are ready",
+                    "fix": "Ensure all dp values needed for current cell are already computed"
+                },
+                {
+                    "mistake": "Off-by-one in indices",
+                    "description": "Confusing 0-indexed string with 1-indexed dp table",
+                    "fix": "Use dp[i][j] for first i and j characters, access s.charAt(i-1)"
+                }
+            ],
+            "flashcards": [
+                {
+                    "front": "What are the two DP approaches?",
+                    "back": "Top-down (recursion + memoization) and Bottom-up (iterative tabulation)"
+                },
+                {
+                    "front": "What is optimal substructure?",
+                    "back": "Optimal solution to problem contains optimal solutions to subproblems"
+                },
+                {
+                    "front": "What are overlapping subproblems?",
+                    "back": "Same subproblems are solved multiple times in naive recursion"
+                },
+                {
+                    "front": "How to identify DP problems?",
+                    "back": "Keywords: minimum/maximum, count ways, can you achieve, optimal"
+                }
+            ],
+            "levels": [
+                {
+                    "level": 1,
+                    "name": "1D Basics",
+                    "problems": [
+                        "Climbing Stairs",
+                        "House Robber",
+                        "Coin Change"
+                    ]
+                },
+                {
+                    "level": 2,
+                    "name": "2D Basics",
+                    "problems": [
+                        "Unique Paths",
+                        "Minimum Path Sum",
+                        "Longest Common Subsequence"
+                    ]
+                },
+                {
+                    "level": 3,
+                    "name": "Knapsack",
+                    "problems": [
+                        "0/1 Knapsack",
+                        "Partition Equal Subset Sum",
+                        "Target Sum"
+                    ]
+                },
+                {
+                    "level": 4,
+                    "name": "Advanced",
+                    "problems": [
+                        "Edit Distance",
+                        "Regular Expression Matching",
+                        "Burst Balloons"
+                    ]
+                }
+            ]
+        },
+        "graphs": {
+            "id": "graphs",
+            "name": "Graphs",
+            "icon": "🕸️",
+            "theoryRecap": "A graph consists of vertices (nodes) and edges (connections). Graphs can be directed/undirected and weighted/unweighted. Represented as adjacency list (Map<Node, List<Node>>) or adjacency matrix. Key algorithms: BFS for shortest path (unweighted), DFS for connectivity, Dijkstra for weighted shortest path.",
+            "patterns": [
+                {
+                    "name": "BFS for Shortest Path",
+                    "description": "Use queue to explore level by level. First time reaching a node is shortest path.",
+                    "whenToUse": "Shortest path in unweighted graph, minimum steps/moves",
+                    "example": "Shortest Path in Binary Matrix, Word Ladder, Rotting Oranges"
+                },
+                {
+                    "name": "DFS for Connectivity",
+                    "description": "Explore as deep as possible. Good for checking if path exists, finding all paths.",
+                    "whenToUse": "Connected components, cycle detection, path existence",
+                    "example": "Number of Islands, Clone Graph, Course Schedule"
+                },
+                {
+                    "name": "Topological Sort",
+                    "description": "Order nodes so all dependencies come before dependents.",
+                    "whenToUse": "Task scheduling, build order, course prerequisites",
+                    "example": "Course Schedule, Alien Dictionary"
+                },
+                {
+                    "name": "Union Find",
+                    "description": "Efficiently manage disjoint sets and find if elements are connected.",
+                    "whenToUse": "Connected components, cycle detection in undirected graphs",
+                    "example": "Number of Connected Components, Redundant Connection"
+                }
+            ],
+            "codeTemplates": [
+                {
+                    "name": "BFS Template",
+                    "code": "Queue<int[]> queue = new LinkedList<>();\nboolean[][] visited = new boolean[m][n];\nqueue.offer(new int[]{startR, startC});\nvisited[startR][startC] = true;\nint steps = 0;\n\nwhile (!queue.isEmpty()) {\n    int size = queue.size();\n    for (int i = 0; i < size; i++) {\n        int[] curr = queue.poll();\n        if (/* reached target */) return steps;\n        for (int[] dir : directions) {\n            int nr = curr[0] + dir[0], nc = curr[1] + dir[1];\n            if (isValid(nr, nc) && !visited[nr][nc]) {\n                visited[nr][nc] = true;\n                queue.offer(new int[]{nr, nc});\n            }\n        }\n    }\n    steps++;\n}"
+                },
+                {
+                    "name": "DFS Template",
+                    "code": "void dfs(int node, Set<Integer> visited, Map<Integer, List<Integer>> graph) {\n    visited.add(node);\n    for (int neighbor : graph.getOrDefault(node, new ArrayList<>())) {\n        if (!visited.contains(neighbor)) {\n            dfs(neighbor, visited, graph);\n        }\n    }\n}"
+                },
+                {
+                    "name": "Union Find Template",
+                    "code": "int[] parent = new int[n];\nfor (int i = 0; i < n; i++) parent[i] = i;\n\nint find(int x) {\n    if (parent[x] != x) parent[x] = find(parent[x]); // path compression\n    return parent[x];\n}\n\nvoid union(int x, int y) {\n    parent[find(x)] = find(y);\n}"
+                }
+            ],
+            "analogies": [
+                {
+                    "concept": "Graph",
+                    "analogy": "Like a social network - people are nodes, friendships are edges."
+                },
+                {
+                    "concept": "BFS",
+                    "analogy": "Like ripples in a pond - explore all neighbors first before going further."
+                },
+                {
+                    "concept": "DFS",
+                    "analogy": "Like exploring a maze - go as deep as possible, backtrack when stuck."
+                },
+                {
+                    "concept": "Topological Sort",
+                    "analogy": "Like getting dressed - must put on underwear before pants, shirt before jacket."
+                }
+            ],
+            "cheatSheet": {
+                "timeComplexity": {
+                    "BFS": "O(V+E)",
+                    "DFS": "O(V+E)",
+                    "Dijkstra": "O((V+E)logV)",
+                    "Topological": "O(V+E)"
+                },
+                "spaceComplexity": "O(V+E) for adjacency list",
+                "bestFor": [
+                    "Networks",
+                    "Maps/paths",
+                    "Dependencies",
+                    "Relationships"
+                ],
+                "avoidWhen": [
+                    "Simple linear relationships",
+                    "Dense graphs with limited memory"
+                ]
+            },
+            "commonMistakes": [
+                {
+                    "mistake": "Forgetting visited check",
+                    "description": "Infinite loop in graphs with cycles",
+                    "fix": "Always maintain visited set, mark when adding to queue (BFS) or when entering (DFS)"
+                },
+                {
+                    "mistake": "Wrong graph building",
+                    "description": "Missing edges or wrong direction in directed graph",
+                    "fix": "For undirected: add both (a,b) and (b,a). For directed: only add (a,b)"
+                },
+                {
+                    "mistake": "BFS for weighted graphs",
+                    "description": "BFS doesn't find shortest path when edges have different weights",
+                    "fix": "Use Dijkstra's algorithm for weighted shortest path"
+                }
+            ],
+            "flashcards": [
+                {
+                    "front": "When to use BFS vs DFS?",
+                    "back": "BFS: shortest path (unweighted), level order. DFS: path existence, backtracking, cycles"
+                },
+                {
+                    "front": "Time complexity of BFS/DFS?",
+                    "back": "O(V + E) where V = vertices, E = edges"
+                },
+                {
+                    "front": "What is topological sort?",
+                    "back": "Linear ordering where for every edge (u,v), u comes before v. Only for DAGs."
+                },
+                {
+                    "front": "Adjacency list vs matrix?",
+                    "back": "List: O(V+E) space, O(degree) edge check. Matrix: O(V²) space, O(1) edge check"
+                }
+            ],
+            "levels": [
+                {
+                    "level": 1,
+                    "name": "Grid BFS/DFS",
+                    "problems": [
+                        "Number of Islands",
+                        "Flood Fill",
+                        "Surrounded Regions"
+                    ]
+                },
+                {
+                    "level": 2,
+                    "name": "Graph Traversal",
+                    "problems": [
+                        "Clone Graph",
+                        "Course Schedule",
+                        "Pacific Atlantic Water Flow"
+                    ]
+                },
+                {
+                    "level": 3,
+                    "name": "Shortest Path",
+                    "problems": [
+                        "Shortest Path in Binary Matrix",
+                        "Word Ladder",
+                        "Network Delay Time"
+                    ]
+                },
+                {
+                    "level": 4,
+                    "name": "Advanced",
+                    "problems": [
+                        "Alien Dictionary",
+                        "Reconstruct Itinerary",
+                        "Critical Connections"
+                    ]
+                }
+            ]
+        },
+        "binarysearch": {
+            "id": "binarysearch",
+            "name": "Binary Search",
+            "icon": "🔍",
+            "theoryRecap": "Binary Search finds target in sorted array in O(log n) by repeatedly halving the search space. Compare target with middle element: if equal, found; if smaller, search left half; if larger, search right half. Can also be used to find boundaries or search in rotated arrays.",
+            "patterns": [
+                {
+                    "name": "Classic Binary Search",
+                    "description": "Find exact target in sorted array.",
+                    "whenToUse": "Finding element in sorted array",
+                    "example": "Binary Search, Search Insert Position"
+                },
+                {
+                    "name": "Find Boundary",
+                    "description": "Find first/last occurrence or boundary where condition changes.",
+                    "whenToUse": "First bad version, finding peaks, range problems",
+                    "example": "First Bad Version, Find First and Last Position"
+                },
+                {
+                    "name": "Search in Rotated",
+                    "description": "Modified binary search for rotated sorted arrays.",
+                    "whenToUse": "Rotated array problems",
+                    "example": "Search in Rotated Sorted Array, Find Minimum in Rotated"
+                },
+                {
+                    "name": "Binary Search on Answer",
+                    "description": "Binary search the answer space, not the input array.",
+                    "whenToUse": "Minimize maximum, capacity problems",
+                    "example": "Koko Eating Bananas, Split Array Largest Sum"
+                }
+            ],
+            "codeTemplates": [
+                {
+                    "name": "Classic Binary Search",
+                    "code": "int left = 0, right = arr.length - 1;\nwhile (left <= right) {\n    int mid = left + (right - left) / 2;\n    if (arr[mid] == target) return mid;\n    else if (arr[mid] < target) left = mid + 1;\n    else right = mid - 1;\n}\nreturn -1; // not found"
+                },
+                {
+                    "name": "Find Left Boundary",
+                    "code": "int left = 0, right = arr.length;\nwhile (left < right) {\n    int mid = left + (right - left) / 2;\n    if (arr[mid] >= target) right = mid;\n    else left = mid + 1;\n}\nreturn left; // first position >= target"
+                },
+                {
+                    "name": "Binary Search on Answer",
+                    "code": "int left = minPossible, right = maxPossible;\nwhile (left < right) {\n    int mid = left + (right - left) / 2;\n    if (canAchieve(mid)) right = mid;\n    else left = mid + 1;\n}\nreturn left; // minimum answer that works"
+                }
+            ],
+            "analogies": [
+                {
+                    "concept": "Binary Search",
+                    "analogy": "Finding a word in a dictionary - open to middle, if your word comes before, look in left half."
+                },
+                {
+                    "concept": "Halving Search Space",
+                    "analogy": "Guessing a number 1-100 - always guess middle to eliminate half possibilities."
+                }
+            ],
+            "cheatSheet": {
+                "timeComplexity": {
+                    "search": "O(log n)"
+                },
+                "spaceComplexity": "O(1) iterative, O(log n) recursive",
+                "templates": {
+                    "findExact": "left <= right, return mid when found",
+                    "findBoundary": "left < right, move boundary based on condition"
+                },
+                "commonBugs": [
+                    "Integer overflow in mid",
+                    "Wrong boundary update (mid vs mid±1)",
+                    "Infinite loop"
+                ]
+            },
+            "commonMistakes": [
+                {
+                    "mistake": "Integer overflow",
+                    "description": "(left + right) / 2 can overflow for large values",
+                    "fix": "Use left + (right - left) / 2"
+                },
+                {
+                    "mistake": "Infinite loop",
+                    "description": "Using wrong boundary update leads to endless loop",
+                    "fix": "Ensure search space shrinks every iteration. If left = mid, use mid + 1"
+                },
+                {
+                    "mistake": "Off-by-one in boundaries",
+                    "description": "Using wrong condition (< vs <=) or wrong initial bounds",
+                    "fix": "Think carefully: should right be arr.length or arr.length - 1?"
+                }
+            ],
+            "flashcards": [
+                {
+                    "front": "Time complexity of binary search?",
+                    "back": "O(log n) - search space halves each iteration"
+                },
+                {
+                    "front": "Why use left + (right - left) / 2?",
+                    "back": "Prevents integer overflow that (left + right) / 2 might cause"
+                },
+                {
+                    "front": "Difference between left <= right and left < right?",
+                    "back": "<= for finding exact element, < for finding boundaries"
+                },
+                {
+                    "front": "Can binary search work on unsorted arrays?",
+                    "back": "No, array must be sorted or have monotonic property"
+                }
+            ],
+            "levels": [
+                {
+                    "level": 1,
+                    "name": "Basics",
+                    "problems": [
+                        "Binary Search",
+                        "Search Insert Position",
+                        "First Bad Version"
+                    ]
+                },
+                {
+                    "level": 2,
+                    "name": "Boundaries",
+                    "problems": [
+                        "Find First and Last Position",
+                        "Search in Rotated Array"
+                    ]
+                },
+                {
+                    "level": 3,
+                    "name": "Advanced",
+                    "problems": [
+                        "Find Minimum in Rotated",
+                        "Search in Rotated Array II",
+                        "Find Peak Element"
+                    ]
+                },
+                {
+                    "level": 4,
+                    "name": "Search on Answer",
+                    "problems": [
+                        "Koko Eating Bananas",
+                        "Split Array Largest Sum",
+                        "Capacity To Ship Packages"
+                    ]
+                }
+            ]
+        }
+    }
+}

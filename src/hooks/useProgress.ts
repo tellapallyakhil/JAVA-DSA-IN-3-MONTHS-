@@ -21,7 +21,9 @@ const defaultProgress: Progress = {
     reasoningDone: [],
     activityDates: [],
     revisionItems: [],
-    lastUpdated: 0
+    lastUpdated: 0,
+    weakTopics: [],
+    topicProgress: {}
 };
 
 // Helper function to get today's date string
@@ -418,6 +420,101 @@ export function useProgress() {
         });
     };
 
+    // Topic Focus Mode: Mark a topic as weak
+    const markTopicAsWeak = (topicId: string) => {
+        setProgress(prev => {
+            if (prev.weakTopics.includes(topicId)) return prev;
+
+            return {
+                ...prev,
+                weakTopics: [...prev.weakTopics, topicId],
+                topicProgress: {
+                    ...prev.topicProgress,
+                    [topicId]: {
+                        currentLevel: 1,
+                        completedProblems: [],
+                        flashcardsReviewed: 0,
+                        lastPracticed: getTodayString()
+                    }
+                },
+                activityDates: recordActivity(prev),
+                lastUpdated: Date.now()
+            };
+        });
+    };
+
+    // Topic Focus Mode: Remove topic from weak list
+    const removeWeakTopic = (topicId: string) => {
+        setProgress(prev => {
+            const newWeakTopics = prev.weakTopics.filter(t => t !== topicId);
+            const newTopicProgress = { ...prev.topicProgress };
+            delete newTopicProgress[topicId];
+
+            return {
+                ...prev,
+                weakTopics: newWeakTopics,
+                topicProgress: newTopicProgress,
+                lastUpdated: Date.now()
+            };
+        });
+    };
+
+    // Topic Focus Mode: Complete an extra problem for a topic
+    const completeTopicProblem = (topicId: string, problemTitle: string) => {
+        setProgress(prev => {
+            const currentProgress = prev.topicProgress[topicId] || {
+                currentLevel: 1,
+                completedProblems: [],
+                flashcardsReviewed: 0,
+                lastPracticed: getTodayString()
+            };
+
+            if (currentProgress.completedProblems.includes(problemTitle)) return prev;
+
+            const newCompletedProblems = [...currentProgress.completedProblems, problemTitle];
+
+            // Auto-level up: 3 problems = next level
+            const newLevel = Math.min(4, Math.floor(newCompletedProblems.length / 3) + 1);
+
+            return {
+                ...prev,
+                topicProgress: {
+                    ...prev.topicProgress,
+                    [topicId]: {
+                        ...currentProgress,
+                        completedProblems: newCompletedProblems,
+                        currentLevel: newLevel,
+                        lastPracticed: getTodayString()
+                    }
+                },
+                activityDates: recordActivity(prev),
+                lastUpdated: Date.now()
+            };
+        });
+    };
+
+    // Topic Focus Mode: Increment flashcards reviewed count
+    const reviewFlashcard = (topicId: string) => {
+        setProgress(prev => {
+            const currentProgress = prev.topicProgress[topicId];
+            if (!currentProgress) return prev;
+
+            return {
+                ...prev,
+                topicProgress: {
+                    ...prev.topicProgress,
+                    [topicId]: {
+                        ...currentProgress,
+                        flashcardsReviewed: currentProgress.flashcardsReviewed + 1,
+                        lastPracticed: getTodayString()
+                    }
+                },
+                activityDates: recordActivity(prev),
+                lastUpdated: Date.now()
+            };
+        });
+    };
+
     return {
         progress,
         toggleProblem,
@@ -429,10 +526,16 @@ export function useProgress() {
         getRevisionsDueToday,
         setStartDate,
         resetStartDate,
+        // Topic Focus Mode
+        markTopicAsWeak,
+        removeWeakTopic,
+        completeTopicProblem,
+        reviewFlashcard,
         isProblemCompleted: (id: string) => progress.completedProblems.includes(id),
         isAptitudeCompleted: (day: number) => progress.aptitudeDone.some(a => a.day === day),
         isReasoningCompleted: (day: number) => progress.reasoningDone.some(r => r.day === day),
         isQuestionCompleted: (id: string) => (progress.completedQuestions || []).includes(id),
+        isTopicWeak: (topicId: string) => (progress.weakTopics || []).includes(topicId),
         startDate: progress.startDate,
         isClient,
         user,

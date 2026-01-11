@@ -54,6 +54,17 @@ export interface Progress {
     revisionItems: RevisionItem[];
     lastUpdated?: number; // Timestamp for sync conflict resolution
     startDate?: string; // ISO date string when user starts their journey (Day 1)
+    // Topic Focus Mode
+    weakTopics: string[]; // Topic IDs marked as weak (e.g., 'arrays', 'dp')
+    topicProgress: { [topicId: string]: TopicMastery }; // Progress on each weak topic
+}
+
+// Track mastery progress for a single topic
+export interface TopicMastery {
+    currentLevel: number; // 1-4 (difficulty levels)
+    completedProblems: string[]; // Extra problems completed for this topic
+    flashcardsReviewed: number; // Count of flashcards reviewed
+    lastPracticed: string; // ISO date of last practice
 }
 
 // Track items for 1-4-7 revision
