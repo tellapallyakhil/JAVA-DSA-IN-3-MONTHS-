@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/Navbar";
-import { Github, Linkedin } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 import "./globals.css";
 
 const geistSans = Geist({
@@ -39,6 +39,13 @@ export default function RootLayout({
           <p className="font-medium text-primary/80">Greetings & Thank you for visiting my web</p>
           <p>Made by Tellapally Akhilkumar</p>
           <div className="flex items-center gap-4 mt-1">
+            <a
+              href="mailto:tellapallyakhil89@gmail.com"
+              className="text-muted-foreground hover:text-red-400 transition-colors p-1"
+              aria-label="Email"
+            >
+              <Mail size={16} />
+            </a>
             <a
               href="https://www.linkedin.com/in/tellapalli-akhil-kumar-188a0028a"
               target="_blank"
