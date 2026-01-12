@@ -81,7 +81,10 @@ Return JSON: {"question": "your question here", "hints": ["hint1", "hint2", "hin
 
         const FREE_MODELS = [
             "mistralai/mistral-7b-instruct:free",
-            "google/gemini-2.0-flash-exp:free"
+            "google/gemini-2.0-flash-exp:free",
+            "meta-llama/llama-3-8b-instruct:free",
+            "microsoft/phi-3-mini-128k-instruct:free",
+            "huggingfaceh4/zephyr-7b-beta:free"
         ];
 
         const randomModel = FREE_MODELS[Math.floor(Math.random() * FREE_MODELS.length)];
@@ -98,10 +101,10 @@ Return JSON: {"question": "your question here", "hints": ["hint1", "hint2", "hin
                 "model": randomModel,
                 "messages": [
                     { "role": "system", "content": systemPrompt },
-                    { "role": "user", "content": "Generate the interview question now. Output strictly valid JSON." }
+                    { "role": "user", "content": `Generate the interview question now. Output strictly valid JSON. Unique Request ID: ${Date.now()}` }
                 ],
                 "response_format": { "type": "json_object" },
-                "temperature": 0.85
+                "temperature": 0.9
             })
         });
 
@@ -117,12 +120,12 @@ Return JSON: {"question": "your question here", "hints": ["hint1", "hint2", "hin
 
         return NextResponse.json(parsed);
 
-    } catch (error: any) {
+    } catch (error: unknown) {
         console.error('OpenRouter Error:', error);
         return NextResponse.json(
             {
                 error: 'Failed to generate question',
-                details: error.message || String(error),
+                details: error instanceof Error ? error.message : String(error),
                 apiKeyConfigured: !!OPENROUTER_API_KEY
             },
             { status: 500 }
