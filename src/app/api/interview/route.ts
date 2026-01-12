@@ -12,7 +12,7 @@ export async function POST(req: Request) {
     }
 
     try {
-        const { topic, type, followUp, previousAnswer, difficulty, companyStyle } = await req.json();
+        const { topic, type, followUp, previousAnswer, difficulty, companyStyle, avoidQuestions } = await req.json();
 
         let systemPrompt: string;
 
@@ -34,6 +34,11 @@ export async function POST(req: Request) {
         const difficultyMod = difficultyGuide[difficulty] || difficultyGuide['medium'];
         const companyMod = companyGuide[companyStyle] || '';
 
+        // Build avoid questions instruction
+        const avoidList = Array.isArray(avoidQuestions) && avoidQuestions.length > 0
+            ? `\n\nIMPORTANT: Do NOT ask any of these questions that were already asked:\n${avoidQuestions.map((q: string) => `- "${q}"`).join('\n')}\nGenerate a COMPLETELY DIFFERENT question.`
+            : '';
+
         if (followUp && previousAnswer) {
             systemPrompt = `You are a senior interviewer conducting a ${type} interview about ${topic}.
 Difficulty: ${difficulty || 'medium'}. ${difficultyMod}
@@ -46,6 +51,7 @@ Based on their response, generate a thoughtful follow-up question that:
 2. OR challenges an assumption they made
 3. OR asks them to clarify or expand on a point
 4. Matches the ${difficulty || 'medium'} difficulty level
+${avoidList}
 
 Return JSON: {"question": "your follow-up question", "hints": ["hint1", "hint2", "hint3"]}`;
         } else if (type === 'behavioral') {
@@ -60,6 +66,7 @@ For ${difficulty || 'medium'} difficulty:
 - Easy: Basic self-introduction or simple teamwork questions
 - Medium: Conflict resolution, challenging projects, deadline management
 - Hard: Leadership failures, ethical dilemmas, strategic decisions
+${avoidList}
 
 Return JSON: {"question": "your question here", "hints": ["hint1", "hint2", "hint3"]}`;
         } else {
@@ -75,8 +82,9 @@ For ${difficulty || 'medium'} difficulty:
 - Hard: Complex system design, advanced algorithms, distributed systems challenges
 
 The question should be clear, specific, and discussable in 2-3 minutes.
+${avoidList}
 
-Return JSON: {"question": "your question here", "hints": ["hint1", "hint2", "hint3"]}`;
+Return JSON: {"question": "your question here", "hints": ["hint1", "hint2", "hint3"]}`
         }
 
         const FREE_MODELS = [
