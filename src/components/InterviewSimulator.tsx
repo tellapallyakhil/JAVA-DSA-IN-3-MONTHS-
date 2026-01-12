@@ -74,6 +74,7 @@ export default function InterviewSimulator({ fullPage = false }: InterviewSimula
     const [isTimerActive, setIsTimerActive] = useState(false);
     const [showAdvanced, setShowAdvanced] = useState(false);
     const [isListening, setIsListening] = useState(false);
+    const [askedQuestions, setAskedQuestions] = useState<Set<string>>(new Set());
 
     const videoRef = useRef<HTMLVideoElement>(null);
     const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -211,11 +212,15 @@ export default function InterviewSimulator({ fullPage = false }: InterviewSimula
                 'hr': 'HR Round (Career Goals, Salary Expectations, Strengths and Weaknesses)'
             };
 
-            const body: any = {
+            // Get list of previously asked questions to avoid repetition
+            const previousQuestions = Array.from(askedQuestions).slice(-5); // Last 5 questions
+
+            const body: Record<string, unknown> = {
                 topic: topicMap[selectedTopic],
                 type: typeMap[selectedTopic],
                 difficulty: difficulty,
-                companyStyle: companyFocus
+                companyStyle: companyFocus,
+                avoidQuestions: previousQuestions // Tell AI to avoid these
             };
 
             if (isFollowUp && context) {
@@ -235,7 +240,10 @@ export default function InterviewSimulator({ fullPage = false }: InterviewSimula
 
             const data = await res.json();
 
-            const questionText = data.question || 'Tell me about a challenging project you worked on.';
+            let questionText = data.question || 'Tell me about a challenging project you worked on.';
+
+            // Track this question to avoid repetition
+            setAskedQuestions(prev => new Set([...prev, questionText]));
 
             const newMessage: Message = {
                 id: `q-${Date.now()}`,
@@ -410,7 +418,14 @@ export default function InterviewSimulator({ fullPage = false }: InterviewSimula
             };
 
             const questions = fallbackQuestions[selectedTopic][difficulty];
-            const randomQ = questions[Math.floor(Math.random() * questions.length)];
+            // Filter out questions that were already asked
+            const availableQuestions = questions.filter(q => !askedQuestions.has(q));
+            // If all questions were asked, reset and use all questions
+            const questionPool = availableQuestions.length > 0 ? availableQuestions : questions;
+            const randomQ = questionPool[Math.floor(Math.random() * questionPool.length)];
+
+            // Track this question
+            setAskedQuestions(prev => new Set([...prev, randomQ]));
 
             setMessages(prev => [...prev, {
                 id: `q-${Date.now()}`,
@@ -423,7 +438,7 @@ export default function InterviewSimulator({ fullPage = false }: InterviewSimula
         } finally {
             setIsLoading(false);
         }
-    }, [selectedTopic, difficulty, companyFocus, speakText]);
+    }, [selectedTopic, difficulty, companyFocus, speakText, askedQuestions]);
 
     // Submit user's answer
     const submitAnswer = async () => {
@@ -459,7 +474,23 @@ export default function InterviewSimulator({ fullPage = false }: InterviewSimula
 
             if (res.ok) {
                 const data = await res.json();
-                const score = data.score || Math.floor(Math.random() * 3) + 7; // 7-9 fallback
+                // Handle greeting responses - don't count as real answers
+                if (data.isGreeting) {
+                    const greetingMessage: Message = {
+                        id: `f-${Date.now()}`,
+                        role: 'feedback',
+                        content: data.feedback,
+                        timestamp: new Date(),
+                        score: 0
+                    };
+                    setMessages(prev => [...prev, greetingMessage]);
+                    setIsLoading(false);
+                    // Don't generate follow-up for greetings, let user answer the actual question
+                    return;
+                }
+
+                // Use nullish coalescing to properly handle score of 0
+                const score = data.score ?? Math.floor(Math.random() * 3) + 7;
 
                 const feedbackMessage: Message = {
                     id: `f-${Date.now()}`,
@@ -470,17 +501,19 @@ export default function InterviewSimulator({ fullPage = false }: InterviewSimula
                 };
                 setMessages(prev => [...prev, feedbackMessage]);
 
-                // Update stats
-                setStats(prev => {
-                    if (!prev) return prev;
-                    const newScores = [...prev.scores, score];
-                    return {
-                        ...prev,
-                        questionsAnswered: prev.questionsAnswered + 1,
-                        scores: newScores,
-                        averageScore: newScores.reduce((a, b) => a + b, 0) / newScores.length
-                    };
-                });
+                // Update stats - only count if score > 0 (valid answer attempt)
+                if (score > 0) {
+                    setStats(prev => {
+                        if (!prev) return prev;
+                        const newScores = [...prev.scores, score];
+                        return {
+                            ...prev,
+                            questionsAnswered: prev.questionsAnswered + 1,
+                            scores: newScores,
+                            averageScore: newScores.reduce((a, b) => a + b, 0) / newScores.length
+                        };
+                    });
+                }
             }
         } catch (err) {
             // Silent fail for feedback
@@ -497,6 +530,7 @@ export default function InterviewSimulator({ fullPage = false }: InterviewSimula
     const startInterview = () => {
         setMode('interview');
         setMessages([]);
+        setAskedQuestions(new Set()); // Reset asked questions for new session
         setStats({
             questionsAnswered: 0,
             startTime: new Date(),
