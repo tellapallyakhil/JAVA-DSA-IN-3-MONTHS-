@@ -253,26 +253,159 @@ export default function InterviewSimulator({ fullPage = false }: InterviewSimula
         } catch (error) {
             console.error('Failed to generate question:', error);
             // Fallback questions based on difficulty
+            // Fallback questions based on difficulty
             const fallbackQuestions: Record<QuestionType, Record<DifficultyLevel, string[]>> = {
                 'dsa': {
-                    'easy': ['What is the difference between an array and a linked list?', 'Explain how a stack works.', 'What is time complexity?'],
-                    'medium': ['How would you implement an LRU Cache?', 'Explain quicksort and its time complexity.', 'How do you detect a cycle in a linked list?'],
-                    'hard': ['Design an algorithm to find the median of two sorted arrays in O(log(m+n)).', 'Implement a persistent data structure.', 'Solve the N-Queens problem optimally.']
+                    'easy': [
+                        'What is the difference between an array and a linked list?',
+                        'Explain how a stack works and its LIFO principle.',
+                        'What is time complexity and why does it matter?',
+                        'Explain the concept of recursion with an example.',
+                        'How do you check if a string is a palindrome?',
+                        'What is the difference between specific and generic programming?',
+                        'How does Binary Search work?',
+                        'What is a hash table and how does it handle collisions?',
+                        'Explain the difference between undefined and null in JavaScript.',
+                        'How do you reverse a string in place?'
+                    ],
+                    'medium': [
+                        'How would you implement an LRU (Least Recently Used) Cache?',
+                        'Explain quicksort and its worst-case time complexity.',
+                        'How do you detect a cycle in a linked list?',
+                        'Find the longest substring without repeating characters.',
+                        'Explain the difference between BFS and DFS graph traversals.',
+                        'How would you merge two sorted linked lists?',
+                        'Find the Kth largest element in an array.',
+                        'Given a binary tree, check if it is a valid Binary Search Tree (BST).',
+                        'Explain Dynamic Programming with the Coin Change problem.',
+                        'Group anagrams together from a list of strings.'
+                    ],
+                    'hard': [
+                        'Design an algorithm to find the median of two sorted arrays in O(log(min(m,n))).',
+                        'Implement a persistent data structure.',
+                        'Solve the N-Queens problem optimally.',
+                        'Trapping Rain Water problem: Calculate how much water can be trapped after raining.',
+                        'Serialize and Deserialize a Binary Tree.',
+                        'Find the maximum path sum in a binary tree.',
+                        'Word Ladder II: Find all shortest transformation sequences.',
+                        'Merge k Sorted Lists efficiently.',
+                        'Implement a regular expression matching parser with support for "." and "*".',
+                        'Find the largest rectangle in a histogram.'
+                    ]
                 },
                 'system-design': {
-                    'easy': ['What is a load balancer?', 'Explain the difference between SQL and NoSQL.', 'What is caching?'],
-                    'medium': ['Design a URL shortener like bit.ly.', 'How would you design a chat application?', 'Design a rate limiter.'],
-                    'hard': ['Design Twitter\'s real-time feed system.', 'Design a distributed file storage system.', 'Design a globally distributed database.']
+                    'easy': [
+                        'What is a load balancer and why do we need it?',
+                        'Explain the difference between SQL and NoSQL databases.',
+                        'What is caching? Where can it be applied?',
+                        'What is horizontal vs vertical scaling?',
+                        'Explain the concept of Database Sharding.',
+                        'What is a CDN (Content Delivery Network)?',
+                        'What is CAP theorem?',
+                        'How does HTTPS work?',
+                        'What is the difference between TCP and UDP?',
+                        'Explain the concept of microservices.'
+                    ],
+                    'medium': [
+                        'Design a URL shortener like bit.ly.',
+                        'How would you design a chat application like WhatsApp?',
+                        'Design a rate limiter to prevent abuse.',
+                        'Design a notification system.',
+                        'How would you design an autocomplete feature for a search engine?',
+                        'Design a parking lot system (Low Level Design).',
+                        'Design a key-value store like Redis.',
+                        'How to handle the Thundering Herd simple problem in caching?',
+                        'Design a leaderboard for a gaming platform.',
+                        'How would you design an image upload service like Imgur?'
+                    ],
+                    'hard': [
+                        'Design Twitter\'s real-time feed system.',
+                        'Design a distributed file storage system like Google Drive / S3.',
+                        'Design a globally distributed database that needs high availability.',
+                        'Design a web crawler effectively.',
+                        'Design a video streaming service like Netflix.',
+                        'Design a payment system that ensures transactional integrity.',
+                        'Design a distributed job scheduler.',
+                        'Design a real-time collaborative code editor like Google Docs/VS Code Live.',
+                        'Design a metric logging and monitoring system.',
+                        'How would you design a system to handle millions of WebSocket connections?'
+                    ]
                 },
                 'behavioral': {
-                    'easy': ['Tell me about yourself.', 'Why are you interested in this role?', 'What are your strengths?'],
-                    'medium': ['Tell me about a time you had a conflict with a teammate.', 'Describe a challenging project you completed.', 'How do you handle tight deadlines?'],
-                    'hard': ['Tell me about a time you failed and what you learned.', 'Describe a situation where you had to influence without authority.', 'How do you make decisions with incomplete information?']
+                    'easy': [
+                        'Tell me about yourself.',
+                        'Why are you interested in this role?',
+                        'What are your greatest strengths?',
+                        'What is your biggest weakness?',
+                        'Describe your ideal work environment.',
+                        'What motivates you?',
+                        'Do you prefer working alone or in a team?',
+                        'How do you stay updated with new technologies?',
+                        'What are your hobbies?',
+                        'What was your favorite project?'
+                    ],
+                    'medium': [
+                        'Tell me about a time you had a conflict with a teammate and how you resolved it.',
+                        'Describe a challenging project you completed and the obstacles you overcame.',
+                        'How do you handle tight deadlines and pressure?',
+                        'Tell me about a time you made a mistake. How did you handle it?',
+                        'Describe a time you showed leadership.',
+                        'How do you explain technical concepts to non-technical stakeholders?',
+                        'Tell me about a time you disagreed with your manager.',
+                        'Describe a situation where you had to adapt to a significant change.',
+                        'Give an example of a goal you didn\'t meet and how you handled it.',
+                        'Tell me about a time you went above and beyond for a project.'
+                    ],
+                    'hard': [
+                        'Tell me about a time you failed and what you learned from it.',
+                        'Describe a situation where you had to influence others without authority.',
+                        'How do you make decisions with incomplete information?',
+                        'Tell me about a time you had to deliver bad news.',
+                        'Describe a time you had to prioritize between two critical tasks.',
+                        'How do you handle constructive criticism?',
+                        'Tell me about a time you had to work with a difficult person.',
+                        'Describe a situation where you challenged the status quo.',
+                        'How do you ensure your team maintains high motivation?',
+                        'Tell me about a significant ethical dilemma you faced.'
+                    ]
                 },
                 'hr': {
-                    'easy': ['What do you know about our company?', 'Where do you see yourself in 5 years?', 'What motivates you?'],
-                    'medium': ['What are your salary expectations?', 'Why are you leaving your current role?', 'Describe your ideal work environment.'],
-                    'hard': ['How do you handle disagreements with your manager?', 'What would you do if you disagreed with a company policy?', 'How do you balance work and personal life?']
+                    'easy': [
+                        'What do you know about our company?',
+                        'Where do you see yourself in 5 years?',
+                        'What motivates you to come to work every day?',
+                        'Why should we hire you?',
+                        'What are your salary expectations?',
+                        'Are you willing to relocate?',
+                        'How soon can you join?',
+                        'What is your preferred management style?',
+                        'Do you have any questions for us?',
+                        'What are top 3 things you look for in a job?'
+                    ],
+                    'medium': [
+                        'Why are you leaving your current role?',
+                        'Describe your ideal work culture.',
+                        'What would your previous manager say about you?',
+                        'How do you handle stress?',
+                        'What is your proudest professional achievement?',
+                        'How do you handle feedback?',
+                        'What makes you uncomfortable in a work environment?',
+                        'Describe a time you took initiative.',
+                        'How do you organize your day?',
+                        'What kind of projects excite you the most?'
+                    ],
+                    'hard': [
+                        'How do you handle disagreements with your manager?',
+                        'What would you do if you disagreed with a company policy?',
+                        'How do you balance work and personal life during crunch time?',
+                        'Tell me about a time you felt underappreciated.',
+                        'What would you do if you saw a coworker doing something unethical?',
+                        'How do you handle multiple offers?',
+                        'What is the biggest risk you have taken in your career?',
+                        'How do you define success?',
+                        'What would you do in your first 30 days here?',
+                        'Describe a time you had to compromise to get the job done.'
+                    ]
                 }
             };
 
