@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { supabase } from '@/lib/supabaseClient';
 import { User } from '@supabase/supabase-js';
 import { Progress } from '@/types';
@@ -178,6 +178,9 @@ export function useProgress() {
                     resolvedProgress = localProgress;
                 }
 
+                // Ensure resolvedProgress has all default fields (backward compatibility)
+                resolvedProgress = { ...defaultProgress, ...resolvedProgress };
+
                 // 4. Data Repair: Ensure startDate exists if there is activity
                 if (resolvedProgress.activityDates && resolvedProgress.activityDates.length > 0 && !resolvedProgress.startDate) {
                     const sortedDates = [...resolvedProgress.activityDates].sort();
@@ -219,19 +222,25 @@ export function useProgress() {
         return () => subscription.unsubscribe();
     }, []);
 
+    const saveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
     // 2. Save logic: If User -> Save Cloud. Always Save Local with user-specific key.
     useEffect(() => {
         if (!isClient || loading) return;
 
-        // Save to user-specific localStorage
+        // Save to user-specific localStorage (Immediate)
         const storageKey = getStorageKey(user?.id);
         localStorage.setItem(storageKey, JSON.stringify(progress));
 
-        // If logged in, save to cloud debounce?
-        // For simplicity, we save immediately. In prod, use debounce.
+        // If logged in, save to cloud with DEBOUNCE
         if (user) {
-            const saveToCloud = async () => {
-                // Upsert profile
+            // Clear any pending save
+            if (saveTimeoutRef.current) {
+                clearTimeout(saveTimeoutRef.current);
+            }
+
+            // Set new timeout for 2 seconds
+            saveTimeoutRef.current = setTimeout(async () => {
                 const { error } = await supabase
                     .from('profiles')
                     .upsert({
@@ -240,10 +249,15 @@ export function useProgress() {
                         updated_at: new Date().toISOString()
                     });
                 if (error) console.error("Error saving to supabase", error);
-            };
-            saveToCloud();
+            }, 2000);
         }
 
+        // Cleanup on unmount
+        return () => {
+            if (saveTimeoutRef.current) {
+                clearTimeout(saveTimeoutRef.current);
+            }
+        };
     }, [progress, isClient, user, loading]);
 
 
@@ -423,11 +437,12 @@ export function useProgress() {
     // Topic Focus Mode: Mark a topic as weak
     const markTopicAsWeak = (topicId: string) => {
         setProgress(prev => {
-            if (prev.weakTopics.includes(topicId)) return prev;
+            const currentWeakTopics = prev.weakTopics || [];
+            if (currentWeakTopics.includes(topicId)) return prev;
 
             return {
                 ...prev,
-                weakTopics: [...prev.weakTopics, topicId],
+                weakTopics: [...currentWeakTopics, topicId],
                 topicProgress: {
                     ...prev.topicProgress,
                     [topicId]: {
@@ -446,7 +461,7 @@ export function useProgress() {
     // Topic Focus Mode: Remove topic from weak list
     const removeWeakTopic = (topicId: string) => {
         setProgress(prev => {
-            const newWeakTopics = prev.weakTopics.filter(t => t !== topicId);
+            const newWeakTopics = (prev.weakTopics || []).filter(t => t !== topicId);
             const newTopicProgress = { ...prev.topicProgress };
             delete newTopicProgress[topicId];
 

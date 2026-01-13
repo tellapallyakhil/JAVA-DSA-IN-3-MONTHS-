@@ -126,6 +126,18 @@
                 {
                     "front": "What does prefix[j] - prefix[i] give?",
                     "back": "Sum of elements from index i to j-1 in the original array"
+                },
+                {
+                    "front": "How do you find the middle element of an array?",
+                    "back": "Use index: startIndex + (endIndex - startIndex) / 2 to avoid overflow"
+                },
+                {
+                    "front": "Space complexity of creating a 2D array of size N x M?",
+                    "back": "O(N * M) - proportional to the total number of elements"
+                },
+                {
+                    "front": "When is an array NOT appropriate to use?",
+                    "back": "When you need frequent insertions/deletions or don't know the size in advance"
                 }
             ],
             "levels": [
@@ -277,6 +289,18 @@
                 {
                     "front": "Time complexity of String concatenation?",
                     "back": "O(n) per operation - it creates a new string each time"
+                },
+                {
+                    "front": "How does Java store Strings efficiently?",
+                    "back": "Using the String Constant Pool (interning) to reuse identical string literals"
+                },
+                {
+                    "front": "What is the time complexity of substring() in Java?",
+                    "back": "O(n) in newer Java versions (copies characters), was O(1) in older versions (shared array)"
+                },
+                {
+                    "front": "How to convert a String to an integer?",
+                    "back": "Integer.parseInt(str) or Integer.valueOf(str)"
                 }
             ],
             "levels": [
@@ -427,6 +451,18 @@
                 {
                     "front": "When does HashMap become O(n)?",
                     "back": "When all keys hash to same bucket (worst case collision)"
+                },
+                {
+                    "front": "What is the default load factor of a HashMap?",
+                    "back": "0.75 - it resizes when 75% full to balance space and time"
+                },
+                {
+                    "front": "Can you use null as a key in HashMap?",
+                    "back": "Yes, HashMap allows one null key (stored at index 0), but Hashtable does not"
+                },
+                {
+                    "front": "How to iterate over a HashMap?",
+                    "back": "Use map.entrySet(), map.keySet(), or map.values() in a loop"
                 }
             ],
             "levels": [
@@ -577,6 +613,18 @@
                 {
                     "front": "Array vs LinkedList for insertions?",
                     "back": "LinkedList O(1) at known position, Array O(n) due to shifting"
+                },
+                {
+                    "front": "What is a 'Runner' pointer?",
+                    "back": "A second pointer (often faster) used to compare or look ahead (e.g., detecting cycles)"
+                },
+                {
+                    "front": "Space complexity of a recursive linked list reversal?",
+                    "back": "O(n) due to the function call stack"
+                },
+                {
+                    "front": "Difference between Singly and Doubly Linked List?",
+                    "back": "Singly has next pointer; Doubly has next and prev pointers (more memory, easier backward traversal)"
                 }
             ],
             "levels": [
@@ -718,6 +766,18 @@
                 {
                     "front": "Real-world use of stacks?",
                     "back": "Browser back button, undo/redo, function call stack"
+                },
+                {
+                    "front": "What data structure implements a recursive algorithm iteratively?",
+                    "back": "A Stack"
+                },
+                {
+                    "front": "How to implement a Queue using Stacks?",
+                    "back": "Use two stacks: one for push(in), one for pop(out). Move elements when out-stack is empty."
+                },
+                {
+                    "front": "Time complexity to find the minimum element in a standard stack?",
+                    "back": "O(n) - you must traverse the whole stack. O(1) if using a MinStack design."
                 }
             ],
             "levels": [
@@ -845,6 +905,18 @@
                 {
                     "front": "What is a Priority Queue?",
                     "back": "Queue where elements are ordered by priority, not insertion order"
+                },
+                {
+                    "front": "Time complexity of enqueue and dequeue?",
+                    "back": "O(1) - constant time operations"
+                },
+                {
+                    "front": "What is a Deque?",
+                    "back": "Double-ended queue: can add/remove from both front and rear"
+                },
+                {
+                    "front": "How to implement a Stack using Queues?",
+                    "back": "Using 1 queue (push -> rotate size-1 times) or 2 queues"
                 }
             ],
             "levels": [
