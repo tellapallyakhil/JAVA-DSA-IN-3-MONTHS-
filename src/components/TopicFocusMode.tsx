@@ -438,22 +438,32 @@ export default function TopicFocusMode() {
                         {activeTab === 'flashcards' && selectedTopicData.flashcards.length > 0 && (
                             <div className="flex flex-col items-center justify-center py-8">
                                 <div
+                                    className="w-full max-w-md aspect-[3/2] cursor-pointer perspective-1000 group"
                                     onClick={() => setShowFlashcardBack(!showFlashcardBack)}
-                                    className={`w-full max-w-md aspect-[3/2] bg-gradient-to-br rounded-2xl border p-6 flex items-center justify-center cursor-pointer transition-all duration-300 ${showFlashcardBack
-                                        ? 'from-green-500/20 to-emerald-500/20 border-green-500/30 scale-[1.02]'
-                                        : 'from-primary/20 to-purple-500/20 border-primary/30 hover:scale-[1.02]'
-                                        }`}
                                 >
-                                    <div className="text-center px-2">
-                                        <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">
-                                            {showFlashcardBack ? '💡 Answer' : '❓ Question'}
-                                        </p>
-                                        <p className="text-base sm:text-lg font-medium">
-                                            {showFlashcardBack
-                                                ? selectedTopicData.flashcards[safeFlashcardIndex]?.back
-                                                : selectedTopicData.flashcards[safeFlashcardIndex]?.front
-                                            }
-                                        </p>
+                                    <div
+                                        className={`relative w-full h-full transition-all duration-500 transform-style-3d ${showFlashcardBack ? 'rotate-y-180' : ''
+                                            }`}
+                                    >
+                                        {/* Front Face */}
+                                        <div className="absolute inset-0 backface-hidden bg-gradient-to-br from-primary/20 to-purple-500/20 border border-primary/30 rounded-2xl p-6 flex flex-col items-center justify-center text-center">
+                                            <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">
+                                                ❓ Question
+                                            </p>
+                                            <p className="text-base sm:text-lg font-medium">
+                                                {selectedTopicData.flashcards[safeFlashcardIndex]?.front}
+                                            </p>
+                                        </div>
+
+                                        {/* Back Face */}
+                                        <div className="absolute inset-0 backface-hidden rotate-y-180 bg-gradient-to-br from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-2xl p-6 flex flex-col items-center justify-center text-center">
+                                            <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">
+                                                💡 Answer
+                                            </p>
+                                            <p className="text-base sm:text-lg font-medium">
+                                                {selectedTopicData.flashcards[safeFlashcardIndex]?.back}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                                 <p className="text-xs sm:text-sm text-muted-foreground mt-4">
