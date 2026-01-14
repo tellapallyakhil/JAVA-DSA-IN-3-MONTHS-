@@ -27,7 +27,8 @@
     ],
     "companies": [
       "Amazon",
-      "Adobe"
+      "Adobe",
+      "Oracle"
     ],
     "javaConcepts": [
       "Recursion",
@@ -46,7 +47,8 @@
     ],
     "companies": [
       "Microsoft",
-      "Samsung"
+      "Samsung",
+      "Atlassian"
     ],
     "javaConcepts": [
       "Floyd's Cycle Finding"
@@ -63,7 +65,9 @@
     ],
     "companies": [
       "Uber",
-      "Google"
+      "Google",
+      "Walmart",
+      "Pinterest"
     ],
     "javaConcepts": [
       "Arrays",
@@ -81,7 +85,8 @@
       "Arrays & Hashing"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Adobe"
     ],
     "javaConcepts": [
       "HashMap",
@@ -99,7 +104,10 @@
     ],
     "companies": [
       "LinkedIn",
-      "Apple"
+      "Apple",
+      "Snapchat",
+      "Twitch",
+      "Lockheed Martin"
     ],
     "javaConcepts": [
       "Kadane's Algorithm"
@@ -136,7 +144,9 @@
     ],
     "companies": [
       "Amazon",
-      "Facebook"
+      "Facebook",
+      "Pinterest",
+      "LinkedIn"
     ],
     "javaConcepts": [
       "Min-Max logic"
@@ -154,7 +164,8 @@
     "companies": [
       "Amazon",
       "Microsoft",
-      "Apple"
+      "Apple",
+      "Uber"
     ],
     "javaConcepts": [
       "Prefix Sum",
@@ -208,7 +219,10 @@
     ],
     "companies": [
       "Facebook",
-      "Microsoft"
+      "Microsoft",
+      "Apple",
+      "Homebrew",
+      "Expedia"
     ],
     "javaConcepts": [
       "Two Pointers",
@@ -227,7 +241,9 @@
     "companies": [
       "Facebook",
       "Amazon",
-      "Microsoft"
+      "Microsoft",
+      "Bloomberg",
+      "Twitch"
     ],
     "javaConcepts": [
       "Sorting",
@@ -296,7 +312,8 @@
     ],
     "companies": [
       "Amazon",
-      "Google"
+      "Google",
+      "Oracle"
     ],
     "javaConcepts": [
       "Memoization",
@@ -313,7 +330,9 @@
     ],
     "companies": [
       "Google",
-      "Microsoft"
+      "Microsoft",
+      "Snapchat",
+      "Atlassian"
     ],
     "javaConcepts": [
       "DP Array"
@@ -329,7 +348,8 @@
     ],
     "companies": [
       "Google",
-      "Homebrew"
+      "Homebrew",
+      "Meta"
     ],
     "javaConcepts": [
       "Recursion"
@@ -379,7 +399,9 @@
     ],
     "companies": [
       "Amazon",
-      "Microsoft"
+      "Microsoft",
+      "Samsung",
+      "Homebrew"
     ],
     "javaConcepts": [
       "Bottom-up Recursion"
@@ -410,7 +432,8 @@
     ],
     "companies": [
       "Facebook",
-      "Amazon"
+      "Amazon",
+      "LinkedIn"
     ],
     "javaConcepts": [
       "Serialization",
@@ -427,7 +450,8 @@
     ],
     "companies": [
       "Amazon",
-      "Microsoft"
+      "Microsoft",
+      "Lockheed Martin"
     ],
     "javaConcepts": [
       "BST Property",
@@ -444,7 +468,10 @@
     ],
     "companies": [
       "Amazon",
-      "Microsoft"
+      "Microsoft",
+      "Walmart",
+      "Bloomberg",
+      "Goldman Sachs"
     ],
     "javaConcepts": [
       "BFS",
@@ -461,7 +488,9 @@
     ],
     "companies": [
       "Bloomberg",
-      "Amazon"
+      "Amazon",
+      "Goldman Sachs",
+      "Oracle"
     ],
     "javaConcepts": [
       "DFS",
@@ -494,7 +523,9 @@
     ],
     "companies": [
       "Amazon",
-      "Microsoft"
+      "Microsoft",
+      "Bloomberg",
+      "Expedia"
     ],
     "javaConcepts": [
       "Recursion",
@@ -512,7 +543,10 @@
     ],
     "companies": [
       "Google",
-      "Amazon"
+      "Amazon",
+      "Atlassian",
+      "Apple",
+      "Bloomberg"
     ],
     "javaConcepts": [
       "TrieNode",
@@ -530,7 +564,8 @@
     "companies": [
       "Amazon",
       "Google",
-      "Microsoft"
+      "Microsoft",
+      "Samsung"
     ],
     "javaConcepts": [
       "DFS",
@@ -548,7 +583,8 @@
     ],
     "companies": [
       "Facebook",
-      "Google"
+      "Google",
+      "Samsung"
     ],
     "javaConcepts": [
       "HashMap",
@@ -565,7 +601,8 @@
     ],
     "companies": [
       "Amazon",
-      "DoorDash"
+      "DoorDash",
+      "Netflix"
     ],
     "javaConcepts": [
       "DFS",
@@ -582,7 +619,10 @@
     ],
     "companies": [
       "Google",
-      "Amazon"
+      "Amazon",
+      "Meta",
+      "Lockheed Martin",
+      "Twitter"
     ],
     "javaConcepts": [
       "DFS",
@@ -599,7 +639,10 @@
     ],
     "companies": [
       "Google",
-      "Amazon"
+      "Amazon",
+      "Intuit",
+      "Meta",
+      "Zoom"
     ],
     "javaConcepts": [
       "DFS",
@@ -616,7 +659,8 @@
     ],
     "companies": [
       "Amazon",
-      "Microsoft"
+      "Microsoft",
+      "Twitch"
     ],
     "javaConcepts": [
       "BFS",
@@ -650,7 +694,10 @@
     ],
     "companies": [
       "Amazon",
-      "Facebook"
+      "Facebook",
+      "Uber",
+      "Snapchat",
+      "ByteDance"
     ],
     "javaConcepts": [
       "Topological Sort",
@@ -667,7 +714,10 @@
     ],
     "companies": [
       "Google",
-      "Amazon"
+      "Amazon",
+      "Walmart",
+      "Oracle",
+      "Intuit"
     ],
     "javaConcepts": [
       "Union-Find"
@@ -716,7 +766,8 @@
       "Stack"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Uber"
     ],
     "javaConcepts": [
       "Stack",
@@ -751,7 +802,9 @@
     "companies": [
       "Amazon",
       "Google",
-      "Facebook"
+      "Facebook",
+      "Oracle",
+      "Walmart"
     ],
     "javaConcepts": [
       "Recursion",
@@ -769,7 +822,8 @@
     ],
     "companies": [
       "Meta",
-      "Amazon"
+      "Amazon",
+      "DoorDash"
     ],
     "javaConcepts": [
       "Stack"
@@ -786,7 +840,10 @@
     ],
     "companies": [
       "Google",
-      "Uber"
+      "Uber",
+      "ByteDance",
+      "Salesforce",
+      "LinkedIn"
     ],
     "javaConcepts": [
       "Sorting",
@@ -804,7 +861,9 @@
     ],
     "companies": [
       "Google",
-      "Amazon"
+      "Amazon",
+      "Zoom",
+      "Expedia"
     ],
     "javaConcepts": [
       "Stack"
@@ -819,7 +878,11 @@
       "Binary Search"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "Pinterest",
+      "Goldman Sachs",
+      "Adobe",
+      "DoorDash"
     ],
     "javaConcepts": [
       "Binary Search"
@@ -836,7 +899,8 @@
     ],
     "companies": [
       "Amazon",
-      "Microsoft"
+      "Microsoft",
+      "PayPal"
     ],
     "javaConcepts": [
       "Binary Search",
@@ -853,7 +917,9 @@
     ],
     "companies": [
       "Google",
-      "Facebook"
+      "Facebook",
+      "Meta",
+      "Twitter"
     ],
     "javaConcepts": [
       "Binary Search on Answer"
@@ -869,7 +935,8 @@
     ],
     "companies": [
       "Facebook",
-      "Microsoft"
+      "Microsoft",
+      "Adobe"
     ],
     "javaConcepts": [
       "Binary Search"
@@ -886,7 +953,8 @@
     "companies": [
       "Amazon",
       "Google",
-      "Facebook"
+      "Facebook",
+      "Netflix"
     ],
     "javaConcepts": [
       "Binary Search"
@@ -903,7 +971,8 @@
     ],
     "companies": [
       "Google",
-      "Netflix"
+      "Netflix",
+      "Intuit"
     ],
     "javaConcepts": [
       "HashMap",
@@ -921,7 +990,10 @@
     "companies": [
       "Google",
       "Amazon",
-      "Apple"
+      "Apple",
+      "ByteDance",
+      "Pinterest",
+      "Lockheed Martin"
     ],
     "javaConcepts": [
       "Binary Search"
@@ -938,7 +1010,10 @@
     "companies": [
       "Amazon",
       "Google",
-      "Microsoft"
+      "Microsoft",
+      "Walmart",
+      "PayPal",
+      "DoorDash"
     ],
     "javaConcepts": [
       "HashSet",
@@ -955,7 +1030,8 @@
     ],
     "companies": [
       "Google",
-      "Uber"
+      "Uber",
+      "Airbnb"
     ],
     "javaConcepts": [
       "HashMap",
@@ -972,7 +1048,8 @@
     ],
     "companies": [
       "Microsoft",
-      "Google"
+      "Google",
+      "Salesforce"
     ],
     "javaConcepts": [
       "Frequency Array",
@@ -989,7 +1066,8 @@
     ],
     "companies": [
       "Facebook",
-      "Google"
+      "Google",
+      "DoorDash"
     ],
     "javaConcepts": [
       "HashMap",
@@ -1007,7 +1085,9 @@
     ],
     "companies": [
       "Google",
-      "Amazon"
+      "Amazon",
+      "Intuit",
+      "Oracle"
     ],
     "javaConcepts": [
       "Deque",
@@ -1026,7 +1106,11 @@
     "companies": [
       "Facebook",
       "Microsoft",
-      "Amazon"
+      "Amazon",
+      "Oracle",
+      "Salesforce",
+      "Uber",
+      "ByteDance"
     ],
     "javaConcepts": [
       "PriorityQueue",
@@ -1043,7 +1127,9 @@
       "Array"
     ],
     "companies": [
-      "Microsoft"
+      "Microsoft",
+      "Atlassian",
+      "Bloomberg"
     ],
     "javaConcepts": [
       "Kadane's Algorithm"
@@ -1060,7 +1146,9 @@
     ],
     "companies": [
       "Amazon",
-      "Apple"
+      "Apple",
+      "DoorDash",
+      "Twitter"
     ],
     "javaConcepts": [
       "Linear Scan"
@@ -1076,7 +1164,10 @@
       "DP"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "Walmart",
+      "Goldman Sachs",
+      "LinkedIn"
     ],
     "javaConcepts": [
       "BFS-like Greedy"
@@ -1092,7 +1183,9 @@
     ],
     "companies": [
       "Google",
-      "Microsoft"
+      "Microsoft",
+      "Pinterest",
+      "Netflix"
     ],
     "javaConcepts": [
       "One Pass"
@@ -1108,7 +1201,8 @@
       "Heap"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "Zoom"
     ],
     "javaConcepts": [
       "TreeMap"
@@ -1139,7 +1233,8 @@
       "Two Pointers"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Uber"
     ],
     "javaConcepts": [
       "Last Index Map"
@@ -1171,7 +1266,10 @@
     ],
     "companies": [
       "Google",
-      "Facebook"
+      "Facebook",
+      "PayPal",
+      "Intuit",
+      "Airbnb"
     ],
     "javaConcepts": [
       "Linear Scan"
@@ -1202,7 +1300,9 @@
       "Intervals"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "Snapchat",
+      "Atlassian"
     ],
     "javaConcepts": [
       "Sorting",
@@ -1218,7 +1318,10 @@
       "Intervals"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "Snapchat",
+      "Walmart",
+      "Meta"
     ],
     "javaConcepts": [
       "Sorting"
@@ -1235,7 +1338,8 @@
     ],
     "companies": [
       "Facebook",
-      "Google"
+      "Google",
+      "Snapchat"
     ],
     "javaConcepts": [
       "Min-Heap"
@@ -1250,7 +1354,10 @@
       "Linked List"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "ByteDance",
+      "Zoom",
+      "Meta"
     ],
     "javaConcepts": [
       "Two Pointers",
@@ -1266,7 +1373,12 @@
       "Linked List"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "Adobe",
+      "Atlassian",
+      "Homebrew",
+      "DoorDash",
+      "Airbnb"
     ],
     "javaConcepts": [
       "Two Pointers"
@@ -1281,7 +1393,9 @@
       "Linked List"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Uber",
+      "ByteDance"
     ],
     "javaConcepts": [
       "HashMap"
@@ -1297,7 +1411,9 @@
     ],
     "companies": [
       "Amazon",
-      "Microsoft"
+      "Microsoft",
+      "Airbnb",
+      "DoorDash"
     ],
     "javaConcepts": [
       "Math"
@@ -1312,7 +1428,10 @@
       "Linked List"
     ],
     "companies": [
-      "Microsoft"
+      "Microsoft",
+      "Apple",
+      "Intuit",
+      "Meta"
     ],
     "javaConcepts": [
       "Floyd's Algo"
@@ -1345,7 +1464,8 @@
     ],
     "companies": [
       "Amazon",
-      "Microsoft"
+      "Microsoft",
+      "Expedia"
     ],
     "javaConcepts": [
       "Doubly Linked List",
@@ -1362,7 +1482,8 @@
     ],
     "companies": [
       "Microsoft",
-      "Amazon"
+      "Amazon",
+      "Salesforce"
     ],
     "javaConcepts": [
       "Recursion",
@@ -1378,7 +1499,10 @@
       "Trees"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "Walmart",
+      "Bloomberg",
+      "DoorDash"
     ],
     "javaConcepts": [
       "BFS",
@@ -1394,7 +1518,10 @@
       "Trees"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "Intuit",
+      "DoorDash",
+      "Meta"
     ],
     "javaConcepts": [
       "Recursion",
@@ -1410,7 +1537,8 @@
       "Trees"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Expedia"
     ],
     "javaConcepts": [
       "HashMap",
@@ -1426,7 +1554,10 @@
       "Trees"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "Zoom",
+      "Snapchat",
+      "Expedia"
     ],
     "javaConcepts": [
       "BFS"
@@ -1441,7 +1572,8 @@
       "Trees"
     ],
     "companies": [
-      "Microsoft"
+      "Microsoft",
+      "Lockheed Martin"
     ],
     "javaConcepts": [
       "DFS"
@@ -1471,7 +1603,8 @@
       "Backtracking"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "Apple"
     ],
     "javaConcepts": [
       "Recursion"
@@ -1487,7 +1620,8 @@
     ],
     "companies": [
       "Facebook",
-      "Airbnb"
+      "Airbnb",
+      "Uber"
     ],
     "javaConcepts": [
       "Recursion"
@@ -1503,7 +1637,8 @@
     ],
     "companies": [
       "Microsoft",
-      "Google"
+      "Google",
+      "Goldman Sachs"
     ],
     "javaConcepts": [
       "Recursion"
@@ -1518,7 +1653,9 @@
       "Backtracking"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Netflix",
+      "Twitter"
     ],
     "javaConcepts": [
       "Sorting",
@@ -1534,7 +1671,9 @@
       "Backtracking"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Lockheed Martin",
+      "Expedia"
     ],
     "javaConcepts": [
       "Sorting",
@@ -1551,7 +1690,8 @@
     ],
     "companies": [
       "Amazon",
-      "Microsoft"
+      "Microsoft",
+      "Twitch"
     ],
     "javaConcepts": [
       "DFS"
@@ -1566,7 +1706,9 @@
       "Backtracking"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "Atlassian",
+      "Zoom"
     ],
     "javaConcepts": [
       "DP",
@@ -1582,7 +1724,9 @@
       "Backtracking"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Bloomberg",
+      "Homebrew"
     ],
     "javaConcepts": [
       "Recursion"
@@ -1597,7 +1741,8 @@
       "Backtracking"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Salesforce"
     ],
     "javaConcepts": [
       "Recursion",
@@ -1629,7 +1774,9 @@
       "Backtracking"
     ],
     "companies": [
-      "Microsoft"
+      "Microsoft",
+      "Samsung",
+      "Apple"
     ],
     "javaConcepts": [
       "DFS",
@@ -1645,7 +1792,8 @@
       "Heap"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Atlassian"
     ],
     "javaConcepts": [
       "Min-Heap"
@@ -1660,7 +1808,8 @@
       "Heap"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Atlassian"
     ],
     "javaConcepts": [
       "Max-Heap"
@@ -1675,7 +1824,9 @@
       "Heap"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "Twitch",
+      "Walmart"
     ],
     "javaConcepts": [
       "Max-Heap",
@@ -1691,7 +1842,9 @@
       "Heap"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "Pinterest",
+      "Salesforce"
     ],
     "javaConcepts": [
       "Min-Heap",
@@ -1725,7 +1878,8 @@
       "Design"
     ],
     "companies": [
-      "Twitter"
+      "Twitter",
+      "Lockheed Martin"
     ],
     "javaConcepts": [
       "HashMap",
@@ -1741,7 +1895,8 @@
       "Heap"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Adobe"
     ],
     "javaConcepts": [
       "Two Heaps"
@@ -1756,7 +1911,8 @@
       "Graphs"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "Snapchat"
     ],
     "javaConcepts": [
       "Union-Find",
@@ -1788,7 +1944,8 @@
       "Graphs"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "Netflix"
     ],
     "javaConcepts": [
       "Topological Sort"
@@ -1804,7 +1961,9 @@
     ],
     "companies": [
       "Airbnb",
-      "expedia"
+      "Expedia",
+      "Goldman Sachs",
+      "Samsung"
     ],
     "javaConcepts": [
       "Bellman-Ford",
@@ -1836,7 +1995,8 @@
       "Graphs"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Salesforce"
     ],
     "javaConcepts": [
       "Prim's Algo"
@@ -1851,7 +2011,9 @@
       "Graphs"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "PayPal",
+      "Lockheed Martin"
     ],
     "javaConcepts": [
       "Dijkstra"
@@ -1866,7 +2028,10 @@
       "Graphs"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "Adobe",
+      "Samsung",
+      "Lockheed Martin"
     ],
     "javaConcepts": [
       "Dijkstra",
@@ -1882,7 +2047,8 @@
       "DP"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "PayPal"
     ],
     "javaConcepts": [
       "Fibonacci"
@@ -1897,7 +2063,8 @@
       "DP"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "LinkedIn"
     ],
     "javaConcepts": [
       "Array"
@@ -1912,7 +2079,9 @@
       "DP"
     ],
     "companies": [
-      "Microsoft"
+      "Microsoft",
+      "Walmart",
+      "Intuit"
     ],
     "javaConcepts": [
       "Array"
@@ -1929,7 +2098,10 @@
     ],
     "companies": [
       "Microsoft",
-      "Amazon"
+      "Amazon",
+      "Walmart",
+      "Airbnb",
+      "Adobe"
     ],
     "javaConcepts": [
       "Expand Around Center"
@@ -1945,7 +2117,10 @@
       "String"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "Snapchat",
+      "Samsung",
+      "PayPal"
     ],
     "javaConcepts": [
       "Expand Around Center"
@@ -1960,7 +2135,8 @@
       "DP"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "DoorDash"
     ],
     "javaConcepts": [
       "Iterative"
@@ -1975,7 +2151,8 @@
       "DP"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Homebrew"
     ],
     "javaConcepts": [
       "Bottom-Up"
@@ -2006,7 +2183,8 @@
     ],
     "companies": [
       "Amazon",
-      "Google"
+      "Google",
+      "Airbnb"
     ],
     "javaConcepts": [
       "Trie",
@@ -2022,7 +2200,9 @@
       "DP"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "Netflix",
+      "Salesforce"
     ],
     "javaConcepts": [
       "Binary Search"
@@ -2037,7 +2217,9 @@
       "DP"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "PayPal",
+      "Lockheed Martin"
     ],
     "javaConcepts": [
       "0/1 Knapsack"
@@ -2052,7 +2234,8 @@
       "DP"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "DoorDash"
     ],
     "javaConcepts": [
       "Grid"
@@ -2067,7 +2250,9 @@
       "DP"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Meta",
+      "Zoom"
     ],
     "javaConcepts": [
       "2D Array"
@@ -2112,7 +2297,9 @@
       "DP"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "Salesforce",
+      "Airbnb"
     ],
     "javaConcepts": [
       "0/1 Knapsack"
@@ -2127,7 +2314,8 @@
       "DP"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "Samsung"
     ],
     "javaConcepts": [
       "2D Grid"
@@ -2143,7 +2331,8 @@
       "Graph"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "Airbnb"
     ],
     "javaConcepts": [
       "DFS",
@@ -2159,7 +2348,10 @@
       "DP"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "Adobe",
+      "ByteDance",
+      "PayPal"
     ],
     "javaConcepts": [
       "2D Array"
@@ -2174,7 +2366,12 @@
       "DP"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "Salesforce",
+      "Snapchat",
+      "Homebrew",
+      "DoorDash",
+      "Expedia"
     ],
     "javaConcepts": [
       "2D Array"
@@ -2204,7 +2401,8 @@
       "DP"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "LinkedIn"
     ],
     "javaConcepts": [
       "Recursion"
@@ -2219,7 +2417,13 @@
       "Bit Manipulation"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Salesforce",
+      "ByteDance",
+      "Adobe",
+      "Samsung",
+      "LinkedIn",
+      "Homebrew"
     ],
     "javaConcepts": [
       "XOR"
@@ -2234,7 +2438,9 @@
       "Bit Manipulation"
     ],
     "companies": [
-      "Microsoft"
+      "Microsoft",
+      "Snapchat",
+      "Apple"
     ],
     "javaConcepts": [
       "Bit Shift"
@@ -2249,7 +2455,9 @@
       "Bit Manipulation"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Atlassian",
+      "ByteDance"
     ],
     "javaConcepts": [
       "DP"
@@ -2264,7 +2472,8 @@
       "Bit Manipulation"
     ],
     "companies": [
-      "Apple"
+      "Apple",
+      "DoorDash"
     ],
     "javaConcepts": [
       "Bit Logic"
@@ -2279,7 +2488,8 @@
       "Bit Manipulation"
     ],
     "companies": [
-      "Microsoft"
+      "Microsoft",
+      "Airbnb"
     ],
     "javaConcepts": [
       "XOR",
@@ -2295,7 +2505,10 @@
       "Bit Manipulation"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "Pinterest",
+      "Twitch",
+      "Apple"
     ],
     "javaConcepts": [
       "Carry Logic"
@@ -2310,7 +2523,9 @@
       "Math"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Adobe",
+      "Lockheed Martin"
     ],
     "javaConcepts": [
       "Modulo"
@@ -2326,7 +2541,8 @@
       "Matrix"
     ],
     "companies": [
-      "Microsoft"
+      "Microsoft",
+      "Oracle"
     ],
     "javaConcepts": [
       "Transpose"
@@ -2358,7 +2574,10 @@
       "Matrix"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "Oracle",
+      "PayPal",
+      "Twitch"
     ],
     "javaConcepts": [
       "In-place"
@@ -2388,7 +2607,8 @@
       "Math"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "PayPal"
     ],
     "javaConcepts": [
       "Array"
@@ -2403,7 +2623,10 @@
       "Math"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "Adobe",
+      "Salesforce",
+      "Twitter"
     ],
     "javaConcepts": [
       "Recursion"
@@ -2418,7 +2641,11 @@
       "Math"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "Zoom",
+      "Homebrew",
+      "DoorDash",
+      "Meta"
     ],
     "javaConcepts": [
       "String"
@@ -2434,7 +2661,8 @@
       "Geometry"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "LinkedIn"
     ],
     "javaConcepts": [
       "HashMap"
@@ -2449,7 +2677,8 @@
       "Array"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Twitch"
     ],
     "javaConcepts": [
       "Prefix Sum"
@@ -2465,7 +2694,10 @@
       "DP"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "Walmart",
+      "Pinterest",
+      "Netflix"
     ],
     "javaConcepts": [
       "Prefix Sum"
@@ -2513,7 +2745,9 @@
       "HashMap"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Goldman Sachs",
+      "Atlassian"
     ],
     "javaConcepts": [
       "Modulo"
@@ -2528,7 +2762,8 @@
       "Array"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "Twitch"
     ],
     "javaConcepts": [
       "Dutch National Flag"
@@ -2543,7 +2778,9 @@
       "String"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Snapchat",
+      "Meta"
     ],
     "javaConcepts": [
       "Scanning"
@@ -2559,7 +2796,8 @@
       "Two Pointers"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "Bloomberg"
     ],
     "javaConcepts": [
       "Greedy"
@@ -2589,7 +2827,10 @@
       "String"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Zoom",
+      "Samsung",
+      "Twitter"
     ],
     "javaConcepts": [
       "Traverse"
@@ -2604,7 +2845,9 @@
       "String"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "Snapchat",
+      "Expedia"
     ],
     "javaConcepts": [
       "Two Pointers"
@@ -2619,7 +2862,10 @@
       "String"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Zoom",
+      "Walmart",
+      "Apple"
     ],
     "javaConcepts": [
       "Two Pointers"
@@ -2634,7 +2880,8 @@
       "HashMap"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "Twitter"
     ],
     "javaConcepts": [
       "Bi-Map"
@@ -2664,7 +2911,9 @@
       "HashMap"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Snapchat",
+      "Airbnb"
     ],
     "javaConcepts": [
       "Counting"
@@ -2679,7 +2928,8 @@
       "String"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Netflix"
     ],
     "javaConcepts": [
       "Frequency Map"
@@ -2694,7 +2944,10 @@
       "Sliding Window"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "PayPal",
+      "Netflix",
+      "Twitter"
     ],
     "javaConcepts": [
       "Frequency Map"
@@ -2709,7 +2962,8 @@
       "String"
     ],
     "companies": [
-      "PayPal"
+      "PayPal",
+      "Twitch"
     ],
     "javaConcepts": [
       "Simulation"
@@ -2739,7 +2993,9 @@
       "String"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "Bloomberg",
+      "Intuit"
     ],
     "javaConcepts": [
       "Recursion"
@@ -2754,7 +3010,8 @@
       "String"
     ],
     "companies": [
-      "LinkedIn"
+      "LinkedIn",
+      "Pinterest"
     ],
     "javaConcepts": [
       "Simulation"
@@ -2769,7 +3026,9 @@
       "Array"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "Salesforce",
+      "Homebrew"
     ],
     "javaConcepts": [
       "Two Pointers"
@@ -2784,7 +3043,11 @@
       "Array"
     ],
     "companies": [
-      "Microsoft"
+      "Microsoft",
+      "Atlassian",
+      "Samsung",
+      "Apple",
+      "Snapchat"
     ],
     "javaConcepts": [
       "Two Pointers"
@@ -2799,7 +3062,9 @@
       "Binary Search"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "Walmart",
+      "Pinterest"
     ],
     "javaConcepts": [
       "Binary Search"
@@ -2814,7 +3079,8 @@
       "Array"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Bloomberg"
     ],
     "javaConcepts": [
       "DP"
@@ -2844,7 +3110,10 @@
       "Array"
     ],
     "companies": [
-      "Microsoft"
+      "Microsoft",
+      "ByteDance",
+      "Zoom",
+      "Salesforce"
     ],
     "javaConcepts": [
       "Boyer-Moore"
@@ -2875,7 +3144,8 @@
       "Greedy"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Netflix"
     ],
     "javaConcepts": [
       "Greedy"
@@ -2890,7 +3160,8 @@
       "Array"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "Snapchat"
     ],
     "javaConcepts": [
       "Sorting"
@@ -2906,7 +3177,8 @@
       "HashMap"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "Goldman Sachs"
     ],
     "javaConcepts": [
       "HashMap",
@@ -2922,7 +3194,10 @@
       "Array"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "DoorDash",
+      "ByteDance",
+      "Lockheed Martin"
     ],
     "javaConcepts": [
       "Prefix/Suffix"
@@ -2937,7 +3212,9 @@
       "Greedy"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "Adobe",
+      "Uber"
     ],
     "javaConcepts": [
       "Linear Scan"
@@ -2952,7 +3229,8 @@
       "Greedy"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "Twitch"
     ],
     "javaConcepts": [
       "Two Pass"
@@ -2967,7 +3245,9 @@
       "Array"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Bloomberg",
+      "Meta"
     ],
     "javaConcepts": [
       "Two Pointers"
@@ -3012,7 +3292,8 @@
       "Sliding Window"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "Meta"
     ],
     "javaConcepts": [
       "Divide & Conquer"
@@ -3027,7 +3308,8 @@
       "Heap"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Homebrew"
     ],
     "javaConcepts": [
       "Min-Heap"
@@ -3042,7 +3324,8 @@
       "Array"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "Adobe"
     ],
     "javaConcepts": [
       "Two Pointers"
@@ -3057,7 +3340,8 @@
       "Binary Search"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "Intuit"
     ],
     "javaConcepts": [
       "Binary Search"
@@ -3102,7 +3386,11 @@
       "Binary Search"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "Bloomberg",
+      "Goldman Sachs",
+      "Meta",
+      "Expedia"
     ],
     "javaConcepts": [
       "Binary Search"
@@ -3117,7 +3405,8 @@
       "Binary Search"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Lockheed Martin"
     ],
     "javaConcepts": [
       "Step-wise Search"
@@ -3147,7 +3436,9 @@
       "Binary Search"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "Netflix",
+      "Lockheed Martin"
     ],
     "javaConcepts": [
       "Binary Search",
@@ -3163,7 +3454,9 @@
       "Binary Search"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Adobe",
+      "Bloomberg"
     ],
     "javaConcepts": [
       "Binary Search"
@@ -3178,7 +3471,8 @@
       "Binary Search"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "Pinterest"
     ],
     "javaConcepts": [
       "Binary Search on Answer"
@@ -3193,7 +3487,10 @@
       "Binary Search"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "Goldman Sachs",
+      "Apple",
+      "Netflix"
     ],
     "javaConcepts": [
       "Binary Search on Answer"
@@ -3208,7 +3505,8 @@
       "Linked List"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Oracle"
     ],
     "javaConcepts": [
       "Two Pointers"
@@ -3223,7 +3521,9 @@
       "Linked List"
     ],
     "companies": [
-      "Airbnb"
+      "Airbnb",
+      "Atlassian",
+      "Expedia"
     ],
     "javaConcepts": [
       "Two Pointers"
@@ -3238,7 +3538,8 @@
       "Linked List"
     ],
     "companies": [
-      "Microsoft"
+      "Microsoft",
+      "Twitter"
     ],
     "javaConcepts": [
       "Pointer"
@@ -3253,7 +3554,8 @@
       "Linked List"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Meta"
     ],
     "javaConcepts": [
       "Recursion"
@@ -3268,7 +3570,10 @@
       "Linked List"
     ],
     "companies": [
-      "Microsoft"
+      "Microsoft",
+      "Atlassian",
+      "ByteDance",
+      "Netflix"
     ],
     "javaConcepts": [
       "Pointer"
@@ -3283,7 +3588,10 @@
       "Linked List"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "Goldman Sachs",
+      "Twitch",
+      "Zoom"
     ],
     "javaConcepts": [
       "Merge Sort"
@@ -3298,7 +3606,10 @@
       "Linked List"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "ByteDance",
+      "Samsung",
+      "LinkedIn"
     ],
     "javaConcepts": [
       "Pointer"
@@ -3313,7 +3624,9 @@
       "Linked List"
     ],
     "companies": [
-      "Microsoft"
+      "Microsoft",
+      "Twitch",
+      "Airbnb"
     ],
     "javaConcepts": [
       "Two Pointers"
@@ -3343,7 +3656,8 @@
       "Trees"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Snapchat"
     ],
     "javaConcepts": [
       "Recursion"
@@ -3358,7 +3672,8 @@
       "Trees"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Lockheed Martin"
     ],
     "javaConcepts": [
       "Recursion"
@@ -3388,7 +3703,11 @@
       "Trees"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Twitch",
+      "Homebrew",
+      "Goldman Sachs",
+      "Zoom"
     ],
     "javaConcepts": [
       "Prefix Sum"
@@ -3403,7 +3722,8 @@
       "Trees"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "Adobe"
     ],
     "javaConcepts": [
       "DFS"
@@ -3433,7 +3753,10 @@
       "Trees"
     ],
     "companies": [
-      "Microsoft"
+      "Microsoft",
+      "Pinterest",
+      "Oracle",
+      "Uber"
     ],
     "javaConcepts": [
       "BFS"
@@ -3478,7 +3801,8 @@
       "Trees"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "Walmart"
     ],
     "javaConcepts": [
       "Recursion"
@@ -3508,7 +3832,9 @@
       "Trees"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "ByteDance",
+      "Intuit"
     ],
     "javaConcepts": [
       "HashSet"
@@ -3523,7 +3849,8 @@
       "Trees"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Meta"
     ],
     "javaConcepts": [
       "Recursion"
@@ -3538,7 +3865,9 @@
       "Trees"
     ],
     "companies": [
-      "Microsoft"
+      "Microsoft",
+      "Pinterest",
+      "Homebrew"
     ],
     "javaConcepts": [
       "Recursion"
@@ -3553,7 +3882,9 @@
       "Trees"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "PayPal",
+      "ByteDance"
     ],
     "javaConcepts": [
       "BFS"
@@ -3568,7 +3899,8 @@
       "Trees"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "Oracle"
     ],
     "javaConcepts": [
       "DFS"
@@ -3583,7 +3915,9 @@
       "Trees"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "Samsung",
+      "Lockheed Martin"
     ],
     "javaConcepts": [
       "BFS"
@@ -3598,7 +3932,9 @@
       "Graphs"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Intuit",
+      "Goldman Sachs"
     ],
     "javaConcepts": [
       "DFS"
@@ -3643,7 +3979,9 @@
       "Graphs"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "PayPal",
+      "Goldman Sachs"
     ],
     "javaConcepts": [
       "BFS"
@@ -3658,7 +3996,10 @@
       "Graphs"
     ],
     "companies": [
-      "Microsoft"
+      "Microsoft",
+      "PayPal",
+      "Intuit",
+      "Samsung"
     ],
     "javaConcepts": [
       "DFS"
@@ -3673,7 +4014,9 @@
       "Graphs"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "Lockheed Martin",
+      "Zoom"
     ],
     "javaConcepts": [
       "DFS"
@@ -3688,7 +4031,8 @@
       "Graphs"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Oracle"
     ],
     "javaConcepts": [
       "Indegree"
@@ -3733,7 +4077,8 @@
       "DP"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Homebrew"
     ],
     "javaConcepts": [
       "Recursion"
@@ -3748,7 +4093,8 @@
       "DP"
     ],
     "companies": [
-      "Microsoft"
+      "Microsoft",
+      "Expedia"
     ],
     "javaConcepts": [
       "DP"
@@ -3763,7 +4109,9 @@
       "DP"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "Zoom",
+      "Twitter"
     ],
     "javaConcepts": [
       "Math"
@@ -3778,7 +4126,11 @@
       "DP"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "Bloomberg",
+      "Goldman Sachs",
+      "Adobe",
+      "Twitch"
     ],
     "javaConcepts": [
       "Bitmask"
@@ -3793,7 +4145,8 @@
       "DP"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Salesforce"
     ],
     "javaConcepts": [
       "Two Pointers"
@@ -3808,7 +4161,10 @@
       "DP"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Atlassian",
+      "Snapchat",
+      "Homebrew"
     ],
     "javaConcepts": [
       "2D DP"
@@ -3883,7 +4239,8 @@
       "DP"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "Atlassian"
     ],
     "javaConcepts": [
       "Knapsack"
@@ -3928,7 +4285,8 @@
       "DP"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "Atlassian"
     ],
     "javaConcepts": [
       "BFS",
@@ -3944,7 +4302,11 @@
       "DP"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Adobe",
+      "Pinterest",
+      "PayPal",
+      "Expedia"
     ],
     "javaConcepts": [
       "Math",
@@ -3960,7 +4322,9 @@
       "DP"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Goldman Sachs",
+      "Salesforce"
     ],
     "javaConcepts": [
       "Greedy"
@@ -3975,7 +4339,8 @@
       "DP"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Walmart"
     ],
     "javaConcepts": [
       "2D DP"
@@ -3990,7 +4355,8 @@
       "DP"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "Intuit"
     ],
     "javaConcepts": [
       "LCS"
@@ -4005,7 +4371,9 @@
       "Heap"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "Twitch",
+      "Pinterest"
     ],
     "javaConcepts": [
       "Sorting"
@@ -4035,7 +4403,9 @@
       "Heap"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Snapchat",
+      "Oracle"
     ],
     "javaConcepts": [
       "Sorting"
@@ -4050,7 +4420,8 @@
       "Heap"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Intuit"
     ],
     "javaConcepts": [
       "Min-Heap"
@@ -4080,7 +4451,10 @@
       "Heap"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Bloomberg",
+      "Twitter",
+      "Expedia"
     ],
     "javaConcepts": [
       "Max-Heap"
@@ -4095,7 +4469,8 @@
       "Heap"
     ],
     "companies": [
-      "Microsoft"
+      "Microsoft",
+      "Expedia"
     ],
     "javaConcepts": [
       "Min-Heap"
@@ -4111,7 +4486,11 @@
       "Stack"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "ByteDance",
+      "Snapchat",
+      "Homebrew",
+      "Twitter"
     ],
     "javaConcepts": [
       "Two Stacks"
@@ -4143,7 +4522,8 @@
       "Queue"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "Samsung"
     ],
     "javaConcepts": [
       "One Queue"
@@ -4159,7 +4539,8 @@
       "Array"
     ],
     "companies": [
-      "LinkedIn"
+      "LinkedIn",
+      "Homebrew"
     ],
     "javaConcepts": [
       "Chaining"
@@ -4175,7 +4556,10 @@
       "Array"
     ],
     "companies": [
-      "LinkedIn"
+      "LinkedIn",
+      "PayPal",
+      "Intuit",
+      "Meta"
     ],
     "javaConcepts": [
       "Chaining"
@@ -4191,7 +4575,9 @@
       "Stack"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "Adobe",
+      "Samsung"
     ],
     "javaConcepts": [
       "Two Stacks"
@@ -4207,7 +4593,8 @@
       "HashMap"
     ],
     "companies": [
-      "Bloomberg"
+      "Bloomberg",
+      "Netflix"
     ],
     "javaConcepts": [
       "HashMap"
@@ -4222,7 +4609,9 @@
       "Bit Manipulation"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "LinkedIn",
+      "Twitter"
     ],
     "javaConcepts": [
       "Bit Logic"
@@ -4237,7 +4626,8 @@
       "Bit Manipulation"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Homebrew"
     ],
     "javaConcepts": [
       "XOR"
@@ -4252,7 +4642,9 @@
       "Bit Manipulation"
     ],
     "companies": [
-      "Facebook"
+      "Facebook",
+      "Lockheed Martin",
+      "Zoom"
     ],
     "javaConcepts": [
       "Common Prefix"
@@ -4282,7 +4674,9 @@
       "Math"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Intuit",
+      "LinkedIn"
     ],
     "javaConcepts": [
       "HashMap"
@@ -4297,7 +4691,8 @@
       "Math"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Atlassian"
     ],
     "javaConcepts": [
       "Greedy"
@@ -4312,7 +4707,9 @@
       "Math"
     ],
     "companies": [
-      "Microsoft"
+      "Microsoft",
+      "Oracle",
+      "Twitter"
     ],
     "javaConcepts": [
       "Modulo"
@@ -4327,7 +4724,8 @@
       "Math"
     ],
     "companies": [
-      "Microsoft"
+      "Microsoft",
+      "DoorDash"
     ],
     "javaConcepts": [
       "Base-26"
@@ -4342,7 +4740,8 @@
       "Math"
     ],
     "companies": [
-      "Microsoft"
+      "Microsoft",
+      "Apple"
     ],
     "javaConcepts": [
       "Counting Factors"
@@ -4358,7 +4757,10 @@
       "Binary Search"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Airbnb",
+      "ByteDance",
+      "Zoom"
     ],
     "javaConcepts": [
       "Binary Search"
@@ -4374,7 +4776,8 @@
       "Geometry"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "Salesforce"
     ],
     "javaConcepts": [
       "GCD",
@@ -4391,7 +4794,9 @@
       "HashTable"
     ],
     "companies": [
-      "Amazon"
+      "Amazon",
+      "Twitch",
+      "Intuit"
     ],
     "javaConcepts": [
       "HashSet"
@@ -4406,7 +4811,10 @@
       "Backtracking"
     ],
     "companies": [
-      "Uber"
+      "Uber",
+      "Goldman Sachs",
+      "Intuit",
+      "LinkedIn"
     ],
     "javaConcepts": [
       "Recursion"
@@ -4421,7 +4829,10 @@
       "Array"
     ],
     "companies": [
-      "Google"
+      "Google",
+      "Pinterest",
+      "Walmart",
+      "Uber"
     ],
     "javaConcepts": [
       "Two Pointers"
@@ -4437,7 +4848,9 @@
     ],
     "companies": [
       "Accenture",
-      "Infosys"
+      "Infosys",
+      "Samsung",
+      "Twitter"
     ],
     "javaConcepts": [
       "Reversal Algorithm"
@@ -4455,7 +4868,10 @@
     "companies": [
       "Accenture",
       "Infosys",
-      "Zoho"
+      "Zoho",
+      "Zoom",
+      "Twitch",
+      "DoorDash"
     ],
     "javaConcepts": [
       "XOR",
@@ -4490,7 +4906,10 @@
     ],
     "companies": [
       "Accenture",
-      "Infosys"
+      "Infosys",
+      "ByteDance",
+      "Atlassian",
+      "Uber"
     ],
     "javaConcepts": [
       "In-place Swap"
@@ -4508,7 +4927,8 @@
     "companies": [
       "Accenture",
       "Infosys",
-      "Zoho"
+      "Zoho",
+      "Goldman Sachs"
     ],
     "javaConcepts": [
       "Two Pointers"
@@ -4560,7 +4980,10 @@
     ],
     "companies": [
       "Zoho",
-      "Accenture"
+      "Accenture",
+      "Pinterest",
+      "Apple",
+      "Twitter"
     ],
     "javaConcepts": [
       "HashMap",
@@ -4578,7 +5001,8 @@
     "companies": [
       "Zoho",
       "Accenture",
-      "Infosys"
+      "Infosys",
+      "Airbnb"
     ],
     "javaConcepts": [
       "String Comparison"
@@ -4593,7 +5017,8 @@
       "String"
     ],
     "companies": [
-      "Zoho"
+      "Zoho",
+      "Apple"
     ],
     "javaConcepts": [
       "String Building",
@@ -4611,7 +5036,9 @@
     ],
     "companies": [
       "Accenture",
-      "Infosys"
+      "Infosys",
+      "Samsung",
+      "Twitter"
     ],
     "javaConcepts": [
       "HashMap"
@@ -4627,7 +5054,8 @@
       "Math"
     ],
     "companies": [
-      "Zoho"
+      "Zoho",
+      "Twitch"
     ],
     "javaConcepts": [
       "Greedy"
@@ -4662,7 +5090,8 @@
     ],
     "companies": [
       "Accenture",
-      "Infosys"
+      "Infosys",
+      "Expedia"
     ],
     "javaConcepts": [
       "Overflow Check"
@@ -4678,7 +5107,9 @@
       "Bit Manipulation"
     ],
     "companies": [
-      "Accenture"
+      "Accenture",
+      "Uber",
+      "Netflix"
     ],
     "javaConcepts": [
       "Bit Manipulation"
@@ -4694,7 +5125,8 @@
     ],
     "companies": [
       "Zoho",
-      "Accenture"
+      "Accenture",
+      "Walmart"
     ],
     "javaConcepts": [
       "Sieve of Eratosthenes"
@@ -4710,7 +5142,10 @@
     ],
     "companies": [
       "Infosys",
-      "Accenture"
+      "Accenture",
+      "ByteDance",
+      "Walmart",
+      "Adobe"
     ],
     "javaConcepts": [
       "Euclidean Algorithm"
@@ -4726,7 +5161,8 @@
     ],
     "companies": [
       "Infosys",
-      "Accenture"
+      "Accenture",
+      "Homebrew"
     ],
     "javaConcepts": [
       "GCD",
@@ -4780,7 +5216,9 @@
     ],
     "companies": [
       "Zoho",
-      "Infosys"
+      "Infosys",
+      "Salesforce",
+      "Walmart"
     ],
     "javaConcepts": [
       "2D Array",
@@ -4797,7 +5235,9 @@
       "String"
     ],
     "companies": [
-      "Zoho"
+      "Zoho",
+      "Airbnb",
+      "Salesforce"
     ],
     "javaConcepts": [
       "Base Conversion"
@@ -4813,7 +5253,12 @@
       "String"
     ],
     "companies": [
-      "Zoho"
+      "Zoho",
+      "Airbnb",
+      "Oracle",
+      "DoorDash",
+      "Intuit",
+      "Zoom"
     ],
     "javaConcepts": [
       "Base Conversion"
@@ -4829,7 +5274,8 @@
     ],
     "companies": [
       "Accenture",
-      "Infosys"
+      "Infosys",
+      "Goldman Sachs"
     ],
     "javaConcepts": [
       "XOR"
@@ -4844,7 +5290,8 @@
       "Bit Manipulation"
     ],
     "companies": [
-      "Accenture"
+      "Accenture",
+      "Expedia"
     ],
     "javaConcepts": [
       "Bit Counting"
@@ -4859,7 +5306,8 @@
       "Bit Manipulation"
     ],
     "companies": [
-      "Accenture"
+      "Accenture",
+      "Uber"
     ],
     "javaConcepts": [
       "Bit Shifting"
@@ -4877,7 +5325,8 @@
     "companies": [
       "Accenture",
       "Infosys",
-      "Zoho"
+      "Zoho",
+      "DoorDash"
     ],
     "javaConcepts": [
       "Two Pointers"
@@ -4893,7 +5342,9 @@
       "Math"
     ],
     "companies": [
-      "Accenture"
+      "Accenture",
+      "Netflix",
+      "Salesforce"
     ],
     "javaConcepts": [
       "Carry Handling"
@@ -4928,7 +5379,10 @@
     "companies": [
       "Accenture",
       "Infosys",
-      "Zoho"
+      "Zoho",
+      "Samsung",
+      "Netflix",
+      "Expedia"
     ],
     "javaConcepts": [
       "Boyer-Moore Voting"
@@ -4944,7 +5398,10 @@
       "Binary Search"
     ],
     "companies": [
-      "Zoho"
+      "Zoho",
+      "ByteDance",
+      "Oracle",
+      "Homebrew"
     ],
     "javaConcepts": [
       "Binary Search"
@@ -4961,7 +5418,8 @@
     ],
     "companies": [
       "Zoho",
-      "Accenture"
+      "Accenture",
+      "Bloomberg"
     ],
     "javaConcepts": [
       "Binary Search"
@@ -4977,7 +5435,9 @@
       "Binary Search"
     ],
     "companies": [
-      "Zoho"
+      "Zoho",
+      "Bloomberg",
+      "Lockheed Martin"
     ],
     "javaConcepts": [
       "Binary Search"
@@ -4994,7 +5454,9 @@
     ],
     "companies": [
       "Zoho",
-      "Infosys"
+      "Infosys",
+      "Bloomberg",
+      "Goldman Sachs"
     ],
     "javaConcepts": [
       "Three Pointers"
@@ -5010,7 +5472,8 @@
       "Heap"
     ],
     "companies": [
-      "Zoho"
+      "Zoho",
+      "Oracle"
     ],
     "javaConcepts": [
       "PriorityQueue",
@@ -5028,7 +5491,10 @@
     ],
     "companies": [
       "Accenture",
-      "Infosys"
+      "Infosys",
+      "PayPal",
+      "Twitter",
+      "Expedia"
     ],
     "javaConcepts": [
       "HashSet"
@@ -5045,7 +5511,8 @@
     ],
     "companies": [
       "Accenture",
-      "Infosys"
+      "Infosys",
+      "Pinterest"
     ],
     "javaConcepts": [
       "HashSet"
@@ -5061,7 +5528,10 @@
       "HashMap"
     ],
     "companies": [
-      "Zoho"
+      "Zoho",
+      "PayPal",
+      "Zoom",
+      "Netflix"
     ],
     "javaConcepts": [
       "Prefix Sum",
@@ -5093,7 +5563,8 @@
       "String"
     ],
     "companies": [
-      "Zoho"
+      "Zoho",
+      "Twitter"
     ],
     "javaConcepts": [
       "Parsing",
@@ -5110,7 +5581,9 @@
     ],
     "companies": [
       "Accenture",
-      "Infosys"
+      "Infosys",
+      "Twitch",
+      "Meta"
     ],
     "javaConcepts": [
       "String Methods",
@@ -5127,7 +5600,8 @@
       "Backtracking"
     ],
     "companies": [
-      "Zoho"
+      "Zoho",
+      "Pinterest"
     ],
     "javaConcepts": [
       "Recursion",
@@ -5145,7 +5619,9 @@
     ],
     "companies": [
       "Zoho",
-      "Infosys"
+      "Infosys",
+      "PayPal",
+      "Atlassian"
     ],
     "javaConcepts": [
       "Boundary Tracking"
@@ -5161,7 +5637,12 @@
       "Matrix"
     ],
     "companies": [
-      "Zoho"
+      "Zoho",
+      "Pinterest",
+      "Oracle",
+      "Uber",
+      "Apple",
+      "Meta"
     ],
     "javaConcepts": [
       "Transpose",
@@ -5178,7 +5659,8 @@
       "Matrix"
     ],
     "companies": [
-      "Zoho"
+      "Zoho",
+      "Oracle"
     ],
     "javaConcepts": [
       "In-place",
