@@ -34,6 +34,37 @@ export async function POST(req: Request) {
         const difficultyMod = difficultyGuide[difficulty] || difficultyGuide['medium'];
         const companyMod = companyGuide[companyStyle] || '';
 
+        // Load problems for RAG
+        let ragContext = "";
+        try {
+            const problemsData = await import('@/data/problems.json');
+            // Check if it's the default import or the module itself
+            const allProblems = (problemsData.default || problemsData) as any[];
+
+            if (Array.isArray(allProblems)) {
+                // Filter relevant problems
+                let relevant = allProblems.filter(p =>
+                    (difficulty ? p.difficulty.toLowerCase() === difficulty.toLowerCase() : true)
+                );
+
+                // Narrow down by company if specified
+                if (companyStyle && companyStyle !== 'general') {
+                    const companyMatches = relevant.filter(p =>
+                        p.companies && p.companies.some((c: string) => c.toLowerCase().includes(companyStyle.toLowerCase()))
+                    );
+                    if (companyMatches.length > 0) relevant = companyMatches;
+                }
+
+                // Pick random 2 examples
+                if (relevant.length > 0) {
+                    const examples = relevant.sort(() => 0.5 - Math.random()).slice(0, 2);
+                    ragContext = `\n\nREFERENCE DATA (Real Interview Questions):\n${examples.map(p => `- "${p.title}": ${p.topics.join(', ')}`).join('\n')}\nUse these as inspiration for DIFFICULTY and STYLE, but generate a NEW unique question.`;
+                }
+            }
+        } catch (e) {
+            console.warn("RAG load failed", e);
+        }
+
         // Build avoid questions instruction
         const avoidList = Array.isArray(avoidQuestions) && avoidQuestions.length > 0
             ? `\n\nIMPORTANT: Do NOT ask any of these questions that were already asked:\n${avoidQuestions.map((q: string) => `- "${q}"`).join('\n')}\nGenerate a COMPLETELY DIFFERENT question.`
@@ -52,6 +83,7 @@ Based on their response, generate a thoughtful follow-up question that:
 3. OR asks them to clarify or expand on a point
 4. Matches the ${difficulty || 'medium'} difficulty level
 ${avoidList}
+${ragContext}
 
 Return JSON: {"question": "your follow-up question", "hints": ["hint1", "hint2", "hint3"]}`;
         } else if (type === 'behavioral') {
@@ -80,6 +112,7 @@ For ${difficulty || 'medium'} difficulty:
 - Easy: Definition questions, basic concepts, simple code walkthrough
 - Medium: Algorithm design, system components, optimization questions
 - Hard: Complex system design, advanced algorithms, distributed systems challenges
+${ragContext}
 
 The question should be clear, specific, and discussable in 2-3 minutes.
 ${avoidList}

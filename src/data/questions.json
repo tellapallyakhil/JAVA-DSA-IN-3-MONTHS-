@@ -869,5 +869,174 @@
         ],
         "answer": "2/13",
         "explanation": "Kings=4, Queens=4. P=8/52=2/13."
+    },
+    {
+        "id": "q34",
+        "topic": "Time & Work",
+        "question": "A can finish a work in 18 days and B can do the same work in 15 days. B worked for 10 days and left the job. In how many days, A alone can finish the remaining work?",
+        "options": [
+            "5",
+            "5.5",
+            "6",
+            "8"
+        ],
+        "answer": "6",
+        "explanation": "B's 10 day work = 10/15 = 2/3. Remaining work = 1 - 2/3 = 1/3. A can do 1 work in 18 days, so 1/3 work in 18/3 = 6 days."
+    },
+    {
+        "id": "q35",
+        "topic": "Pipes & Cisterns",
+        "question": "A cistern is normally filled in 8 hours but takes 2 hours longer to fill because of a leak in its bottom. If the cistern is full, the leak will empty it in?",
+        "options": [
+            "20 hours",
+            "28 hours",
+            "36 hours",
+            "40 hours"
+        ],
+        "answer": "40 hours",
+        "explanation": "Work rate without leak = 1/8. With leak = 1/10. Leak rate = 1/8 - 1/10 = 1/40. So 40 hours."
+    },
+    {
+        "id": "q36",
+        "topic": "Probability",
+        "question": "A card is drawn from a pack of 52 cards. The probability of getting a queen of club or a king of heart is:",
+        "options": [
+            "1/13",
+            "2/13",
+            "1/26",
+            "1/52"
+        ],
+        "answer": "1/26",
+        "explanation": "Queen of Club (1) + King of Heart (1) = 2 cards favorable. Total 52. P = 2/52 = 1/26."
+    },
+    {
+        "id": "q37",
+        "topic": "Profit & Loss",
+        "question": "If selling price is doubled, the profit triples. Find the profit percent.",
+        "options": [
+            "66.66%",
+            "100%",
+            "105.33%",
+            "120%"
+        ],
+        "answer": "100%",
+        "explanation": "Let CP=x, SP=y. Profit=y-x. New SP=2y, New Profit=2y-x. Given 2y-x = 3(y-x) => 2y-x=3y-3x => y=2x. Profit = 2x-x=x. Profit% = (x/x)*100 = 100%."
+    },
+    {
+        "id": "q38",
+        "topic": "Simple Interest",
+        "question": "A sum of money at simple interest amounts to Rs. 815 in 3 years and to Rs. 854 in 4 years. The sum is:",
+        "options": [
+            "Rs. 650",
+            "Rs. 690",
+            "Rs. 698",
+            "Rs. 700"
+        ],
+        "answer": "Rs. 698",
+        "explanation": "SI for 1 year = 854 - 815 = 39. SI for 3 years = 39 * 3 = 117. Sum = 815 - 117 = 698."
+    },
+    {
+        "id": "q39",
+        "topic": "Numbers",
+        "question": "The sum of first five prime numbers is:",
+        "options": [
+            "11",
+            "18",
+            "26",
+            "28"
+        ],
+        "answer": "28",
+        "explanation": "First 5 primes: 2, 3, 5, 7, 11. Sum = 2+3+5+7+11 = 28."
+    },
+    {
+        "id": "q40",
+        "topic": "Speed Time Distance",
+        "question": "Excluding stoppages, the speed of a bus is 54 kmph and including stoppages, it is 45 kmph. For how many minutes does the bus stop per hour?",
+        "options": [
+            "9",
+            "10",
+            "12",
+            "20"
+        ],
+        "answer": "10",
+        "explanation": "Loss in speed due to stoppage = 54 - 45 = 9kmph. Time taken to cover 9km with 54kmph = 9/54 hr = 1/6 hr = 10 mins."
+    },
+    {
+        "id": "q41",
+        "topic": "Averages",
+        "question": "The average weight of 8 person's increases by 2.5 kg when a new person comes in place of one of them weighing 65 kg. What might be the weight of the new person?",
+        "options": [
+            "76 kg",
+            "76.5 kg",
+            "85 kg",
+            "Date inadequate"
+        ],
+        "answer": "85 kg",
+        "explanation": "Total weight increase = 8 * 2.5 = 20 kg. New person weight = 65 + 20 = 85 kg."
+    },
+    {
+        "id": "r31",
+        "topic": "Series Completion",
+        "question": "Choose the missing terms: B, D, F, I, L, P, ?",
+        "options": [
+            "R",
+            "S",
+            "T",
+            "U"
+        ],
+        "answer": "T",
+        "explanation": "B(+2)D(+2)F(+3)I(+3)L(+4)P(+4)T."
+    },
+    {
+        "id": "r32",
+        "topic": "Analogy",
+        "question": "Flow : River :: Stagnant : ?",
+        "options": [
+            "Rain",
+            "Stream",
+            "Pool",
+            "Canal"
+        ],
+        "answer": "Pool",
+        "explanation": "River water flows, Pool water is stagnant."
+    },
+    {
+        "id": "r33",
+        "topic": "Statement & Assumptions",
+        "question": "Statement: 'Buy pure and natural honey of company X.' - An advertisement. Assumption I: Artificial honey can be prepared. Assumption II: People do not mind paying more for pure and natural honey.",
+        "options": [
+            "Only I is implicit",
+            "Only II is implicit",
+            "Both I and II are implicit",
+            "Neither I nor II is implicit"
+        ],
+        "answer": "Both I and II are implicit",
+        "explanation": "Ad emphasizes 'pure/natural' implying artificial exists (I). Ads target buyers willing to buy, implying II."
+    },
+    {
+        "id": "r34",
+        "topic": "Coding Decoding",
+        "question": "If Z = 52 and ACT = 48, then BAT will be equal to:",
+        "options": [
+            "39",
+            "41",
+            "44",
+            "46"
+        ],
+        "answer": "46",
+        "explanation": "Z = 26*2 = 52. ACT = (1+3+20)*2 = 48. BAT = (2+1+20)*2 = 46."
+    },
+    {
+        "id": "r35",
+        "topic": "Blood Relations",
+        "question": "Pointing to a man, a woman said, 'His mother is the only daughter of my mother.' How is the woman related to the man?",
+        "options": [
+            "Mother",
+            "Daughter",
+            "Sister",
+            "Grandmother"
+        ],
+        "answer": "Mother",
+        "explanation": "Only daughter of woman's mother is the woman herself. So the woman is the man's mother."
     }
 ]
