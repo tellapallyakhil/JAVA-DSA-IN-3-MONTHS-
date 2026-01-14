@@ -45,6 +45,16 @@ export async function POST(req: Request) {
             });
         }
 
+        // Check for "keyboard smash" gibberish (e.g. "asdfghjkl", "qwert")
+        const words = trimmedAnswer.split(/\s+/);
+        const isGibberish = words.some((w: string) => w.length > 10 && !/[aeiouy]/i.test(w));
+        if (isGibberish) {
+            return NextResponse.json({
+                feedback: "I can't understand this answer. It looks like random keystrokes. Please provide a valid evaluation.",
+                score: 0
+            });
+        }
+
         const systemPrompt = `You are a strict senior tech interviewer providing constructive but honest feedback.
 
 The candidate was asked: "${question}"
@@ -53,9 +63,10 @@ Topic: ${topic || 'general'}
 Difficulty: ${difficulty || 'medium'}
 
 IMPORTANT SCORING RULES:
-1. If the answer has LESS THAN 10% relevance to the question (off-topic, random words, jokes, greetings, or doesn't attempt to answer), give a score of 0.
-2. If the answer is a greeting like "hi", "hello", etc., give score 0 and politely ask them to answer the actual question.
-3. Be STRICT - do not give participation points. An irrelevant answer = 0.
+1. If the answer has LESS THAN 10% relevance (off-topic, random words, jokes, greetings), give a score of 0.
+2. If the answer is GIBBERISH (e.g., "dhbdoiksjjkfwl", "asdf"), random letters, or clearly meaningless, give a score of 0.
+3. If the answer is a greeting ("hi"), give score 0.
+4. Be STRICT. Do not hallucinate meaning in random text.
 
 Evaluate the answer and provide:
 1. A score from 0-10 (be realistic and strict)
@@ -118,14 +129,14 @@ Return a JSON object: {"score": <number>, "feedback": "<string>"}`;
 
     } catch (error: unknown) {
         console.error('Feedback API Error:', error);
-        // Return a generic fallback feedback with random decent score
-        const scores = [7, 7, 8, 8, 8];
+        // Return a generic fallback feedback with NEUTRAL score (5) to avoid over-praising failures
+        // We assume 5 = "Average/Unsure" rather than 8 "Good"
+        const scores = [4, 5, 5, 6];
         const feedbacks = [
-            'Good answer! Consider adding more concrete examples to strengthen your response.',
-            'Solid response. You covered the main points well, but could go deeper into the technical details.',
-            'Well stated. Try to structure your answer with the STAR method for even better clarity.',
-            'Good understanding shown. Don\'t forget to mention edge cases or trade-offs.',
-            'Nice work! A few more specific metrics or results would make this answer even stronger.'
+            'Thanks for your response. It captures some aspects, but I would recommend adding more specific technical details.',
+            'This is a reasonable start. Try to elaborate more on the specific algorithms or data structures involved.',
+            'Your answer is noted. For a higher score, ensure you cover edge cases and time complexity.',
+            'Okay, fair point. In a real interview, you might want to structure this more clearly using the STAR method.'
         ];
         return NextResponse.json({
             feedback: feedbacks[Math.floor(Math.random() * feedbacks.length)],
