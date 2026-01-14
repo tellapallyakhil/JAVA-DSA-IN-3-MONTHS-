@@ -28,7 +28,8 @@
             "topic": "Coding Decoding",
             "questionIds": [
                 "r1",
-                "r2"
+                "r2",
+                "r34"
             ]
         },
         "flashcards": [
@@ -82,7 +83,8 @@
             "topic": "Analogy",
             "questionIds": [
                 "r13",
-                "r14"
+                "r14",
+                "r32"
             ]
         },
         "flashcards": [
@@ -136,7 +138,8 @@
             "topic": "Blood Relations",
             "questionIds": [
                 "r3",
-                "r4"
+                "r4",
+                "r35"
             ]
         },
         "flashcards": [
@@ -279,7 +282,8 @@
             "topic": "Pipes & Cisterns",
             "questionIds": [
                 "q22",
-                "q23"
+                "q23",
+                "q35"
             ]
         },
         "reasoning": {
@@ -383,7 +387,8 @@
             "topic": "Profit & Loss",
             "questionIds": [
                 "q8",
-                "q7"
+                "q7",
+                "q37"
             ]
         },
         "reasoning": {
@@ -485,7 +490,8 @@
             "topic": "Simple Interest",
             "questionIds": [
                 "q10",
-                "q9"
+                "q9",
+                "q38"
             ]
         },
         "reasoning": {
@@ -916,7 +922,8 @@
             "topic": "Time & Work",
             "questionIds": [
                 "q13",
-                "q12"
+                "q12",
+                "q34"
             ]
         },
         "reasoning": {
@@ -1387,7 +1394,8 @@
         "aptitude": {
             "topic": "Averages",
             "questionIds": [
-                "q15"
+                "q15",
+                "q41"
             ]
         },
         "reasoning": {
@@ -1726,7 +1734,8 @@
         "aptitude": {
             "topic": "Probability",
             "questionIds": [
-                "q16"
+                "q16",
+                "q36"
             ]
         },
         "reasoning": {
@@ -1837,7 +1846,7 @@
         "flashcards": [
             {
                 "front": "Union Find operations?",
-                "back": "Find: O(\u00ce\u00b1(n)) \u00e2\u2030\u02c6 O(1). Union: O(\u00ce\u00b1(n)) \u00e2\u2030\u02c6 O(1)."
+                "back": "Find: O(Î±(n)) â‰ˆ O(1). Union: O(Î±(n)) â‰ˆ O(1)."
             },
             {
                 "front": "Union-Find 'Find' complexity with compression?",
@@ -2725,7 +2734,8 @@
         "aptitude": {
             "topic": "Numbers",
             "questionIds": [
-                "q1"
+                "q1",
+                "q39"
             ]
         },
         "reasoning": {
@@ -3569,7 +3579,9 @@
             "topic": "Mixed",
             "questionIds": [
                 "r1",
-                "r2"
+                "r2",
+                "r31",
+                "r33"
             ]
         },
         "flashcards": [
@@ -3787,7 +3799,8 @@
             "topic": "Mixed",
             "questionIds": [
                 "q1",
-                "q2"
+                "q2",
+                "q40"
             ]
         },
         "reasoning": {
@@ -4034,7 +4047,7 @@
     },
     {
         "day": 90,
-        "title": "You're Ready! \u00f0\u0178\u017d\u2030",
+        "title": "You're Ready! ðŸŽ‰",
         "type": "Holiday",
         "javaDSA": {
             "topic": "Celebration",
@@ -4069,7 +4082,7 @@
         "flashcards": [
             {
                 "front": "Final message?",
-                "back": "You've put in the work. Trust yourself. Go ace that interview! \u00f0\u0178\u0161\u20ac"
+                "back": "You've put in the work. Trust yourself. Go ace that interview! ðŸš€"
             }
         ]
     }
