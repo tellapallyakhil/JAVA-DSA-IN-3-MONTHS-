@@ -56,6 +56,8 @@
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
+
+  --breakpoint-xs: 375px;
 }
 
 @utility glass {
@@ -112,17 +114,7 @@ body {
 .line-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
-
-/* Extra small breakpoint for mobile */
-@media (min-width: 375px) {
-  .xs\:inline {
-    display: inline;
-  }
-
-  .xs\:hidden {
-    display: none;
-  }
 }
