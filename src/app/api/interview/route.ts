@@ -55,10 +55,16 @@ export async function POST(req: Request) {
                     if (companyMatches.length > 0) relevant = companyMatches;
                 }
 
-                // Pick random 2 examples
+                // Pick random 3 examples
                 if (relevant.length > 0) {
-                    const examples = relevant.sort(() => 0.5 - Math.random()).slice(0, 2);
-                    ragContext = `\n\nREFERENCE DATA (Real Interview Questions):\n${examples.map(p => `- "${p.title}": ${p.topics.join(', ')}`).join('\n')}\nUse these as inspiration for DIFFICULTY and STYLE, but generate a NEW unique question.`;
+                    const examples = relevant.sort(() => 0.5 - Math.random()).slice(0, 3);
+                    ragContext = `\n\nREFERENCE DATA (Real Interview Questions):\n${examples.map(p =>
+                        `- Question: "${p.title}"
+  Topics: ${p.topics.join(', ')}
+  Difficulty: ${p.difficulty}
+  Companies: ${p.companies ? p.companies.join(', ') : 'General'}
+  Key Concepts: ${p.javaConcepts ? p.javaConcepts.join(', ') : 'N/A'}`
+                    ).join('\n')}\n\nINSTRUCTION: Analyze the "REFERENCE DATA" above. The generated question should match the complexity and style of these real-world examples, but MUST be a completely new and unique question.`;
                 }
             }
         } catch (e) {
