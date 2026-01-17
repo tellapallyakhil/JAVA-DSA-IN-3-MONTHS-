@@ -1055,6 +1055,18 @@
                 {
                     "front": "When to use BFS vs DFS on trees?",
                     "back": "BFS for level-wise problems, DFS for path/depth problems"
+                },
+                {
+                    "front": "Difference between Full and Complete Binary Tree?",
+                    "back": "Full: Every node has 0 or 2 children. Complete: All levels filled except possibly last (left-filled)."
+                },
+                {
+                    "front": "What is a Balanced Binary Tree?",
+                    "back": "A tree where the height difference between left and right subtrees is at most 1 for every node."
+                },
+                {
+                    "front": "What is the Lowest Common Ancestor (LCA)?",
+                    "back": "The deepest node that is an ancestor to two specific nodes in the tree."
                 }
             ],
             "levels": [
@@ -1215,6 +1227,18 @@
                 {
                     "front": "How to identify DP problems?",
                     "back": "Keywords: minimum/maximum, count ways, can you achieve, optimal"
+                },
+                {
+                    "front": "What is space optimization in DP?",
+                    "back": "Reducing space complexity (e.g., O(n) to O(1)) by storing only necessary previous states."
+                },
+                {
+                    "front": "Tabulation vs Memoization?",
+                    "back": "Tabulation (bottom-up) avoids recursion overhead; Memoization (top-down) solves only needed subproblems."
+                },
+                {
+                    "front": "What constitutes a 'state' in DP?",
+                    "back": "The set of variables (parameters) needed to uniquely identify a subproblem."
                 }
             ],
             "levels": [
@@ -1371,6 +1395,18 @@
                 {
                     "front": "Adjacency list vs matrix?",
                     "back": "List: O(V+E) space, O(degree) edge check. Matrix: O(V²) space, O(1) edge check"
+                },
+                {
+                    "front": "Difference between Dijkstra and BFS?",
+                    "back": "BFS finds shortest path in unweighted graphs; Dijkstra handles weighted edges (non-negative)."
+                },
+                {
+                    "front": "What is a Connected Component?",
+                    "back": "A subgraph where every vertex is reachable from every other vertex in that subgraph."
+                },
+                {
+                    "front": "How to detect a cycle in a Directed Graph?",
+                    "back": "Use DFS with recursion stack tracking or Kahn's Algorithm (Topological Sort)."
                 }
             ],
             "levels": [
@@ -1515,6 +1551,18 @@
                 {
                     "front": "Can binary search work on unsorted arrays?",
                     "back": "No, array must be sorted or have monotonic property"
+                },
+                {
+                    "front": "What is 'Binary Search on Answer'?",
+                    "back": "Searching within a range of possible answers (min to max capacity/value) rather than an array index."
+                },
+                {
+                    "front": "Difference between Lower Bound and Upper Bound?",
+                    "back": "Lower Bound: First element >= target. Upper Bound: First element > target."
+                },
+                {
+                    "front": "Best case time complexity of Binary Search?",
+                    "back": "O(1) - when the middle element is the target."
                 }
             ],
             "levels": [
