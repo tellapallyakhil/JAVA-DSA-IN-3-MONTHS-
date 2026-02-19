@@ -63,8 +63,7 @@
                 "9",
                 "10",
                 "11",
-                "7",
-                "1"
+                "61"
             ],
             "concepts": [
                 "Prefix Sum",
@@ -165,12 +164,10 @@
             "topic": "Two Pointers",
             "description": "Advanced applications including container problems.",
             "problems": [
-                "12",
-                "13",
                 "14",
-                "8",
-                "9",
-                "11"
+                "67",
+                "74",
+                "16"
             ],
             "concepts": [
                 "Container problems",
@@ -617,8 +614,8 @@
             "description": "Iterative and recursive reversal techniques.",
             "problems": [
                 "2",
-                "15",
-                "16"
+                "81",
+                "74"
             ],
             "concepts": [
                 "Iterative reversal",
@@ -719,8 +716,8 @@
             "description": "Floyd's algorithm for cycle detection.",
             "problems": [
                 "3",
-                "2",
-                "15"
+                "78",
+                "79"
             ],
             "concepts": [
                 "Floyd's algorithm",
