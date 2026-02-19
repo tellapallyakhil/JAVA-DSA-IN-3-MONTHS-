@@ -24,7 +24,7 @@ public class Main {
 }`);
 
     // Standard Input/Output States
-    const [stdin, setStdin] = useState("Antigravity\n10 20");
+    const [stdin, setStdin] = useState("akhil\n10 20");
     const [output, setOutput] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [isCheerpJReady, setIsCheerpJReady] = useState(false);
