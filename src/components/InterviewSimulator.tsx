@@ -66,7 +66,7 @@ export default function InterviewSimulator({ fullPage = false }: InterviewSimula
     const [isCameraOn, setIsCameraOn] = useState(false);
     const [isMicOn, setIsMicOn] = useState(true);
     const [isSpeaking, setIsSpeaking] = useState(false);
-    const [voiceEnabled, setVoiceEnabled] = useState(false);
+    const [voiceEnabled, setVoiceEnabled] = useState(true);
     const [stats, setStats] = useState<SessionStats | null>(null);
     const [currentHints, setCurrentHints] = useState<string[]>([]);
     const [showHints, setShowHints] = useState(false);
@@ -702,26 +702,28 @@ export default function InterviewSimulator({ fullPage = false }: InterviewSimula
                                 </div>
                             </div>
 
-                            {/* Voice Settings */}
-                            <div className="flex items-center justify-between bg-white/5 rounded-xl p-4 border border-white/10">
-                                <div className="flex items-center gap-3">
-                                    <Volume2 className="text-blue-400" size={20} />
-                                    <div>
-                                        <div className="text-sm font-medium">Voice Narration</div>
-                                        <div className="text-xs text-muted-foreground">AI reads questions aloud</div>
-                                    </div>
-                                </div>
-                                <button
-                                    onClick={() => setVoiceEnabled(!voiceEnabled)}
-                                    className={`w-12 h-6 rounded-full transition-colors relative ${voiceEnabled ? 'bg-primary' : 'bg-white/20'
-                                        }`}
-                                >
-                                    <div className={`absolute top-1 w-4 h-4 rounded-full bg-white transition-transform ${voiceEnabled ? 'translate-x-7' : 'translate-x-1'
-                                        }`} />
-                                </button>
-                            </div>
+
                         </div>
                     )}
+
+                    {/* Voice Settings - Highly Visible */}
+                    <div className="flex items-center justify-between bg-white/5 rounded-xl p-4 border border-white/10 mb-6">
+                        <div className="flex items-center gap-3">
+                            <div className="p-2 bg-blue-500/20 rounded-lg text-blue-400">
+                                <Volume2 size={20} />
+                            </div>
+                            <div>
+                                <div className="text-sm font-medium">Voice Interviewer</div>
+                                <div className="text-xs text-muted-foreground">AI reads questions aloud (Realistic)</div>
+                            </div>
+                        </div>
+                        <button
+                            onClick={() => setVoiceEnabled(!voiceEnabled)}
+                            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none ${voiceEnabled ? 'bg-primary' : 'bg-white/20'}`}
+                        >
+                            <span className={`${voiceEnabled ? 'translate-x-6' : 'translate-x-1'} inline-block h-4 w-4 transform rounded-full bg-white transition-transform`} />
+                        </button>
+                    </div>
 
                     {/* How it Works */}
                     <div className="bg-gradient-to-br from-yellow-500/10 via-amber-500/5 to-transparent rounded-xl p-4 mb-6 border border-yellow-500/20">

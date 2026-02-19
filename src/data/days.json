@@ -21,7 +21,12 @@
             "topic": "Numbers & Decimal Fractions",
             "questionIds": [
                 "q1",
-                "q2"
+                "q2",
+                "q39",
+                "q_new_1",
+                "q_boost_200",
+                "q_boost_201",
+                "q_boost_202"
             ]
         },
         "reasoning": {
@@ -75,7 +80,12 @@
             "topic": "Ages",
             "questionIds": [
                 "q17",
-                "q18"
+                "q18",
+                "q5",
+                "q6",
+                "q15",
+                "q34",
+                "q35"
             ]
         },
         "reasoning": {
@@ -130,7 +140,10 @@
             "topic": "HCF & LCM",
             "questionIds": [
                 "q4",
-                "q3"
+                "q3",
+                "q_new_2",
+                "q_boost_274",
+                "q_boost_275"
             ]
         },
         "reasoning": {
@@ -138,7 +151,9 @@
             "questionIds": [
                 "r3",
                 "r4",
-                "r35"
+                "r35",
+                "r_new_4",
+                "r_new_5"
             ]
         },
         "flashcards": [
@@ -178,7 +193,13 @@
             "topic": "Time Speed Distance",
             "questionIds": [
                 "q19",
-                "q20"
+                "q20",
+                "q21",
+                "q_new_11",
+                "q_new_12",
+                "q_boost_213",
+                "q_boost_214",
+                "q_boost_215"
             ]
         },
         "reasoning": {
@@ -233,7 +254,13 @@
             "topic": "Percentages",
             "questionIds": [
                 "q6",
-                "q5"
+                "q5",
+                "q17",
+                "q18",
+                "q_new_3",
+                "q_new_4",
+                "gen_age_110",
+                "gen_age_111"
             ]
         },
         "reasoning": {
@@ -280,14 +307,19 @@
             "questionIds": [
                 "q22",
                 "q23",
-                "q35"
+                "q35",
+                "q35_1",
+                "q_new_13",
+                "q_boost_216",
+                "q_boost_day6_apt_0"
             ]
         },
         "reasoning": {
             "topic": "Statement Conclusion",
             "questionIds": [
                 "r18",
-                "r19"
+                "r19",
+                "q_boost_273"
             ]
         },
         "flashcards": [
@@ -329,14 +361,20 @@
             "topic": "Mixtures",
             "questionIds": [
                 "q24",
-                "q25"
+                "q25",
+                "q_boost_231",
+                "q_boost_day7_apt_0",
+                "q_boost_day7_apt_1"
             ]
         },
         "reasoning": {
             "topic": "Mirror Image",
             "questionIds": [
                 "r20",
-                "r21"
+                "r21",
+                "q_boost_272",
+                "q_boost_day7_res_0",
+                "q_boost_day7_res_1"
             ]
         },
         "flashcards": [
@@ -385,7 +423,13 @@
             "questionIds": [
                 "q8",
                 "q7",
-                "q37"
+                "q37",
+                "q37_1",
+                "q_new_5",
+                "q_new_6",
+                "q_boost_207",
+                "q_boost_208",
+                "q_boost_277"
             ]
         },
         "reasoning": {
@@ -432,14 +476,20 @@
             "topic": "Clock",
             "questionIds": [
                 "q26",
-                "q27"
+                "q27",
+                "logic_12",
+                "q_boost_257",
+                "q_boost_258",
+                "q_boost_291"
             ]
         },
         "reasoning": {
             "topic": "Venn Diagram",
             "questionIds": [
                 "r22",
-                "r23"
+                "r23",
+                "q_boost_265",
+                "q_boost_266"
             ]
         },
         "flashcards": [
@@ -488,7 +538,13 @@
             "questionIds": [
                 "q10",
                 "q9",
-                "q38"
+                "q38",
+                "gen_si_105",
+                "gen_si_106",
+                "gen_si_107",
+                "gen_si_108",
+                "gen_si_109",
+                "q_boost_217"
             ]
         },
         "reasoning": {
@@ -533,14 +589,20 @@
             "topic": "Calendar",
             "questionIds": [
                 "q28",
-                "q29"
+                "q29",
+                "logic_11",
+                "q_boost_255",
+                "q_boost_256",
+                "q_boost_290"
             ]
         },
         "reasoning": {
             "topic": "Ranking",
             "questionIds": [
                 "r24",
-                "r25"
+                "r25",
+                "q_boost_261",
+                "q_boost_289"
             ]
         },
         "flashcards": [
@@ -580,14 +642,20 @@
             "topic": "Boats & Streams",
             "questionIds": [
                 "q30",
-                "q31"
+                "q31",
+                "q_boost_228",
+                "q_boost_day12_apt_0"
             ]
         },
         "reasoning": {
             "topic": "Puzzle",
             "questionIds": [
                 "r26",
-                "r27"
+                "r27",
+                "q_boost_262",
+                "q_boost_263",
+                "q_boost_287",
+                "q_boost_day12_res_0"
             ]
         },
         "flashcards": [
@@ -626,14 +694,20 @@
             "topic": "Permutation Combination",
             "questionIds": [
                 "q32",
-                "q33"
+                "q33",
+                "q_new_16",
+                "q_new_17",
+                "q_boost_day13_apt_0"
             ]
         },
         "reasoning": {
             "topic": "Cubes",
             "questionIds": [
                 "r29",
-                "r30"
+                "r30",
+                "q_boost_268",
+                "q_boost_269",
+                "q_boost_day13_res_0"
             ]
         },
         "flashcards": [
@@ -675,13 +749,20 @@
             "topic": "Profit & Loss",
             "questionIds": [
                 "q7",
-                "q8"
+                "q8",
+                "q37_1",
+                "q_new_5",
+                "q_new_6",
+                "q_boost_207",
+                "q_boost_208",
+                "q_boost_277"
             ]
         },
         "reasoning": {
             "topic": "Seating Arrangement",
             "questionIds": [
-                "r11"
+                "r11",
+                "q_boost_259"
             ]
         },
         "flashcards": [
@@ -728,13 +809,31 @@
         "aptitude": {
             "topic": "Ratio & Proportion",
             "questionIds": [
-                "q14"
+                "q14",
+                "q_new_7",
+                "q_new_8",
+                "q_boost_209",
+                "q_boost_210",
+                "q_day15_apt_1",
+                "q_day15_apt_2",
+                "q_day15_apt_3",
+                "q_day15_apt_4",
+                "q_day15_apt_5"
             ]
         },
         "reasoning": {
             "topic": "Data Sufficiency",
             "questionIds": [
-                "r1"
+                "q_day15_res_1",
+                "q_day15_res_2",
+                "q_day15_res_3",
+                "q_day15_res_4",
+                "q_day15_res_5",
+                "q_day15_res_6",
+                "q_day15_res_7",
+                "q_day15_res_8",
+                "q_day15_res_9",
+                "q_day15_res_10"
             ]
         },
         "flashcards": [
@@ -774,7 +873,14 @@
         "aptitude": {
             "topic": "Ratio & Proportion",
             "questionIds": [
-                "q14"
+                "q14",
+                "q_new_7",
+                "q_new_8",
+                "q_boost_209",
+                "q_boost_210",
+                "q_day15_apt_1",
+                "q_day15_apt_2",
+                "q_day15_apt_3"
             ]
         },
         "reasoning": {
@@ -827,13 +933,21 @@
         "aptitude": {
             "topic": "Partnership",
             "questionIds": [
-                "q1"
+                "q1",
+                "q_boost_day17_apt_0",
+                "q_boost_day17_apt_1"
             ]
         },
         "reasoning": {
             "topic": "Puzzles",
             "questionIds": [
-                "r1"
+                "r1",
+                "r26",
+                "r27",
+                "q_boost_262",
+                "q_boost_263",
+                "q_boost_287",
+                "q_boost_day17_res_0"
             ]
         },
         "flashcards": [
@@ -872,14 +986,20 @@
             "topic": "Partnership",
             "questionIds": [
                 "q1",
-                "q2"
+                "q2",
+                "q_boost_day18_apt_0"
             ]
         },
         "reasoning": {
             "topic": "Puzzles",
             "questionIds": [
                 "r1",
-                "r2"
+                "r2",
+                "r26",
+                "r27",
+                "q_boost_262",
+                "q_boost_263",
+                "q_boost_287"
             ]
         },
         "flashcards": [
@@ -920,7 +1040,13 @@
             "questionIds": [
                 "q13",
                 "q12",
-                "q34"
+                "q34",
+                "q34_1",
+                "q_new_9",
+                "q_new_10",
+                "q_boost_211",
+                "q_boost_212",
+                "q_boost_278"
             ]
         },
         "reasoning": {
@@ -965,7 +1091,13 @@
             "topic": "Time & Work",
             "questionIds": [
                 "q13",
-                "q12"
+                "q12",
+                "q34_1",
+                "q_new_9",
+                "q_new_10",
+                "q_boost_211",
+                "q_boost_212",
+                "q_boost_278"
             ]
         },
         "reasoning": {
@@ -1014,7 +1146,13 @@
             "topic": "Time & Work",
             "questionIds": [
                 "q13",
-                "q12"
+                "q12",
+                "q34_1",
+                "q_new_9",
+                "q_new_10",
+                "q_boost_211",
+                "q_boost_212",
+                "q_boost_278"
             ]
         },
         "reasoning": {
@@ -1068,13 +1206,21 @@
         "aptitude": {
             "topic": "Pipes & Cisterns",
             "questionIds": [
-                "q1"
+                "q1",
+                "q22",
+                "q23",
+                "q35_1",
+                "q_new_13",
+                "q_boost_216",
+                "q_boost_day22_apt_0",
+                "q_boost_day22_apt_1"
             ]
         },
         "reasoning": {
             "topic": "Statement Arguments",
             "questionIds": [
-                "r1"
+                "r1",
+                "q_boost_day22_res_0"
             ]
         },
         "flashcards": [
@@ -1116,7 +1262,13 @@
             "topic": "Pipes & Cisterns",
             "questionIds": [
                 "q1",
-                "q2"
+                "q2",
+                "q22",
+                "q23",
+                "q35_1",
+                "q_new_13",
+                "q_boost_216",
+                "q_boost_day23_apt_0"
             ]
         },
         "reasoning": {
@@ -1169,13 +1321,21 @@
         "aptitude": {
             "topic": "Boats & Streams",
             "questionIds": [
-                "q1"
+                "q1",
+                "q30",
+                "q31",
+                "q_boost_228",
+                "q_boost_day24_apt_0",
+                "q_boost_day24_apt_1",
+                "q_boost_day24_apt_2"
             ]
         },
         "reasoning": {
             "topic": "Course of Action",
             "questionIds": [
-                "r1"
+                "r1",
+                "q_boost_day24_res_0",
+                "q_boost_day24_res_1"
             ]
         },
         "flashcards": [
@@ -1214,14 +1374,20 @@
             "topic": "Boats & Streams",
             "questionIds": [
                 "q1",
-                "q2"
+                "q2",
+                "q30",
+                "q31",
+                "q_boost_228",
+                "q_boost_day25_apt_0",
+                "q_boost_day25_apt_1"
             ]
         },
         "reasoning": {
             "topic": "Course of Action",
             "questionIds": [
                 "r1",
-                "r2"
+                "r2",
+                "q_boost_day25_res_0"
             ]
         },
         "flashcards": [
@@ -1259,13 +1425,21 @@
         "aptitude": {
             "topic": "Trains",
             "questionIds": [
-                "q1"
+                "q1",
+                "q_boost_229",
+                "q_boost_230",
+                "q_boost_day26_apt_0",
+                "q_boost_day26_apt_1",
+                "q_boost_day26_apt_2"
             ]
         },
         "reasoning": {
             "topic": "Statement Assumptions",
             "questionIds": [
-                "r1"
+                "r1",
+                "q_boost_day26_res_0",
+                "q_boost_day26_res_1",
+                "q_boost_day26_res_2"
             ]
         },
         "flashcards": [
@@ -1304,14 +1478,20 @@
             "topic": "Trains",
             "questionIds": [
                 "q1",
-                "q2"
+                "q2",
+                "q_boost_229",
+                "q_boost_230",
+                "q_boost_day27_apt_0",
+                "q_boost_day27_apt_1"
             ]
         },
         "reasoning": {
             "topic": "Statement Assumptions",
             "questionIds": [
                 "r1",
-                "r2"
+                "r2",
+                "q_boost_day27_res_0",
+                "q_boost_day27_res_1"
             ]
         },
         "flashcards": [
@@ -1353,7 +1533,13 @@
             "topic": "Numbers & Decimal Fractions",
             "questionIds": [
                 "q2",
-                "q1"
+                "q1",
+                "q39",
+                "q_new_1",
+                "q_boost_200",
+                "q_boost_201",
+                "q_boost_202",
+                "q_boost_203"
             ]
         },
         "reasoning": {
@@ -1392,7 +1578,14 @@
             "topic": "Averages",
             "questionIds": [
                 "q15",
-                "q41"
+                "q41",
+                "q17",
+                "q18",
+                "gen_avg_100",
+                "gen_avg_101",
+                "gen_avg_102",
+                "gen_avg_103",
+                "gen_avg_104"
             ]
         },
         "reasoning": {
@@ -1440,7 +1633,14 @@
         "aptitude": {
             "topic": "Averages",
             "questionIds": [
-                "q15"
+                "q15",
+                "q17",
+                "q18",
+                "q41",
+                "gen_avg_100",
+                "gen_avg_101",
+                "gen_avg_102",
+                "gen_avg_103"
             ]
         },
         "reasoning": {
@@ -1494,7 +1694,15 @@
         "aptitude": {
             "topic": "Problems on Ages",
             "questionIds": [
-                "q1"
+                "q1",
+                "q17",
+                "q18",
+                "gen_age_110",
+                "gen_age_111",
+                "gen_age_112",
+                "gen_age_113",
+                "gen_age_114",
+                "q_boost_221"
             ]
         },
         "reasoning": {
@@ -1539,7 +1747,14 @@
             "topic": "Problems on Ages",
             "questionIds": [
                 "q1",
-                "q2"
+                "q2",
+                "q17",
+                "q18",
+                "gen_age_110",
+                "gen_age_111",
+                "gen_age_112",
+                "gen_age_113",
+                "gen_age_114"
             ]
         },
         "reasoning": {
@@ -1583,14 +1798,21 @@
         "aptitude": {
             "topic": "Mixtures & Alligations",
             "questionIds": [
-                "q1"
+                "q1",
+                "q24",
+                "q25",
+                "q_boost_231"
             ]
         },
         "reasoning": {
             "topic": "Number Series",
             "questionIds": [
                 "r9",
-                "r8"
+                "r8",
+                "r_new_1",
+                "r_new_2",
+                "logic_1",
+                "logic_2"
             ]
         },
         "flashcards": [
@@ -1629,14 +1851,20 @@
             "topic": "Mixtures & Alligations",
             "questionIds": [
                 "q1",
-                "q2"
+                "q2",
+                "q24",
+                "q25",
+                "q_boost_231"
             ]
         },
         "reasoning": {
             "topic": "Number Series",
             "questionIds": [
                 "r8",
-                "r9"
+                "r9",
+                "r_new_1",
+                "r_new_2",
+                "logic_1"
             ]
         },
         "flashcards": [
@@ -1677,7 +1905,14 @@
         "aptitude": {
             "topic": "Averages",
             "questionIds": [
-                "q15"
+                "q15",
+                "q17",
+                "q18",
+                "q41",
+                "gen_avg_100",
+                "gen_avg_101",
+                "gen_avg_102",
+                "gen_avg_103"
             ]
         },
         "reasoning": {
@@ -1732,7 +1967,14 @@
             "topic": "Probability",
             "questionIds": [
                 "q16",
-                "q36"
+                "q36",
+                "q37",
+                "q36_1",
+                "q_new_14",
+                "q_new_15",
+                "q_boost_222",
+                "q_boost_223",
+                "q_boost_224"
             ]
         },
         "reasoning": {
@@ -1779,7 +2021,15 @@
         "aptitude": {
             "topic": "Probability",
             "questionIds": [
-                "q16"
+                "q16",
+                "q36",
+                "q37",
+                "q36_1",
+                "q_new_14",
+                "q_new_15",
+                "q_boost_222",
+                "q_boost_223",
+                "q_boost_224"
             ]
         },
         "reasoning": {
@@ -1831,13 +2081,21 @@
         "aptitude": {
             "topic": "Permutation & Combination",
             "questionIds": [
-                "q1"
+                "q1",
+                "q_boost_225",
+                "q_boost_226",
+                "q_boost_day38_apt_0",
+                "q_boost_day38_apt_1"
             ]
         },
         "reasoning": {
             "topic": "Mirror Image",
             "questionIds": [
-                "r1"
+                "r1",
+                "r20",
+                "r21",
+                "q_boost_272",
+                "q_boost_day38_res_0"
             ]
         },
         "flashcards": [
@@ -1877,14 +2135,20 @@
             "topic": "Permutation & Combination",
             "questionIds": [
                 "q1",
-                "q2"
+                "q2",
+                "q_boost_225",
+                "q_boost_226",
+                "q_boost_day39_apt_0"
             ]
         },
         "reasoning": {
             "topic": "Mirror Image",
             "questionIds": [
                 "r1",
-                "r2"
+                "r2",
+                "r20",
+                "r21",
+                "q_boost_272"
             ]
         },
         "flashcards": [
@@ -1923,13 +2187,21 @@
         "aptitude": {
             "topic": "Geometry",
             "questionIds": [
-                "q1"
+                "q1",
+                "q_boost_227",
+                "q_boost_day40_apt_0",
+                "q_boost_day40_apt_1",
+                "q_boost_day40_apt_2",
+                "q_boost_day40_apt_3"
             ]
         },
         "reasoning": {
             "topic": "Water Image",
             "questionIds": [
-                "r1"
+                "r1",
+                "q_boost_day40_res_0",
+                "q_boost_day40_res_1",
+                "q_boost_day40_res_2"
             ]
         },
         "flashcards": [
@@ -1968,14 +2240,20 @@
             "topic": "Geometry",
             "questionIds": [
                 "q1",
-                "q2"
+                "q2",
+                "q_boost_227",
+                "q_boost_day41_apt_0",
+                "q_boost_day41_apt_1",
+                "q_boost_day41_apt_2"
             ]
         },
         "reasoning": {
             "topic": "Water Image",
             "questionIds": [
                 "r1",
-                "r2"
+                "r2",
+                "q_boost_day41_res_0",
+                "q_boost_day41_res_1"
             ]
         },
         "flashcards": [
@@ -2017,14 +2295,20 @@
             "topic": "Geometry",
             "questionIds": [
                 "q1",
-                "q2"
+                "q2",
+                "q_boost_227",
+                "q_boost_day42_apt_0",
+                "q_boost_day42_apt_1",
+                "q_boost_day42_apt_2"
             ]
         },
         "reasoning": {
             "topic": "Water Image",
             "questionIds": [
                 "r1",
-                "r2"
+                "r2",
+                "q_boost_day42_res_0",
+                "q_boost_day42_res_1"
             ]
         },
         "flashcards": [
@@ -2070,13 +2354,21 @@
         "aptitude": {
             "topic": "Mensuration",
             "questionIds": [
-                "q1"
+                "q1",
+                "q_boost_day43_apt_0",
+                "q_boost_day43_apt_1",
+                "q_boost_day43_apt_2",
+                "q_boost_day43_apt_3"
             ]
         },
         "reasoning": {
             "topic": "Paper Cutting",
             "questionIds": [
-                "r1"
+                "r1",
+                "q_boost_day43_res_0",
+                "q_boost_day43_res_1",
+                "q_boost_day43_res_2",
+                "q_boost_day43_res_3"
             ]
         },
         "flashcards": [
@@ -2118,14 +2410,20 @@
             "topic": "Mensuration",
             "questionIds": [
                 "q1",
-                "q2"
+                "q2",
+                "q_boost_day44_apt_0",
+                "q_boost_day44_apt_1",
+                "q_boost_day44_apt_2"
             ]
         },
         "reasoning": {
             "topic": "Paper Cutting",
             "questionIds": [
                 "r1",
-                "r2"
+                "r2",
+                "q_boost_day44_res_0",
+                "q_boost_day44_res_1",
+                "q_boost_day44_res_2"
             ]
         },
         "flashcards": [
@@ -2172,13 +2470,21 @@
         "aptitude": {
             "topic": "Clocks",
             "questionIds": [
-                "q1"
+                "q1",
+                "q26",
+                "q27",
+                "logic_12",
+                "q_boost_257",
+                "q_boost_258",
+                "q_boost_291",
+                "q_boost_day45_apt_0"
             ]
         },
         "reasoning": {
             "topic": "Cube & Dice",
             "questionIds": [
-                "r1"
+                "r1",
+                "q_boost_day45_res_0"
             ]
         },
         "flashcards": [
@@ -2217,7 +2523,13 @@
             "topic": "Clocks",
             "questionIds": [
                 "q1",
-                "q2"
+                "q2",
+                "q26",
+                "q27",
+                "logic_12",
+                "q_boost_257",
+                "q_boost_258",
+                "q_boost_291"
             ]
         },
         "reasoning": {
@@ -2262,13 +2574,21 @@
         "aptitude": {
             "topic": "Calendar",
             "questionIds": [
-                "q1"
+                "q1",
+                "q28",
+                "q29",
+                "logic_11",
+                "q_boost_255",
+                "q_boost_256",
+                "q_boost_290",
+                "q_boost_day47_apt_0"
             ]
         },
         "reasoning": {
             "topic": "Analytical Reasoning",
             "questionIds": [
-                "r1"
+                "r1",
+                "q_boost_day47_res_0"
             ]
         },
         "flashcards": [
@@ -2307,7 +2627,13 @@
             "topic": "Calendar",
             "questionIds": [
                 "q1",
-                "q2"
+                "q2",
+                "q28",
+                "q29",
+                "logic_11",
+                "q_boost_255",
+                "q_boost_256",
+                "q_boost_290"
             ]
         },
         "reasoning": {
@@ -2356,7 +2682,13 @@
             "topic": "Calendar",
             "questionIds": [
                 "q1",
-                "q2"
+                "q2",
+                "q28",
+                "q29",
+                "logic_11",
+                "q_boost_255",
+                "q_boost_256",
+                "q_boost_290"
             ]
         },
         "reasoning": {
@@ -2409,13 +2741,21 @@
         "aptitude": {
             "topic": "Stocks & Shares",
             "questionIds": [
-                "q1"
+                "q1",
+                "q_boost_day50_apt_0",
+                "q_boost_day50_apt_1",
+                "q_boost_day50_apt_2",
+                "q_boost_day50_apt_3"
             ]
         },
         "reasoning": {
             "topic": "Critical Reasoning",
             "questionIds": [
-                "r1"
+                "r1",
+                "q_boost_day50_res_0",
+                "q_boost_day50_res_1",
+                "q_boost_day50_res_2",
+                "q_boost_day50_res_3"
             ]
         },
         "flashcards": [
@@ -2457,14 +2797,20 @@
             "topic": "Stocks & Shares",
             "questionIds": [
                 "q1",
-                "q2"
+                "q2",
+                "q_boost_day51_apt_0",
+                "q_boost_day51_apt_1",
+                "q_boost_day51_apt_2"
             ]
         },
         "reasoning": {
             "topic": "Critical Reasoning",
             "questionIds": [
                 "r1",
-                "r2"
+                "r2",
+                "q_boost_day51_res_0",
+                "q_boost_day51_res_1",
+                "q_boost_day51_res_2"
             ]
         },
         "flashcards": [
@@ -2510,13 +2856,21 @@
         "aptitude": {
             "topic": "True Discount",
             "questionIds": [
-                "q1"
+                "q1",
+                "q_boost_day52_apt_0",
+                "q_boost_day52_apt_1",
+                "q_boost_day52_apt_2",
+                "q_boost_day52_apt_3"
             ]
         },
         "reasoning": {
             "topic": "Verbal Reasoning",
             "questionIds": [
-                "r1"
+                "r1",
+                "q_boost_day52_res_0",
+                "q_boost_day52_res_1",
+                "q_boost_day52_res_2",
+                "q_boost_day52_res_3"
             ]
         },
         "flashcards": [
@@ -2555,14 +2909,20 @@
             "topic": "True Discount",
             "questionIds": [
                 "q1",
-                "q2"
+                "q2",
+                "q_boost_day53_apt_0",
+                "q_boost_day53_apt_1",
+                "q_boost_day53_apt_2"
             ]
         },
         "reasoning": {
             "topic": "Verbal Reasoning",
             "questionIds": [
                 "r1",
-                "r2"
+                "r2",
+                "q_boost_day53_res_0",
+                "q_boost_day53_res_1",
+                "q_boost_day53_res_2"
             ]
         },
         "flashcards": [
@@ -2600,13 +2960,21 @@
         "aptitude": {
             "topic": "Banker's Discount",
             "questionIds": [
-                "q1"
+                "q1",
+                "q_boost_day54_apt_0",
+                "q_boost_day54_apt_1",
+                "q_boost_day54_apt_2",
+                "q_boost_day54_apt_3"
             ]
         },
         "reasoning": {
             "topic": "Reading Comprehension",
             "questionIds": [
-                "r1"
+                "r1",
+                "q_boost_day54_res_0",
+                "q_boost_day54_res_1",
+                "q_boost_day54_res_2",
+                "q_boost_day54_res_3"
             ]
         },
         "flashcards": [
@@ -2645,14 +3013,20 @@
             "topic": "Banker's Discount",
             "questionIds": [
                 "q1",
-                "q2"
+                "q2",
+                "q_boost_day55_apt_0",
+                "q_boost_day55_apt_1",
+                "q_boost_day55_apt_2"
             ]
         },
         "reasoning": {
             "topic": "Reading Comprehension",
             "questionIds": [
                 "r1",
-                "r2"
+                "r2",
+                "q_boost_day55_res_0",
+                "q_boost_day55_res_1",
+                "q_boost_day55_res_2"
             ]
         },
         "flashcards": [
@@ -2694,14 +3068,20 @@
             "topic": "All Topics",
             "questionIds": [
                 "q1",
-                "q2"
+                "q2",
+                "q_new_8",
+                "q_boost_284",
+                "q_boost_254"
             ]
         },
         "reasoning": {
             "topic": "All Topics",
             "questionIds": [
                 "r1",
-                "r2"
+                "r2",
+                "r13",
+                "gen_avg_103",
+                "q_boost_237"
             ]
         },
         "flashcards": [
@@ -2732,7 +3112,13 @@
             "topic": "Numbers",
             "questionIds": [
                 "q1",
-                "q39"
+                "q39",
+                "q2",
+                "q_new_1",
+                "q_boost_200",
+                "q_boost_201",
+                "q_boost_202",
+                "q_boost_203"
             ]
         },
         "reasoning": {
@@ -2777,7 +3163,13 @@
             "topic": "Numbers",
             "questionIds": [
                 "q1",
-                "q2"
+                "q2",
+                "q39",
+                "q_new_1",
+                "q_boost_200",
+                "q_boost_201",
+                "q_boost_202",
+                "q_boost_203"
             ]
         },
         "reasoning": {
@@ -2832,14 +3224,20 @@
             "topic": "HCF & LCM",
             "questionIds": [
                 "q3",
-                "q4"
+                "q4",
+                "q_new_2",
+                "q_boost_274",
+                "q_boost_275"
             ]
         },
         "reasoning": {
             "topic": "Blood Relations",
             "questionIds": [
                 "r3",
-                "r4"
+                "r4",
+                "r35",
+                "r_new_4",
+                "r_new_5"
             ]
         },
         "flashcards": [
@@ -2878,14 +3276,20 @@
             "topic": "HCF & LCM",
             "questionIds": [
                 "q4",
-                "q3"
+                "q3",
+                "q_new_2",
+                "q_boost_274",
+                "q_boost_275"
             ]
         },
         "reasoning": {
             "topic": "Blood Relations",
             "questionIds": [
                 "r4",
-                "r3"
+                "r3",
+                "r35",
+                "r_new_4",
+                "r_new_5"
             ]
         },
         "flashcards": [
@@ -2925,7 +3329,13 @@
             "topic": "Percentages",
             "questionIds": [
                 "q5",
-                "q6"
+                "q6",
+                "q17",
+                "q18",
+                "q_new_3",
+                "q_new_4",
+                "gen_age_110",
+                "gen_age_111"
             ]
         },
         "reasoning": {
@@ -2971,7 +3381,13 @@
             "topic": "Percentages",
             "questionIds": [
                 "q5",
-                "q6"
+                "q6",
+                "q17",
+                "q18",
+                "q_new_3",
+                "q_new_4",
+                "gen_age_110",
+                "gen_age_111"
             ]
         },
         "reasoning": {
@@ -3020,7 +3436,13 @@
             "topic": "Percentages",
             "questionIds": [
                 "q6",
-                "q5"
+                "q5",
+                "q17",
+                "q18",
+                "q_new_3",
+                "q_new_4",
+                "gen_age_110",
+                "gen_age_111"
             ]
         },
         "reasoning": {
@@ -3075,13 +3497,20 @@
             "topic": "Profit & Loss",
             "questionIds": [
                 "q7",
-                "q8"
+                "q8",
+                "q37_1",
+                "q_new_5",
+                "q_new_6",
+                "q_boost_207",
+                "q_boost_208",
+                "q_boost_277"
             ]
         },
         "reasoning": {
             "topic": "Seating Arrangement",
             "questionIds": [
-                "r11"
+                "r11",
+                "q_boost_259"
             ]
         },
         "flashcards": [
@@ -3116,13 +3545,20 @@
             "topic": "Profit & Loss",
             "questionIds": [
                 "q7",
-                "q8"
+                "q8",
+                "q37_1",
+                "q_new_5",
+                "q_new_6",
+                "q_boost_207",
+                "q_boost_208",
+                "q_boost_277"
             ]
         },
         "reasoning": {
             "topic": "Seating Arrangement",
             "questionIds": [
-                "r11"
+                "r11",
+                "q_boost_259"
             ]
         },
         "flashcards": [
@@ -3153,7 +3589,14 @@
             "topic": "Simple Interest",
             "questionIds": [
                 "q10",
-                "q9"
+                "q9",
+                "q38",
+                "gen_si_105",
+                "gen_si_106",
+                "gen_si_107",
+                "gen_si_108",
+                "gen_si_109",
+                "q_boost_217"
             ]
         },
         "reasoning": {
@@ -3190,7 +3633,14 @@
             "topic": "Simple Interest",
             "questionIds": [
                 "q10",
-                "q9"
+                "q9",
+                "q38",
+                "gen_si_105",
+                "gen_si_106",
+                "gen_si_107",
+                "gen_si_108",
+                "gen_si_109",
+                "q_boost_217"
             ]
         },
         "reasoning": {
@@ -3226,13 +3676,21 @@
         "aptitude": {
             "topic": "Compound Interest",
             "questionIds": [
-                "q11"
+                "q11",
+                "q_boost_218",
+                "q_boost_day68_apt_0",
+                "q_boost_day68_apt_1",
+                "q_boost_day68_apt_2",
+                "q_boost_day68_apt_3"
             ]
         },
         "reasoning": {
             "topic": "Inequality",
             "questionIds": [
-                "r1"
+                "r1",
+                "q_boost_day68_res_0",
+                "q_boost_day68_res_1",
+                "q_boost_day68_res_2"
             ]
         },
         "flashcards": [
@@ -3262,14 +3720,21 @@
         "aptitude": {
             "topic": "Compound Interest",
             "questionIds": [
-                "q11"
+                "q11",
+                "q_boost_218",
+                "q_boost_day69_apt_0",
+                "q_boost_day69_apt_1",
+                "q_boost_day69_apt_2"
             ]
         },
         "reasoning": {
             "topic": "Inequality",
             "questionIds": [
                 "r1",
-                "r2"
+                "r2",
+                "q_boost_day69_res_0",
+                "q_boost_day69_res_1",
+                "q_boost_day69_res_2"
             ]
         },
         "flashcards": [
@@ -3303,14 +3768,20 @@
             "topic": "Mixed",
             "questionIds": [
                 "q1",
-                "q2"
+                "q2",
+                "r_new_7",
+                "q_boost_252",
+                "q_boost_209"
             ]
         },
         "reasoning": {
             "topic": "Mixed",
             "questionIds": [
                 "r1",
-                "r2"
+                "r2",
+                "q_boost_218",
+                "q_boost_241",
+                "r_new_7"
             ]
         },
         "flashcards": [
@@ -3340,13 +3811,21 @@
         "aptitude": {
             "topic": "Mixed",
             "questionIds": [
-                "q1"
+                "q1",
+                "logic_1",
+                "q_boost_275",
+                "q11",
+                "q_boost_277"
             ]
         },
         "reasoning": {
             "topic": "Mixed",
             "questionIds": [
-                "r1"
+                "r1",
+                "q_day15_res_1",
+                "q_boost_250",
+                "q40",
+                "q_boost_212"
             ]
         },
         "flashcards": [
@@ -3380,14 +3859,20 @@
             "topic": "Mixed",
             "questionIds": [
                 "q1",
-                "q2"
+                "q2",
+                "q_boost_207",
+                "q_boost_256",
+                "q_boost_246"
             ]
         },
         "reasoning": {
             "topic": "Mixed",
             "questionIds": [
                 "r1",
-                "r2"
+                "r2",
+                "q_boost_279",
+                "q32",
+                "r11"
             ]
         },
         "flashcards": [
@@ -3417,13 +3902,21 @@
         "aptitude": {
             "topic": "Mixed",
             "questionIds": [
-                "q1"
+                "q1",
+                "q_new_16",
+                "r12",
+                "logic_12",
+                "q_boost_212"
             ]
         },
         "reasoning": {
             "topic": "Mixed",
             "questionIds": [
-                "r1"
+                "r1",
+                "q_boost_235",
+                "r27",
+                "q_new_10",
+                "logic_6"
             ]
         },
         "flashcards": [
@@ -3454,14 +3947,20 @@
             "topic": "Mixed",
             "questionIds": [
                 "q1",
-                "q2"
+                "q2",
+                "q_new_10",
+                "q_boost_267",
+                "q_boost_292"
             ]
         },
         "reasoning": {
             "topic": "Mixed",
             "questionIds": [
                 "r1",
-                "r2"
+                "r2",
+                "q_boost_260",
+                "q_boost_258",
+                "r10"
             ]
         },
         "flashcards": [
@@ -3491,13 +3990,21 @@
         "aptitude": {
             "topic": "Mixed",
             "questionIds": [
-                "q1"
+                "q1",
+                "q_boost_226",
+                "q_boost_200",
+                "q_day15_res_8",
+                "r31"
             ]
         },
         "reasoning": {
             "topic": "Mixed",
             "questionIds": [
-                "r1"
+                "r1",
+                "q_boost_213",
+                "q35",
+                "q_new_3",
+                "q26"
             ]
         },
         "flashcards": [
@@ -3528,14 +4035,20 @@
             "topic": "Mixed",
             "questionIds": [
                 "q1",
-                "q2"
+                "q2",
+                "q_boost_261",
+                "q_boost_250",
+                "q_boost_226"
             ]
         },
         "reasoning": {
             "topic": "Mixed",
             "questionIds": [
                 "r1",
-                "r2"
+                "r2",
+                "q_boost_205",
+                "q_boost_241",
+                "q_boost_268"
             ]
         },
         "flashcards": [
@@ -3569,7 +4082,9 @@
             "topic": "Mixed",
             "questionIds": [
                 "q1",
-                "q2"
+                "q2",
+                "q_boost_209",
+                "q_boost_279"
             ]
         },
         "reasoning": {
@@ -3578,7 +4093,9 @@
                 "r1",
                 "r2",
                 "r31",
-                "r33"
+                "r33",
+                "q_day15_res_4",
+                "q_boost_283"
             ]
         },
         "flashcards": [
@@ -3608,13 +4125,21 @@
         "aptitude": {
             "topic": "Mixed",
             "questionIds": [
-                "q1"
+                "q1",
+                "q_boost_242",
+                "q11",
+                "q_boost_244",
+                "q_new_13"
             ]
         },
         "reasoning": {
             "topic": "Mixed",
             "questionIds": [
-                "r1"
+                "r1",
+                "r16",
+                "q35_1",
+                "r22",
+                "q_new_10"
             ]
         },
         "flashcards": [
@@ -3648,14 +4173,20 @@
             "topic": "Mixed",
             "questionIds": [
                 "q1",
-                "q2"
+                "q2",
+                "q_boost_276",
+                "q34",
+                "r27"
             ]
         },
         "reasoning": {
             "topic": "Mixed",
             "questionIds": [
                 "r1",
-                "r2"
+                "r2",
+                "q_boost_214",
+                "q_boost_249",
+                "q_boost_247"
             ]
         },
         "flashcards": [
@@ -3685,13 +4216,21 @@
         "aptitude": {
             "topic": "Mixed",
             "questionIds": [
-                "q1"
+                "q1",
+                "q5",
+                "q34",
+                "q_boost_270",
+                "q24"
             ]
         },
         "reasoning": {
             "topic": "Mixed",
             "questionIds": [
-                "r1"
+                "r1",
+                "q30",
+                "q36_1",
+                "gen_si_108",
+                "q_new_6"
             ]
         },
         "flashcards": [
@@ -3722,14 +4261,20 @@
             "topic": "Mixed",
             "questionIds": [
                 "q1",
-                "q2"
+                "q2",
+                "q7",
+                "q_day15_apt_3",
+                "q8"
             ]
         },
         "reasoning": {
             "topic": "Mixed",
             "questionIds": [
                 "r1",
-                "r2"
+                "r2",
+                "q32",
+                "gen_avg_102",
+                "q_day15_apt_3"
             ]
         },
         "flashcards": [
@@ -3759,13 +4304,21 @@
         "aptitude": {
             "topic": "Mixed",
             "questionIds": [
-                "q1"
+                "q1",
+                "q_new_1",
+                "q_boost_232",
+                "r_new_2",
+                "q_boost_269"
             ]
         },
         "reasoning": {
             "topic": "Mixed",
             "questionIds": [
-                "r1"
+                "r1",
+                "r_new_1",
+                "q3",
+                "r14",
+                "q_new_12"
             ]
         },
         "flashcards": [
@@ -3797,14 +4350,20 @@
             "questionIds": [
                 "q1",
                 "q2",
-                "q40"
+                "q40",
+                "r22",
+                "r9",
+                "q_boost_232"
             ]
         },
         "reasoning": {
             "topic": "Mixed",
             "questionIds": [
                 "r1",
-                "r2"
+                "r2",
+                "q_boost_262",
+                "q_boost_215",
+                "q_boost_248"
             ]
         },
         "flashcards": [
@@ -3838,14 +4397,20 @@
             "topic": "All Topics",
             "questionIds": [
                 "q1",
-                "q2"
+                "q2",
+                "r29",
+                "q3",
+                "q18"
             ]
         },
         "reasoning": {
             "topic": "All Topics",
             "questionIds": [
                 "r1",
-                "r2"
+                "r2",
+                "r33",
+                "r25",
+                "q_boost_205"
             ]
         },
         "flashcards": [
@@ -3875,13 +4440,21 @@
         "aptitude": {
             "topic": "All Topics",
             "questionIds": [
-                "q1"
+                "q1",
+                "logic_8",
+                "q_day15_res_4",
+                "q_new_13",
+                "q_new_2"
             ]
         },
         "reasoning": {
             "topic": "All Topics",
             "questionIds": [
-                "r1"
+                "r1",
+                "r30",
+                "q_boost_271",
+                "logic_8",
+                "r31"
             ]
         },
         "flashcards": [
@@ -3915,14 +4488,20 @@
             "topic": "All Topics",
             "questionIds": [
                 "q1",
-                "q2"
+                "q2",
+                "q_boost_220",
+                "q_day15_apt_2",
+                "q_boost_275"
             ]
         },
         "reasoning": {
             "topic": "All Topics",
             "questionIds": [
                 "r1",
-                "r2"
+                "r2",
+                "r19",
+                "q9",
+                "r16"
             ]
         },
         "flashcards": [
@@ -3952,13 +4531,21 @@
         "aptitude": {
             "topic": "Weak Topics",
             "questionIds": [
-                "q1"
+                "q1",
+                "q_boost_day87_apt_0",
+                "q_boost_day87_apt_1",
+                "q_boost_day87_apt_2",
+                "q_boost_day87_apt_3"
             ]
         },
         "reasoning": {
             "topic": "Weak Topics",
             "questionIds": [
-                "r1"
+                "r1",
+                "q_boost_212",
+                "logic_4",
+                "q_new_5",
+                "logic_6"
             ]
         },
         "flashcards": [
@@ -3989,14 +4576,20 @@
             "topic": "Weak Topics",
             "questionIds": [
                 "q1",
-                "q2"
+                "q2",
+                "q_boost_day88_apt_0",
+                "q_boost_day88_apt_1",
+                "q_boost_day88_apt_2"
             ]
         },
         "reasoning": {
             "topic": "Weak Topics",
             "questionIds": [
                 "r1",
-                "r2"
+                "r2",
+                "q_boost_290",
+                "q30",
+                "q_day15_apt_4"
             ]
         },
         "flashcards": [
@@ -4026,13 +4619,21 @@
         "aptitude": {
             "topic": "Light Review",
             "questionIds": [
-                "q1"
+                "q1",
+                "q_boost_212",
+                "r32",
+                "q_boost_276",
+                "r14"
             ]
         },
         "reasoning": {
             "topic": "Light Review",
             "questionIds": [
-                "r1"
+                "r1",
+                "r1",
+                "q_boost_211",
+                "r7",
+                "r7"
             ]
         },
         "flashcards": [
@@ -4066,14 +4667,20 @@
             "topic": "Celebration",
             "questionIds": [
                 "q1",
-                "q2"
+                "q2",
+                "q_day15_res_3",
+                "q_new_5",
+                "r24"
             ]
         },
         "reasoning": {
             "topic": "Celebration",
             "questionIds": [
                 "r1",
-                "r2"
+                "r2",
+                "gen_si_105",
+                "q31",
+                "q_boost_223"
             ]
         },
         "flashcards": [

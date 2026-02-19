@@ -1,5 +1,8 @@
+"use client";
+
 import Link from 'next/link';
-import { ArrowRight, Code2, BrainCircuit, Calendar, Zap, Target } from 'lucide-react';
+import { ArrowRight, Code2, BrainCircuit, Calendar, Zap, Target, Sparkles, Trophy, MousePointer2, Lightbulb } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { getAllDays } from '@/lib/api';
 import CalendarSection from '@/components/CalendarSection';
 import PomodoroTimer from '@/components/PomodoroTimer';
@@ -8,14 +11,15 @@ import InterviewSimulator from '@/components/InterviewSimulator';
 import RevisionReminder from '@/components/RevisionReminder';
 import StartButton from '@/components/StartButton';
 import FocusAreasWidget from '@/components/FocusAreasWidget';
+import DreamCompanyWidget from '@/components/DreamCompanyWidget';
 
 export default function Home() {
   const days = getAllDays();
 
   const stats = [
     { label: "Total Days", value: "90", icon: Calendar },
-    { label: "DSA Problems", value: "270+", icon: Code2 },
-    { label: "Aptitude Questions", value: "180+", icon: BrainCircuit },
+    { label: "DSA Problems", value: "400+", icon: Code2 },
+    { label: "Aptitude Questions", value: "200+", icon: BrainCircuit },
     { label: "Flashcards", value: "100+", icon: Zap },
   ];
 
@@ -30,7 +34,7 @@ export default function Home() {
     },
     {
       id: 2,
-      title: "Advanced Data Structures",
+      title: "Advanced DSA",
       focus: "Trees, Graphs, DP, Verbal Ability",
       color: "from-purple-500/20 to-pink-500/10",
       weeks: "Week 5-8",
@@ -47,30 +51,109 @@ export default function Home() {
   ];
 
   return (
-    <div className="space-y-16 animate-in fade-in duration-500">
-      {/* Revision Reminder - shows if there are items due */}
+    <div className="relative space-y-24 pb-20 overflow-x-hidden">
+      {/* Premium Texture Overlay */}
+      <div className="fixed inset-0 pointer-events-none z-[100] opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+
+      {/* Architectural Background Grid */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/20 rounded-full blur-[120px] opacity-50" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-600/20 rounded-full blur-[100px] opacity-30" />
+      </div>
+
       <RevisionReminder />
 
-      {/* Hero */}
-      <section className="text-center space-y-6 pt-6 md:pt-10 px-2">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs sm:text-sm font-medium">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-          </span>
-          Placement Ready in 90 Days
-        </div>
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight bg-gradient-to-br from-white via-white to-white/50 bg-clip-text text-transparent pb-2">
-          Master DSA & <br className="hidden sm:block" /><span className="sm:hidden"> </span>Aptitude Together.
-        </h1>
-        <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-2">
-          A structured 3-month roadmap dedicating 2 hours to Java+DSA and 2 hours to Aptitude daily.
-        </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-4">
-          <StartButton />
-          <Link href="#calendar" className="w-full sm:w-auto border border-white/20 hover:border-white/40 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg transition-all flex items-center justify-center gap-2">
-            View Calendar
-          </Link>
+      {/* Technical Engineering Hero Section */}
+      <section className="relative pt-12 md:pt-24 border-b border-white/5 overflow-hidden">
+        {/* Architectural Background Grid */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:40px_40px] -z-10" />
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-[#020205] to-[#020205] -z-10" />
+
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-16 items-center">
+          <div className="space-y-10 py-12">
+            {/* System Status Log */}
+            <div className="flex items-center gap-6">
+              <div className="flex flex-col">
+                <span className="text-[10px] font-black tracking-[0.3em] text-primary uppercase">Current Pipeline</span>
+                <div className="flex items-center gap-2 mt-1">
+                  <span className="h-1.5 w-1.5 bg-primary animate-pulse" />
+                  <span className="text-xs font-mono text-zinc-500 uppercase">SYS-090: ACTIVE_ROADMAP</span>
+                </div>
+              </div>
+              <div className="h-8 w-px bg-white/10 hidden sm:block" />
+              <div className="flex flex-col hidden sm:flex">
+                <span className="text-[10px] font-black tracking-[0.3em] text-zinc-600 uppercase">Target Readiness</span>
+                <span className="text-xs font-mono text-emerald-500 uppercase mt-1">99.8% Optimized</span>
+              </div>
+            </div>
+
+            {/* Main Heading: Structural & Clean */}
+            <div className="space-y-4 px-4 md:px-0 text-center md:text-left">
+              <h1 className="text-3xl sm:text-4xl md:text-7xl font-black tracking-tighter leading-none text-white uppercase italic">
+                The 90-Day <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">Engineering</span> <br />
+                Pipeline.
+              </h1>
+              <p className="max-w-xl text-zinc-500 text-sm md:text-lg font-medium leading-relaxed border-l-0 md:border-l-2 border-primary/20 pl-0 md:pl-6 py-2">
+                A high-precision curriculum for data structures, algorithmic synchronization, and quantitative logic. Designed for specialists.
+              </p>
+            </div>
+
+            {/* Execution Actions */}
+            <div className="flex flex-col sm:flex-row gap-6">
+              <StartButton className="px-10 py-5 bg-primary text-white font-black text-lg rounded-none transition-all shadow-[8px_8px_0px_0px_rgba(100,80,250,0.3)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 active:scale-[0.98] flex items-center justify-center gap-4" />
+
+              <Link href="#calendar" className="px-10 py-5 bg-white/5 border border-white/10 text-white font-black text-lg rounded-none hover:bg-white/10 transition-all flex items-center justify-center gap-4 group">
+                <span className="w-2 h-2 bg-zinc-700 group-hover:bg-white transition-colors" />
+                ROADMAP_VIEW
+              </Link>
+            </div>
+
+            {/* Data Stats Footer */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 opacity-40 hover:opacity-100 transition-opacity duration-500">
+              <div>
+                <div className="text-xl font-black text-white">400+</div>
+                <div className="text-[9px] font-bold text-zinc-600 uppercase tracking-widest mt-1">DSA_UNITS</div>
+              </div>
+              <div>
+                <div className="text-xl font-black text-white">200+</div>
+                <div className="text-[9px] font-bold text-zinc-600 uppercase tracking-widest mt-1">QUANT_UNITS</div>
+              </div>
+              <div>
+                <div className="text-xl font-black text-white">90</div>
+                <div className="text-[9px] font-bold text-zinc-600 uppercase tracking-widest mt-1">CYCLES</div>
+              </div>
+              <div>
+                <div className="text-xl font-black text-white">24/7</div>
+                <div className="text-[9px] font-bold text-zinc-600 uppercase tracking-widest mt-1">UPTIME</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Side: Engineering Visualization */}
+          <div className="relative hidden lg:block">
+            <div className="aspect-square bg-[#050510] border border-white/10 p-12 relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none" />
+              {/* Fake Code Block Visual */}
+              <div className="space-y-6 font-mono text-[11px] text-zinc-700 leading-relaxed overflow-hidden italic">
+                <div className="text-primary font-black opacity-40"># INITIALIZING_ENV...</div>
+                <div>while (current_day &lt; 90) &#123;</div>
+                <div className="pl-6">master_dsa(current_topic);</div>
+                <div className="pl-6 text-purple-400">solve_aptitude(daily_logic);</div>
+                <div className="pl-6 text-emerald-500 font-bold">// SECURING_PLACEMENT...</div>
+                <div className="pl-6">revision_cycle(1, 4, 7);</div>
+                <div className="pl-6">current_day++;</div>
+                <div>&#125;</div>
+                <div className="text-zinc-400 pt-4 cursor-default">| STATUS: 100%_CODE_SYNCED</div>
+              </div>
+              {/* Floating HUD info */}
+              <div className="absolute bottom-8 right-8 border border-primary/20 bg-black/80 px-4 py-2 text-[10px] font-black text-primary tracking-widest uppercase">
+                System_Core v3.2
+              </div>
+            </div>
+            {/* Visual Depth Decoration */}
+            <div className="absolute -z-10 -bottom-12 -right-12 w-full h-full border border-white/5 pointer-events-none" />
+          </div>
         </div>
       </section>
 
@@ -84,6 +167,10 @@ export default function Home() {
           </div>
         ))}
       </section>
+
+      {/* DREAM COMPANY WIDGET */}
+      <DreamCompanyWidget />
+
 
       {/* Routine Info */}
       <div className="grid md:grid-cols-2 gap-6">
@@ -120,7 +207,7 @@ export default function Home() {
         <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
         <div className="relative z-10">
           <h2 className="text-xl sm:text-2xl font-bold mb-4 flex items-center gap-2">
-            <span className="p-1.5 bg-green-500/20 rounded-md text-green-400">🧠</span>
+            <span className="p-1.5 bg-green-500/20 rounded-md text-green-400"><Lightbulb size={20} /></span>
             The 1-4-7 Revision Rule
           </h2>
           <div className="grid md:grid-cols-[2fr,1fr] gap-6 items-center">

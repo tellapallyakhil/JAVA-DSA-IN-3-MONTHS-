@@ -15,6 +15,7 @@ export interface Question {
     options: string[];
     answer: string;
     explanation: string;
+    companies?: string[];
 }
 
 export interface Flashcard {

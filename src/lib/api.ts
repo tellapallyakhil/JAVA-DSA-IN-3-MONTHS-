@@ -9,6 +9,12 @@ export function getQuestionsByIds(ids: string[]): Question[] {
     return (questions as Question[]).filter(q => ids.includes(q.id));
 }
 
+export function getQuestionsByCompany(company: string): Question[] {
+    return (questions as Question[]).filter(q =>
+        q.companies?.some(c => c.toLowerCase() === company.toLowerCase())
+    );
+}
+
 export function getAllDays(): DailyTask[] {
     return days as DailyTask[];
 }

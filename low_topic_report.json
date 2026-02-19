@@ -1,0 +1,308 @@
+[
+    {
+        "day": 6,
+        "current": 9,
+        "aptTopic": "Pipes & Cisterns",
+        "resTopic": "Statement Conclusion"
+    },
+    {
+        "day": 7,
+        "current": 6,
+        "aptTopic": "Mixtures",
+        "resTopic": "Mirror Image"
+    },
+    {
+        "day": 12,
+        "current": 8,
+        "aptTopic": "Boats & Streams",
+        "resTopic": "Puzzle"
+    },
+    {
+        "day": 13,
+        "current": 8,
+        "aptTopic": "Permutation Combination",
+        "resTopic": "Cubes"
+    },
+    {
+        "day": 17,
+        "current": 7,
+        "aptTopic": "Partnership",
+        "resTopic": "Puzzles"
+    },
+    {
+        "day": 18,
+        "current": 9,
+        "aptTopic": "Partnership",
+        "resTopic": "Puzzles"
+    },
+    {
+        "day": 22,
+        "current": 7,
+        "aptTopic": "Pipes & Cisterns",
+        "resTopic": "Statement Arguments"
+    },
+    {
+        "day": 23,
+        "current": 9,
+        "aptTopic": "Pipes & Cisterns",
+        "resTopic": "Statement Arguments"
+    },
+    {
+        "day": 24,
+        "current": 5,
+        "aptTopic": "Boats & Streams",
+        "resTopic": "Course of Action"
+    },
+    {
+        "day": 25,
+        "current": 7,
+        "aptTopic": "Boats & Streams",
+        "resTopic": "Course of Action"
+    },
+    {
+        "day": 26,
+        "current": 4,
+        "aptTopic": "Trains",
+        "resTopic": "Statement Assumptions"
+    },
+    {
+        "day": 27,
+        "current": 6,
+        "aptTopic": "Trains",
+        "resTopic": "Statement Assumptions"
+    },
+    {
+        "day": 38,
+        "current": 7,
+        "aptTopic": "Permutation & Combination",
+        "resTopic": "Mirror Image"
+    },
+    {
+        "day": 39,
+        "current": 9,
+        "aptTopic": "Permutation & Combination",
+        "resTopic": "Mirror Image"
+    },
+    {
+        "day": 40,
+        "current": 3,
+        "aptTopic": "Geometry",
+        "resTopic": "Water Image"
+    },
+    {
+        "day": 41,
+        "current": 5,
+        "aptTopic": "Geometry",
+        "resTopic": "Water Image"
+    },
+    {
+        "day": 42,
+        "current": 5,
+        "aptTopic": "Geometry",
+        "resTopic": "Water Image"
+    },
+    {
+        "day": 43,
+        "current": 2,
+        "aptTopic": "Mensuration",
+        "resTopic": "Paper Cutting"
+    },
+    {
+        "day": 44,
+        "current": 4,
+        "aptTopic": "Mensuration",
+        "resTopic": "Paper Cutting"
+    },
+    {
+        "day": 45,
+        "current": 8,
+        "aptTopic": "Clocks",
+        "resTopic": "Cube & Dice"
+    },
+    {
+        "day": 47,
+        "current": 8,
+        "aptTopic": "Calendar",
+        "resTopic": "Analytical Reasoning"
+    },
+    {
+        "day": 50,
+        "current": 2,
+        "aptTopic": "Stocks & Shares",
+        "resTopic": "Critical Reasoning"
+    },
+    {
+        "day": 51,
+        "current": 4,
+        "aptTopic": "Stocks & Shares",
+        "resTopic": "Critical Reasoning"
+    },
+    {
+        "day": 52,
+        "current": 2,
+        "aptTopic": "True Discount",
+        "resTopic": "Verbal Reasoning"
+    },
+    {
+        "day": 53,
+        "current": 4,
+        "aptTopic": "True Discount",
+        "resTopic": "Verbal Reasoning"
+    },
+    {
+        "day": 54,
+        "current": 2,
+        "aptTopic": "Banker's Discount",
+        "resTopic": "Reading Comprehension"
+    },
+    {
+        "day": 55,
+        "current": 4,
+        "aptTopic": "Banker's Discount",
+        "resTopic": "Reading Comprehension"
+    },
+    {
+        "day": 56,
+        "current": 4,
+        "aptTopic": "All Topics",
+        "resTopic": "All Topics"
+    },
+    {
+        "day": 68,
+        "current": 3,
+        "aptTopic": "Compound Interest",
+        "resTopic": "Inequality"
+    },
+    {
+        "day": 69,
+        "current": 4,
+        "aptTopic": "Compound Interest",
+        "resTopic": "Inequality"
+    },
+    {
+        "day": 70,
+        "current": 4,
+        "aptTopic": "Mixed",
+        "resTopic": "Mixed"
+    },
+    {
+        "day": 71,
+        "current": 2,
+        "aptTopic": "Mixed",
+        "resTopic": "Mixed"
+    },
+    {
+        "day": 72,
+        "current": 4,
+        "aptTopic": "Mixed",
+        "resTopic": "Mixed"
+    },
+    {
+        "day": 73,
+        "current": 2,
+        "aptTopic": "Mixed",
+        "resTopic": "Mixed"
+    },
+    {
+        "day": 74,
+        "current": 4,
+        "aptTopic": "Mixed",
+        "resTopic": "Mixed"
+    },
+    {
+        "day": 75,
+        "current": 2,
+        "aptTopic": "Mixed",
+        "resTopic": "Mixed"
+    },
+    {
+        "day": 76,
+        "current": 4,
+        "aptTopic": "Mixed",
+        "resTopic": "Mixed"
+    },
+    {
+        "day": 77,
+        "current": 6,
+        "aptTopic": "Mixed",
+        "resTopic": "Mixed"
+    },
+    {
+        "day": 78,
+        "current": 2,
+        "aptTopic": "Mixed",
+        "resTopic": "Mixed"
+    },
+    {
+        "day": 79,
+        "current": 4,
+        "aptTopic": "Mixed",
+        "resTopic": "Mixed"
+    },
+    {
+        "day": 80,
+        "current": 2,
+        "aptTopic": "Mixed",
+        "resTopic": "Mixed"
+    },
+    {
+        "day": 81,
+        "current": 4,
+        "aptTopic": "Mixed",
+        "resTopic": "Mixed"
+    },
+    {
+        "day": 82,
+        "current": 2,
+        "aptTopic": "Mixed",
+        "resTopic": "Mixed"
+    },
+    {
+        "day": 83,
+        "current": 5,
+        "aptTopic": "Mixed",
+        "resTopic": "Mixed"
+    },
+    {
+        "day": 84,
+        "current": 4,
+        "aptTopic": "All Topics",
+        "resTopic": "All Topics"
+    },
+    {
+        "day": 85,
+        "current": 2,
+        "aptTopic": "All Topics",
+        "resTopic": "All Topics"
+    },
+    {
+        "day": 86,
+        "current": 4,
+        "aptTopic": "All Topics",
+        "resTopic": "All Topics"
+    },
+    {
+        "day": 87,
+        "current": 2,
+        "aptTopic": "Weak Topics",
+        "resTopic": "Weak Topics"
+    },
+    {
+        "day": 88,
+        "current": 4,
+        "aptTopic": "Weak Topics",
+        "resTopic": "Weak Topics"
+    },
+    {
+        "day": 89,
+        "current": 2,
+        "aptTopic": "Light Review",
+        "resTopic": "Light Review"
+    },
+    {
+        "day": 90,
+        "current": 4,
+        "aptTopic": "Celebration",
+        "resTopic": "Celebration"
+    }
+]

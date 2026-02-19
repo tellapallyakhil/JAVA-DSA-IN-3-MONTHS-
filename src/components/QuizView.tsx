@@ -58,7 +58,7 @@ export default function QuizView({ questions }: QuizViewProps) {
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pl-12">
-                            {q.options.map((opt) => {
+                            {q.options.map((opt, idx) => {
                                 const isSelected = selections[q.id] === opt;
                                 const isTheCorrectAnswer = opt === q.answer;
 
@@ -73,7 +73,7 @@ export default function QuizView({ questions }: QuizViewProps) {
 
                                 return (
                                     <button
-                                        key={opt}
+                                        key={`${q.id}-opt-${idx}`}
                                         onClick={() => handleSelect(q.id, opt)}
                                         disabled={isAnswered}
                                         className={buttonClass}
