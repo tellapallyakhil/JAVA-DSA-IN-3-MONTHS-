@@ -85,7 +85,54 @@ public class Main {
         try {
             await new Promise(r => setTimeout(r, 200));
 
-            let result = "Execution output:\n";
+            let result = "";
+            let errorFound = false;
+            const codeLines = code.split('\n');
+
+            // --- 0. Pre-Execution Syntax Check ---
+            let braceCount = 0;
+            for (let i = 0; i < codeLines.length; i++) {
+                const line = codeLines[i].trim();
+                const lineNum = i + 1;
+
+                if (line === "" || line.startsWith("//") || line.startsWith("import")) continue;
+
+                // Check Braces
+                if (line.includes('{')) braceCount++;
+                if (line.includes('}')) braceCount--;
+
+                // Check Semicolon for typical statements
+                if ((line.includes("System.out.println") || line.match(/(?:String|int|double|long)\s+\w+\s*=/)) && !line.endsWith(';')) {
+                    setOutput(`Compilation Error:\nLine ${lineNum}: Syntax Error: ';' expected`);
+                    setStatus("ERROR");
+                    errorFound = true;
+                    break;
+                }
+
+                if (line.includes("System.out.println") && !line.includes('(')) {
+                    setOutput(`Compilation Error:\nLine ${lineNum}: Syntax Error: '(' expected after println`);
+                    setStatus("ERROR");
+                    errorFound = true;
+                    break;
+                }
+            }
+
+            if (errorFound) return;
+
+            if (braceCount !== 0) {
+                setOutput(`Compilation Error:\nStructure Error: Unmatched braces detected. Check your { } blocks.`);
+                setStatus("ERROR");
+                return;
+            }
+
+            // Check if main method exists roughly
+            if (!code.includes("public static void main") || !code.includes("String[] args")) {
+                setOutput(`Compilation Error:\nStructure Error: Main method 'public static void main(String[] args)' not found.`);
+                setStatus("ERROR");
+                return;
+            }
+
+            result = "Execution output:\n";
             // Flatten all input into a list of words to simulate Scanner tokens correctly
             const allTokens = stdin.split(/\s+/).filter(t => t.length > 0);
             let tokenIdx = 0;
@@ -94,7 +141,6 @@ public class Main {
             // Simple variable tracking map
             const vars: { [key: string]: string } = {};
 
-            const codeLines = code.split('\n');
             codeLines.forEach(line => {
                 const trimmed = line.trim();
 
@@ -106,9 +152,6 @@ public class Main {
                 }
 
                 // 2. Detect Print Statements
-                // Handles: System.out.println("String"); 
-                // Handles: System.out.println("String" + var + "String");
-                // Handles: System.out.println(var);
                 const printMatch = trimmed.match(/System\.out\.println\s*\((.*)\)\s*;/);
                 if (printMatch) {
                     let content = printMatch[1].trim();
@@ -159,11 +202,6 @@ public class Main {
 
                     result += finalLine + "\n";
                     foundOutput = true;
-                }
-
-                // 3. Fallback for specific Sum logic if needed
-                if (trimmed.includes("Sum:") && !trimmed.includes("println")) {
-                    // Logic preserved for backward compatibility with initial implementation
                 }
             });
 
