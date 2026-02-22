@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { getAllCompanies } from '@/lib/api';
 import { Building2 } from 'lucide-react';
 
-export default function CompaniesPage() {
-    const companies = getAllCompanies();
+export default async function CompaniesPage() {
+    const companies = await getAllCompanies();
 
     return (
         <div className="space-y-8 animate-in fade-in duration-500">

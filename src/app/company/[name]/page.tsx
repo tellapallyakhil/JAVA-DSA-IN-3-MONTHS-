@@ -5,18 +5,18 @@ import { ExternalLink, ArrowLeft, BrainCircuit } from 'lucide-react';
 import ProblemCard from '@/components/ProblemCard';
 
 export async function generateStaticParams() {
-    const companies = getAllCompanies();
+    const companies = await getAllCompanies();
     return companies.map(c => ({ name: c }));
 }
 
 export default async function CompanyPage({ params }: { params: Promise<{ name: string }> }) {
     const { name } = await params;
     const companyName = decodeURIComponent(name);
-    const problems = getProblemsByCompany(companyName);
-    const questions = getQuestionsByCompany(companyName);
+    const problems = await getProblemsByCompany(companyName);
+    const questions = await getQuestionsByCompany(companyName);
 
     if (!problems.length) {
-        const allCompanies = getAllCompanies();
+        const allCompanies = await getAllCompanies();
         if (!allCompanies.some(c => c.toLowerCase() === companyName.toLowerCase())) {
             notFound();
         }

@@ -3,9 +3,10 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useDreamCompany } from '@/context/DreamCompanyContext';
 import { getAllCompanies, getProblemsByCompany, getQuestionsByCompany } from '@/lib/api';
-import { Target, BrainCircuit, Code2, ChevronDown, Check, X, Building2, Zap, Search } from 'lucide-react';
+import { Target, BrainCircuit, Code2, ChevronDown, Check, X, Building2, Zap, Search, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+import StartButton from './StartButton';
 
 const getCompanyColor = (name: string) => {
     const colors = [
@@ -33,19 +34,28 @@ export default function DreamCompanyWidget() {
     });
 
     useEffect(() => {
-        setCompanies(getAllCompanies());
+        const fetchCompanies = async () => {
+            const data = await getAllCompanies();
+            setCompanies(data);
+        };
+        fetchCompanies();
     }, []);
 
     useEffect(() => {
-        if (dreamCompany) {
-            const dsa = getProblemsByCompany(dreamCompany);
-            const apt = getQuestionsByCompany(dreamCompany);
+        const fetchStats = async () => {
+            if (dreamCompany) {
+                const [dsa, apt] = await Promise.all([
+                    getProblemsByCompany(dreamCompany),
+                    getQuestionsByCompany(dreamCompany)
+                ]);
 
-            setStats({
-                dsaTotal: dsa.length,
-                aptitudeTotal: apt.length,
-            });
-        }
+                setStats({
+                    dsaTotal: dsa.length,
+                    aptitudeTotal: apt.length,
+                });
+            }
+        };
+        fetchStats();
     }, [dreamCompany]);
 
     const filteredCompanies = useMemo(() => {
@@ -55,10 +65,12 @@ export default function DreamCompanyWidget() {
     }, [companies, search]);
 
     return (
-        <div className="glass-card p-6 relative overflow-hidden transition-all group/widget border-white/5 hover:border-white/10">
-            {/* Background Decorative Gradients */}
-            <div className="absolute top-0 right-0 w-80 h-80 bg-primary/10 rounded-full blur-[100px] -mr-40 -mt-40 pointer-events-none group-hover:bg-primary/20 transition-all duration-700" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/5 rounded-full blur-[80px] -ml-32 -mb-32 pointer-events-none group-hover:bg-blue-500/10 transition-all duration-700" />
+        <div className="glass-card p-6 relative transition-all group/widget border-white/5 hover:border-white/10">
+            {/* Background Decorative Gradients clipped to the card */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[inherit]">
+                <div className="absolute top-0 right-0 w-80 h-80 bg-primary/10 rounded-full blur-[100px] -mr-40 -mt-40 group-hover:bg-primary/20 transition-all duration-700" />
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/5 rounded-full blur-[80px] -ml-32 -mb-32 group-hover:bg-blue-500/10 transition-all duration-700" />
+            </div>
 
             <div className="relative z-10">
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-8">
@@ -118,7 +130,7 @@ export default function DreamCompanyWidget() {
                                     initial={{ opacity: 0, scale: 0.95, y: 10 }}
                                     animate={{ opacity: 1, scale: 1, y: 0 }}
                                     exit={{ opacity: 0, scale: 0.95, y: 10 }}
-                                    className="absolute top-full right-0 mt-3 w-full lg:w-[400px] bg-[#0d0e12]/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-50 overflow-hidden flex flex-col"
+                                    className="absolute top-full right-0 mt-3 w-full lg:w-[400px] bg-[#0d0e12] backdrop-blur-3xl border border-white/10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.8)] z-[100] overflow-hidden flex flex-col"
                                 >
                                     <div className="p-4 border-b border-white/5 bg-white/5">
                                         <div className="relative">
@@ -302,18 +314,26 @@ export default function DreamCompanyWidget() {
                     ) : (
                         <motion.div
                             key="placeholder"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            className="text-center py-12 border-2 border-dashed border-white/5 rounded-3xl bg-white/[0.02] flex flex-col items-center justify-center gap-4"
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 10 }}
+                            className="text-center py-16 flex flex-col items-center justify-center space-y-8"
                         >
-                            <Building2 className="text-white/10 animate-pulse" size={48} />
-                            <div className="max-w-sm">
-                                <p className="text-base font-semibold text-white/60">Choose your destination</p>
-                                <p className="text-sm text-muted-foreground mt-2">
-                                    Unlock exclusive interview patterns and curated practice paths for your goal company.
-                                </p>
+                            <div className="space-y-2">
+                                <h2 className="text-4xl font-black uppercase tracking-tighter text-white">Get Started</h2>
+                                <p className="text-zinc-500 italic text-sm">Your 90-day plan is ready.</p>
                             </div>
+
+                            <motion.div
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
+                                className="w-fit"
+                            >
+                                <StartButton
+                                    className="group relative inline-flex items-center justify-center gap-3 bg-primary px-10 py-5 rounded-2xl transition-all shadow-2xl shadow-primary/30 text-white font-black uppercase tracking-widest text-lg"
+                                />
+                            </motion.div>
+
                         </motion.div>
                     )}
                 </AnimatePresence>

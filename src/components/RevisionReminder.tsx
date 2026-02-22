@@ -6,7 +6,7 @@ import { Brain, Check, Clock, RefreshCw, Sparkles, BookOpen, Code } from 'lucide
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export default function RevisionReminder() {
+export default function RevisionReminder({ compact = false }: { compact?: boolean }) {
     const { getRevisionsDueToday, markRevisionDone, progress, isClient } = useProgress();
 
     if (!isClient) return null;
@@ -16,7 +16,7 @@ export default function RevisionReminder() {
         item => !dueItems.some(d => d.id === item.id)
     ).slice(0, 3);
 
-    if (dueItems.length === 0 && upcomingItems.length === 0) {
+    if (dueItems.length === 0 && upcomingItems.length === 0 && !compact) {
         return null;
     }
 
@@ -34,6 +34,63 @@ export default function RevisionReminder() {
         return diff;
     };
 
+    if (compact) {
+        return (
+            <div className="glass p-5 rounded-3xl border border-amber-500/10 bg-amber-500/5 flex flex-col h-full overflow-hidden">
+                <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-2">
+                        <div className="p-1.5 bg-amber-500/20 rounded-lg text-amber-400">
+                            <Brain size={16} />
+                        </div>
+                        <h4 className="text-[10px] font-black uppercase tracking-widest text-zinc-400">Recall</h4>
+                    </div>
+                    {dueItems.length > 0 && (
+                        <span className="flex h-2 w-2 rounded-full bg-amber-400 animate-pulse" />
+                    )}
+                </div>
+
+                <div className="flex-grow overflow-y-auto pr-1 space-y-2 custom-scrollbar">
+                    {dueItems.length > 0 ? (
+                        <>
+                            <div className="text-[10px] font-bold text-amber-400 uppercase tracking-tight mb-1">Due Today</div>
+                            {dueItems.map(item => (
+                                <div key={item.id} className="p-2 rounded-xl bg-amber-500/10 border border-amber-500/10 flex items-center justify-between gap-2">
+                                    <div className="min-w-0 flex-grow">
+                                        <div className="text-xs font-bold text-white truncate">{item.title}</div>
+                                        <div className="text-[10px] text-amber-500/70">{getRevisionLabel(item)}</div>
+                                    </div>
+                                    <button
+                                        onClick={() => markRevisionDone(item.id)}
+                                        className="p-1.5 bg-amber-400/20 text-amber-400 rounded-lg hover:bg-amber-400 hover:text-white transition-all"
+                                    >
+                                        <Check size={12} />
+                                    </button>
+                                </div>
+                            ))}
+                        </>
+                    ) : upcomingItems.length > 0 ? (
+                        <>
+                            <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-tight mb-1">Upcoming</div>
+                            {upcomingItems.map(item => (
+                                <div key={item.id} className="p-2 rounded-xl bg-white/5 flex items-center justify-between gap-2 opacity-60">
+                                    <div className="min-w-0 flex-grow">
+                                        <div className="text-xs font-medium text-zinc-400 truncate">{item.title}</div>
+                                        <div className="text-[10px] text-zinc-600">in {getDaysUntil(item.nextRevisionDate)}d</div>
+                                    </div>
+                                </div>
+                            ))}
+                        </>
+                    ) : (
+                        <div className="h-full flex flex-col items-center justify-center text-center opacity-30 py-4">
+                            <Sparkles size={24} className="mb-2" />
+                            <p className="text-[10px] font-bold uppercase tracking-tight leading-tight">All Tasks<br />Mastered</p>
+                        </div>
+                    )}
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div className="glass-card p-6 mb-8 border-amber-500/20 bg-gradient-to-br from-amber-500/5 to-orange-500/5">
             <div className="flex items-center gap-3 mb-4">
@@ -45,7 +102,7 @@ export default function RevisionReminder() {
                         1-4-7 Revision System
                         <Sparkles size={16} className="text-amber-400" />
                     </h3>
-                    <p className="text-xs text-muted-foreground">Spaced repetition for long-term memory</p>
+                    <p className="text-xs text-zinc-500">Spaced repetition for long-term memory</p>
                 </div>
             </div>
 

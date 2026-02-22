@@ -34,41 +34,40 @@ export async function POST(req: Request) {
         const difficultyMod = difficultyGuide[difficulty] || difficultyGuide['medium'];
         const companyMod = companyGuide[companyStyle] || '';
 
-        // Load problems for RAG
+        // Load concepts for RAG context
         let ragContext = "";
         try {
-            const problemsData = await import('@/data/problems.json');
-            // Check if it's the default import or the module itself
-            const allProblems = (problemsData.default || problemsData) as any[];
+            const conceptsData = await import('@/data/concepts.json');
+            const raw = conceptsData.default || conceptsData;
 
-            if (Array.isArray(allProblems)) {
-                // Filter relevant problems
-                let relevant = allProblems.filter(p =>
-                    (difficulty ? p.difficulty.toLowerCase() === difficulty.toLowerCase() : true)
+            // concepts.json is an object keyed by topic name
+            const entries = Object.entries(raw).map(([key, val]: [string, any]) => ({
+                topic: key,
+                title: val.title || key,
+                content: (val.content || '').slice(0, 300)
+            }));
+
+            if (entries.length > 0) {
+                // Filter concepts relevant to the interview topic
+                let relevant = entries.filter(c =>
+                    topic && c.topic.toLowerCase().includes(topic.toLowerCase())
                 );
 
-                // Narrow down by company if specified
-                if (companyStyle && companyStyle !== 'general') {
-                    const companyMatches = relevant.filter(p =>
-                        p.companies && p.companies.some((c: string) => c.toLowerCase().includes(companyStyle.toLowerCase()))
-                    );
-                    if (companyMatches.length > 0) relevant = companyMatches;
+                // Fallback: if no match, pick randomly
+                if (relevant.length === 0) {
+                    relevant = entries;
                 }
 
-                // Pick random 3 examples
-                if (relevant.length > 0) {
-                    const examples = relevant.sort(() => 0.5 - Math.random()).slice(0, 3);
-                    ragContext = `\n\nREFERENCE DATA (Real Interview Questions):\n${examples.map(p =>
-                        `- Question: "${p.title}"
-  Topics: ${p.topics.join(', ')}
-  Difficulty: ${p.difficulty}
-  Companies: ${p.companies ? p.companies.join(', ') : 'General'}
-  Key Concepts: ${p.javaConcepts ? p.javaConcepts.join(', ') : 'N/A'}`
-                    ).join('\n')}\n\nINSTRUCTION: Analyze the "REFERENCE DATA" above. The generated question should match the complexity and style of these real-world examples, but MUST be a completely new and unique question.`;
-                }
+                // Pick up to 3 for context
+                const examples = relevant.sort(() => 0.5 - Math.random()).slice(0, 3);
+                ragContext = `\n\nREFERENCE DATA (Real Interview Concepts):\n${examples.map(c =>
+                    `- Topic: "${c.topic}"
+  Title: ${c.title}
+  Summary: ${c.content.slice(0, 200)}...`
+                ).join('\n')}\n\nINSTRUCTION: Use the "REFERENCE DATA" above as context. The generated question should be related to these concepts but MUST be a completely new and unique question.`;
             }
         } catch (e) {
-            console.warn("RAG load failed", e);
+            console.warn("RAG context load failed, continuing without it:", e);
         }
 
         // Build avoid questions instruction

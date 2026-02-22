@@ -15,12 +15,25 @@ import Link from 'next/link';
 export default function ProfilePage() {
     const { progress, user, isClient, loading } = useProgress();
     const router = useRouter();
-    const allDays = getAllDays();
-    const allProblems = getAllProblems();
 
+    const [allDays, setAllDays] = useState<any[]>([]);
+    const [allProblems, setAllProblems] = useState<any[]>([]);
     const [isEditing, setIsEditing] = useState(false);
     const [displayName, setDisplayName] = useState('');
     const [saving, setSaving] = useState(false);
+
+    useEffect(() => {
+        const load = async () => {
+            try {
+                const [days, problems] = await Promise.all([getAllDays(), getAllProblems()]);
+                setAllDays(days);
+                setAllProblems(problems);
+            } catch (err) {
+                console.error("Failed to load profile data:", err);
+            }
+        };
+        load();
+    }, []);
 
     useEffect(() => {
         if (!loading && !user) {

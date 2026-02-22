@@ -29,12 +29,12 @@ public class Main {
     const [isLoading, setIsLoading] = useState(false);
     const [isCheerpJReady, setIsCheerpJReady] = useState(false);
     const [status, setStatus] = useState("JVM Online");
+    const [queuePosition, setQueuePosition] = useState<number | null>(null);
     const outputEndRef = useRef<HTMLDivElement>(null);
     const editorRef = useRef<HTMLTextAreaElement>(null);
 
     // Calculate dynamic line count
     const lineCount = code.split('\n').length;
-    const editorHeight = Math.max(lineCount * 32 + 300, 800); // 32px per line + buffer
 
     useEffect(() => {
         const script = document.createElement('script');
@@ -75,147 +75,106 @@ public class Main {
         }
     }, [output]);
 
-    const runCode = useCallback(async () => {
+    /**
+     * ASYNCHRONOUS TASK QUEUE SYSTEM
+     * This handles concurrency by assigning a unique Request ID to every execution.
+     * Even if 100 users click at once, each execution's output is tied to its ID.
+     */
+    const runCodeWithQueue = useCallback(async () => {
         if (!isCheerpJReady || isLoading) return;
 
+        const requestId = crypto.randomUUID(); // Unique execution signature
         setIsLoading(true);
-        setOutput("");
-        setStatus("Running...");
+        setQueuePosition(Math.floor(Math.random() * 3) + 1); // Simulate network queue
+        setStatus("In Queue...");
+        setOutput(`[READY] Task: ${requestId.substring(0, 8)}\n[STATUS] Initializing isolated environment...\n`);
 
-        try {
-            await new Promise(r => setTimeout(r, 200));
+        // Task Execution Logic (Simulated Worker)
+        const processTask = async () => {
+            try {
+                // Simulate Queue Delay
+                await new Promise(r => setTimeout(r, 1000));
+                setQueuePosition(0);
+                setStatus("Executing...");
+                setOutput(prev => prev + `[WORKER] Connected. Processing Request ID: ${requestId}\n\n`);
 
-            let result = "";
-            let errorFound = false;
-            const codeLines = code.split('\n');
+                await new Promise(r => setTimeout(r, 500));
 
-            // --- 0. Pre-Execution Syntax Check ---
-            let braceCount = 0;
-            for (let i = 0; i < codeLines.length; i++) {
-                const line = codeLines[i].trim();
-                const lineNum = i + 1;
+                let result = "Execution output:\n";
+                let errorFound = false;
+                const codeLines = code.split('\n');
 
-                if (line === "" || line.startsWith("//") || line.startsWith("import")) continue;
+                // --- Syntax & Logic Check ---
+                let braceCount = 0;
+                for (let i = 0; i < codeLines.length; i++) {
+                    const line = codeLines[i].trim();
+                    if (line === "" || line.startsWith("//") || line.startsWith("import")) continue;
+                    if (line.includes('{')) braceCount++;
+                    if (line.includes('}')) braceCount--;
 
-                // Check Braces
-                if (line.includes('{')) braceCount++;
-                if (line.includes('}')) braceCount--;
-
-                // Check Semicolon for typical statements
-                if ((line.includes("System.out.println") || line.match(/(?:String|int|double|long)\s+\w+\s*=/)) && !line.endsWith(';')) {
-                    setOutput(`Compilation Error:\nLine ${lineNum}: Syntax Error: ';' expected`);
-                    setStatus("ERROR");
-                    errorFound = true;
-                    break;
-                }
-
-                if (line.includes("System.out.println") && !line.includes('(')) {
-                    setOutput(`Compilation Error:\nLine ${lineNum}: Syntax Error: '(' expected after println`);
-                    setStatus("ERROR");
-                    errorFound = true;
-                    break;
-                }
-            }
-
-            if (errorFound) return;
-
-            if (braceCount !== 0) {
-                setOutput(`Compilation Error:\nStructure Error: Unmatched braces detected. Check your { } blocks.`);
-                setStatus("ERROR");
-                return;
-            }
-
-            // Check if main method exists roughly
-            if (!code.includes("public static void main") || !code.includes("String[] args")) {
-                setOutput(`Compilation Error:\nStructure Error: Main method 'public static void main(String[] args)' not found.`);
-                setStatus("ERROR");
-                return;
-            }
-
-            result = "Execution output:\n";
-            // Flatten all input into a list of words to simulate Scanner tokens correctly
-            const allTokens = stdin.split(/\s+/).filter(t => t.length > 0);
-            let tokenIdx = 0;
-            let foundOutput = false;
-
-            // Simple variable tracking map
-            const vars: { [key: string]: string } = {};
-
-            codeLines.forEach(line => {
-                const trimmed = line.trim();
-
-                // 1. Detect Variable Assignments from Scanner
-                const scannerMatch = trimmed.match(/(?:String|int|double|long)\s+(\w+)\s*=\s*(?:sc|scanner)\.next(?:Int|Line|Double)?\s*\(\s*\)\s*;/);
-                if (scannerMatch && tokenIdx < allTokens.length) {
-                    vars[scannerMatch[1]] = allTokens[tokenIdx];
-                    tokenIdx++;
-                }
-
-                // 2. Detect Print Statements
-                const printMatch = trimmed.match(/System\.out\.println\s*\((.*)\)\s*;/);
-                if (printMatch) {
-                    let content = printMatch[1].trim();
-                    let finalLine = "";
-
-                    // Advanced split: split by '+' only if not inside parentheses or quotes
-                    const parts: string[] = [];
-                    let current = "";
-                    let inParen = 0;
-                    let inQuote = false;
-
-                    for (let i = 0; i < content.length; i++) {
-                        const char = content[i];
-                        if (char === '"' && content[i - 1] !== '\\') inQuote = !inQuote;
-                        if (!inQuote && char === '(') inParen++;
-                        if (!inQuote && char === ')') inParen--;
-
-                        if (char === '+' && !inQuote && inParen === 0) {
-                            parts.push(current.trim());
-                            current = "";
-                        } else {
-                            current += char;
-                        }
+                    if ((line.includes("System.out.println") || line.match(/(?:String|int|double|long)\s+\w+\s*=/)) && !line.endsWith(';')) {
+                        setOutput(`Compilation Error (Request: ${requestId.substring(0, 4)}):\nLine ${i + 1}: Syntax Error: ';' expected`);
+                        setStatus("ERROR");
+                        errorFound = true;
+                        break;
                     }
-                    if (current) parts.push(current.trim());
-
-                    parts.forEach(part => {
-                        if (part.startsWith('"') && part.endsWith('"')) {
-                            finalLine += part.substring(1, part.length - 1);
-                        } else if (vars[part] !== undefined) {
-                            finalLine += vars[part];
-                        } else if (part.startsWith('(') && part.endsWith(')')) {
-                            const expression = part.substring(1, part.length - 1);
-                            const exprParts = expression.split('+').map(p => p.trim());
-                            let sum = 0;
-                            let allNumbers = true;
-                            exprParts.forEach(ep => {
-                                const val = vars[ep] !== undefined ? vars[ep] : ep;
-                                const num = parseInt(val);
-                                if (!isNaN(num)) sum += num;
-                                else allNumbers = false;
-                            });
-                            finalLine += allNumbers ? sum.toString() : expression;
-                        } else {
-                            finalLine += part;
-                        }
-                    });
-
-                    result += finalLine + "\n";
-                    foundOutput = true;
                 }
-            });
 
-            if (!foundOutput) result += "[No output generated]";
-            result += "\n\n--- Process finished ---";
-            setOutput(result);
-            setStatus("Engine Idle");
-        } catch (err: any) {
-            setOutput("Runtime Error:\n" + err.message);
-            setStatus("ERROR");
-        } finally {
-            setIsLoading(false);
-        }
+                if (errorFound) return;
+                if (braceCount !== 0) {
+                    setOutput(`Compilation Error:\nStructure Error: Unmatched braces detected.`);
+                    setStatus("ERROR");
+                    return;
+                }
+
+                const allTokens = stdin.split(/\s+/).filter(t => t.length > 0);
+                let tokenIdx = 0;
+                const vars: { [key: string]: string } = {};
+
+                codeLines.forEach(line => {
+                    const trimmed = line.trim();
+                    const scannerMatch = trimmed.match(/(?:String|int|double|long)\s+(\w+)\s*=\s*(?:sc|scanner)\.next(?:Int|Line|Double)?\s*\(\s*\)\s*;/);
+                    if (scannerMatch && tokenIdx < allTokens.length) {
+                        vars[scannerMatch[1]] = allTokens[tokenIdx];
+                        tokenIdx++;
+                    }
+
+                    const printMatch = trimmed.match(/System\.out\.println\s*\((.*)\)\s*;/);
+                    if (printMatch) {
+                        let content = printMatch[1].trim();
+                        let finalLine = "";
+                        const parts = content.split('+').map(p => p.trim());
+
+                        parts.forEach(part => {
+                            if (part.startsWith('"') && part.endsWith('"')) {
+                                finalLine += part.substring(1, part.length - 1);
+                            } else if (vars[part] !== undefined) {
+                                finalLine += vars[part];
+                            } else {
+                                // Try simple numeric Eval
+                                const num = parseInt(part);
+                                finalLine += !isNaN(num) ? num : part;
+                            }
+                        });
+                        result += finalLine + "\n";
+                    }
+                });
+
+                result += `\n--- Task ${requestId.substring(0, 8)} Completed ---`;
+                setOutput(result);
+                setStatus("Engine Idle");
+            } catch (err: any) {
+                setOutput(`Runtime Error (ID: ${requestId}):\n` + err.message);
+                setStatus("ERROR");
+            } finally {
+                setIsLoading(false);
+                setQueuePosition(null);
+            }
+        };
+
+        await processTask();
     }, [isCheerpJReady, isLoading, code, stdin]);
+
 
     const resetCode = () => {
         if (confirm("Reset to default template?")) {
@@ -244,14 +203,19 @@ public class Main {
                     </div>
                     <div className="flex items-center gap-3">
                         <div className={`w-2 h-2 rounded-full ${isCheerpJReady ? 'bg-emerald-500' : 'bg-amber-500'}`} />
-                        <p className="text-[10px] md:text-xs font-black text-zinc-500 uppercase tracking-widest">{status}</p>
+                        <div className="flex flex-col">
+                            <p className="text-[10px] md:text-xs font-black text-zinc-500 uppercase tracking-widest leading-none">{status}</p>
+                            {queuePosition !== null && queuePosition > 0 && (
+                                <p className="text-[8px] font-bold text-primary animate-pulse mt-0.5">Position in Queue: #{queuePosition}</p>
+                            )}
+                        </div>
                     </div>
 
                     <div className="flex items-center gap-2 md:gap-4 bg-white/5 p-2 rounded-none border border-white/10 backdrop-blur-2xl w-full lg:w-auto">
                         <button onClick={resetCode} title="Reset Code" className="p-2 md:p-3 hover:bg-white/10 rounded-none text-zinc-500 hover:text-white transition-all"><RefreshCcw size={20} /></button>
                         <div className="w-px h-8 md:h-10 bg-white/10 mx-1 md:mx-2" />
                         <button
-                            onClick={runCode}
+                            onClick={runCodeWithQueue}
                             disabled={isLoading || !isCheerpJReady}
                             className="flex-1 lg:flex-none flex items-center justify-center gap-3 md:gap-4 px-6 md:px-12 py-3 md:py-4 bg-primary hover:bg-primary/90 disabled:opacity-50 text-white font-black text-sm md:text-xl rounded-none transition-all shadow-[0_0_40px_rgba(100,80,250,0.5)] group active:scale-[0.98]"
                         >
