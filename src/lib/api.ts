@@ -146,6 +146,27 @@ export async function getAllCompanies(): Promise<string[]> {
     return result;
 }
 
+// Normalize inconsistent topic names from the database
+const TOPIC_ALIASES: Record<string, string> = {
+    'LinkedList': 'Linked Lists',
+    'Linked List': 'Linked Lists',
+    'Graph': 'Graphs',
+    'DP': 'Dynamic Programming Basics',
+    'HashTable': 'HashMap',
+    'Array': 'Arrays & Hashing',
+};
+
+// Get all variant names that map to a canonical topic
+function getTopicVariants(canonicalTopic: string): string[] {
+    const variants = [canonicalTopic];
+    for (const [alias, canonical] of Object.entries(TOPIC_ALIASES)) {
+        if (canonical === canonicalTopic) {
+            variants.push(alias);
+        }
+    }
+    return variants;
+}
+
 export async function getAllTopics(): Promise<string[]> {
     // Check cache
     const now = Date.now();
@@ -161,7 +182,11 @@ export async function getAllTopics(): Promise<string[]> {
     if (error || !data) return apiCache.topics || [];
 
     const set = new Set<string>();
-    data.forEach(p => p.topics?.forEach((t: string) => set.add(t)));
+    data.forEach(p => p.topics?.forEach((t: string) => {
+        // Normalize topic name using alias map
+        const normalized = TOPIC_ALIASES[t] || t;
+        set.add(normalized);
+    }));
 
     const result = Array.from(set).sort();
 
@@ -172,21 +197,41 @@ export async function getAllTopics(): Promise<string[]> {
 }
 
 export async function getProblemsByTopic(topic: string): Promise<Problem[]> {
-    const { data, error } = await supabase
-        .from('problems')
-        .select('*')
-        .filter('topics', 'cs', `{"${topic}"}`);
+    // Query all variant names for this topic
+    const variants = getTopicVariants(topic);
 
-    if (error || !data) return [];
+    // Fetch problems matching ANY variant
+    const promises = variants.map(variant =>
+        supabase
+            .from('problems')
+            .select('*')
+            .filter('topics', 'cs', `{"${variant}"}`)
+    );
 
-    return data.map(p => ({
-        id: p.id,
-        title: p.title,
-        difficulty: p.difficulty,
-        topics: p.topics,
-        companies: p.companies,
-        javaConcepts: p.java_concepts,
-        link: p.link
-    }));
+    const results = await Promise.all(promises);
+
+    // Merge and deduplicate by id
+    const seen = new Set<string>();
+    const allProblems: Problem[] = [];
+
+    for (const { data, error } of results) {
+        if (error || !data) continue;
+        for (const p of data) {
+            if (!seen.has(p.id)) {
+                seen.add(p.id);
+                allProblems.push({
+                    id: p.id,
+                    title: p.title,
+                    difficulty: p.difficulty,
+                    topics: p.topics,
+                    companies: p.companies,
+                    javaConcepts: p.java_concepts,
+                    link: p.link
+                });
+            }
+        }
+    }
+
+    return allProblems;
 }
 
