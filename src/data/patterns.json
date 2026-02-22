@@ -18,6 +18,32 @@
             "117",
             "118",
             "119"
+        ],
+        "hardProblems": [
+            {
+                "title": "First Missing Positive",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/first-missing-positive/",
+                "hint": "Use the array itself as a hash table by placing each number at its correct index."
+            },
+            {
+                "title": "Longest Consecutive Sequence",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/longest-consecutive-sequence/",
+                "hint": "Use a HashSet. For each number, check if it's the start of a sequence (num-1 not in set)."
+            },
+            {
+                "title": "Minimum Window Substring",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/minimum-window-substring/",
+                "hint": "Use two HashMaps to track character frequencies + sliding window."
+            },
+            {
+                "title": "Substring with Concatenation of All Words",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/substring-with-concatenation-of-all-words/",
+                "hint": "Sliding window with word-level frequency maps. Words are same length — use that."
+            }
         ]
     },
     {
@@ -39,6 +65,26 @@
             "121",
             "122",
             "123"
+        ],
+        "hardProblems": [
+            {
+                "title": "Trapping Rain Water",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/trapping-rain-water/",
+                "hint": "Two pointers from each end. Track leftMax and rightMax. Water = min(leftMax, rightMax) - height."
+            },
+            {
+                "title": "4Sum",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/4sum/",
+                "hint": "Fix two numbers, then use two pointers for the remaining pair. Handle duplicate skipping."
+            },
+            {
+                "title": "Shortest Unsorted Continuous Subarray",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/shortest-unsorted-continuous-subarray/",
+                "hint": "Find the leftmost and rightmost positions where order breaks. Expand using min/max tracking."
+            }
         ]
     },
     {
@@ -59,6 +105,32 @@
             "124",
             "125",
             "126"
+        ],
+        "hardProblems": [
+            {
+                "title": "Minimum Window Substring",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/minimum-window-substring/",
+                "hint": "Expand right to cover all chars, then shrink left to minimize window. Use character count maps."
+            },
+            {
+                "title": "Sliding Window Maximum",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/sliding-window-maximum/",
+                "hint": "Use a Monotonic Deque (decreasing). Front = max of window. Remove out-of-window indices."
+            },
+            {
+                "title": "Longest Substring with At Most K Distinct Characters",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/",
+                "hint": "Variable window + HashMap tracking char frequencies. Shrink when distinct count > k."
+            },
+            {
+                "title": "Subarrays with K Different Integers",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/subarrays-with-k-different-integers/",
+                "hint": "exactly(K) = atMost(K) - atMost(K-1). Use sliding window for atMost function."
+            }
         ]
     },
     {
@@ -79,6 +151,32 @@
             "151",
             "152",
             "153"
+        ],
+        "hardProblems": [
+            {
+                "title": "Largest Rectangle in Histogram",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/largest-rectangle-in-histogram/",
+                "hint": "Monotonic increasing stack. For each bar, find left and right boundaries where shorter bars exist."
+            },
+            {
+                "title": "Maximal Rectangle",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/maximal-rectangle/",
+                "hint": "Build histogram heights row by row, then solve 'Largest Rectangle in Histogram' for each row."
+            },
+            {
+                "title": "Basic Calculator",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/basic-calculator/",
+                "hint": "Use stack for sign tracking. Push current result and sign when '(' is seen, pop when ')'. "
+            },
+            {
+                "title": "Longest Valid Parentheses",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/longest-valid-parentheses/",
+                "hint": "Stack stores indices. Push -1 as base. On match, length = i - stack.peek()."
+            }
         ]
     },
     {
@@ -99,6 +197,32 @@
             "161",
             "162",
             "163"
+        ],
+        "hardProblems": [
+            {
+                "title": "Median of Two Sorted Arrays",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/median-of-two-sorted-arrays/",
+                "hint": "Binary search on the smaller array. Partition both arrays so left halves equal right halves."
+            },
+            {
+                "title": "Split Array Largest Sum",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/split-array-largest-sum/",
+                "hint": "Binary search on the answer (max subarray sum). Use greedy to check if k splits are feasible."
+            },
+            {
+                "title": "Find Minimum in Rotated Sorted Array II",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/",
+                "hint": "Binary search but handle duplicates: when nums[mid] == nums[right], just shrink right by 1."
+            },
+            {
+                "title": "Kth Smallest Element in a Sorted Matrix",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/",
+                "hint": "Binary search on the value range. Count elements ≤ mid using sorted row/column property."
+            }
         ]
     },
     {
@@ -120,6 +244,26 @@
             "76",
             "77",
             "78"
+        ],
+        "hardProblems": [
+            {
+                "title": "Merge k Sorted Lists",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/merge-k-sorted-lists/",
+                "hint": "Use a Min-Heap of size k. Always poll smallest, add its next node. O(N log k)."
+            },
+            {
+                "title": "Reverse Nodes in k-Group",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/reverse-nodes-in-k-group/",
+                "hint": "Count k nodes ahead. If enough, reverse that segment. Connect previous tail to new head."
+            },
+            {
+                "title": "Copy List with Random Pointer",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/copy-list-with-random-pointer/",
+                "hint": "Interleave cloned nodes: A→A'→B→B'. Set random pointers using A'.random = A.random.next."
+            }
         ]
     },
     {
@@ -143,6 +287,32 @@
             "82",
             "83",
             "84"
+        ],
+        "hardProblems": [
+            {
+                "title": "Binary Tree Maximum Path Sum",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
+                "hint": "DFS returns max single-branch sum. At each node, update global max with left + node + right."
+            },
+            {
+                "title": "Serialize and Deserialize Binary Tree",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/",
+                "hint": "Preorder traversal with null markers. Use queue for deserialization."
+            },
+            {
+                "title": "Vertical Order Traversal of a Binary Tree",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/",
+                "hint": "BFS with (col, row) tracking. Use TreeMap sorted by column, then by row."
+            },
+            {
+                "title": "Count Complete Tree Nodes",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/count-complete-tree-nodes/",
+                "hint": "Compare left and right depth. If equal, nodes = 2^h − 1. Otherwise recurse. O(log²n)."
+            }
         ]
     },
     {
@@ -166,6 +336,38 @@
             "107",
             "109",
             "112"
+        ],
+        "hardProblems": [
+            {
+                "title": "Word Ladder",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/word-ladder/",
+                "hint": "BFS level by level. Each word connects to all words differing by 1 char. Use wildcard patterns."
+            },
+            {
+                "title": "Alien Dictionary",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/alien-dictionary/",
+                "hint": "Build a directed graph from adjacent word pairs. Topological sort gives the ordering."
+            },
+            {
+                "title": "Cheapest Flights Within K Stops",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/cheapest-flights-within-k-stops/",
+                "hint": "Modified Bellman-Ford with K+1 iterations. Or BFS with priority queue tracking (cost, node, stops)."
+            },
+            {
+                "title": "Critical Connections in a Network",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/critical-connections-in-a-network/",
+                "hint": "Tarjan's algorithm. Track discovery time and low-link values. Bridge = disc[u] < low[v]."
+            },
+            {
+                "title": "Shortest Path in a Grid with Obstacles Elimination",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/",
+                "hint": "BFS with state (row, col, remainingK). visited[row][col][k] prevents revisits."
+            }
         ]
     },
     {
@@ -188,6 +390,38 @@
             "200",
             "201",
             "202"
+        ],
+        "hardProblems": [
+            {
+                "title": "Edit Distance",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/edit-distance/",
+                "hint": "dp[i][j] = min ops to convert word1[0..i] to word2[0..j]. Three choices: insert, delete, replace."
+            },
+            {
+                "title": "Regular Expression Matching",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/regular-expression-matching/",
+                "hint": "dp[i][j] = does s[0..i] match p[0..j]. Handle '.' and '*' cases. '*' can match 0 or more."
+            },
+            {
+                "title": "Burst Balloons",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/burst-balloons/",
+                "hint": "Think backwards — which balloon is burst LAST? dp[i][j] = max coins for range (i, j)."
+            },
+            {
+                "title": "Longest Increasing Path in a Matrix",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/longest-increasing-path-in-a-matrix/",
+                "hint": "DFS + memoization. memo[i][j] = longest path starting at (i,j). Only go to strictly greater neighbors."
+            },
+            {
+                "title": "Palindrome Partitioning II",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/palindrome-partitioning-ii/",
+                "hint": "dp[i] = min cuts for s[0..i]. Precompute isPalin[i][j]. dp[i] = min(dp[j-1] + 1) for all valid j."
+            }
         ]
     },
     {
@@ -209,6 +443,32 @@
             "91",
             "92",
             "93"
+        ],
+        "hardProblems": [
+            {
+                "title": "N-Queens",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/n-queens/",
+                "hint": "Place queens row by row. Track columns, diagonals (r-c), and anti-diagonals (r+c) used."
+            },
+            {
+                "title": "Sudoku Solver",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/sudoku-solver/",
+                "hint": "Try 1-9 in each empty cell. Validate row, col, and 3x3 box. Backtrack on failure."
+            },
+            {
+                "title": "Word Search II",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/word-search-ii/",
+                "hint": "Build a Trie from words. DFS on grid with Trie pruning. Remove found words from Trie."
+            },
+            {
+                "title": "Palindrome Partitioning",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/palindrome-partitioning/",
+                "hint": "Backtrack: at each position, try all substrings. If palindrome, recurse on remainder."
+            }
         ]
     },
     {
@@ -229,6 +489,32 @@
             "101",
             "102",
             "105"
+        ],
+        "hardProblems": [
+            {
+                "title": "Find Median from Data Stream",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/find-median-from-data-stream/",
+                "hint": "Two heaps: Max-heap for lower half, Min-heap for upper half. Balance sizes. Median from tops."
+            },
+            {
+                "title": "Merge k Sorted Lists",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/merge-k-sorted-lists/",
+                "hint": "Min-heap of size k. Poll smallest node, push its next. O(N log k) total."
+            },
+            {
+                "title": "Smallest Range Covering Elements from K Lists",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/",
+                "hint": "Min-heap with one element from each list. Track global max. Range = [heap.peek(), globalMax]."
+            },
+            {
+                "title": "IPO",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/ipo/",
+                "hint": "Sort by capital needed. Max-heap of available profits. Greedily pick max profit k times."
+            }
         ]
     },
     {
@@ -248,6 +534,32 @@
             "115",
             "116",
             "117"
+        ],
+        "hardProblems": [
+            {
+                "title": "Candy",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/candy/",
+                "hint": "Two passes: left-to-right (increasing neighbor gets more), right-to-left (same). Take max."
+            },
+            {
+                "title": "Task Scheduler",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/task-scheduler/",
+                "hint": "Most frequent task dictates. Idle slots = (maxFreq - 1) * n. Fill with other tasks."
+            },
+            {
+                "title": "Minimum Number of Refueling Stops",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/minimum-number-of-refueling-stops/",
+                "hint": "Max-heap of passed stations' fuel. When out of fuel, greedily refuel from the best passed station."
+            },
+            {
+                "title": "Patching Array",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/patching-array/",
+                "hint": "Track max reachable sum. If next num > reach+1, patch with reach+1. Otherwise, extend reach."
+            }
         ]
     },
     {
@@ -266,6 +578,26 @@
             "211",
             "212",
             "213"
+        ],
+        "hardProblems": [
+            {
+                "title": "Maximum XOR of Two Numbers in an Array",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/",
+                "hint": "Build a bit Trie. For each number, greedily choose opposite bit at each level for max XOR."
+            },
+            {
+                "title": "Bitwise AND of Numbers Range",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/bitwise-and-of-numbers-range/",
+                "hint": "Find the common prefix of m and n in binary. Right-shift both until equal, then left-shift back."
+            },
+            {
+                "title": "Total Hamming Distance",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/total-hamming-distance/",
+                "hint": "For each bit position, count 0s and 1s. Contribution = count0 × count1. Sum all 32 bits."
+            }
         ]
     },
     {
@@ -284,6 +616,32 @@
             "221",
             "222",
             "223"
+        ],
+        "hardProblems": [
+            {
+                "title": "Insert Interval",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/insert-interval/",
+                "hint": "Add all intervals before overlap, merge overlapping ones, add all after. One pass O(n)."
+            },
+            {
+                "title": "Employee Free Time",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/employee-free-time/",
+                "hint": "Flatten all intervals, sort by start. Gaps between merged intervals = free time."
+            },
+            {
+                "title": "Meeting Rooms III",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/meeting-rooms-iii/",
+                "hint": "Two heaps: available rooms (min-heap by ID) and busy rooms (min-heap by end time). Simulate."
+            },
+            {
+                "title": "Data Stream as Disjoint Intervals",
+                "difficulty": "Hard",
+                "link": "https://leetcode.com/problems/data-stream-as-disjoint-intervals/",
+                "hint": "Use TreeMap. On add, check if num merges with adjacent intervals. getIntervals returns all values."
+            }
         ]
     }
 ]

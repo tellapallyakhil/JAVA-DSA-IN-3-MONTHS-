@@ -77,11 +77,15 @@ export default function PatternsPage() {
             .map((id: string) => problems.find((p) => String(p.id) === String(id)))
             .filter(Boolean) as Problem[];
 
+        const hardChallenges = pattern.hardProblems || [];
+
         const filtered =
             filterDifficulty === "All"
                 ? patternProblems
-                : patternProblems.filter((p) => p.difficulty === filterDifficulty);
-        return { ...pattern, problems: filtered, totalProblems: patternProblems.length };
+                : filterDifficulty === "Hard"
+                    ? patternProblems.filter((p) => p.difficulty === "Hard")
+                    : patternProblems.filter((p) => p.difficulty === filterDifficulty);
+        return { ...pattern, problems: filtered, totalProblems: patternProblems.length, hardChallenges };
     });
 
     return (
@@ -130,7 +134,7 @@ export default function PatternsPage() {
                             </div>
                             <div className="bg-white/5 border border-white/10 px-5 py-3 text-center min-w-[100px]">
                                 <div className="text-2xl font-black text-primary">
-                                    {loading ? "..." : patterns.reduce((acc: number, p: any) => acc + p.problemIds.length, 0)}
+                                    {loading ? "..." : patterns.reduce((acc: number, p: any) => acc + p.problemIds.length + (p.hardProblems?.length || 0), 0)}
                                 </div>
                                 <div className="text-[9px] font-bold text-zinc-500 uppercase tracking-widest">Problems</div>
                             </div>
@@ -212,7 +216,7 @@ export default function PatternsPage() {
                                                     {pattern.title}
                                                 </h3>
                                                 <span className="text-[10px] font-bold text-zinc-600 bg-white/5 px-2 py-0.5 border border-white/10 shrink-0">
-                                                    {pattern.problems.length} / {pattern.totalProblems}
+                                                    {pattern.totalProblems + pattern.hardChallenges.length} problems
                                                 </span>
                                             </div>
                                             <p className="text-xs md:text-sm text-zinc-500 line-clamp-1 md:line-clamp-2">
@@ -223,9 +227,10 @@ export default function PatternsPage() {
                                         {/* Difficulty Distribution Mini-Bar */}
                                         <div className="hidden lg:flex items-center gap-2 shrink-0">
                                             {["Easy", "Medium", "Hard"].map((d) => {
-                                                const count = pattern.problemIds
+                                                let count = pattern.problemIds
                                                     .map((id: string) => problems.find((p) => String(p.id) === String(id)))
                                                     .filter((p: any) => p && p.difficulty === d).length;
+                                                if (d === "Hard") count += (pattern.hardChallenges?.length || 0);
                                                 const config = difficultyConfig[d];
                                                 return (
                                                     <div key={d} className={`text-[10px] font-bold px-2 py-1 border ${config.bg} ${config.color}`}>
@@ -341,6 +346,60 @@ export default function PatternsPage() {
                                                         </div>
                                                     )}
                                                 </div>
+
+                                                {/* Hard Challenges Section */}
+                                                {pattern.hardProblems && pattern.hardProblems.length > 0 && (
+                                                    <div className="px-6 pb-6">
+                                                        <div className="border border-red-500/20 bg-red-500/[0.03]">
+                                                            <div className="px-4 py-3 border-b border-red-500/10 flex items-center gap-2">
+                                                                <Flame size={16} className="text-red-400" />
+                                                                <span className="text-[10px] font-black text-red-400 uppercase tracking-[0.2em]">Hard Challenges</span>
+                                                                <span className="text-[9px] text-zinc-600 ml-auto font-mono">{pattern.hardProblems.length} problems</span>
+                                                            </div>
+                                                            <div className="divide-y divide-white/[0.03]">
+                                                                {pattern.hardProblems.map((hp: any, hpIdx: number) => (
+                                                                    <motion.div
+                                                                        key={hpIdx}
+                                                                        initial={{ opacity: 0, x: -10 }}
+                                                                        animate={{ opacity: 1, x: 0 }}
+                                                                        transition={{ delay: hpIdx * 0.05 }}
+                                                                        className="px-4 py-3 hover:bg-white/[0.03] transition-all group/hard"
+                                                                    >
+                                                                        <div className="flex items-center gap-3">
+                                                                            <span className="text-[10px] font-mono text-zinc-700 w-5 shrink-0">
+                                                                                {String(hpIdx + 1).padStart(2, "0")}
+                                                                            </span>
+                                                                            <div className="flex-1 min-w-0">
+                                                                                <div className="flex items-center gap-2">
+                                                                                    <span className="text-sm font-semibold text-zinc-300 group-hover/hard:text-white transition-colors truncate">
+                                                                                        {hp.title}
+                                                                                    </span>
+                                                                                    <span className="text-[10px] font-bold px-2 py-0.5 border bg-red-500/15 border-red-500/20 text-red-400 shrink-0">
+                                                                                        Hard
+                                                                                    </span>
+                                                                                </div>
+                                                                                <div className="flex items-start gap-1.5 mt-1.5">
+                                                                                    <Target size={12} className="text-amber-500/60 shrink-0 mt-0.5" />
+                                                                                    <p className="text-[11px] text-zinc-500 leading-relaxed">
+                                                                                        <span className="font-semibold text-amber-400/80">Hint:</span> {hp.hint}
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
+                                                                            <a
+                                                                                href={hp.link}
+                                                                                target="_blank"
+                                                                                rel="noopener noreferrer"
+                                                                                className="inline-flex items-center justify-center w-8 h-8 bg-white/5 hover:bg-red-500/20 hover:text-red-400 text-zinc-600 transition-all border border-white/5 hover:border-red-500/30 shrink-0"
+                                                                            >
+                                                                                <ExternalLink size={14} />
+                                                                            </a>
+                                                                        </div>
+                                                                    </motion.div>
+                                                                ))}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                )}
                                             </div>
                                         </motion.div>
                                     )}
