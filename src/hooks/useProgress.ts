@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import { supabase } from '@/lib/supabaseClient';
 import { User } from '@supabase/supabase-js';
 import { Progress } from '@/types';
+import { progressSyncQueue } from '@/lib/syncQueue';
 
 const STORAGE_KEY_PREFIX = 'dsa_tracker_progress_';
 const GUEST_STORAGE_KEY = 'dsa_tracker_progress_guest';
@@ -224,7 +225,7 @@ export function useProgress() {
 
     const saveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-    // 2. Save logic: If User -> Save Cloud. Always Save Local with user-specific key.
+    // 2. Save logic: If User -> Save Cloud. Always Save Local.
     useEffect(() => {
         if (!isClient || loading) return;
 
@@ -232,15 +233,10 @@ export function useProgress() {
         const storageKey = getStorageKey(user?.id);
         localStorage.setItem(storageKey, JSON.stringify(progress));
 
-        // If logged in, save to cloud with DEBOUNCE
+        // If logged in, save to cloud via ASYNC QUEUE
         if (user) {
-            // Clear any pending save
-            if (saveTimeoutRef.current) {
-                clearTimeout(saveTimeoutRef.current);
-            }
-
-            // Set new timeout for 2 seconds
-            saveTimeoutRef.current = setTimeout(async () => {
+            const taskId = `progress_sync_${user.id}`;
+            progressSyncQueue.enqueue(taskId, async () => {
                 const { error } = await supabase
                     .from('profiles')
                     .upsert({
@@ -248,16 +244,9 @@ export function useProgress() {
                         progress: progress,
                         updated_at: new Date().toISOString()
                     });
-                if (error) console.error("Error saving to supabase", error);
-            }, 2000);
+                if (error) throw error; // Reject to trigger queue retry
+            });
         }
-
-        // Cleanup on unmount
-        return () => {
-            if (saveTimeoutRef.current) {
-                clearTimeout(saveTimeoutRef.current);
-            }
-        };
     }, [progress, isClient, user, loading]);
 
 

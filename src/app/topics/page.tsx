@@ -3,8 +3,9 @@ import { getAllTopics } from '@/lib/api';
 import { BookOpen, Code, ArrowRight } from 'lucide-react';
 import concepts from '@/data/concepts.json';
 
-export default function TopicsPage() {
-    const topics = getAllTopics();
+export default async function TopicsPage() {
+    const topics = await getAllTopics();
+    const concepts = await import('@/data/concepts.json').then(mod => mod.default);
     const conceptKeys = Object.keys(concepts);
 
     return (
@@ -25,6 +26,8 @@ export default function TopicsPage() {
                     {conceptKeys.map(topic => {
                         // @ts-ignore
                         const noteData = concepts[topic];
+                        const hasFlashcards = noteData.content.includes('**Q:');
+
                         return (
                             <Link
                                 key={topic}
@@ -40,7 +43,9 @@ export default function TopicsPage() {
                                 </div>
                                 <div className="mt-4 flex items-center gap-2">
                                     <span className="text-xs bg-green-500/10 text-green-400 px-2 py-1 rounded-full border border-green-500/20">Notes Available</span>
-                                    <span className="text-xs bg-blue-500/10 text-blue-400 px-2 py-1 rounded-full border border-blue-500/20">Flashcards</span>
+                                    {hasFlashcards && (
+                                        <span className="text-xs bg-blue-500/10 text-blue-400 px-2 py-1 rounded-full border border-blue-500/20">Flashcards</span>
+                                    )}
                                 </div>
                             </Link>
                         );

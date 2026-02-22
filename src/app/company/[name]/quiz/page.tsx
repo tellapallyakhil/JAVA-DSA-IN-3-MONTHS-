@@ -5,17 +5,17 @@ import { ArrowLeft, BrainCircuit } from 'lucide-react';
 import QuizView from '@/components/QuizView';
 
 export async function generateStaticParams() {
-    const companies = getAllCompanies();
+    const companies = await getAllCompanies();
     return companies.map(c => ({ name: c }));
 }
 
 export default async function CompanyQuizPage({ params }: { params: Promise<{ name: string }> }) {
     const { name } = await params;
     const companyName = decodeURIComponent(name);
-    const questions = getQuestionsByCompany(companyName);
+    const questions = await getQuestionsByCompany(companyName);
 
     if (!questions.length) {
-        const allCompanies = getAllCompanies();
+        const allCompanies = await getAllCompanies();
         if (!allCompanies.some(c => c.toLowerCase() === companyName.toLowerCase())) {
             notFound();
         }

@@ -1,9 +1,15 @@
 "use client";
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { ArrowRight, Code2, BrainCircuit, Calendar, Zap, Target, Sparkles, Trophy, MousePointer2, Lightbulb } from 'lucide-react';
+import {
+  ArrowRight, Code2, BrainCircuit, Calendar, Zap,
+  Target, Sparkles, Trophy, Activity, ChevronRight,
+  LayoutDashboard, RefreshCw
+} from 'lucide-react';
 import { motion } from 'framer-motion';
 import { getAllDays } from '@/lib/api';
+import { DailyTask } from '@/types';
 import CalendarSection from '@/components/CalendarSection';
 import PomodoroTimer from '@/components/PomodoroTimer';
 import StudyHeatmap from '@/components/StudyHeatmap';
@@ -14,298 +20,203 @@ import FocusAreasWidget from '@/components/FocusAreasWidget';
 import DreamCompanyWidget from '@/components/DreamCompanyWidget';
 
 export default function Home() {
-  const days = getAllDays();
+  const [days, setDays] = useState<DailyTask[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchDays = async () => {
+      try {
+        const data = await getAllDays();
+        setDays(data);
+      } catch (error) {
+        console.error("Failed to fetch days:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchDays();
+  }, []);
 
   const stats = [
-    { label: "Total Days", value: "90", icon: Calendar },
-    { label: "DSA Problems", value: "400+", icon: Code2 },
-    { label: "Aptitude Questions", value: "200+", icon: BrainCircuit },
-    { label: "Flashcards", value: "100+", icon: Zap },
-  ];
-
-  const months = [
-    {
-      id: 1,
-      title: "Foundation & Core",
-      focus: "Arrays, Strings, Basic Math, Logical Reasoning",
-      color: "from-blue-500/20 to-cyan-500/10",
-      weeks: "Week 1-4",
-      topics: ["Arrays & Hashing", "Two Pointers", "Sliding Window", "Stack", "Binary Search", "Linked Lists"]
-    },
-    {
-      id: 2,
-      title: "Advanced DSA",
-      focus: "Trees, Graphs, DP, Verbal Ability",
-      color: "from-purple-500/20 to-pink-500/10",
-      weeks: "Week 5-8",
-      topics: ["Trees & BST", "Heap", "Backtracking", "Graphs", "Dynamic Programming"]
-    },
-    {
-      id: 3,
-      title: "Interview Preparation",
-      focus: "Mock Tests, Pattern Revision, Hard Problems",
-      color: "from-amber-500/20 to-orange-500/10",
-      weeks: "Week 9-12",
-      topics: ["System Design", "Company Focus", "Mock Interviews", "Final Sprint"]
-    },
+    { label: "DSA", value: "400+", icon: Code2, color: "text-blue-400" },
+    { label: "Quant", value: "200+", icon: BrainCircuit, color: "text-purple-400" },
+    { label: "Cycles", value: "90", icon: Calendar, color: "text-emerald-400" },
   ];
 
   return (
-    <div className="relative space-y-24 pb-20 overflow-x-hidden">
-      {/* Premium Texture Overlay */}
-      <div className="fixed inset-0 pointer-events-none z-[100] opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
-
-      {/* Architectural Background Grid */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/20 rounded-full blur-[120px] opacity-50" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-600/20 rounded-full blur-[100px] opacity-30" />
+    <div className="relative space-y-12 pb-20 overflow-x-hidden">
+      {/* Background Ambience */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] opacity-30" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-[100px] opacity-20" />
       </div>
 
-      <RevisionReminder />
-
-      {/* Technical Engineering Hero Section */}
-      <section className="relative pt-12 md:pt-24 border-b border-white/5 overflow-hidden">
-        {/* Architectural Background Grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:40px_40px] -z-10" />
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-[#020205] to-[#020205] -z-10" />
-
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-10 py-12">
-            {/* System Status Log */}
-            <div className="flex items-center gap-6">
-              <div className="flex flex-col">
-                <span className="text-[10px] font-black tracking-[0.3em] text-primary uppercase">Current Pipeline</span>
-                <div className="flex items-center gap-2 mt-1">
-                  <span className="h-1.5 w-1.5 bg-primary animate-pulse" />
-                  <span className="text-xs font-mono text-zinc-500 uppercase">SYS-090: ACTIVE_ROADMAP</span>
+      {/* 1. COMPACT CONTROL CENTER (HERO + STATS) */}
+      <section className="relative pt-6 md:pt-12 px-4 z-40">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-[1.4fr,1fr] gap-8 items-stretch">
+            {/* Left: Action Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="glass-card p-8 md:p-12 relative overflow-hidden group border-primary/20 bg-gradient-to-br from-[#080810] to-black"
+            >
+              <div className="absolute top-0 right-0 p-8 opacity-5">
+                <LayoutDashboard size={180} />
+              </div>
+              <div className="relative z-10 space-y-6">
+                <h1 className="text-4xl md:text-6xl font-black tracking-tighter leading-[0.9] uppercase text-white">
+                  90-Day <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-400 to-primary">Placement Prep.</span>
+                </h1>
+                <p className="max-w-md text-zinc-500 text-sm font-medium leading-relaxed">
+                  A structured trajectory for DSA mastery and technical interview success. Follow the plan, solve the problems, and secure your dream role.
+                </p>
+                <div className="flex flex-wrap gap-4 pt-4">
+                  <StartButton className="px-8 py-4 bg-primary text-white font-black text-sm uppercase tracking-wider rounded-xl transition-all hover:scale-105 active:scale-95 shadow-xl shadow-primary/20 flex items-center gap-3" />
+                  <Link href="#calendar" className="px-8 py-4 bg-white/5 border border-white/10 text-white font-black text-sm uppercase tracking-wider rounded-xl hover:bg-white/10 transition-all flex items-center gap-3 group">
+                    Roadmap <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                  </Link>
                 </div>
               </div>
-              <div className="h-8 w-px bg-white/10 hidden sm:block" />
-              <div className="flex flex-col hidden sm:flex">
-                <span className="text-[10px] font-black tracking-[0.3em] text-zinc-600 uppercase">Target Readiness</span>
-                <span className="text-xs font-mono text-emerald-500 uppercase mt-1">99.8% Optimized</span>
-              </div>
-            </div>
+            </motion.div>
 
-            {/* Main Heading: Structural & Clean */}
-            <div className="space-y-4 px-4 md:px-0 text-center md:text-left">
-              <h1 className="text-3xl sm:text-4xl md:text-7xl font-black tracking-tighter leading-none text-white uppercase italic">
-                The 90-Day <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">Engineering</span> <br />
-                Pipeline.
-              </h1>
-              <p className="max-w-xl text-zinc-500 text-sm md:text-lg font-medium leading-relaxed border-l-0 md:border-l-2 border-primary/20 pl-0 md:pl-6 py-2">
-                A high-precision curriculum for data structures, algorithmic synchronization, and quantitative logic. Designed for specialists.
-              </p>
+            {/* Right: Stats Grid */}
+            <div className="grid grid-cols-2 gap-4">
+              {stats.map((stat, i) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: i * 0.1 }}
+                  className="glass p-6 rounded-3xl border border-white/5 flex flex-col justify-between hover:border-white/10 transition-colors"
+                >
+                  <div className={`w-10 h-10 rounded-2xl bg-white/5 flex items-center justify-center ${stat.color}`}>
+                    <stat.icon size={20} />
+                  </div>
+                  <div>
+                    <div className="text-2xl font-black text-white">{stat.value}</div>
+                    <div className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">{stat.label}</div>
+                  </div>
+                </motion.div>
+              ))}
+              <RevisionReminder compact />
             </div>
-
-            {/* Execution Actions */}
-            <div className="flex flex-col sm:flex-row gap-6">
-              <StartButton className="px-10 py-5 bg-primary text-white font-black text-lg rounded-none transition-all shadow-[8px_8px_0px_0px_rgba(100,80,250,0.3)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 active:scale-[0.98] flex items-center justify-center gap-4" />
-
-              <Link href="#calendar" className="px-10 py-5 bg-white/5 border border-white/10 text-white font-black text-lg rounded-none hover:bg-white/10 transition-all flex items-center justify-center gap-4 group">
-                <span className="w-2 h-2 bg-zinc-700 group-hover:bg-white transition-colors" />
-                ROADMAP_VIEW
-              </Link>
-            </div>
-
-            {/* Data Stats Footer */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 opacity-40 hover:opacity-100 transition-opacity duration-500">
-              <div>
-                <div className="text-xl font-black text-white">400+</div>
-                <div className="text-[9px] font-bold text-zinc-600 uppercase tracking-widest mt-1">DSA_UNITS</div>
-              </div>
-              <div>
-                <div className="text-xl font-black text-white">200+</div>
-                <div className="text-[9px] font-bold text-zinc-600 uppercase tracking-widest mt-1">QUANT_UNITS</div>
-              </div>
-              <div>
-                <div className="text-xl font-black text-white">90</div>
-                <div className="text-[9px] font-bold text-zinc-600 uppercase tracking-widest mt-1">CYCLES</div>
-              </div>
-              <div>
-                <div className="text-xl font-black text-white">24/7</div>
-                <div className="text-[9px] font-bold text-zinc-600 uppercase tracking-widest mt-1">UPTIME</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Side: Engineering Visualization */}
-          <div className="relative hidden lg:block">
-            <div className="aspect-square bg-[#050510] border border-white/10 p-12 relative overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none" />
-              {/* Fake Code Block Visual */}
-              <div className="space-y-6 font-mono text-[11px] text-zinc-700 leading-relaxed overflow-hidden italic">
-                <div className="text-primary font-black opacity-40"># INITIALIZING_ENV...</div>
-                <div>while (current_day &lt; 90) &#123;</div>
-                <div className="pl-6">master_dsa(current_topic);</div>
-                <div className="pl-6 text-purple-400">solve_aptitude(daily_logic);</div>
-                <div className="pl-6 text-emerald-500 font-bold">// SECURING_PLACEMENT...</div>
-                <div className="pl-6">revision_cycle(1, 4, 7);</div>
-                <div className="pl-6">current_day++;</div>
-                <div>&#125;</div>
-                <div className="text-zinc-400 pt-4 cursor-default">| STATUS: 100%_CODE_SYNCED</div>
-              </div>
-              {/* Floating HUD info */}
-              <div className="absolute bottom-8 right-8 border border-primary/20 bg-black/80 px-4 py-2 text-[10px] font-black text-primary tracking-widest uppercase">
-                System_Core v3.2
-              </div>
-            </div>
-            {/* Visual Depth Decoration */}
-            <div className="absolute -z-10 -bottom-12 -right-12 w-full h-full border border-white/5 pointer-events-none" />
           </div>
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {stats.map((stat) => (
-          <div key={stat.label} className="glass-card p-6 text-center">
-            <stat.icon className="mx-auto mb-3 text-primary" size={28} />
-            <div className="text-3xl font-black">{stat.value}</div>
-            <div className="text-sm text-muted-foreground">{stat.label}</div>
-          </div>
-        ))}
+      {/* 2. CORE PERFORMANCE WIDGETS */}
+      <section className="px-4 max-w-7xl mx-auto space-y-8 relative z-30">
+        <FocusAreasWidget />
+
+        <div className="grid grid-cols-1 lg:grid-cols-[1.5fr,1fr] gap-8">
+          <StudyHeatmap />
+          <DreamCompanyWidget />
+        </div>
       </section>
 
-      {/* DREAM COMPANY WIDGET */}
-      <DreamCompanyWidget />
+      {/* 3. MASTERY FRAMEWORK (THE METHODOLOGY) */}
+      <section className="px-4 max-w-7xl mx-auto relative z-20">
+        <div className="glass-card p-10 relative overflow-hidden bg-gradient-to-b from-white/[0.03] to-transparent">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
+            <div>
+              <h2 className="text-2xl font-black uppercase italic tracking-tight">The Framework.</h2>
+              <p className="text-sm text-zinc-500">How we turn knowledge into mastery.</p>
+            </div>
+            <div className="h-px flex-1 bg-white/5 mx-8 hidden md:block" />
+            <div className="bg-primary/20 text-primary text-[10px] font-black px-4 py-1.5 rounded-full border border-primary/30 uppercase tracking-[0.2em]">
+              Precision Training
+            </div>
+          </div>
 
-
-      {/* Routine Info */}
-      <div className="grid md:grid-cols-2 gap-6">
-        <div className="glass-card p-8 flex items-start gap-4">
-          <div className="bg-blue-500/20 p-3 rounded-lg text-blue-400">
-            <Code2 size={32} />
-          </div>
-          <div>
-            <h3 className="text-xl font-bold mb-2">2 Hours Java + DSA</h3>
-            <p className="text-muted-foreground leading-relaxed">Master Data Structures, Algorithms, and Core Java concepts through daily structured problem sets.</p>
-            <ul className="mt-4 space-y-1 text-sm text-blue-300/80">
-              <li>• Work Days: 3 problems (1 Easy, 1 Medium, 1 Hard)</li>
-              <li>• Holidays: 6 problems (3 Easy, 2 Medium, 1 Hard)</li>
-            </ul>
-          </div>
-        </div>
-        <div className="glass-card p-8 flex items-start gap-4">
-          <div className="bg-purple-500/20 p-3 rounded-lg text-purple-400">
-            <BrainCircuit size={32} />
-          </div>
-          <div>
-            <h3 className="text-xl font-bold mb-2">2 Hours Aptitude</h3>
-            <p className="text-muted-foreground leading-relaxed">Sharpen your logical reasoning, quantitative, and verbal aptitude for initial screening rounds.</p>
-            <ul className="mt-4 space-y-1 text-sm text-purple-300/80">
-              <li>• Daily MCQ quizzes with instant feedback</li>
-              <li>• Detailed explanations for each answer</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      {/* Spaced Repetition Rule */}
-      <section className="glass-card p-6 sm:p-8 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
-        <div className="relative z-10">
-          <h2 className="text-xl sm:text-2xl font-bold mb-4 flex items-center gap-2">
-            <span className="p-1.5 bg-green-500/20 rounded-md text-green-400"><Lightbulb size={20} /></span>
-            The 1-4-7 Revision Rule
-          </h2>
-          <div className="grid md:grid-cols-[2fr,1fr] gap-6 items-center">
+          <div className="grid md:grid-cols-3 gap-8 text-center md:text-left">
+            {/* Rule 1-4-7 */}
             <div className="space-y-4">
-              <p className="text-muted-foreground leading-relaxed">
-                To move concepts from short-term to long-term memory, we strictly follow the
-                <span className="text-white font-bold"> Spaced Repetition</span> method.
-                Never forget a concept again by following this review schedule:
+              <div className="flex items-center justify-center md:justify-start gap-3 text-amber-400">
+                <RefreshCw size={20} className="animate-spin-slow" />
+                <h3 className="font-black uppercase text-sm tracking-wider">Spaced Repetition</h3>
+              </div>
+              <p className="text-xs text-zinc-500 leading-relaxed italic">
+                Reset the "Forgetting Curve" by reviewing on days 1, 4, and 7.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <div className="flex items-center gap-3 bg-white/5 px-4 py-2 rounded-lg border border-white/10">
-                  <div className="w-8 h-8 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-sm">1</div>
-                  <div className="text-sm">
-                    <span className="block font-bold text-white">Day 1</span>
-                    <span className="text-white/60">Learn Concept</span>
-                  </div>
-                </div>
-                <div className="text-muted-foreground self-center">→</div>
-                <div className="flex items-center gap-3 bg-white/5 px-4 py-2 rounded-lg border border-white/10">
-                  <div className="w-8 h-8 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold text-sm">4</div>
-                  <div className="text-sm">
-                    <span className="block font-bold text-white">Day 4</span>
-                    <span className="text-white/60">First Review</span>
-                  </div>
-                </div>
-                <div className="text-muted-foreground self-center">→</div>
-                <div className="flex items-center gap-3 bg-white/5 px-4 py-2 rounded-lg border border-white/10">
-                  <div className="w-8 h-8 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-sm">7</div>
-                  <div className="text-sm">
-                    <span className="block font-bold text-white">Day 7</span>
-                    <span className="text-white/60">Final Mastery</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="bg-black/20 p-4 rounded-xl border border-white/5 text-sm space-y-2">
-              <div className="font-bold text-green-400 mb-2">Why it works?</div>
-              <p className="text-white/70">The brain forgets 40% of new info within 24 hours.</p>
-              <p className="text-white/70">Reviewing at specific intervals resets the "Forgetting Curve" and strengthens neural connections.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Months Overview */}
-      <section>
-        <h2 className="text-3xl font-bold mb-8 flex items-center gap-2"><Target className="text-primary" /> The 3-Month Plan</h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          {months.map(m => (
-            <div key={m.id} className={`p-6 rounded-2xl border border-white/5 bg-gradient-to-br ${m.color} flex flex-col justify-between min-h-[220px]`}>
-              <div>
-                <div className="text-4xl font-black text-white/10">0{m.id}</div>
-                <h3 className="text-xl font-bold mb-1">{m.title}</h3>
-                <p className="text-sm text-white/60 mb-3">{m.weeks}</p>
-              </div>
-              <div className="flex flex-wrap gap-1">
-                {m.topics.map(t => (
-                  <span key={t} className="text-[10px] bg-white/10 px-2 py-1 rounded-full">{t}</span>
+              <div className="flex justify-center md:justify-start gap-2">
+                {[1, 4, 7].map(n => (
+                  <div key={n} className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-xs font-black text-zinc-400">{n}</div>
                 ))}
               </div>
             </div>
-          ))}
-        </div>
-      </section>
 
-      {/* Calendar View */}
-      <CalendarSection days={days} />
+            {/* Routine */}
+            <div className="space-y-4">
+              <div className="flex items-center justify-center md:justify-start gap-3 text-blue-400">
+                <Target size={20} />
+                <h3 className="font-black uppercase text-sm tracking-wider">The 4-Hour Daily</h3>
+              </div>
+              <p className="text-xs text-zinc-500 leading-relaxed italic">
+                2 hours dedicated to DSA depth + 2 hours for Aptitude logic.
+              </p>
+              <div className="flex items-center justify-center md:justify-start gap-3 text-[10px] font-black">
+                <span className="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md border border-blue-500/20">2H DSA</span>
+                <span className="bg-purple-500/20 text-purple-400 px-3 py-1 rounded-md border border-purple-500/20">2H QUANT</span>
+              </div>
+            </div>
 
-      {/* Feature Grid */}
-      <section className="space-y-8 py-8">
-        <h2 className="text-3xl font-bold mb-4 flex items-center gap-2">
-          <span className="p-2 bg-purple-500/20 rounded-lg text-purple-400">🚀</span>
-          Study Tools
-        </h2>
-        <div className="space-y-8">
-          {/* Focus Areas - Full Width on Top */}
-          <FocusAreasWidget />
-
-          {/* Heatmap and Interview Simulator side by side */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <StudyHeatmap />
-            <InterviewSimulator />
+            {/* Strategy */}
+            <div className="space-y-4">
+              <div className="flex items-center justify-center md:justify-start gap-3 text-emerald-400">
+                <Trophy size={20} />
+                <h3 className="font-black uppercase text-sm tracking-wider">Placement Phase</h3>
+              </div>
+              <p className="text-xs text-zinc-500 leading-relaxed italic">
+                Tier-based progression from Basic Foundations to FAANG Hard.
+              </p>
+              <Link href="#calendar" className="text-[10px] font-black text-emerald-400 hover:text-white transition-colors flex items-center justify-center md:justify-start gap-1 uppercase tracking-widest">
+                Explore Roadmap <ArrowRight size={12} />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Quick Start CTA */}
-      <section className="glass-card p-10 text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-purple-500/10"></div>
-        <div className="relative z-10">
-          <h2 className="text-3xl font-bold mb-4">Ready to Begin Your Journey?</h2>
-          <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-            Commit to 4 hours daily for 90 days and transform your coding & aptitude skills. Your dream placement awaits!
-          </p>
-          <StartButton className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-[0_0_40px_-10px_rgba(124,58,237,0.5)]">
-            Start Today <ArrowRight />
-          </StartButton>
+      {/* 4. INTERACTIVE SIMULATOR */}
+      <section className="px-4 max-w-7xl mx-auto relative z-10">
+        <InterviewSimulator />
+      </section>
+
+      {/* 5. LOGIC PATTERNS & QUICK START */}
+      <section className="px-4 max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 items-stretch relative z-10">
+        <div className="glass-card p-10 bg-[#0a0a0f] border-white/10 relative overflow-hidden group">
+          <div className="relative z-10 space-y-6">
+            <div className="p-3 bg-primary/20 rounded-2xl w-fit text-primary">
+              <Sparkles size={24} />
+            </div>
+            <h2 className="text-3xl font-black text-white leading-tight uppercase tracking-tighter">
+              Problem Solving <br />
+              <span className="text-primary">Patterns.</span>
+            </h2>
+            <p className="text-sm text-zinc-500 leading-relaxed">
+              Master the 14 core patterns that solve thousands of different interview questions efficiently.
+            </p>
+            <Link href="/patterns" className="inline-flex items-center gap-3 bg-white/5 border border-white/10 text-white px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-primary hover:border-primary transition-all active:scale-95 shadow-xl shadow-black/40">
+              Explore Patterns <ArrowRight size={16} />
+            </Link>
+          </div>
         </div>
+
+        <div className="glass-card p-10 bg-gradient-to-br from-primary/10 to-transparent border-white/5 flex flex-col items-center justify-center text-center space-y-8 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+          <div className="space-y-3">
+            <h3 className="text-2xl font-bold uppercase tracking-tighter text-white">Get Started</h3>
+            <p className="text-xs text-zinc-500 font-medium italic">Your 90-day plan is ready.</p>
+          </div>
+          <StartButton className="w-full max-w-xs py-5 bg-primary text-white font-black uppercase tracking-[0.2em] rounded-2xl shadow-2xl shadow-primary/30 hover:shadow-primary/50 transition-all hover:-translate-y-1 active:scale-95 text-sm" />
+        </div>
+      </section>
+
+      {/* 6. FULL ROADMAP */}
+      <section id="calendar" className="pt-12 relative z-10">
+        <CalendarSection days={days} />
       </section>
 
       <PomodoroTimer />

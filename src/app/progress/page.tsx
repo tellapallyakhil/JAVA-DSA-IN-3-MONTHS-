@@ -1,18 +1,40 @@
 "use client";
 
+import { useState, useEffect } from 'react';
 import { useProgress } from '@/hooks/useProgress';
 import { getAllDays, getAllProblems } from '@/lib/api';
-import { PieChart, ListChecks, Brain, RotateCcw, Award } from 'lucide-react';
+import { PieChart, ListChecks, Brain, RotateCcw, Award, Loader2 } from 'lucide-react';
 import Link from 'next/link';
+import { Problem, DailyTask } from '@/types';
 
 export default function ProgressPage() {
     const { progress, isClient } = useProgress();
-    const allDays = getAllDays();
-    const allProblems = getAllProblems();
+    const [allDays, setAllDays] = useState<DailyTask[]>([]);
+    const [allProblems, setAllProblems] = useState<Problem[]>([]);
+    const [loadingData, setLoadingData] = useState(true);
 
-    if (!isClient) return (
-        <div className="min-h-[50vh] flex items-center justify-center">
-            <div className="animate-pulse text-muted-foreground">Loading specific progress...</div>
+    useEffect(() => {
+        const load = async () => {
+            try {
+                const [days, problems] = await Promise.all([
+                    getAllDays(),
+                    getAllProblems()
+                ]);
+                setAllDays(days);
+                setAllProblems(problems);
+            } catch (err) {
+                console.error("Failed to load progress data", err);
+            } finally {
+                setLoadingData(false);
+            }
+        };
+        load();
+    }, []);
+
+    if (!isClient || loadingData) return (
+        <div className="min-h-[50vh] flex flex-col items-center justify-center gap-4">
+            <Loader2 className="animate-spin text-primary" size={40} />
+            <div className="text-muted-foreground font-bold uppercase tracking-widest text-xs">Syncing Progress Data...</div>
         </div>
     );
 
@@ -30,7 +52,7 @@ export default function ProgressPage() {
     const overallPercentage = Math.round((dsaPercentage + aptitudePercentage + reasoningPercentage) / 3);
 
     return (
-        <div className="space-y-12 animate-in fade-in duration-500">
+        <div className="space-y-12 animate-in fade-in duration-500 pb-20">
             <div className="text-center space-y-4">
                 <div className="inline-flex p-3 rounded-full bg-primary/10 text-primary mb-2">
                     <Award size={32} />

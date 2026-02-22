@@ -5,16 +5,16 @@ import { ExternalLink, ArrowLeft } from 'lucide-react';
 import ProblemCard from '@/components/ProblemCard';
 
 export async function generateStaticParams() {
-    const topics = getAllTopics();
+    const topics = await getAllTopics();
     return topics.map(t => ({ name: t }));
 }
 
 export default async function TopicPage({ params }: { params: Promise<{ name: string }> }) {
     const { name } = await params;
     const topicName = decodeURIComponent(name);
-    const problems = getProblemsByTopic(topicName);
+    const problems = await getProblemsByTopic(topicName);
 
-    if (!problems.length) {
+    if (!problems || !problems.length) {
         notFound();
     }
 
