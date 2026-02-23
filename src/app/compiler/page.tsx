@@ -92,8 +92,6 @@ public class Main {
         // Real Execution Logic (Microservice Bridge)
         const processTask = async () => {
             try {
-                // Simulate minimal network delay for UX
-                await new Promise(r => setTimeout(r, 800));
                 setQueuePosition(0);
                 setStatus("Executing...");
                 setOutput(prev => prev + `[WORKER] Running Main.java via Isolated JVM...\n\n`);
@@ -176,6 +174,14 @@ public class Main {
                             EXECUTE
                         </button>
                     </div>
+                </div>
+
+                {/* Cold Start Notice */}
+                <div className="flex items-center gap-2 px-4 py-2 mb-4 bg-amber-500/10 border border-amber-500/20 rounded-none">
+                    <AlertCircle className="w-4 h-4 text-amber-400 flex-shrink-0" />
+                    <p className="text-[10px] md:text-xs text-amber-300/80 font-mono">
+                        First execution may take up to 30s due to server warm-up. Subsequent runs will be faster.
+                    </p>
                 </div>
 
                 {/* SIDE-BY-SIDE IDE LAYOUT */}
