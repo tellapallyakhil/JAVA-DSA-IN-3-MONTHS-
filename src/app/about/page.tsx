@@ -4,7 +4,8 @@ import { motion } from 'framer-motion';
 import {
     ShieldCheck, Zap, Target, BookOpen,
     Code2, BrainCircuit, Activity, Sparkles,
-    LayoutDashboard, History, Cpu, Globe
+    LayoutDashboard, History, Cpu, Globe,
+    Server, Container, ArrowRight, Shield
 } from 'lucide-react';
 
 const features = [
@@ -121,6 +122,83 @@ export default function AboutPage() {
                         </motion.div>
                     ))}
                 </div>
+            </section>
+
+            {/* Architecture Section */}
+            <section className="relative z-10 max-w-5xl mx-auto px-4">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-center mb-12"
+                >
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 text-[10px] font-black uppercase tracking-[0.2em] mb-6">
+                        <Server size={12} /> Microservice Architecture
+                    </div>
+                    <h2 className="text-3xl md:text-4xl font-black uppercase italic tracking-tighter text-white">
+                        Powered by <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Real Infrastructure</span>
+                    </h2>
+                </motion.div>
+
+                <div className="grid md:grid-cols-3 gap-6">
+                    {/* Frontend */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        className="glass-card p-6 text-center group hover:border-blue-400/40 transition-all duration-500"
+                    >
+                        <div className="w-14 h-14 rounded-2xl bg-blue-500/10 text-blue-400 flex items-center justify-center mx-auto mb-4 border border-white/5">
+                            <Globe size={28} />
+                        </div>
+                        <h3 className="text-lg font-bold text-white mb-2 uppercase tracking-tight">Next.js Frontend</h3>
+                        <p className="text-xs text-zinc-500 leading-relaxed">React-based UI with server-side rendering, deployed on Vercel for blazing-fast load times.</p>
+                    </motion.div>
+
+                    {/* Arrow */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        className="glass-card p-6 text-center group hover:border-emerald-400/40 transition-all duration-500 relative"
+                    >
+                        <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mx-auto mb-4 border border-white/5">
+                            <Shield size={28} />
+                        </div>
+                        <h3 className="text-lg font-bold text-white mb-2 uppercase tracking-tight">API Bridge</h3>
+                        <p className="text-xs text-zinc-500 leading-relaxed">Secure API routes act as a gateway between the frontend and the code execution engine.</p>
+                    </motion.div>
+
+                    {/* Microservice */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        className="glass-card p-6 text-center group hover:border-purple-400/40 transition-all duration-500"
+                    >
+                        <div className="w-14 h-14 rounded-2xl bg-purple-500/10 text-purple-400 flex items-center justify-center mx-auto mb-4 border border-white/5">
+                            <Container size={28} />
+                        </div>
+                        <h3 className="text-lg font-bold text-white mb-2 uppercase tracking-tight">Code Judge</h3>
+                        <p className="text-xs text-zinc-500 leading-relaxed">Dockerized Python + Java microservice on Render. Compiles and executes Java code in an isolated sandbox.</p>
+                    </motion.div>
+                </div>
+
+                {/* Flow Diagram */}
+                <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="flex items-center justify-center gap-3 mt-8 flex-wrap"
+                >
+                    <span className="px-3 py-1.5 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-black uppercase tracking-widest rounded-full">User Code</span>
+                    <ArrowRight size={14} className="text-zinc-600" />
+                    <span className="px-3 py-1.5 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-black uppercase tracking-widest rounded-full">API Route</span>
+                    <ArrowRight size={14} className="text-zinc-600" />
+                    <span className="px-3 py-1.5 bg-purple-500/10 border border-purple-500/20 text-purple-400 text-[10px] font-black uppercase tracking-widest rounded-full">Docker JVM</span>
+                    <ArrowRight size={14} className="text-zinc-600" />
+                    <span className="px-3 py-1.5 bg-amber-500/10 border border-amber-500/20 text-amber-400 text-[10px] font-black uppercase tracking-widest rounded-full">Result</span>
+                </motion.div>
             </section>
 
             {/* Mission Statement / CTA */}
