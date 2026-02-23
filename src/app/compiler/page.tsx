@@ -89,83 +89,36 @@ public class Main {
         setStatus("In Queue...");
         setOutput(`[READY] Task: ${requestId.substring(0, 8)}\n[STATUS] Initializing isolated environment...\n`);
 
-        // Task Execution Logic (Simulated Worker)
+        // Real Execution Logic (Microservice Bridge)
         const processTask = async () => {
             try {
-                // Simulate Queue Delay
-                await new Promise(r => setTimeout(r, 1000));
+                // Simulate minimal network delay for UX
+                await new Promise(r => setTimeout(r, 800));
                 setQueuePosition(0);
                 setStatus("Executing...");
-                setOutput(prev => prev + `[WORKER] Connected. Processing Request ID: ${requestId}\n\n`);
+                setOutput(prev => prev + `[WORKER] Running Main.java via Isolated JVM...\n\n`);
 
-                await new Promise(r => setTimeout(r, 500));
-
-                let result = "Execution output:\n";
-                let errorFound = false;
-                const codeLines = code.split('\n');
-
-                // --- Syntax & Logic Check ---
-                let braceCount = 0;
-                for (let i = 0; i < codeLines.length; i++) {
-                    const line = codeLines[i].trim();
-                    if (line === "" || line.startsWith("//") || line.startsWith("import")) continue;
-                    if (line.includes('{')) braceCount++;
-                    if (line.includes('}')) braceCount--;
-
-                    if ((line.includes("System.out.println") || line.match(/(?:String|int|double|long)\s+\w+\s*=/)) && !line.endsWith(';')) {
-                        setOutput(`Compilation Error (Request: ${requestId.substring(0, 4)}):\nLine ${i + 1}: Syntax Error: ';' expected`);
-                        setStatus("ERROR");
-                        errorFound = true;
-                        break;
-                    }
-                }
-
-                if (errorFound) return;
-                if (braceCount !== 0) {
-                    setOutput(`Compilation Error:\nStructure Error: Unmatched braces detected.`);
-                    setStatus("ERROR");
-                    return;
-                }
-
-                const allTokens = stdin.split(/\s+/).filter(t => t.length > 0);
-                let tokenIdx = 0;
-                const vars: { [key: string]: string } = {};
-
-                codeLines.forEach(line => {
-                    const trimmed = line.trim();
-                    const scannerMatch = trimmed.match(/(?:String|int|double|long)\s+(\w+)\s*=\s*(?:sc|scanner)\.next(?:Int|Line|Double)?\s*\(\s*\)\s*;/);
-                    if (scannerMatch && tokenIdx < allTokens.length) {
-                        vars[scannerMatch[1]] = allTokens[tokenIdx];
-                        tokenIdx++;
-                    }
-
-                    const printMatch = trimmed.match(/System\.out\.println\s*\((.*)\)\s*;/);
-                    if (printMatch) {
-                        let content = printMatch[1].trim();
-                        let finalLine = "";
-                        const parts = content.split('+').map(p => p.trim());
-
-                        parts.forEach(part => {
-                            if (part.startsWith('"') && part.endsWith('"')) {
-                                finalLine += part.substring(1, part.length - 1);
-                            } else if (vars[part] !== undefined) {
-                                finalLine += vars[part];
-                            } else {
-                                // Try simple numeric Eval
-                                const num = parseInt(part);
-                                finalLine += !isNaN(num) ? num : part;
-                            }
-                        });
-                        result += finalLine + "\n";
-                    }
+                const response = await fetch('/api/execute', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ code, stdin })
                 });
 
-                result += `\n--- Task ${requestId.substring(0, 8)} Completed ---`;
-                setOutput(result);
-                setStatus("Engine Idle");
+                const data = await response.json();
+
+                if (data.success) {
+                    let result = `--- Execution Output ---\n${data.output}`;
+                    if (data.error) result += `\n--- Standard Error ---\n${data.error}`;
+                    result += `\n\n--- Runtime: ${data.runtime}ms | Status: ${data.type} ---`;
+                    setOutput(result);
+                    setStatus("Engine Idle");
+                } else {
+                    setOutput(`[${data.type}]\n${data.error}`);
+                    setStatus("ERROR");
+                }
             } catch (err: any) {
-                setOutput(`Runtime Error (ID: ${requestId}):\n` + err.message);
-                setStatus("ERROR");
+                setOutput(`System Error: Could not connect to Code Judge.\nDetails: ${err.message}`);
+                setStatus("OFFLINE");
             } finally {
                 setIsLoading(false);
                 setQueuePosition(null);
