@@ -1,7 +1,17 @@
 import { NextResponse } from 'next/server';
 
-// Primary Engine: Piston API (free, full JDK, no API key)
+// Primary Engine: Piston API (free, full JDK 15, no API key)
+// Supports ALL standard Java packages for DSA:
+// java.util.* (Collections, Lists, Maps, Sets, PriorityQueue, Deque, Stack)
+// java.util.stream.* (Streams API)
+// java.util.concurrent.* (Threading)
+// java.io.* / java.nio.* (I/O)
+// java.math.* (BigInteger, BigDecimal)
+// java.text.* / java.time.* (Formatting)
+// Also supports multiple classes, inner classes, generics, lambdas, etc.
 async function executeWithPiston(code: string, stdin: string) {
+    const startTime = Date.now();
+
     const response = await fetch('https://emkc.org/api/v2/piston/execute', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -10,12 +20,14 @@ async function executeWithPiston(code: string, stdin: string) {
             version: '15.0.2',
             files: [{ name: 'Main.java', content: code }],
             stdin: stdin || '',
-            compile_timeout: 15000,
-            run_timeout: 10000,
+            compile_timeout: 30000,  // 30s for complex DSA compilation
+            run_timeout: 30000,      // 30s for heavy DP/Graph/Backtracking
             compile_memory_limit: -1,
             run_memory_limit: -1,
         }),
     });
+
+    const elapsed = Date.now() - startTime;
 
     if (!response.ok) {
         throw new Error(`Piston API responded with ${response.status}`);
@@ -23,38 +35,57 @@ async function executeWithPiston(code: string, stdin: string) {
 
     const data = await response.json();
 
-    // Piston returns { run: { stdout, stderr, code, signal, output }, compile: { ... } }
-    const compileError = data.compile?.stderr || '';
+    // Handle Piston error messages (e.g. language not found)
+    if (data.message) {
+        throw new Error(data.message);
+    }
+
+    const compileStdout = data.compile?.stdout || '';
+    const compileStderr = data.compile?.stderr || '';
+    const compileCode = data.compile?.code ?? 0;
     const runStdout = data.run?.stdout || '';
     const runStderr = data.run?.stderr || '';
     const exitCode = data.run?.code ?? 0;
+    const runSignal = data.run?.signal || null;
 
-    // Check for compile errors first
-    if (compileError) {
+    // Check for compile errors
+    if (compileCode !== 0 || compileStderr) {
         return {
             success: false,
-            error: compileError,
+            error: compileStderr || compileStdout || 'Compilation failed.',
             type: 'Compilation Error',
+            runtime: elapsed,
+        };
+    }
+
+    // Check for timeout / killed signals
+    if (runSignal === 'SIGKILL') {
+        return {
+            success: false,
+            output: runStdout || '',
+            error: 'Time Limit Exceeded (TLE). Your solution took too long to execute. Try optimizing your algorithm.',
+            type: 'Time Limit Exceeded',
+            runtime: elapsed,
         };
     }
 
     // Check for runtime errors
-    if (exitCode !== 0 && runStderr) {
+    if (exitCode !== 0) {
         return {
             success: true,
             output: runStdout || '',
-            error: runStderr,
+            error: runStderr || 'Runtime error occurred.',
             type: 'Runtime Error',
-            runtime: 0,
+            runtime: elapsed,
         };
     }
 
     return {
         success: true,
-        output: runStdout + (runStderr ? `\n${runStderr}` : ''),
+        output: runStdout + (runStderr ? `\n--- Warnings ---\n${runStderr}` : ''),
         error: '',
         type: 'Success',
-        runtime: 0,
+        runtime: elapsed,
     };
 }
 
