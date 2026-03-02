@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { Play, Terminal, Code2, AlertCircle, Loader2, RefreshCcw, Trash2, Zap, Cpu, Keyboard } from 'lucide-react';
+import { Play, Terminal, Code2, AlertCircle, Loader2, RefreshCcw, Trash2, Zap, Cpu, Keyboard, Activity, Clock, HardDrive, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useComplexityAnalysis } from '@/hooks/useComplexityAnalysis';
 
 export default function CompilerContainer() {
     const [code, setCode] = useState(`import java.util.*;
@@ -65,6 +66,29 @@ public class Main {
 
     // Calculate dynamic line count
     const lineCount = code.split('\n').length;
+
+    // Live complexity analysis (client-side, instant)
+    const { result: complexity, isAnalyzing: isAnalyzingComplexity } = useComplexityAnalysis(code);
+
+    // Warm-up ping: silently compile a Hello World on mount
+    // This pre-establishes the connection so the first real execution is faster
+    useEffect(() => {
+        const warmUp = async () => {
+            try {
+                await fetch('/api/execute', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        code: 'public class Main { public static void main(String[] args) { System.out.println("ready"); } }',
+                        stdin: ''
+                    }),
+                });
+            } catch (e) {
+                // Silently ignore warm-up failures
+            }
+        };
+        warmUp();
+    }, []);
 
     useEffect(() => {
         const script = document.createElement('script');
@@ -199,11 +223,53 @@ public class Main {
                     </div>
                 </div>
 
-                <div className="flex items-center gap-2 px-4 py-2 mb-4 bg-amber-500/10 border border-amber-500/20 rounded-none">
-                    <AlertCircle className="w-4 h-4 text-amber-400 flex-shrink-0" />
-                    <p className="text-[10px] md:text-xs text-amber-300/80 font-mono">
-                        First execution may take up to 30s due to server warm-up. Subsequent runs will be faster.
-                    </p>
+                {/* Live Complexity Analysis Widget */}
+                <div className="flex flex-col sm:flex-row items-stretch gap-3 mb-4">
+                    <div className="flex-1 flex items-center gap-3 px-4 py-2.5 bg-gradient-to-r from-emerald-500/10 to-emerald-500/5 border border-emerald-500/20 rounded-none">
+                        <Clock className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                        <div className="flex flex-col">
+                            <span className="text-[8px] font-black text-emerald-500/60 uppercase tracking-widest">Time</span>
+                            {isAnalyzingComplexity ? (
+                                <span className="text-xs text-emerald-300 animate-pulse">analyzing...</span>
+                            ) : complexity ? (
+                                <span className="text-sm font-bold text-emerald-300">{complexity.time} <span className="text-[10px] font-normal text-emerald-400/60">— {complexity.timeReason}</span></span>
+                            ) : (
+                                <span className="text-xs text-zinc-600">—</span>
+                            )}
+                        </div>
+                    </div>
+                    <div className="flex-1 flex items-center gap-3 px-4 py-2.5 bg-gradient-to-r from-blue-500/10 to-blue-500/5 border border-blue-500/20 rounded-none">
+                        <HardDrive className="w-4 h-4 text-blue-400 flex-shrink-0" />
+                        <div className="flex flex-col">
+                            <span className="text-[8px] font-black text-blue-500/60 uppercase tracking-widest">Space</span>
+                            {isAnalyzingComplexity ? (
+                                <span className="text-xs text-blue-300 animate-pulse">analyzing...</span>
+                            ) : complexity ? (
+                                <span className="text-sm font-bold text-blue-300">{complexity.space} <span className="text-[10px] font-normal text-blue-400/60">— {complexity.spaceReason}</span></span>
+                            ) : (
+                                <span className="text-xs text-zinc-600">—</span>
+                            )}
+                        </div>
+                    </div>
+                    <div className="flex items-center gap-3 px-4 py-2.5 bg-gradient-to-r from-purple-500/10 to-purple-500/5 border border-purple-500/20 rounded-none">
+                        <Sparkles className="w-4 h-4 text-purple-400 flex-shrink-0" />
+                        <div className="flex flex-col">
+                            <span className="text-[8px] font-black text-purple-500/60 uppercase tracking-widest">Pattern</span>
+                            {isAnalyzingComplexity ? (
+                                <span className="text-xs text-purple-300 animate-pulse">detecting...</span>
+                            ) : complexity ? (
+                                <span className="text-sm font-bold text-purple-300">{complexity.pattern}</span>
+                            ) : (
+                                <span className="text-xs text-zinc-600">—</span>
+                            )}
+                        </div>
+                    </div>
+                    {complexity && (
+                        <div className="flex items-center gap-2 px-3 py-2.5 bg-white/5 border border-white/10 rounded-none">
+                            <Activity className="w-3.5 h-3.5 text-zinc-500" />
+                            <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-wider">{complexity.confidence}%</span>
+                        </div>
+                    )}
                 </div>
 
                 <div className="flex-1 grid grid-cols-1 xl:grid-cols-12 gap-6 min-h-0 pb-8">
