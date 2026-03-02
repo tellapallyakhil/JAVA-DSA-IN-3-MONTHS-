@@ -2,6 +2,12 @@ import Link from 'next/link';
 import { getAllTopics } from '@/lib/api';
 import { BookOpen, Code, ArrowRight } from 'lucide-react';
 import concepts from '@/data/concepts.json';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'DSA Topics | Data Structures and Algorithms Guide',
+    description: 'Explore comprehensive study notes and practice problems for all major Data Structures and Algorithms topics including Arrays, Trees, Graphs, and Dynamic Programming.',
+};
 
 export default async function TopicsPage() {
     const topics = await getAllTopics();

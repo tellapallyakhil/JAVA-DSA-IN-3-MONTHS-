@@ -16,8 +16,46 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "90-Day DSA Prep | Master Java & Aptitude",
-  description: "A structured 3-month placement preparation plan for coding interviews.",
+  title: {
+    default: "90-Day DSA Prep | Master Java & Placement Interviews",
+    template: "%s | 90-Day DSA Prep"
+  },
+  description: "Accelerate your coding journey with a structured 3-month preparation plan for Data Structures, Algorithms, and Placement Interviews in Java.",
+  keywords: ["DSA", "Java", "Coding Interview Prep", "Placement Training", "Data Structures", "Algorithms", "90 Day Challenge", "Software Engineering"],
+  authors: [{ name: "Tellapalli Akhil Kumar" }],
+  creator: "Tellapalli Akhil Kumar",
+  publisher: "Tellapalli Akhil Kumar",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    title: "90-Day DSA Prep | Master Java & Aptitude",
+    description: "Structure, systematic approach to master Data Structures and Algorithms in 90 days. Built for student placement success.",
+    url: "https://java-dsa-in-3-months.vercel.app", // User-provided URL
+    siteName: "90-Day DSA Prep",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "90-Day DSA Prep | Placement Interview Guide",
+    description: "Master Java, DSA, and Interview Skills in 3 Months.",
+    creator: "@tellapallyakhil", // Placeholder based on github username
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  category: "technology",
 };
 
 export default function RootLayout({
