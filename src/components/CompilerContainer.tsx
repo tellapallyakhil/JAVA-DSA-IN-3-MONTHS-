@@ -298,6 +298,36 @@ public class Main {
                                     ref={editorRef}
                                     value={code}
                                     onChange={(e) => setCode(e.target.value)}
+                                    onKeyDown={(e) => {
+                                        if (e.key === 'Tab') {
+                                            e.preventDefault();
+                                            const textarea = e.currentTarget;
+                                            const start = textarea.selectionStart;
+                                            const end = textarea.selectionEnd;
+
+                                            if (e.shiftKey) {
+                                                // Shift+Tab: remove 4 spaces before cursor
+                                                const beforeCursor = code.substring(0, start);
+                                                const lastLine = beforeCursor.split('\n').pop() || '';
+                                                const spacesToRemove = Math.min(4, lastLine.length - lastLine.trimStart().length, lastLine.search(/\S|$/) >= 4 ? 4 : lastLine.search(/\S|$/));
+                                                if (spacesToRemove > 0) {
+                                                    const lineStart = beforeCursor.lastIndexOf('\n') + 1;
+                                                    const newCode = code.substring(0, lineStart) + code.substring(lineStart).replace(/^ {1,4}/, '');
+                                                    setCode(newCode);
+                                                    requestAnimationFrame(() => {
+                                                        textarea.selectionStart = textarea.selectionEnd = Math.max(lineStart, start - spacesToRemove);
+                                                    });
+                                                }
+                                            } else {
+                                                // Tab: insert 4 spaces
+                                                const newCode = code.substring(0, start) + '    ' + code.substring(end);
+                                                setCode(newCode);
+                                                requestAnimationFrame(() => {
+                                                    textarea.selectionStart = textarea.selectionEnd = start + 4;
+                                                });
+                                            }
+                                        }
+                                    }}
                                     className="flex-1 bg-transparent px-4 md:px-8 py-6 font-mono text-sm md:text-base resize-none focus:outline-none text-zinc-100 leading-8 selection:bg-primary/40 scrollbar-hide h-full"
                                     style={{ minHeight: `${lineCount * 32 + 100}px` }}
                                     spellCheck={false}
