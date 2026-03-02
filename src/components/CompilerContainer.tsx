@@ -299,20 +299,80 @@ public class Main {
                                     value={code}
                                     onChange={(e) => setCode(e.target.value)}
                                     onKeyDown={(e) => {
+                                        const textarea = e.currentTarget;
+                                        const start = textarea.selectionStart;
+                                        const end = textarea.selectionEnd;
+
+                                        if (e.key === 'Enter') {
+                                            e.preventDefault();
+                                            const beforeCursor = code.substring(0, start);
+                                            const afterCursor = code.substring(end);
+                                            const currentLine = beforeCursor.split('\n').pop() || '';
+                                            const currentIndent = currentLine.match(/^(\s*)/)?.[1] || '';
+                                            const trimmedLine = currentLine.trimEnd();
+
+                                            // If line ends with {, add extra indent
+                                            if (trimmedLine.endsWith('{')) {
+                                                const newIndent = currentIndent + '    ';
+                                                // Auto-close: if next char is } or nothing meaningful, add closing brace
+                                                if (afterCursor.trimStart().startsWith('}') || afterCursor.trim() === '') {
+                                                    const closingExists = afterCursor.trimStart().startsWith('}');
+                                                    if (!closingExists) {
+                                                        const newCode = beforeCursor + '\n' + newIndent + '\n' + currentIndent + '}' + afterCursor;
+                                                        setCode(newCode);
+                                                        const cursorPos = start + 1 + newIndent.length;
+                                                        requestAnimationFrame(() => {
+                                                            textarea.selectionStart = textarea.selectionEnd = cursorPos;
+                                                        });
+                                                    } else {
+                                                        const newCode = beforeCursor + '\n' + newIndent + afterCursor;
+                                                        setCode(newCode);
+                                                        const cursorPos = start + 1 + newIndent.length;
+                                                        requestAnimationFrame(() => {
+                                                            textarea.selectionStart = textarea.selectionEnd = cursorPos;
+                                                        });
+                                                    }
+                                                } else {
+                                                    const newCode = beforeCursor + '\n' + newIndent + afterCursor;
+                                                    setCode(newCode);
+                                                    const cursorPos = start + 1 + newIndent.length;
+                                                    requestAnimationFrame(() => {
+                                                        textarea.selectionStart = textarea.selectionEnd = cursorPos;
+                                                    });
+                                                }
+                                            }
+                                            // If line starts with }, reduce indent
+                                            else if (trimmedLine.startsWith('}')) {
+                                                const newCode = beforeCursor + '\n' + currentIndent + afterCursor;
+                                                setCode(newCode);
+                                                const cursorPos = start + 1 + currentIndent.length;
+                                                requestAnimationFrame(() => {
+                                                    textarea.selectionStart = textarea.selectionEnd = cursorPos;
+                                                });
+                                            }
+                                            // Normal Enter: maintain current indentation
+                                            else {
+                                                const newCode = beforeCursor + '\n' + currentIndent + afterCursor;
+                                                setCode(newCode);
+                                                const cursorPos = start + 1 + currentIndent.length;
+                                                requestAnimationFrame(() => {
+                                                    textarea.selectionStart = textarea.selectionEnd = cursorPos;
+                                                });
+                                            }
+                                        }
+
                                         if (e.key === 'Tab') {
                                             e.preventDefault();
-                                            const textarea = e.currentTarget;
-                                            const start = textarea.selectionStart;
-                                            const end = textarea.selectionEnd;
 
                                             if (e.shiftKey) {
-                                                // Shift+Tab: remove 4 spaces before cursor
+                                                // Shift+Tab: remove 4 spaces
                                                 const beforeCursor = code.substring(0, start);
-                                                const lastLine = beforeCursor.split('\n').pop() || '';
-                                                const spacesToRemove = Math.min(4, lastLine.length - lastLine.trimStart().length, lastLine.search(/\S|$/) >= 4 ? 4 : lastLine.search(/\S|$/));
-                                                if (spacesToRemove > 0) {
-                                                    const lineStart = beforeCursor.lastIndexOf('\n') + 1;
-                                                    const newCode = code.substring(0, lineStart) + code.substring(lineStart).replace(/^ {1,4}/, '');
+                                                const lineStart = beforeCursor.lastIndexOf('\n') + 1;
+                                                const lineContent = code.substring(lineStart);
+                                                const match = lineContent.match(/^ {1,4}/);
+                                                if (match) {
+                                                    const spacesToRemove = match[0].length;
+                                                    const newCode = code.substring(0, lineStart) + lineContent.replace(/^ {1,4}/, '');
                                                     setCode(newCode);
                                                     requestAnimationFrame(() => {
                                                         textarea.selectionStart = textarea.selectionEnd = Math.max(lineStart, start - spacesToRemove);
