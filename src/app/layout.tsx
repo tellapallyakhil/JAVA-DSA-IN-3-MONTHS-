@@ -17,10 +17,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "90-Day DSA Prep | Master Java & Placement Interviews",
-    template: "%s | 90-Day DSA Prep"
+    default: "90-Day DSA Roadmap: Master Java & Placement Interviews (Free Guide)",
+    template: "%s | DSAPrep"
   },
-  description: "Accelerate your coding journey with a structured 3-month preparation plan for Data Structures, Algorithms, and Placement Interviews in Java.",
+  description: "Master Data Structures and Algorithms in 3 months with our structured Java DSA Roadmap. Perfect for FAANG and campus placement preparation. Free, pattern-based learning guide.",
   keywords: [
     "DSA", "Java", "Data Structures", "Algorithms", "Coding Interview Prep",
     "Placement Training", "90 Day Challenge", "Software Engineering",
@@ -54,17 +54,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "90-Day DSA Prep | Master Java & Aptitude",
-    description: "Structure, systematic approach to master Data Structures and Algorithms in 90 days. Built for student placement success.",
-    url: "https://java-dsa-in-3-months.vercel.app", // User-provided URL
-    siteName: "90-Day DSA Prep",
+    title: "90-Day DSA Roadmap | Master Java & Placement Prep",
+    description: "Structured, systematic approach to master Data Structures and Algorithms in 90 days. Free pattern-based learning for students.",
+    url: "https://java-dsa-in-3-months.vercel.app",
+    siteName: "DSAPrep",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "90-Day DSA Prep | Placement Interview Guide",
-    description: "Master Java, DSA, and Interview Skills in 3 Months.",
+    title: "90-Day DSA Roadmap | Free Placement Guide",
+    description: "Master Java, DSA, and Interview Skills in 3 Months with our structured roadmap.",
     creator: "@tellapallyakhil", // Placeholder based on github username
   },
   robots: {
