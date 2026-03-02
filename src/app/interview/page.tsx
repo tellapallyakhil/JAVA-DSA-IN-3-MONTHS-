@@ -1,8 +1,15 @@
 import InterviewSimulator from '@/components/InterviewSimulator';
 
-export const metadata = {
-    title: 'AI Interview Simulator | DSA Prep',
-    description: 'Practice mock interviews with AI-powered questions and real-time feedback'
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'AI Interview Simulator | Practice Technical & Behavioral Interviews',
+    description: 'Master your technical communication with our AI-powered interview simulator. Practice DSA questions and behavioral rounds with real-time AI feedback.',
+    keywords: [
+        "AI interview simulator", "mock interview practice", "online technical interview prep",
+        "behavioral interview AI", "coding interview feedback", "practice mock interviews",
+        "AI interview coach", "technical communication practice", "FAANG mock interview"
+    ],
 };
 
 export default function InterviewPage() {
