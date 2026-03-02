@@ -5,26 +5,56 @@ import { Play, Terminal, Code2, AlertCircle, Loader2, RefreshCcw, Trash2, Zap, C
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function CompilerContainer() {
-    const [code, setCode] = useState(`import java.util.Scanner;
+    const [code, setCode] = useState(`import java.util.*;
+import java.util.stream.*;
 
 public class Main {
+    // Binary Search - O(log n)
+    static int binarySearch(int[] arr, int target) {
+        int lo = 0, hi = arr.length - 1;
+        while (lo <= hi) {
+            int mid = lo + (hi - lo) / 2;
+            if (arr[mid] == target) return mid;
+            else if (arr[mid] < target) lo = mid + 1;
+            else hi = mid - 1;
+        }
+        return -1;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter your name:");
-        String name = sc.next();
-        System.out.println("Hello, " + name + "!");
-        
-        System.out.println("Enter two numbers to add:");
-        if (sc.hasNextInt()) {
-            int a = sc.nextInt();
-            int b = sc.nextInt();
-            System.out.println("Sum: " + (a + b));
-        }
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) arr[i] = sc.nextInt();
+
+        // Sort + Binary Search
+        Arrays.sort(arr);
+        System.out.println("Sorted: " + Arrays.toString(arr));
+
+        int target = sc.nextInt();
+        int idx = binarySearch(arr, target);
+        System.out.println("Index of " + target + ": " + idx);
+
+        // HashMap - frequency count
+        Map<Integer, Integer> freq = new HashMap<>();
+        for (int x : arr) freq.merge(x, 1, Integer::sum);
+        System.out.println("Frequency: " + freq);
+
+        // PriorityQueue (Min-Heap)
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        for (int x : arr) pq.add(x);
+        System.out.print("Heap order: ");
+        while (!pq.isEmpty()) System.out.print(pq.poll() + " ");
+        System.out.println();
+
+        // Streams
+        int sum = Arrays.stream(arr).sum();
+        System.out.println("Sum: " + sum);
     }
 }`);
 
     // Standard Input/Output States
-    const [stdin, setStdin] = useState("akhil\n10 20");
+    const [stdin, setStdin] = useState("5\n3 1 4 1 5\n4");
     const [output, setOutput] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [isCheerpJReady, setIsCheerpJReady] = useState(false);
@@ -122,8 +152,9 @@ public class Main {
 
 
     const resetCode = () => {
-        if (confirm("Reset to default template?")) {
-            setCode(`import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        System.out.println("Enter name:");\n        String val = sc.next();\n        System.out.println("Value: " + val);\n    }\n}`);
+        if (confirm("Reset to default DSA template?")) {
+            setCode(`import java.util.*;\nimport java.util.stream.*;\n\npublic class Main {\n    // Binary Search - O(log n)\n    static int binarySearch(int[] arr, int target) {\n        int lo = 0, hi = arr.length - 1;\n        while (lo <= hi) {\n            int mid = lo + (hi - lo) / 2;\n            if (arr[mid] == target) return mid;\n            else if (arr[mid] < target) lo = mid + 1;\n            else hi = mid - 1;\n        }\n        return -1;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] arr = new int[n];\n        for (int i = 0; i < n; i++) arr[i] = sc.nextInt();\n\n        Arrays.sort(arr);\n        System.out.println("Sorted: " + Arrays.toString(arr));\n\n        int target = sc.nextInt();\n        int idx = binarySearch(arr, target);\n        System.out.println("Index of " + target + ": " + idx);\n\n        Map<Integer, Integer> freq = new HashMap<>();\n        for (int x : arr) freq.merge(x, 1, Integer::sum);\n        System.out.println("Frequency: " + freq);\n\n        int sum = Arrays.stream(arr).sum();\n        System.out.println("Sum: " + sum);\n    }\n}`);
+            setStdin("5\n3 1 4 1 5\n4");
         }
     };
 
