@@ -4,6 +4,14 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: "90-Day DSA Prep | Master Java, Algorithms & Placement Interviews",
   description: "The ultimate 3-month structured preparation guide for Data Structures, Algorithms, and Technical Placement Interviews. Featuring spaced repetition, pattern-based learning, and AI mock interviews.",
+  keywords: [
+    "90 day DSA plan", "Java DSA in 3 months", "DSA preparation roadmap",
+    "placement interview preparation", "coding interview guide",
+    "data structures and algorithms Java", "structured DSA learning",
+    "spaced repetition DSA", "pattern based learning",
+    "FAANG preparation plan", "campus placement coding",
+    "DSA challenge 90 days", "master algorithms Java"
+  ],
 };
 
 export default function Home() {
