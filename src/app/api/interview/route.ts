@@ -126,45 +126,60 @@ Return JSON: {"question": "your question here", "hints": ["hint1", "hint2", "hin
         }
 
         const FREE_MODELS = [
-            "mistralai/mistral-7b-instruct:free",
-            "google/gemini-2.0-flash-exp:free",
-            "meta-llama/llama-3-8b-instruct:free",
-            "microsoft/phi-3-mini-128k-instruct:free",
-            "huggingfaceh4/zephyr-7b-beta:free"
+            "openrouter/free",
+            "qwen/qwen3-next-80b-a3b-instruct:free",
+            "nvidia/nemotron-3-nano-30b-a3b:free",
+            "stepfun/step-3.5-flash:free",
+            "arcee-ai/trinity-large-preview:free",
+            "upstage/solar-pro-3:free"
         ];
 
-        const randomModel = FREE_MODELS[Math.floor(Math.random() * FREE_MODELS.length)];
+        // Shuffle models to distribute load
+        const shuffled = [...FREE_MODELS].sort(() => 0.5 - Math.random());
 
-        const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-            method: "POST",
-            headers: {
-                "Authorization": `Bearer ${OPENROUTER_API_KEY}`,
-                "HTTP-Referer": SITE_URL,
-                "X-Title": "DSA Prep App",
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                "model": randomModel,
-                "messages": [
-                    { "role": "system", "content": systemPrompt },
-                    { "role": "user", "content": `Generate the interview question now. Output strictly valid JSON. Unique Request ID: ${Date.now()}` }
-                ],
-                "response_format": { "type": "json_object" },
-                "temperature": 0.9
-            })
-        });
+        let lastError = '';
+        for (const model of shuffled) {
+            try {
+                const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+                    method: "POST",
+                    headers: {
+                        "Authorization": `Bearer ${OPENROUTER_API_KEY}`,
+                        "HTTP-Referer": SITE_URL,
+                        "X-Title": "DSA Prep App",
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        "model": model,
+                        "messages": [
+                            { "role": "system", "content": systemPrompt },
+                            { "role": "user", "content": `Generate the interview question now. Output strictly valid JSON. Unique Request ID: ${Date.now()}` }
+                        ],
+                        "response_format": { "type": "json_object" },
+                        "temperature": 0.9
+                    })
+                });
 
-        const data = await response.json();
+                const data = await response.json();
 
-        if (!response.ok || !data.choices || !data.choices[0]) {
-            console.error("OpenRouter Response:", data);
-            throw new Error(data.error?.message || "Invalid response from OpenRouter");
+                if (!response.ok || !data.choices || !data.choices[0]) {
+                    lastError = data.error?.message || `${model} failed`;
+                    console.warn(`Model ${model} failed:`, lastError);
+                    continue; // Try next model
+                }
+
+                const content = data.choices[0].message.content;
+                const parsed = JSON.parse(content);
+                return NextResponse.json(parsed);
+
+            } catch (err: any) {
+                lastError = err.message;
+                console.warn(`Model ${model} error:`, lastError);
+                continue; // Try next model
+            }
         }
 
-        const content = data.choices[0].message.content;
-        const parsed = JSON.parse(content);
-
-        return NextResponse.json(parsed);
+        // All models failed
+        throw new Error(`All models failed. Last error: ${lastError}`);
 
     } catch (error: unknown) {
         console.error('OpenRouter Error:', error);

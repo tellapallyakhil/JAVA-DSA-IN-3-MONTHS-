@@ -1,14 +1,33 @@
 import { NextResponse } from 'next/server';
 
-// Primary Engine: Piston API (free, full JDK 15, no API key)
-// Supports ALL standard Java packages for DSA:
-// java.util.* (Collections, Lists, Maps, Sets, PriorityQueue, Deque, Stack)
-// java.util.stream.* (Streams API)
-// java.util.concurrent.* (Threading)
-// java.io.* / java.nio.* (I/O)
-// java.math.* (BigInteger, BigDecimal)
-// java.text.* / java.time.* (Formatting)
-// Also supports multiple classes, inner classes, generics, lambdas, etc.
+// Primary Engine: Self-hosted Judge Service on Render (full JDK, reliable)
+async function executeWithJudgeService(code: string, stdin: string) {
+    const JUDGE_SERVICE_URL = process.env.JUDGE_SERVICE_URL || 'http://localhost:8000';
+    const startTime = Date.now();
+
+    const response = await fetch(`${JUDGE_SERVICE_URL}/execute`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ code, stdin }),
+    });
+
+    const elapsed = Date.now() - startTime;
+
+    if (!response.ok) {
+        throw new Error(`Judge Service responded with ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    // If the Judge Service already returns formatted data, use it
+    if (data.runtime === undefined || data.runtime === null) {
+        data.runtime = elapsed;
+    }
+
+    return data;
+}
+
+// Fallback Engine: Piston API
 async function executeWithPiston(code: string, stdin: string) {
     const startTime = Date.now();
 
@@ -20,8 +39,8 @@ async function executeWithPiston(code: string, stdin: string) {
             version: '15.0.2',
             files: [{ name: 'Main.java', content: code }],
             stdin: stdin || '',
-            compile_timeout: 30000,  // 30s for complex DSA compilation
-            run_timeout: 30000,      // 30s for heavy DP/Graph/Backtracking
+            compile_timeout: 30000,
+            run_timeout: 30000,
             compile_memory_limit: -1,
             run_memory_limit: -1,
         }),
@@ -35,12 +54,10 @@ async function executeWithPiston(code: string, stdin: string) {
 
     const data = await response.json();
 
-    // Handle Piston error messages (e.g. language not found)
     if (data.message) {
         throw new Error(data.message);
     }
 
-    const compileStdout = data.compile?.stdout || '';
     const compileStderr = data.compile?.stderr || '';
     const compileCode = data.compile?.code ?? 0;
     const runStdout = data.run?.stdout || '';
@@ -48,28 +65,25 @@ async function executeWithPiston(code: string, stdin: string) {
     const exitCode = data.run?.code ?? 0;
     const runSignal = data.run?.signal || null;
 
-    // Check for compile errors
     if (compileCode !== 0 || compileStderr) {
         return {
             success: false,
-            error: compileStderr || compileStdout || 'Compilation failed.',
+            error: compileStderr || 'Compilation failed.',
             type: 'Compilation Error',
             runtime: elapsed,
         };
     }
 
-    // Check for timeout / killed signals
     if (runSignal === 'SIGKILL') {
         return {
             success: false,
             output: runStdout || '',
-            error: 'Time Limit Exceeded (TLE). Your solution took too long to execute. Try optimizing your algorithm.',
+            error: 'Time Limit Exceeded (TLE). Try optimizing your algorithm.',
             type: 'Time Limit Exceeded',
             runtime: elapsed,
         };
     }
 
-    // Check for runtime errors
     if (exitCode !== 0) {
         return {
             success: true,
@@ -82,28 +96,11 @@ async function executeWithPiston(code: string, stdin: string) {
 
     return {
         success: true,
-        output: runStdout + (runStderr ? `\n--- Warnings ---\n${runStderr}` : ''),
+        output: runStdout,
         error: '',
         type: 'Success',
         runtime: elapsed,
     };
-}
-
-// Fallback Engine: Self-hosted Judge Service
-async function executeWithJudgeService(code: string, stdin: string) {
-    const JUDGE_SERVICE_URL = process.env.JUDGE_SERVICE_URL || 'http://localhost:8000';
-
-    const response = await fetch(`${JUDGE_SERVICE_URL}/execute`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ code, stdin }),
-    });
-
-    if (!response.ok) {
-        throw new Error(`Judge Service responded with ${response.status}`);
-    }
-
-    return await response.json();
 }
 
 export async function POST(req: Request) {
@@ -117,23 +114,22 @@ export async function POST(req: Request) {
             );
         }
 
-        // Try Piston API first (supports ALL standard Java packages)
-        try {
-            const result = await executeWithPiston(code, stdin);
-            return NextResponse.json(result);
-        } catch (pistonError: any) {
-            console.warn('Piston API failed, falling back to Judge Service:', pistonError.message);
-        }
-
-        // Fallback to self-hosted Judge Service
+        // Try Render Judge Service first (primary, reliable)
         try {
             const result = await executeWithJudgeService(code, stdin);
             return NextResponse.json(result);
         } catch (judgeError: any) {
-            console.error('Judge Service also failed:', judgeError.message);
+            console.warn('Judge Service failed, falling back to Piston:', judgeError.message);
         }
 
-        // Both engines failed
+        // Fallback to Piston API
+        try {
+            const result = await executeWithPiston(code, stdin);
+            return NextResponse.json(result);
+        } catch (pistonError: any) {
+            console.error('Piston API also failed:', pistonError.message);
+        }
+
         return NextResponse.json(
             {
                 success: false,
@@ -151,3 +147,4 @@ export async function POST(req: Request) {
         );
     }
 }
+
