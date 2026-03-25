@@ -83,49 +83,62 @@ Scoring guide:
 Return a JSON object: {"score": <number>, "feedback": "<string>"}`;
 
         const FREE_MODELS = [
-            "mistralai/mistral-7b-instruct:free",
-            "google/gemini-2.0-flash-exp:free",
-            "meta-llama/llama-3-8b-instruct:free",
-            "microsoft/phi-3-mini-128k-instruct:free"
+            "openrouter/free",
+            "qwen/qwen3-next-80b-a3b-instruct:free",
+            "nvidia/nemotron-3-nano-30b-a3b:free",
+            "stepfun/step-3.5-flash:free",
+            "arcee-ai/trinity-large-preview:free"
         ];
 
-        const randomModel = FREE_MODELS[Math.floor(Math.random() * FREE_MODELS.length)];
+        const shuffled = [...FREE_MODELS].sort(() => 0.5 - Math.random());
 
-        const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-            method: "POST",
-            headers: {
-                "Authorization": `Bearer ${OPENROUTER_API_KEY}`,
-                "HTTP-Referer": SITE_URL,
-                "X-Title": "DSA Prep App - Interview Feedback",
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                "model": randomModel,
-                "messages": [
-                    { "role": "system", "content": systemPrompt },
-                    { "role": "user", "content": `Provide your evaluation now. Output strictly valid JSON. Unique Request ID: ${Date.now()}` }
-                ],
-                "response_format": { "type": "json_object" },
-                "temperature": 0.7
-            })
-        });
+        let lastError = '';
+        for (const model of shuffled) {
+            try {
+                const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+                    method: "POST",
+                    headers: {
+                        "Authorization": `Bearer ${OPENROUTER_API_KEY}`,
+                        "HTTP-Referer": SITE_URL,
+                        "X-Title": "DSA Prep App - Interview Feedback",
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        "model": model,
+                        "messages": [
+                            { "role": "system", "content": systemPrompt },
+                            { "role": "user", "content": `Provide your evaluation now. Output strictly valid JSON. Unique Request ID: ${Date.now()}` }
+                        ],
+                        "response_format": { "type": "json_object" },
+                        "temperature": 0.7
+                    })
+                });
 
-        const data = await response.json();
+                const data = await response.json();
 
-        if (!response.ok || !data.choices?.[0]) {
-            throw new Error(data.error?.message || 'Invalid response');
+                if (!response.ok || !data.choices?.[0]) {
+                    lastError = data.error?.message || `${model} failed`;
+                    console.warn(`Feedback model ${model} failed:`, lastError);
+                    continue;
+                }
+
+                const content = data.choices[0].message.content;
+                const parsed = JSON.parse(content);
+                const score = Math.min(10, Math.max(0, parseInt(parsed.score) || 0));
+
+                return NextResponse.json({
+                    feedback: parsed.feedback || 'Good answer! Consider adding more concrete examples.',
+                    score: score
+                });
+
+            } catch (err: any) {
+                lastError = err.message;
+                console.warn(`Feedback model ${model} error:`, lastError);
+                continue;
+            }
         }
 
-        const content = data.choices[0].message.content;
-        const parsed = JSON.parse(content);
-
-        // Ensure score is within bounds (0-10, allowing 0 for irrelevant answers)
-        const score = Math.min(10, Math.max(0, parseInt(parsed.score) || 0));
-
-        return NextResponse.json({
-            feedback: parsed.feedback || 'Good answer! Consider adding more concrete examples.',
-            score: score
-        });
+        throw new Error(`All feedback models failed. Last error: ${lastError}`);
 
     } catch (error: unknown) {
         console.error('Feedback API Error:', error);
