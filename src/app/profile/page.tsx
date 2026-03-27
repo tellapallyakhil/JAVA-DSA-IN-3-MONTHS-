@@ -22,6 +22,38 @@ export default function ProfilePage() {
     const [displayName, setDisplayName] = useState('');
     const [saving, setSaving] = useState(false);
 
+    // Password change state
+    const [isChangingPassword, setIsChangingPassword] = useState(false);
+    const [newPassword, setNewPassword] = useState('');
+    const [passLoading, setPassLoading] = useState(false);
+    const [passMessage, setPassMessage] = useState<{ text: string, type: 'error' | 'success' } | null>(null);
+
+    async function handlePasswordChange() {
+        if (newPassword.length < 6) {
+            setPassMessage({ text: 'Password must be at least 6 characters.', type: 'error' });
+            return;
+        }
+
+        setPassLoading(true);
+        setPassMessage(null);
+
+        const { error } = await supabase.auth.updateUser({
+            password: newPassword
+        });
+
+        if (error) {
+            setPassMessage({ text: error.message, type: 'error' });
+        } else {
+            setPassMessage({ text: 'Password updated successfully!', type: 'success' });
+            setNewPassword('');
+            setTimeout(() => {
+                setIsChangingPassword(false);
+                setPassMessage(null);
+            }, 2000);
+        }
+        setPassLoading(false);
+    }
+
     useEffect(() => {
         const load = async () => {
             try {
@@ -348,7 +380,7 @@ export default function ProfilePage() {
                         </div>
                         <ChevronRight size={18} className="text-muted-foreground" />
                     </button>
-                    <button className="w-full flex items-center justify-between p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors text-left">
+                    <button className="w-full flex items-center justify-between p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors text-left" onClick={() => setIsChangingPassword(true)}>
                         <div className="flex items-center gap-3">
                             <Shield size={18} className="text-muted-foreground" />
                             <div>
@@ -358,6 +390,49 @@ export default function ProfilePage() {
                         </div>
                         <ChevronRight size={18} className="text-muted-foreground" />
                     </button>
+
+                    {/* Change Password Modal/Overlay */}
+                    {isChangingPassword && (
+                        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-300">
+                            <div className="glass-card p-6 w-full max-w-sm space-y-4 animate-in zoom-in duration-300">
+                                <div className="flex justify-between items-center">
+                                    <h3 className="text-lg font-bold">Update Password</h3>
+                                    <button onClick={() => { setIsChangingPassword(false); setPassMessage(null); }} className="p-1 hover:bg-white/10 rounded-lg">
+                                        <X size={18} />
+                                    </button>
+                                </div>
+                                <p className="text-sm text-muted-foreground">Enter your new password below (min 6 characters).</p>
+                                
+                                <div className="space-y-4">
+                                    <div className="relative">
+                                        <Shield className="absolute left-3 top-2.5 h-5 w-5 text-muted-foreground" />
+                                        <input
+                                            type="password"
+                                            value={newPassword}
+                                            onChange={(e) => setNewPassword(e.target.value)}
+                                            placeholder="New Password"
+                                            className="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:border-primary transition-all"
+                                        />
+                                    </div>
+
+                                    {passMessage && (
+                                        <div className={`text-xs p-3 rounded-lg flex items-center gap-2 ${passMessage.type === 'error' ? 'bg-red-500/10 text-red-400' : 'bg-green-500/10 text-green-400'}`}>
+                                            <Shield size={14} />
+                                            {passMessage.text}
+                                        </div>
+                                    )}
+
+                                    <button
+                                        onClick={handlePasswordChange}
+                                        disabled={passLoading}
+                                        className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3 rounded-xl transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                                    >
+                                        {passLoading ? <Zap className="animate-spin" size={18} /> : 'Update Password'}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    )}
                     <button
                         onClick={handleSignOut}
                         className="w-full flex items-center justify-between p-4 rounded-xl bg-red-500/10 hover:bg-red-500/20 transition-colors text-left text-red-400"
