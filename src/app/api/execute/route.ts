@@ -93,7 +93,7 @@ async function executeWithJudgeService(code: string, stdin: string): Promise<Exe
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ code, stdin }),
-        signal: AbortSignal.timeout(15000),
+        signal: AbortSignal.timeout(30000), // 30s to handle Render cold starts
     });
 
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -106,47 +106,6 @@ async function executeWithJudgeService(code: string, stdin: string): Promise<Exe
         type: data.type || 'Success',
         runtime: data.runtime || (Date.now() - startTime),
         engine: 'Judge (Render)',
-    };
-}
-
-// ============================================================================
-// ENGINE 2: Piston API (Public, free, always-on)
-// ============================================================================
-async function executeWithPiston(code: string, stdin: string): Promise<ExecutionResult> {
-    const startTime = Date.now();
-
-    const response = await fetch('https://emkc.org/api/v2/piston/execute', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            language: 'java',
-            version: '15.0.2',
-            files: [{ name: 'Main.java', content: code }],
-            stdin: stdin || '',
-            run_timeout: 10000,
-        }),
-        signal: AbortSignal.timeout(20000),
-    });
-
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const data = await response.json();
-    const elapsed = Date.now() - startTime;
-
-    const isCompileError = (data.compile?.code ?? 0) !== 0 || !!data.compile?.stderr;
-
-    return {
-        success: !isCompileError && data.run?.code === 0,
-        output: data.run?.stdout || '',
-        error: data.compile?.stderr || data.run?.stderr || '',
-        type: isCompileError
-            ? 'Compilation Error'
-            : data.run?.signal === 'SIGKILL'
-                ? 'Time Limit Exceeded'
-                : data.run?.code !== 0
-                    ? 'Runtime Error'
-                    : 'Success',
-        runtime: elapsed,
-        engine: 'Piston',
     };
 }
 
@@ -166,7 +125,7 @@ async function executeWithWandbox(code: string, stdin: string): Promise<Executio
             'compiler-option-raw': '',
             'runtime-option-raw': '',
         }),
-        signal: AbortSignal.timeout(20000),
+        signal: AbortSignal.timeout(25000), // 25s timeout for Wandbox
     });
 
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -197,7 +156,6 @@ async function executeWithWandbox(code: string, stdin: string): Promise<Executio
 // LOAD BALANCER — Engines listed in priority order
 // ============================================================================
 const ENGINES = [
-    { name: 'Piston', fn: executeWithPiston },
     { name: 'Judge (Render)', fn: executeWithJudgeService },
     { name: 'Wandbox', fn: executeWithWandbox },
 ];

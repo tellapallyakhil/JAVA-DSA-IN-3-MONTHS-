@@ -10,7 +10,6 @@ export async function GET() {
 
     const engines = [
         { name: 'Judge (Render)', url: `${JUDGE_SERVICE_URL}/health` },
-        { name: 'Piston', url: 'https://emkc.org/api/v2/piston/runtimes' },
         { name: 'Wandbox', url: 'https://wandbox.org/api/list.json' },
     ];
 
