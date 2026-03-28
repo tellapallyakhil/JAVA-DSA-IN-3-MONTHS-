@@ -115,11 +115,15 @@ async function executeWithJudgeService(code: string, stdin: string): Promise<Exe
 async function executeWithWandbox(code: string, stdin: string): Promise<ExecutionResult> {
     const startTime = Date.now();
 
+    // Wandbox saves file as prog.java, so "public class Main" fails.
+    // Strip the 'public' modifier from the class declaration.
+    const wandboxCode = code.replace(/public\s+class\s+/g, 'class ');
+
     const response = await fetch('https://wandbox.org/api/compile.json', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            code,
+            code: wandboxCode,
             compiler: 'openjdk-jdk-22+36',
             stdin: stdin || '',
             'compiler-option-raw': '',
