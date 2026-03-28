@@ -1,22 +1,31 @@
-# Use an official Python runtime as a parent image
+# Stage 1: Slim Python + JDK image
 FROM python:3.11-slim
 
-# Install OpenJDK (Required to run javac and java)
+# Install OpenJDK (headless for smaller image)
 RUN apt-get update && \
-    apt-get install -y default-jdk && \
-    apt-get clean;
+    apt-get install -y --no-install-recommends default-jdk-headless && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
-# Set the working directory in the container
+# Create non-root user for execution
+RUN useradd -m -s /bin/bash judge
+
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
-COPY . /app
-
-# Install any needed packages specified in requirements.txt
+# Copy and install dependencies first (Docker layer caching)
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Make port 8000 available to the world outside this container
+# Copy application code
+COPY . /app
+
+# Set ownership
+RUN chown -R judge:judge /app
+
 EXPOSE 8000
 
-# Run main.py when the container launches
+# Run as non-root user
+USER judge
+
+# Use multiple workers for concurrent execution
 CMD ["python", "main.py"]
