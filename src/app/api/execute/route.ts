@@ -161,7 +161,7 @@ async function executeWithWandbox(code: string, stdin: string): Promise<Executio
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             code,
-            compiler: 'openjdk-head',
+            compiler: 'openjdk-jdk-22+36',
             stdin: stdin || '',
             'compiler-option-raw': '',
             'runtime-option-raw': '',
@@ -197,8 +197,8 @@ async function executeWithWandbox(code: string, stdin: string): Promise<Executio
 // LOAD BALANCER — Engines listed in priority order
 // ============================================================================
 const ENGINES = [
-    { name: 'Judge (Render)', fn: executeWithJudgeService },
     { name: 'Piston', fn: executeWithPiston },
+    { name: 'Judge (Render)', fn: executeWithJudgeService },
     { name: 'Wandbox', fn: executeWithWandbox },
 ];
 
