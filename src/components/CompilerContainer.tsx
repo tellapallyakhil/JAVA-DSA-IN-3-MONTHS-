@@ -7,50 +7,28 @@ import { useComplexityAnalysis } from '@/hooks/useComplexityAnalysis';
 
 export default function CompilerContainer() {
     const [code, setCode] = useState(`import java.util.*;
-import java.util.stream.*;
 
 public class Main {
-    // Binary Search - O(log n)
-    static int binarySearch(int[] arr, int target) {
-        int lo = 0, hi = arr.length - 1;
-        while (lo <= hi) {
-            int mid = lo + (hi - lo) / 2;
-            if (arr[mid] == target) return mid;
-            else if (arr[mid] < target) lo = mid + 1;
-            else hi = mid - 1;
-        }
-        return -1;
-    }
-
     public static void main(String[] args) {
+        // Welcome to your Java DSA Playground!
+        // Start coding your solution here.
+        
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int[] arr = new int[n];
-        for (int i = 0; i < n; i++) arr[i] = sc.nextInt();
-
-        // Sort + Binary Search
-        Arrays.sort(arr);
-        System.out.println("Sorted: " + Arrays.toString(arr));
-
-        int target = sc.nextInt();
-        int idx = binarySearch(arr, target);
-        System.out.println("Index of " + target + ": " + idx);
-
-        // HashMap - frequency count
-        Map<Integer, Integer> freq = new HashMap<>();
-        for (int x : arr) freq.merge(x, 1, Integer::sum);
-        System.out.println("Frequency: " + freq);
-
-        // PriorityQueue (Min-Heap)
-        PriorityQueue<Integer> pq = new PriorityQueue<>();
-        for (int x : arr) pq.add(x);
-        System.out.print("Heap order: ");
-        while (!pq.isEmpty()) System.out.print(pq.poll() + " ");
-        System.out.println();
-
-        // Streams
-        int sum = Arrays.stream(arr).sum();
-        System.out.println("Sum: " + sum);
+        System.out.println("CyberVM Engine: Initialized");
+        
+        // Example: Reading n elements
+        if (sc.hasNextInt()) {
+            int n = sc.nextInt();
+            int[] arr = new int[n];
+            for (int i = 0; i < n; i++) {
+                if (sc.hasNextInt()) arr[i] = sc.nextInt();
+            }
+            System.out.println("Processing " + n + " elements...");
+            Arrays.sort(arr);
+            System.out.println("Sorted Array: " + Arrays.toString(arr));
+        } else {
+            System.out.println("Tip: Provide input in the 'Standard Input' box below!");
+        }
     }
 }`);
 
@@ -177,8 +155,8 @@ public class Main {
 
     const resetCode = () => {
         if (confirm("Reset to default DSA template?")) {
-            setCode(`import java.util.*;\nimport java.util.stream.*;\n\npublic class Main {\n    // Binary Search - O(log n)\n    static int binarySearch(int[] arr, int target) {\n        int lo = 0, hi = arr.length - 1;\n        while (lo <= hi) {\n            int mid = lo + (hi - lo) / 2;\n            if (arr[mid] == target) return mid;\n            else if (arr[mid] < target) lo = mid + 1;\n            else hi = mid - 1;\n        }\n        return -1;\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[] arr = new int[n];\n        for (int i = 0; i < n; i++) arr[i] = sc.nextInt();\n\n        Arrays.sort(arr);\n        System.out.println("Sorted: " + Arrays.toString(arr));\n\n        int target = sc.nextInt();\n        int idx = binarySearch(arr, target);\n        System.out.println("Index of " + target + ": " + idx);\n\n        Map<Integer, Integer> freq = new HashMap<>();\n        for (int x : arr) freq.merge(x, 1, Integer::sum);\n        System.out.println("Frequency: " + freq);\n\n        int sum = Arrays.stream(arr).sum();\n        System.out.println("Sum: " + sum);\n    }\n}`);
-            setStdin("5\n3 1 4 1 5\n4");
+            setCode(`import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        // Your code starts here\n        Scanner sc = new Scanner(System.in);\n        System.out.println("CyberVM Ready");\n        \n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            System.out.println("Input received: " + n);\n        }\n    }\n}`);
+            setStdin("5\n1 2 3 4 5");
         }
     };
 
@@ -198,6 +176,9 @@ public class Main {
                         <h1 className="text-2xl sm:text-3xl md:text-5xl font-black text-white tracking-tighter uppercase italic">
                             Cyber<span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">VM</span>
                         </h1>
+                        <p className="hidden sm:block text-[10px] font-bold text-zinc-500 max-w-[150px] leading-tight opacity-60">
+                            First compilation may take 15s+ due to cold start.
+                        </p>
                     </div>
                     <div className="flex items-center gap-3">
                         <div className={`w-2 h-2 rounded-full ${isCheerpJReady ? 'bg-emerald-500' : 'bg-amber-500'}`} />
