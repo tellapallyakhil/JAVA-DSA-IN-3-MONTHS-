@@ -78,7 +78,7 @@ def execute_java(code: str, stdin: str = ""):
                 input=stdin,
                 capture_output=True,
                 text=True,
-                timeout=10  # 10s execution limit
+                timeout=15  # 15s execution limit
             )
             end_time = time.time()
             runtime_ms = round((end_time - start_time) * 1000, 2)
@@ -112,7 +112,7 @@ def execute_java(code: str, stdin: str = ""):
         except subprocess.TimeoutExpired:
             return {
                 "success": False,
-                "error": "Time Limit Exceeded — your program took too long (max 10s).",
+                "error": "Time Limit Exceeded — your program took too long (max 15s).",
                 "type": "Time Limit Exceeded"
             }
         except MemoryError:
