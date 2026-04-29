@@ -100,6 +100,16 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
 }
 
+/* Menu open state handling */
+.menu-open {
+  overflow: hidden !important;
+}
+
+.menu-open .floating-widget,
+.menu-open [class*="fixed bottom-"] {
+  display: none !important;
+}
+
 /* Custom Scrollbar for Dropdowns */
 .custom-scrollbar::-webkit-scrollbar {
   width: 6px;
