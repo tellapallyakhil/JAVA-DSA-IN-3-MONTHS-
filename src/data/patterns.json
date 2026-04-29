@@ -17,7 +17,10 @@
             "116",
             "117",
             "118",
-            "119"
+            "119",
+            "330",
+            "140",
+            "305"
         ],
         "hardProblems": [
             {
@@ -31,12 +34,6 @@
                 "difficulty": "Hard",
                 "link": "https://leetcode.com/problems/longest-consecutive-sequence/",
                 "hint": "Use a HashSet. For each number, check if it's the start of a sequence (num-1 not in set)."
-            },
-            {
-                "title": "Minimum Window Substring",
-                "difficulty": "Hard",
-                "link": "https://leetcode.com/problems/minimum-window-substring/",
-                "hint": "Use two HashMaps to track character frequencies + sliding window."
             },
             {
                 "title": "Substring with Concatenation of All Words",
@@ -64,7 +61,11 @@
             "120",
             "121",
             "122",
-            "123"
+            "123",
+            "335",
+            "285",
+            "286",
+            "287"
         ],
         "hardProblems": [
             {
@@ -85,6 +86,14 @@
                 "link": "https://leetcode.com/problems/shortest-unsorted-continuous-subarray/",
                 "hint": "Find the leftmost and rightmost positions where order breaks. Expand using min/max tracking."
             }
+        ],
+        "easyProblems": [
+            {
+                "title": "Squares of a Sorted Array",
+                "difficulty": "Easy",
+                "link": "https://leetcode.com/problems/squares-of-a-sorted-array/",
+                "hint": "Two pointers at both ends, compare absolute values, fill result array from the end."
+            }
         ]
     },
     {
@@ -104,7 +113,8 @@
             "86",
             "124",
             "125",
-            "126"
+            "126",
+            "187"
         ],
         "hardProblems": [
             {
@@ -131,6 +141,32 @@
                 "link": "https://leetcode.com/problems/subarrays-with-k-different-integers/",
                 "hint": "exactly(K) = atMost(K) - atMost(K-1). Use sliding window for atMost function."
             }
+        ],
+        "easyProblems": [
+            {
+                "title": "Maximum Average Subarray I",
+                "difficulty": "Easy",
+                "link": "https://leetcode.com/problems/maximum-average-subarray-i/",
+                "hint": "Fixed window of size k. Slide by adding right element and removing left element."
+            },
+            {
+                "title": "Defuse the Bomb",
+                "difficulty": "Easy",
+                "link": "https://leetcode.com/problems/defuse-the-bomb/",
+                "hint": "Circular array sliding window. Use modulo for index wrapping."
+            },
+            {
+                "title": "Find the K-Beauty of a Number",
+                "difficulty": "Easy",
+                "link": "https://leetcode.com/problems/find-the-k-beauty-of-a-number/",
+                "hint": "Slide a window of size k over the digit string. Check divisibility for each substring."
+            },
+            {
+                "title": "Minimum Recolors to Get K Consecutive Black Blocks",
+                "difficulty": "Easy",
+                "link": "https://leetcode.com/problems/minimum-recolors-to-get-k-consecutive-black-blocks/",
+                "hint": "Slide window of size k, count 'W' chars in each window, track the minimum."
+            }
         ]
     },
     {
@@ -150,7 +186,10 @@
             "150",
             "151",
             "152",
-            "153"
+            "153",
+            "41",
+            "372",
+            "373"
         ],
         "hardProblems": [
             {
@@ -177,6 +216,26 @@
                 "link": "https://leetcode.com/problems/longest-valid-parentheses/",
                 "hint": "Stack stores indices. Push -1 as base. On match, length = i - stack.peek()."
             }
+        ],
+        "easyProblems": [
+            {
+                "title": "Baseball Game",
+                "difficulty": "Easy",
+                "link": "https://leetcode.com/problems/baseball-game/",
+                "hint": "Use a stack to track valid scores. Apply operations (+, D, C) using top elements."
+            },
+            {
+                "title": "Remove All Adjacent Duplicates In String",
+                "difficulty": "Easy",
+                "link": "https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/",
+                "hint": "Push chars to stack. If top equals current char, pop instead of pushing."
+            },
+            {
+                "title": "Backspace String Compare",
+                "difficulty": "Easy",
+                "link": "https://leetcode.com/problems/backspace-string-compare/",
+                "hint": "Use stack to simulate typing. '#' means pop the last char. Compare final results."
+            }
         ]
     },
     {
@@ -196,7 +255,11 @@
             "160",
             "161",
             "162",
-            "163"
+            "163",
+            "48",
+            "174",
+            "191",
+            "277"
         ],
         "hardProblems": [
             {
@@ -223,6 +286,20 @@
                 "link": "https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/",
                 "hint": "Binary search on the value range. Count elements ≤ mid using sorted row/column property."
             }
+        ],
+        "easyProblems": [
+            {
+                "title": "Guess Number Higher or Lower",
+                "difficulty": "Easy",
+                "link": "https://leetcode.com/problems/guess-number-higher-or-lower/",
+                "hint": "Binary search with API feedback: -1 means lower, 1 means higher, 0 means found."
+            },
+            {
+                "title": "Count Negative Numbers in a Sorted Matrix",
+                "difficulty": "Easy",
+                "link": "https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/",
+                "hint": "Binary search each row for the first negative number. Or use staircase from top-right."
+            }
         ]
     },
     {
@@ -243,15 +320,10 @@
             "75",
             "76",
             "77",
-            "78"
+            "78",
+            "201"
         ],
         "hardProblems": [
-            {
-                "title": "Merge k Sorted Lists",
-                "difficulty": "Hard",
-                "link": "https://leetcode.com/problems/merge-k-sorted-lists/",
-                "hint": "Use a Min-Heap of size k. Always poll smallest, add its next node. O(N log k)."
-            },
             {
                 "title": "Reverse Nodes in k-Group",
                 "difficulty": "Hard",
@@ -263,6 +335,26 @@
                 "difficulty": "Hard",
                 "link": "https://leetcode.com/problems/copy-list-with-random-pointer/",
                 "hint": "Interleave cloned nodes: A→A'→B→B'. Set random pointers using A'.random = A.random.next."
+            }
+        ],
+        "easyProblems": [
+            {
+                "title": "Linked List Cycle",
+                "difficulty": "Easy",
+                "link": "https://leetcode.com/problems/linked-list-cycle/",
+                "hint": "Floyd's Tortoise & Hare: slow moves 1 step, fast moves 2. If they meet, cycle exists."
+            },
+            {
+                "title": "Remove Duplicates from Sorted List",
+                "difficulty": "Easy",
+                "link": "https://leetcode.com/problems/remove-duplicates-from-sorted-list/",
+                "hint": "If curr.val == curr.next.val, skip the next node. Otherwise advance normally."
+            },
+            {
+                "title": "Middle of the Linked List",
+                "difficulty": "Easy",
+                "link": "https://leetcode.com/problems/middle-of-the-linked-list/",
+                "hint": "Slow and fast pointers. When fast reaches the end, slow is at the middle."
             }
         ]
     },
@@ -286,7 +378,9 @@
             "28",
             "82",
             "83",
-            "84"
+            "84",
+            "347",
+            "348"
         ],
         "hardProblems": [
             {
@@ -335,7 +429,9 @@
             "106",
             "107",
             "109",
-            "112"
+            "112",
+            "227",
+            "233"
         ],
         "hardProblems": [
             {
@@ -368,6 +464,26 @@
                 "link": "https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/",
                 "hint": "BFS with state (row, col, remainingK). visited[row][col][k] prevents revisits."
             }
+        ],
+        "easyProblems": [
+            {
+                "title": "Find if Path Exists in Graph",
+                "difficulty": "Easy",
+                "link": "https://leetcode.com/problems/find-if-path-exists-in-graph/",
+                "hint": "Build adjacency list, then BFS/DFS from source. Return true if destination is reached."
+            },
+            {
+                "title": "Island Perimeter",
+                "difficulty": "Easy",
+                "link": "https://leetcode.com/problems/island-perimeter/",
+                "hint": "For each land cell add 4, subtract 2 for each adjacent land pair (right and down)."
+            },
+            {
+                "title": "Find Center of Star Graph",
+                "difficulty": "Easy",
+                "link": "https://leetcode.com/problems/find-center-of-star-graph/",
+                "hint": "The center node appears in every edge. Just check the first two edges for the common node."
+            }
         ]
     },
     {
@@ -389,7 +505,12 @@
             "114",
             "200",
             "201",
-            "202"
+            "202",
+            "236",
+            "115",
+            "237",
+            "329",
+            "238"
         ],
         "hardProblems": [
             {
@@ -442,7 +563,9 @@
             "90",
             "91",
             "92",
-            "93"
+            "93",
+            "364",
+            "362"
         ],
         "hardProblems": [
             {
@@ -469,6 +592,20 @@
                 "link": "https://leetcode.com/problems/palindrome-partitioning/",
                 "hint": "Backtrack: at each position, try all substrings. If palindrome, recurse on remainder."
             }
+        ],
+        "easyProblems": [
+            {
+                "title": "Binary Watch",
+                "difficulty": "Easy",
+                "link": "https://leetcode.com/problems/binary-watch/",
+                "hint": "Enumerate all hour (0-11) and minute (0-59) combos. Count bits == turnedOn."
+            },
+            {
+                "title": "Letter Case Permutation",
+                "difficulty": "Medium",
+                "link": "https://leetcode.com/problems/letter-case-permutation/",
+                "hint": "At each letter, branch into two: lowercase and uppercase. Digits have no branching."
+            }
         ]
     },
     {
@@ -488,7 +625,10 @@
             "100",
             "101",
             "102",
-            "105"
+            "105",
+            "255",
+            "257",
+            "254"
         ],
         "hardProblems": [
             {
@@ -514,6 +654,20 @@
                 "difficulty": "Hard",
                 "link": "https://leetcode.com/problems/ipo/",
                 "hint": "Sort by capital needed. Max-heap of available profits. Greedily pick max profit k times."
+            }
+        ],
+        "easyProblems": [
+            {
+                "title": "Take Gifts From the Richest Pile",
+                "difficulty": "Easy",
+                "link": "https://leetcode.com/problems/take-gifts-from-the-richest-pile/",
+                "hint": "Max-Heap. Poll max, push floor(sqrt(max)) back. Repeat k times. Sum remaining."
+            },
+            {
+                "title": "Sort Array by Increasing Frequency",
+                "difficulty": "Easy",
+                "link": "https://leetcode.com/problems/sort-array-by-increasing-frequency/",
+                "hint": "Count frequencies. Sort by frequency ascending, then by value descending for ties."
             }
         ]
     },
@@ -560,6 +714,44 @@
                 "link": "https://leetcode.com/problems/patching-array/",
                 "hint": "Track max reachable sum. If next num > reach+1, patch with reach+1. Otherwise, extend reach."
             }
+        ],
+        "easyProblems": [
+            {
+                "title": "Assign Cookies",
+                "difficulty": "Easy",
+                "link": "https://leetcode.com/problems/assign-cookies/",
+                "hint": "Sort both arrays. Try to satisfy the least greedy child first with the smallest cookie."
+            },
+            {
+                "title": "Lemonade Change",
+                "difficulty": "Easy",
+                "link": "https://leetcode.com/problems/lemonade-change/",
+                "hint": "Track $5 and $10 bills. For $20, prefer giving $10+$5 over three $5 bills."
+            },
+            {
+                "title": "Can Place Flowers",
+                "difficulty": "Easy",
+                "link": "https://leetcode.com/problems/can-place-flowers/",
+                "hint": "Greedily plant at each empty spot if both neighbors are also empty. Count placements."
+            },
+            {
+                "title": "Maximum Units on a Truck",
+                "difficulty": "Easy",
+                "link": "https://leetcode.com/problems/maximum-units-on-a-truck/",
+                "hint": "Sort by units per box descending. Greedily pick boxes with most units first."
+            },
+            {
+                "title": "Largest Perimeter Triangle",
+                "difficulty": "Easy",
+                "link": "https://leetcode.com/problems/largest-perimeter-triangle/",
+                "hint": "Sort descending. Check consecutive triplets: a[i] < a[i+1] + a[i+2] forms a valid triangle."
+            },
+            {
+                "title": "Minimum Moves to Seat Everyone",
+                "difficulty": "Easy",
+                "link": "https://leetcode.com/problems/minimum-number-of-moves-to-seat-everyone/",
+                "hint": "Sort both seats and students. Sum of absolute differences of paired elements."
+            }
         ]
     },
     {
@@ -577,7 +769,13 @@
             "210",
             "211",
             "212",
-            "213"
+            "213",
+            "305",
+            "306",
+            "307",
+            "296",
+            "140",
+            "239"
         ],
         "hardProblems": [
             {
@@ -615,7 +813,9 @@
             "220",
             "221",
             "222",
-            "223"
+            "223",
+            "70",
+            "71"
         ],
         "hardProblems": [
             {
@@ -641,6 +841,26 @@
                 "difficulty": "Hard",
                 "link": "https://leetcode.com/problems/data-stream-as-disjoint-intervals/",
                 "hint": "Use TreeMap. On add, check if num merges with adjacent intervals. getIntervals returns all values."
+            }
+        ],
+        "easyProblems": [
+            {
+                "title": "Summary Ranges",
+                "difficulty": "Easy",
+                "link": "https://leetcode.com/problems/summary-ranges/",
+                "hint": "Track start of each range. Extend while consecutive. Format as 'start->end' or 'start'."
+            },
+            {
+                "title": "Determine if Two Events Have Conflict",
+                "difficulty": "Easy",
+                "link": "https://leetcode.com/problems/determine-if-two-events-have-conflict/",
+                "hint": "Two intervals overlap if start1 <= end2 AND start2 <= end1. Compare as strings."
+            },
+            {
+                "title": "Check if All Integers in a Range Are Covered",
+                "difficulty": "Easy",
+                "link": "https://leetcode.com/problems/check-if-all-the-integers-in-a-range-are-covered/",
+                "hint": "For each number in [left, right], check if any interval covers it. Or use a diff array."
             }
         ]
     }

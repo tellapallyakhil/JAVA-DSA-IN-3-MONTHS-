@@ -17,7 +17,6 @@ export default function Navbar() {
 
     const navLinks = [
         { href: '/', label: 'Dashboard', icon: Home },
-        { href: '/about', label: 'About', icon: Info },
         { href: '/topics', label: 'Topics', icon: BookOpen },
         { href: '/focus', label: 'Focus Mode', icon: Target },
         { href: '/patterns', label: 'Patterns', icon: Sparkles },
@@ -28,7 +27,7 @@ export default function Navbar() {
 
     return (
         <>
-            <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-white/5 h-16 flex items-center justify-between px-6 md:px-12">
+            <nav className="fixed top-0 left-0 right-0 z-[100] glass border-b border-white/5 h-16 flex items-center justify-between px-6 md:px-12">
                 <Link href="/" className="flex items-center gap-2 group">
                     <div className="bg-primary/20 p-2 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-all">
                         <Terminal size={20} />
@@ -81,8 +80,24 @@ export default function Navbar() {
 
             {/* Mobile Menu Overlay */}
             {mobileMenuOpen && (
-                <div className="fixed inset-0 z-40 bg-black/90 backdrop-blur-lg pt-20 px-6 md:hidden animate-in fade-in duration-200">
-                    <div className="space-y-4">
+                <div className="fixed inset-0 z-[200] bg-zinc-950 pt-6 px-6 md:hidden animate-in fade-in duration-200 overflow-y-auto">
+                    {/* Menu Header with Close Button */}
+                    <div className="flex items-center justify-between mb-8">
+                        <div className="flex items-center gap-2">
+                            <div className="bg-primary/20 p-2 rounded-lg text-primary">
+                                <Terminal size={20} />
+                            </div>
+                            <span className="font-bold text-xl tracking-tight text-white">DSA<span className="text-primary">Prep</span></span>
+                        </div>
+                        <button
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="p-2 hover:bg-white/5 rounded-lg transition-colors text-zinc-400 hover:text-white"
+                        >
+                            <X size={28} />
+                        </button>
+                    </div>
+
+                    <div className="space-y-4 pb-20">
                         {navLinks.map(link => (
                             <Link
                                 key={link.href}

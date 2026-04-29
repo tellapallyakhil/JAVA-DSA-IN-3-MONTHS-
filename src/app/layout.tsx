@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/Navbar";
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, Info } from 'lucide-react';
+import Link from "next/link";
+import PomodoroTimer from "@/components/PomodoroTimer";
 import Providers from '@/components/Providers';
 import "./globals.css";
 
@@ -94,7 +96,7 @@ export default function RootLayout({
       >
         <Providers>
           <Navbar />
-          <main className="pt-24 px-6 md:px-12 max-w-7xl mx-auto pb-12 w-full flex-grow">
+          <main className="pt-24 px-6 md:px-12 max-w-7xl mx-auto pb-24 w-full flex-grow">
             {children}
           </main>
 
@@ -129,6 +131,21 @@ export default function RootLayout({
               </a>
             </div>
           </footer>
+
+          {/* Floating About Link - Left Bottom */}
+          <Link
+            href="/about"
+            className="fixed bottom-6 left-6 z-[40] group flex items-center gap-2 px-3 py-3 md:px-4 md:py-2 bg-zinc-900/80 hover:bg-primary/10 border border-white/10 hover:border-primary/40 rounded-full backdrop-blur-xl transition-all shadow-2xl active:scale-95"
+          >
+            <div className="relative flex items-center justify-center">
+              <Info size={16} className="text-primary group-hover:scale-110 transition-transform" />
+              <div className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-primary animate-pulse" />
+            </div>
+            <span className="text-[10px] font-black text-zinc-400 group-hover:text-white transition-colors tracking-[0.2em] uppercase hidden md:inline">About_Sys</span>
+          </Link>
+
+          {/* Global Pomodoro Timer */}
+          <PomodoroTimer />
         </Providers>
       </body>
     </html>

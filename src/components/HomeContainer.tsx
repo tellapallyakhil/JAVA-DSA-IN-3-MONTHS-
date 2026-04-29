@@ -218,8 +218,6 @@ export default function HomeContainer() {
             <section id="calendar" className="pt-12 relative z-10">
                 <CalendarSection days={days} />
             </section>
-
-            <PomodoroTimer />
         </div>
     );
 }

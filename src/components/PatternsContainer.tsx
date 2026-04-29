@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
     Hash, ArrowLeftRight, AppWindow, Layers, Search, Link2,
     TreePine, Network, Brain, Undo2, Trophy, Zap, Binary,
     CalendarDays, ChevronDown, ChevronUp, ExternalLink,
-    Lightbulb, Flame, Target
+    Lightbulb, Flame, Target, Sparkles
 } from "lucide-react";
 import { getAllProblems } from "@/lib/api";
 import { Problem } from "@/types";
@@ -65,21 +65,23 @@ export default function PatternsContainer() {
         setExpandedPattern(expandedPattern === id ? null : id);
     };
 
-    const filteredPatternsWithCounts = patterns.map((pattern) => {
-        const patternProblems = pattern.problemIds
-            .map((id: string) => problems.find((p) => String(p.id) === String(id)))
-            .filter(Boolean) as Problem[];
+    const filteredPatternsWithCounts = useMemo(() => {
+        return patterns.map((pattern) => {
+            const patternProblems = pattern.problemIds
+                .map((id: string) => problems.find((p) => String(p.id) === String(id)))
+                .filter(Boolean) as Problem[];
 
-        const hardChallenges = pattern.hardProblems || [];
+            const hardChallenges = pattern.hardProblems || [];
 
-        const filtered =
-            filterDifficulty === "All"
-                ? patternProblems
-                : filterDifficulty === "Hard"
-                    ? patternProblems.filter((p) => p.difficulty === "Hard")
-                    : patternProblems.filter((p) => p.difficulty === filterDifficulty);
-        return { ...pattern, problems: filtered, totalProblems: patternProblems.length, hardChallenges };
-    });
+            const filtered =
+                filterDifficulty === "All"
+                    ? patternProblems
+                    : filterDifficulty === "Hard"
+                        ? patternProblems.filter((p) => p.difficulty === "Hard")
+                        : patternProblems.filter((p) => p.difficulty === filterDifficulty);
+            return { ...pattern, problems: filtered, totalProblems: patternProblems.length, hardChallenges };
+        });
+    }, [patterns, problems, filterDifficulty]);
 
     return (
         <div className="relative space-y-10 pb-20">
