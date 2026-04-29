@@ -116,7 +116,7 @@ export default function PomodoroTimer() {
         return (
             <button
                 onClick={() => setIsExpanded(true)}
-                className="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-violet-500 to-purple-600 text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform group"
+                className="fixed bottom-6 right-6 z-[40] bg-gradient-to-r from-violet-500 to-purple-600 text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform group"
                 title="Open Pomodoro Timer"
             >
                 <Brain size={24} />
@@ -130,7 +130,7 @@ export default function PomodoroTimer() {
     }
 
     return (
-        <div className="fixed bottom-6 right-6 z-50 w-80 bg-zinc-900/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden">
+        <div className="fixed bottom-6 right-6 z-[40] w-80 bg-zinc-900/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden">
             {/* Header */}
             <div className={`bg-gradient-to-r ${TIMER_SETTINGS[mode].color} p-4`}>
                 <div className="flex items-center justify-between">
