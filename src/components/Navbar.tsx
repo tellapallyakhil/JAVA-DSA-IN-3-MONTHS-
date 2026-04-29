@@ -10,6 +10,14 @@ export default function Navbar() {
     const { user } = useProgress();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+    const toggleMenu = (open: boolean) => {
+        setMobileMenuOpen(open);
+        if (typeof document !== 'undefined') {
+            if (open) document.documentElement.classList.add('menu-open');
+            else document.documentElement.classList.remove('menu-open');
+        }
+    };
+
     const handleSignOut = async () => {
         await supabase.auth.signOut();
         window.location.href = '/login';
@@ -72,7 +80,7 @@ export default function Navbar() {
                 {/* Mobile Menu Button */}
                 <button
                     className="md:hidden p-2 hover:bg-white/5 rounded-lg transition-colors"
-                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                    onClick={() => toggleMenu(!mobileMenuOpen)}
                 >
                     {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
@@ -90,7 +98,7 @@ export default function Navbar() {
                             <span className="font-bold text-xl tracking-tight text-white">DSA<span className="text-primary">Prep</span></span>
                         </div>
                         <button
-                            onClick={() => setMobileMenuOpen(false)}
+                            onClick={() => toggleMenu(false)}
                             className="p-2 hover:bg-white/5 rounded-lg transition-colors text-zinc-400 hover:text-white"
                         >
                             <X size={28} />
@@ -102,7 +110,7 @@ export default function Navbar() {
                             <Link
                                 key={link.href}
                                 href={link.href}
-                                onClick={() => setMobileMenuOpen(false)}
+                                onClick={() => toggleMenu(false)}
                                 className="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all"
                             >
                                 <link.icon className="text-primary" size={24} />
