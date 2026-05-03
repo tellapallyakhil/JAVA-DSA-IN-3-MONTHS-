@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Terminal, Activity, LogIn, LogOut, Menu, X, BookOpen, Building2, Home, BarChart3, User, Target, Code2, Sparkles, Info } from 'lucide-react';
+import { Terminal, Activity, LogIn, LogOut, Menu, X, BookOpen, Building2, Home, BarChart3, User, Target, Code2, Sparkles, Info, Brain } from 'lucide-react';
 import { useProgress } from '@/hooks/useProgress';
 import { supabase } from '@/lib/supabaseClient';
 
@@ -29,6 +29,7 @@ export default function Navbar() {
         { href: '/focus', label: 'Focus Mode', icon: Target },
         { href: '/patterns', label: 'Patterns', icon: Sparkles },
         { href: '/companies', label: 'Companies', icon: Building2 },
+        { href: '/aptitude', label: 'Aptitude', icon: Brain },
         { href: '/compiler', label: 'Compiler', icon: Code2 },
         { href: '/progress', label: 'My Progress', icon: BarChart3, highlight: true },
     ];
