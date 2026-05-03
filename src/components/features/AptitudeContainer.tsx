@@ -139,6 +139,14 @@ export default function AptitudeContainer() {
         else setSelectedCategory(null);
     };
 
+    const topics = useMemo(() => {
+        const rawTopics = processedData[selectedCategory || ''] || [];
+        if (!searchTerm) return rawTopics;
+        return rawTopics.filter(t => 
+            t.title.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+    }, [processedData, selectedCategory, searchTerm]);
+
     if (isLoading) {
         return (
             <div className="min-h-[80vh] px-4 max-w-7xl mx-auto">
@@ -193,14 +201,6 @@ export default function AptitudeContainer() {
             </div>
         );
     }
-
-    const topics = useMemo(() => {
-        const rawTopics = processedData[selectedCategory] || [];
-        if (!searchTerm) return rawTopics;
-        return rawTopics.filter(t => 
-            t.title.toLowerCase().includes(searchTerm.toLowerCase())
-        );
-    }, [processedData, selectedCategory, searchTerm]);
 
     if (!selectedTopic) {
         return (
