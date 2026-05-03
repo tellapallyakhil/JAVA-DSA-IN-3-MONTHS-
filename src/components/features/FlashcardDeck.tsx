@@ -156,3 +156,4 @@ export default function FlashcardDeck({ cards }: { cards: Flashcard[] }) {
         </div>
     );
 }
+

@@ -1,6 +1,6 @@
 "use client";
 
-import TopicFocusMode from '@/components/TopicFocusMode';
+import TopicFocusMode from '@/components/features/TopicFocusMode';
 
 export default function FocusPage() {
     return (
@@ -9,3 +9,4 @@ export default function FocusPage() {
         </div>
     );
 }
+

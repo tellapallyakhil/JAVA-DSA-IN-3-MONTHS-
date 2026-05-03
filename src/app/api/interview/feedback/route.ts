@@ -83,11 +83,10 @@ Scoring guide:
 Return a JSON object: {"score": <number>, "feedback": "<string>"}`;
 
         const FREE_MODELS = [
-            "openrouter/free",
-            "qwen/qwen3-next-80b-a3b-instruct:free",
-            "nvidia/nemotron-3-nano-30b-a3b:free",
-            "stepfun/step-3.5-flash:free",
-            "arcee-ai/trinity-large-preview:free"
+            "google/gemini-2.0-flash-lite-preview:free",
+            "meta-llama/llama-3.3-70b-instruct:free",
+            "qwen/qwen-2.5-72b-instruct:free",
+            "mistralai/mistral-7b-instruct:free"
         ];
 
         const shuffled = [...FREE_MODELS].sort(() => 0.5 - Math.random());

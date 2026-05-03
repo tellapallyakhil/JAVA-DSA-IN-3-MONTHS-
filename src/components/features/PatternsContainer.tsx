@@ -433,3 +433,4 @@ export default function PatternsContainer() {
         </div>
     );
 }
+

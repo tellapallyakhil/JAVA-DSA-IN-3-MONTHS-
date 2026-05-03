@@ -108,3 +108,4 @@ export default function QuizView({ questions }: QuizViewProps) {
         </div>
     );
 }
+

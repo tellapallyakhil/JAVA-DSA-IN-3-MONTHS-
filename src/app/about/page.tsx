@@ -1,4 +1,4 @@
-import AboutContainer from "@/components/AboutContainer";
+import AboutContainer from "@/components/features/AboutContainer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,3 +14,4 @@ export const metadata: Metadata = {
 export default function AboutPage() {
     return <AboutContainer />;
 }
+

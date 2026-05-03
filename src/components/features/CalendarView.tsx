@@ -210,3 +210,4 @@ export default function CalendarView({ days, completedDays = [], startDateStr }:
         </div>
     );
 }
+

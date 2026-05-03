@@ -6,7 +6,7 @@ import { getAllCompanies, getProblemsByCompany, getQuestionsByCompany } from '@/
 import { Target, BrainCircuit, Code2, ChevronDown, Check, X, Building2, Zap, Search, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import StartButton from './StartButton';
+import StartButton from '@/components/ui/StartButton';
 
 const getCompanyColor = (name: string) => {
     const colors = [
@@ -288,27 +288,28 @@ export default function DreamCompanyWidget() {
                                 </Link>
                             </motion.div>
 
-                            {/* Action Card */}
                             <motion.div
                                 variants={{
                                     hidden: { opacity: 0, y: 20 },
                                     show: { opacity: 1, y: 0 }
                                 }}
                             >
-                                <motion.div
-                                    whileHover={{ scale: 1.02, y: -5 }}
-                                    className="p-5 rounded-2xl bg-gradient-to-br from-primary/20 via-primary/5 to-transparent border border-primary/20 flex flex-col justify-center items-center text-center gap-3 group cursor-pointer h-full relative overflow-hidden shadow-lg shadow-primary/5"
-                                >
-                                    <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                                    <div className="w-12 h-12 rounded-2xl bg-primary/20 flex items-center justify-center text-primary mb-1 group-hover:rotate-12 transition-transform shadow-lg shadow-primary/20 ring-1 ring-primary/20">
-                                        <Zap size={24} />
-                                    </div>
-                                    <div>
-                                        <div className="font-bold text-base leading-tight">Mock Interview</div>
-                                        <p className="text-[11px] text-muted-foreground mt-1 px-4 italic">AI-tailored for {dreamCompany}</p>
-                                    </div>
-                                    <div className="text-[10px] font-bold text-primary px-3 py-1 bg-primary/10 rounded-full border border-primary/20 group-hover:bg-primary group-hover:text-white transition-all shadow-inner">START NOW</div>
-                                </motion.div>
+                                <Link href={`/interview?company=${encodeURIComponent(dreamCompany)}`} className="block h-full">
+                                    <motion.div
+                                        whileHover={{ scale: 1.02, y: -5 }}
+                                        className="p-5 rounded-2xl bg-gradient-to-br from-primary/20 via-primary/5 to-transparent border border-primary/20 flex flex-col justify-center items-center text-center gap-3 group cursor-pointer h-full relative overflow-hidden shadow-lg shadow-primary/5"
+                                    >
+                                        <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                                        <div className="w-12 h-12 rounded-2xl bg-primary/20 flex items-center justify-center text-primary mb-1 group-hover:rotate-12 transition-transform shadow-lg shadow-primary/20 ring-1 ring-primary/20">
+                                            <Zap size={24} />
+                                        </div>
+                                        <div>
+                                            <div className="font-bold text-base leading-tight text-white">Mock Interview</div>
+                                            <p className="text-[11px] text-muted-foreground mt-1 px-4 italic">AI-tailored for {dreamCompany}</p>
+                                        </div>
+                                        <div className="text-[10px] font-bold text-primary px-3 py-1 bg-primary/10 rounded-full border border-primary/20 group-hover:bg-primary group-hover:text-white transition-all shadow-inner uppercase">Start Now</div>
+                                    </motion.div>
+                                </Link>
                             </motion.div>
                         </motion.div>
                     ) : (
@@ -342,3 +343,4 @@ export default function DreamCompanyWidget() {
         </div>
     );
 }
+

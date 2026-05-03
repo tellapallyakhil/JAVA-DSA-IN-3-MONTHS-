@@ -2,7 +2,7 @@ import { getProblemsByTopic, getAllTopics } from '@/lib/api';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ExternalLink, ArrowLeft } from 'lucide-react';
-import ProblemCard from '@/components/ProblemCard';
+import ProblemCard from '@/components/ui/ProblemCard';
 
 export async function generateStaticParams() {
     const topics = await getAllTopics();

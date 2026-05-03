@@ -2,7 +2,7 @@ import { getProblemsByCompany, getAllCompanies, getQuestionsByCompany } from '@/
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ExternalLink, ArrowLeft, BrainCircuit } from 'lucide-react';
-import ProblemCard from '@/components/ProblemCard';
+import ProblemCard from '@/components/ui/ProblemCard';
 
 export async function generateStaticParams() {
     const companies = await getAllCompanies();

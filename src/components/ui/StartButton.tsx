@@ -70,3 +70,4 @@ export default function StartButton({ className, children }: StartButtonProps) {
         </Link>
     );
 }
+

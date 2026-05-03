@@ -32,7 +32,7 @@ export async function POST(req: Request) {
         };
 
         const difficultyMod = difficultyGuide[difficulty] || difficultyGuide['medium'];
-        const companyMod = companyGuide[companyStyle] || '';
+        const companyMod = companyGuide[companyStyle] || (companyStyle ? `Frame the interview specifically for ${companyStyle}'s hiring culture and engineering standards.` : '');
 
         // Load concepts for RAG context
         let ragContext = "";
@@ -126,12 +126,11 @@ Return JSON: {"question": "your question here", "hints": ["hint1", "hint2", "hin
         }
 
         const FREE_MODELS = [
-            "openrouter/free",
-            "qwen/qwen3-next-80b-a3b-instruct:free",
-            "nvidia/nemotron-3-nano-30b-a3b:free",
-            "stepfun/step-3.5-flash:free",
-            "arcee-ai/trinity-large-preview:free",
-            "upstage/solar-pro-3:free"
+            "google/gemini-2.0-flash-lite-preview:free",
+            "meta-llama/llama-3.3-70b-instruct:free",
+            "qwen/qwen-2.5-72b-instruct:free",
+            "mistralai/mistral-7b-instruct:free",
+            "google/gemini-2.0-pro-exp-02-05:free"
         ];
 
         // Shuffle models to distribute load

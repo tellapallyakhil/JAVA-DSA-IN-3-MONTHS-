@@ -24,6 +24,8 @@ const defaultProgress: Progress = {
     revisionItems: [],
     lastUpdated: 0,
     weakTopics: [],
+    completedAptitudeTopics: [],
+    completedReasoningTopics: [],
     topicProgress: {}
 };
 
@@ -105,10 +107,22 @@ export function useProgress() {
     const [isClient, setIsClient] = useState(false);
     const [user, setUser] = useState<User | null>(null);
     const [loading, setLoading] = useState(true);
+    // Add cachedUser state for instant UI updates
+    const [cachedUser, setCachedUser] = useState<{ email?: string; id?: string } | null>(null);
 
     // 1. Initialize logic: Check Auth -> Load Cloud if User -> Load Local if Guest
     useEffect(() => {
         setIsClient(true);
+
+        // Load cached user immediately for fast UI
+        const storedUser = localStorage.getItem('dsa_last_user');
+        if (storedUser) {
+            try {
+                setCachedUser(JSON.parse(storedUser));
+            } catch (e) {
+                console.error("Failed to parse cached user", e);
+            }
+        }
 
         const getLocalProgress = (userId?: string): Progress | null => {
             const stored = localStorage.getItem(getStorageKey(userId));
@@ -142,6 +156,13 @@ export function useProgress() {
 
                 // 1. Get Local Data
                 localProgress = getLocalProgress(session?.user?.id);
+                
+                // OPTIMIZATION: If we have local progress, set it immediately 
+                // so the UI doesn't have to wait for the cloud fetch
+                if (localProgress) {
+                    setProgress(localProgress);
+                    setLoading(false); // UI can render now!
+                }
 
                 // 2. Get Cloud Data if logged in
                 if (session?.user) {
@@ -206,15 +227,22 @@ export function useProgress() {
         init();
 
         const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_event, session) => {
-            setUser(session?.user ?? null);
-            // On auth change, we mostly rely on init or reload, but for SPA feel:
-            if (session?.user) {
-                // Try to load user data again to be safe
-                const local = getLocalProgress(session.user.id);
+            const newUser = session?.user ?? null;
+            setUser(newUser);
+
+            if (newUser) {
+                // Cache user for next reload
+                localStorage.setItem('dsa_last_user', JSON.stringify({
+                    email: newUser.email,
+                    id: newUser.id
+                }));
+                setCachedUser({ email: newUser.email, id: newUser.id });
+
+                const local = getLocalProgress(newUser.id);
                 if (local) setProgress(local);
-                // We could fetch cloud here too, but simple is better for now
             } else {
-                // User logged out - load guest or default
+                localStorage.removeItem('dsa_last_user');
+                setCachedUser(null);
                 const guest = getLocalProgress();
                 setProgress(guest || defaultProgress);
             }
@@ -296,6 +324,36 @@ export function useProgress() {
                 reasoningDone: exists
                     ? prev.reasoningDone.filter(r => r.day !== day)
                     : [...prev.reasoningDone, { day, count: 1 }],
+                lastUpdated: Date.now()
+            };
+        });
+    };
+    
+    const toggleAptitudeTopic = (topicId: string) => {
+        setProgress(prev => {
+            const topics = prev.completedAptitudeTopics || [];
+            const exists = topics.includes(topicId);
+            return {
+                ...prev,
+                completedAptitudeTopics: exists
+                    ? topics.filter(t => t !== topicId)
+                    : [...topics, topicId],
+                activityDates: exists ? prev.activityDates : recordActivity(prev),
+                lastUpdated: Date.now()
+            };
+        });
+    };
+
+    const toggleReasoningTopic = (topicId: string) => {
+        setProgress(prev => {
+            const topics = prev.completedReasoningTopics || [];
+            const exists = topics.includes(topicId);
+            return {
+                ...prev,
+                completedReasoningTopics: exists
+                    ? topics.filter(t => t !== topicId)
+                    : [...topics, topicId],
+                activityDates: exists ? prev.activityDates : recordActivity(prev),
                 lastUpdated: Date.now()
             };
         });
@@ -530,6 +588,8 @@ export function useProgress() {
         getRevisionsDueToday,
         setStartDate,
         resetStartDate,
+        toggleAptitudeTopic,
+        toggleReasoningTopic,
         // Topic Focus Mode
         markTopicAsWeak,
         removeWeakTopic,
@@ -539,10 +599,13 @@ export function useProgress() {
         isAptitudeCompleted: (day: number) => progress.aptitudeDone.some(a => a.day === day),
         isReasoningCompleted: (day: number) => progress.reasoningDone.some(r => r.day === day),
         isQuestionCompleted: (id: string) => (progress.completedQuestions || []).includes(id),
+        isAptitudeTopicCompleted: (id: string) => (progress.completedAptitudeTopics || []).includes(id),
+        isReasoningTopicCompleted: (id: string) => (progress.completedReasoningTopics || []).includes(id),
         isTopicWeak: (topicId: string) => (progress.weakTopics || []).includes(topicId),
         startDate: progress.startDate,
         isClient,
         user,
+        cachedUser,
         loading
     };
 }

@@ -7,7 +7,7 @@ import { useProgress } from '@/hooks/useProgress';
 import { supabase } from '@/lib/supabaseClient';
 
 export default function Navbar() {
-    const { user } = useProgress();
+    const { user, cachedUser } = useProgress();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const toggleMenu = (open: boolean) => {
@@ -60,13 +60,13 @@ export default function Navbar() {
                         </Link>
                     ))}
 
-                    {user ? (
+                    {(user || cachedUser) ? (
                         <Link href="/profile" title="My Profile" className="group flex items-center gap-2 hover:bg-white/5 p-1 pr-3 rounded-full border border-transparent hover:border-white/10 transition-all">
                             <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center text-xs font-bold text-white uppercase shadow-lg">
-                                {user.email?.slice(0, 2)}
+                                {(user?.email || cachedUser?.email)?.slice(0, 2)}
                             </div>
                             <span className="text-xs text-zinc-400 group-hover:text-white transition-colors max-w-[100px] truncate hidden lg:block">
-                                {user.email?.split('@')[0]}
+                                {(user?.email || cachedUser?.email)?.split('@')[0]}
                             </span>
                             <User size={14} className="text-zinc-500 group-hover:text-primary ml-1" />
                         </Link>
@@ -121,7 +121,7 @@ export default function Navbar() {
 
                         <hr className="border-white/10 my-6" />
 
-                        {user ? (
+                        {(user || cachedUser) ? (
                             <div className="space-y-4">
                                 <Link
                                     href="/profile"
@@ -129,11 +129,11 @@ export default function Navbar() {
                                     className="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all"
                                 >
                                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center text-lg font-bold text-white uppercase">
-                                        {user.email?.slice(0, 2)}
+                                        {(user?.email || cachedUser?.email)?.slice(0, 2)}
                                     </div>
                                     <div className="flex-1">
-                                        <div className="font-medium">{user.email?.split('@')[0]}</div>
-                                        <div className="text-sm text-muted-foreground truncate max-w-[200px]">{user.email}</div>
+                                        <div className="font-medium">{(user?.email || cachedUser?.email)?.split('@')[0]}</div>
+                                        <div className="text-sm text-muted-foreground truncate max-w-[200px]">{user?.email || cachedUser?.email}</div>
                                     </div>
                                     <User size={20} className="text-muted-foreground" />
                                 </Link>
@@ -161,3 +161,4 @@ export default function Navbar() {
         </>
     );
 }
+

@@ -2,7 +2,7 @@ import { getQuestionsByCompany, getAllCompanies } from '@/lib/api';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, BrainCircuit } from 'lucide-react';
-import QuizView from '@/components/QuizView';
+import QuizView from '@/components/features/QuizView';
 
 export async function generateStaticParams() {
     const companies = await getAllCompanies();

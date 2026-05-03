@@ -39,3 +39,4 @@ export default function CalendarSection({ days }: CalendarSectionProps) {
         </section>
     );
 }
+

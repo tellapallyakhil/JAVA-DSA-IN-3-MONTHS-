@@ -138,3 +138,4 @@ export default function ShortNotes({ title, content }: ShortNotesProps) {
         </div>
     );
 }
+

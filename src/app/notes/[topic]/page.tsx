@@ -10,7 +10,7 @@ import {
     List, Target, Zap, Info, ChevronRight, Copy, Check
 } from 'lucide-react';
 import concepts from '@/data/concepts.json';
-import FlashcardDeck from '@/components/FlashcardDeck';
+import FlashcardDeck from '@/components/features/FlashcardDeck';
 import { Flashcard } from '@/types';
 
 // Generate flashcards from note content
