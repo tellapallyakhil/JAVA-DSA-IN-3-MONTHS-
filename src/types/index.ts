@@ -50,6 +50,8 @@ export interface Progress {
     completedQuestions: string[]; // Question IDs
     aptitudeDone: { day: number; count: number }[];
     reasoningDone: { day: number; count: number }[];
+    completedAptitudeTopics: string[]; // Topic IDs
+    completedReasoningTopics: string[]; // Topic IDs
     activityDates: string[]; // ISO date strings of days with activity
     // 1-4-7 Spaced Repetition System
     revisionItems: RevisionItem[];

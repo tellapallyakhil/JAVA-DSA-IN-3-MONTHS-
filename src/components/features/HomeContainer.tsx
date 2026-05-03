@@ -10,14 +10,15 @@ import {
 import { motion } from 'framer-motion';
 import { getAllDays } from '@/lib/api';
 import { DailyTask } from '@/types';
-import CalendarSection from '@/components/CalendarSection';
-import PomodoroTimer from '@/components/PomodoroTimer';
-import StudyHeatmap from '@/components/StudyHeatmap';
-import InterviewSimulator from '@/components/InterviewSimulator';
-import RevisionReminder from '@/components/RevisionReminder';
-import StartButton from '@/components/StartButton';
-import FocusAreasWidget from '@/components/FocusAreasWidget';
-import DreamCompanyWidget from '@/components/DreamCompanyWidget';
+import CalendarSection from '@/components/features/CalendarSection';
+import PomodoroTimer from '@/components/features/PomodoroTimer';
+import StudyHeatmap from '@/components/features/StudyHeatmap';
+import InterviewSimulator from '@/components/features/InterviewSimulator';
+import RevisionReminder from '@/components/features/RevisionReminder';
+import StartButton from '@/components/ui/StartButton';
+import FocusAreasWidget from '@/components/features/FocusAreasWidget';
+import DreamCompanyWidget from '@/components/features/DreamCompanyWidget';
+import { ErrorBoundary } from '@/components/layout/ErrorBoundary';
 
 export default function HomeContainer() {
     const [days, setDays] = useState<DailyTask[]>([]);
@@ -100,7 +101,9 @@ export default function HomeContainer() {
                                     </div>
                                 </motion.div>
                             ))}
-                            <RevisionReminder compact />
+                            <ErrorBoundary name="Revision Reminder">
+                                <RevisionReminder compact />
+                            </ErrorBoundary>
                         </div>
                     </div>
                 </div>
@@ -108,11 +111,17 @@ export default function HomeContainer() {
 
             {/* 2. CORE PERFORMANCE WIDGETS */}
             <section className="px-4 max-w-7xl mx-auto space-y-8 relative z-30">
-                <FocusAreasWidget />
+                <ErrorBoundary name="Focus Areas">
+                    <FocusAreasWidget />
+                </ErrorBoundary>
 
                 <div className="grid grid-cols-1 lg:grid-cols-[1.5fr,1fr] gap-8">
-                    <StudyHeatmap />
-                    <DreamCompanyWidget />
+                    <ErrorBoundary name="Activity Heatmap">
+                        <StudyHeatmap />
+                    </ErrorBoundary>
+                    <ErrorBoundary name="Dream Company Widget">
+                        <DreamCompanyWidget />
+                    </ErrorBoundary>
                 </div>
             </section>
 
@@ -181,7 +190,9 @@ export default function HomeContainer() {
 
             {/* 4. INTERACTIVE SIMULATOR */}
             <section className="px-4 max-w-7xl mx-auto relative z-10">
-                <InterviewSimulator />
+                <ErrorBoundary name="AI Interview Simulator">
+                    <InterviewSimulator />
+                </ErrorBoundary>
             </section>
 
             {/* 5. LOGIC PATTERNS & QUICK START */}

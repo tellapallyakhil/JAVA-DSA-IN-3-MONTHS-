@@ -1,6 +1,6 @@
 import { getDay, getProblemsForDay, getAllDays, getQuestionsByIds } from '@/lib/api';
 import { getExtraProblems, getNotes } from '@/lib/extras';
-import DayView from '@/components/DayView';
+import DayView from '@/components/features/DayView';
 import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {

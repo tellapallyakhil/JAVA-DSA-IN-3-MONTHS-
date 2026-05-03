@@ -1,4 +1,4 @@
-import PatternsContainer from "@/components/PatternsContainer";
+import PatternsContainer from "@/components/features/PatternsContainer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -21,3 +21,4 @@ export const metadata: Metadata = {
 export default function PatternsPage() {
     return <PatternsContainer />;
 }
+

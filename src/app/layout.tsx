@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/layout/Navbar";
 import { Github, Linkedin, Mail, Info } from 'lucide-react';
 import Link from "next/link";
-import PomodoroTimer from "@/components/PomodoroTimer";
-import Providers from '@/components/Providers';
+import PomodoroTimer from "@/components/features/PomodoroTimer";
+import Providers from '@/components/layout/Providers';
 import "./globals.css";
 
 const geistSans = Geist({
@@ -151,3 +151,4 @@ export default function RootLayout({
     </html>
   );
 }
+

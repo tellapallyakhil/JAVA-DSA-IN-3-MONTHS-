@@ -33,6 +33,7 @@ interface SessionStats {
 
 interface InterviewSimulatorProps {
     fullPage?: boolean;
+    initialCompany?: string;
 }
 
 const TOPIC_OPTIONS: { value: QuestionType; label: string; icon: string; description: string }[] = [
@@ -55,11 +56,12 @@ const COMPANY_OPTIONS: { value: CompanyFocus; label: string; icon: React.ReactNo
     { value: 'product', label: 'Product Based', icon: <Target size={14} /> },
 ];
 
-export default function InterviewSimulator({ fullPage = false }: InterviewSimulatorProps) {
+export default function InterviewSimulator({ fullPage = false, initialCompany = '' }: InterviewSimulatorProps) {
     const [mode, setMode] = useState<InterviewMode>('setup');
     const [selectedTopic, setSelectedTopic] = useState<QuestionType>('dsa');
     const [difficulty, setDifficulty] = useState<DifficultyLevel>('medium');
     const [companyFocus, setCompanyFocus] = useState<CompanyFocus>('general');
+    const [targetCompany, setTargetCompany] = useState<string>(initialCompany);
     const [messages, setMessages] = useState<Message[]>([]);
     const [userInput, setUserInput] = useState('');
     const [isLoading, setIsLoading] = useState(false);
@@ -219,7 +221,7 @@ export default function InterviewSimulator({ fullPage = false }: InterviewSimula
                 topic: topicMap[selectedTopic],
                 type: typeMap[selectedTopic],
                 difficulty: difficulty,
-                companyStyle: companyFocus,
+                companyStyle: targetCompany || companyFocus,
                 avoidQuestions: previousQuestions // Tell AI to avoid these
             };
 
@@ -683,22 +685,41 @@ export default function InterviewSimulator({ fullPage = false }: InterviewSimula
                     {showAdvanced && (
                         <div className="space-y-4 mb-6 animate-in slide-in-from-top-2">
                             {/* Company Focus */}
-                            <div>
-                                <h3 className="text-sm font-semibold mb-3 text-muted-foreground">Company Style</h3>
-                                <div className="flex flex-wrap gap-2">
-                                    {COMPANY_OPTIONS.map((option) => (
-                                        <button
-                                            key={option.value}
-                                            onClick={() => setCompanyFocus(option.value)}
-                                            className={`px-3 py-2 rounded-lg border text-xs flex items-center gap-1.5 transition-all ${companyFocus === option.value
-                                                ? 'bg-primary/20 border-primary text-white'
-                                                : 'bg-white/5 border-white/10 hover:bg-white/10 text-white/70'
-                                                }`}
-                                        >
-                                            {option.icon}
-                                            {option.label}
-                                        </button>
-                                    ))}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <h3 className="text-sm font-semibold mb-3 text-muted-foreground">Company Style</h3>
+                                    <div className="flex flex-wrap gap-2">
+                                        {COMPANY_OPTIONS.map((option) => (
+                                            <button
+                                                key={option.value}
+                                                onClick={() => {
+                                                    setCompanyFocus(option.value);
+                                                    setTargetCompany(''); // Clear specific company if preset selected
+                                                }}
+                                                className={`px-3 py-2 rounded-lg border text-xs flex items-center gap-1.5 transition-all ${companyFocus === option.value && !targetCompany
+                                                    ? 'bg-primary/20 border-primary text-white'
+                                                    : 'bg-white/5 border-white/10 hover:bg-white/10 text-white/70'
+                                                    }`}
+                                            >
+                                                {option.icon}
+                                                {option.label}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h3 className="text-sm font-semibold mb-3 text-muted-foreground">Specific Company</h3>
+                                    <div className="relative">
+                                        <Building2 className="absolute left-3 top-1/2 -translate-y-1/2 text-white/30" size={16} />
+                                        <input
+                                            type="text"
+                                            placeholder="e.g. Google, Microsoft..."
+                                            className="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-2.5 text-sm transition-all focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/50 placeholder:text-white/20"
+                                            value={targetCompany}
+                                            onChange={(e) => setTargetCompany(e.target.value)}
+                                        />
+                                    </div>
                                 </div>
                             </div>
 
@@ -1149,3 +1170,4 @@ export default function InterviewSimulator({ fullPage = false }: InterviewSimula
         </div>
     );
 }
+

@@ -1,4 +1,4 @@
-import AptitudeContainer from '@/components/AptitudeContainer';
+import AptitudeContainer from '@/components/features/AptitudeContainer';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -16,3 +16,4 @@ export const metadata: Metadata = {
 export default function AptitudePage() {
     return <AptitudeContainer />;
 }
+

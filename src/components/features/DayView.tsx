@@ -5,10 +5,10 @@ import { useProgress } from '@/hooks/useProgress';
 import { CheckCircle2, Circle, Code, Brain, BookOpen, Sword, Layers, Lightbulb, PenTool } from 'lucide-react';
 
 import { useState } from 'react';
-import ProblemCard from '@/components/ProblemCard';
-import FlashcardDeck from '@/components/FlashcardDeck';
-import QuizView from '@/components/QuizView';
-import ShortNotes from '@/components/ShortNotes';
+import ProblemCard from '@/components/ui/ProblemCard';
+import FlashcardDeck from '@/components/features/FlashcardDeck';
+import QuizView from '@/components/features/QuizView';
+import ShortNotes from '@/components/features/ShortNotes';
 
 interface DayViewProps {
     day: DailyTask;
@@ -157,3 +157,4 @@ export default function DayView({ day, problems, extraProblems = [], notes, ques
         </div>
     );
 }
+

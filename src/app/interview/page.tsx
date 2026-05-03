@@ -1,4 +1,4 @@
-import InterviewSimulator from '@/components/InterviewSimulator';
+import InterviewSimulator from '@/components/features/InterviewSimulator';
 
 import { Metadata } from 'next';
 
@@ -12,12 +12,16 @@ export const metadata: Metadata = {
     ],
 };
 
-export default function InterviewPage() {
+export default async function InterviewPage({ searchParams }: { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }) {
+    const params = await searchParams;
+    const company = typeof params.company === 'string' ? params.company : '';
+
     return (
         <div className="min-h-screen">
             <div className="max-w-6xl mx-auto">
-                <InterviewSimulator fullPage />
+                <InterviewSimulator fullPage initialCompany={company} />
             </div>
         </div>
     );
 }
+

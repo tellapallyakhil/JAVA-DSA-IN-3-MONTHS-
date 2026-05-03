@@ -1,8 +1,10 @@
 "use client";
 
 import { useState, useMemo, useEffect } from 'react';
+import { useProgress } from '@/hooks/useProgress';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Brain, Calculator, MessageSquare, Puzzle, ChevronRight, CheckCircle2, BookOpen, Lightbulb, ArrowLeft, Sparkles, Building2, BarChart3, Loader2 } from 'lucide-react';
+import { Brain, Calculator, MessageSquare, Puzzle, ChevronRight, CheckCircle2, BookOpen, Lightbulb, ArrowLeft, Sparkles, Building2, BarChart3, Loader2, Search } from 'lucide-react';
+import { Skeleton } from '@/components/ui/Skeleton';
 
 // ─── TYPES ──────────────────────────────────────────────────────────────────
 interface Question { q: string; options: string[]; answer: string; explanation: string; companies: string[]; }
@@ -69,8 +71,13 @@ export default function AptitudeContainer() {
     const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
     const [score, setScore] = useState(0);
     const [showExplanation, setShowExplanation] = useState(false);
-    const [completedTopics, setCompletedTopics] = useState<Set<string>>(new Set());
+    const [searchTerm, setSearchTerm] = useState('');
+    const { toggleAptitudeTopic, isAptitudeTopicCompleted, isReasoningTopicCompleted } = useProgress();
     
+    const isTopicDone = (topicId: string) => {
+        return isAptitudeTopicCompleted(topicId) || isReasoningTopicCompleted(topicId);
+    };
+
     // PERFORMANCE: Lazy load the question bank
     const [allQuestions, setAllQuestions] = useState<any[]>([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -121,7 +128,7 @@ export default function AptitudeContainer() {
         if (currentQ + 1 < selectedTopic!.questions.length) {
             setCurrentQ(c => c + 1); setSelectedAnswer(null); setShowExplanation(false);
         } else {
-            setCompletedTopics(prev => new Set(prev).add(selectedTopic!.id));
+            toggleAptitudeTopic(selectedTopic!.id);
             setQuizMode(false); setCurrentQ(0); setSelectedAnswer(null); setShowExplanation(false); setScore(0);
         }
     };
@@ -134,9 +141,17 @@ export default function AptitudeContainer() {
 
     if (isLoading) {
         return (
-            <div className="min-h-[60vh] flex flex-col items-center justify-center text-zinc-500 gap-4">
-                <Loader2 className="w-10 h-10 animate-spin text-primary" />
-                <p className="text-xs font-bold uppercase tracking-widest animate-pulse">Initializing Placement Hub...</p>
+            <div className="min-h-[80vh] px-4 max-w-7xl mx-auto">
+                <div className="text-center mb-12">
+                    <Skeleton className="h-8 w-48 mx-auto mb-6 rounded-full" />
+                    <Skeleton className="h-16 w-96 mx-auto mb-4" />
+                    <Skeleton className="h-4 w-64 mx-auto" />
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {[...Array(4)].map((_, i) => (
+                        <Skeleton key={i} className="h-48 rounded-2xl" />
+                    ))}
+                </div>
             </div>
         );
     }
@@ -157,7 +172,7 @@ export default function AptitudeContainer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
                     {CATEGORIES.map((cat, i) => {
                         const topics = processedData[cat.id] || [];
-                        const done = topics.filter(t => completedTopics.has(t.id)).length;
+                        const done = topics.filter(t => isTopicDone(t.id)).length;
                         return (
                             <motion.button key={cat.id} initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }}
                                 onClick={() => setSelectedCategory(cat.id)}
@@ -179,22 +194,39 @@ export default function AptitudeContainer() {
         );
     }
 
-    const topics = processedData[selectedCategory] || [];
+    const topics = useMemo(() => {
+        const rawTopics = processedData[selectedCategory] || [];
+        if (!searchTerm) return rawTopics;
+        return rawTopics.filter(t => 
+            t.title.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+    }, [processedData, selectedCategory, searchTerm]);
+
     if (!selectedTopic) {
         return (
             <div className="min-h-[80vh] px-4">
                 <button onClick={goBack} className="flex items-center gap-2 text-zinc-500 hover:text-white mb-8 transition-colors">
                     <ArrowLeft size={18} /> Back
                 </button>
-                <div className="flex items-center gap-4 mb-8">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
                     <h2 className="text-3xl font-black text-white">{CATEGORIES.find(c => c.id === selectedCategory)?.label}</h2>
+                    <div className="relative w-full md:w-64 group">
+                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500 group-focus-within:text-primary transition-colors" size={18} />
+                        <input
+                            type="text"
+                            placeholder="Search topics..."
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                            className="w-full bg-white/5 border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-sm text-white focus:outline-none focus:border-primary/50 transition-all"
+                        />
+                    </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {topics.map((topic, i) => (
                         <motion.button key={topic.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.05 }}
                             onClick={() => setSelectedTopic(topic)}
                             className="group p-6 bg-white/5 border border-white/10 rounded-xl text-left hover:bg-white/10 transition-all relative">
-                            {completedTopics.has(topic.id) && <CheckCircle2 className="absolute top-4 right-4 w-5 h-5 text-emerald-400" />}
+                            {isTopicDone(topic.id) && <CheckCircle2 className="absolute top-4 right-4 w-5 h-5 text-emerald-400" />}
                             <span className="text-2xl mb-3 block">{topic.emoji}</span>
                             <h3 className="text-lg font-bold text-white mb-1">{topic.title}</h3>
                             <p className="text-xs text-zinc-500">{topic.questions.length} questions</p>

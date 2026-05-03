@@ -1,4 +1,4 @@
-import HomeContainer from '@/components/HomeContainer';
+import HomeContainer from '@/components/features/HomeContainer';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -89,3 +89,4 @@ export default function Home() {
     </>
   );
 }
+
