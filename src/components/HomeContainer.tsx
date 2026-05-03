@@ -39,7 +39,7 @@ export default function HomeContainer() {
 
     const stats = [
         { label: "DSA", value: "400+", icon: Code2, color: "text-blue-400" },
-        { label: "Quant", value: "200+", icon: BrainCircuit, color: "text-purple-400" },
+        { label: "Quant", value: "1000+", icon: BrainCircuit, color: "text-purple-400" },
         { label: "Cycles", value: "90", icon: Calendar, color: "text-emerald-400" },
     ];
 

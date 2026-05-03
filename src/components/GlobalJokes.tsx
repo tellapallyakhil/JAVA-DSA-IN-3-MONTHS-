@@ -13,9 +13,10 @@ export default function GlobalJokes() {
 
     useEffect(() => {
         setMounted(true);
+        if (!techJokes || techJokes.length === 0) return;
         const interval = setInterval(() => {
-            setIndex((prev) => (prev + 6) % techJokes.length);
-        }, 120000);
+            setIndex((prev) => (prev + 1) % techJokes.length);
+        }, 120000); // 2 minutes per rotation
         return () => clearInterval(interval);
     }, []);
 
@@ -35,7 +36,7 @@ export default function GlobalJokes() {
     const rightJokes = getJokes(index + 3, 3);
 
     return (
-        <div className="hidden xl:block fixed inset-0 pointer-events-none z-[100]">
+        <div className="hidden xl:block fixed inset-0 pointer-events-none z-[20]">
             {/* Left Side Jokes */}
             <div className="absolute left-6 top-1/4 space-y-8 w-64">
                 <div className="flex items-center gap-2 mb-4 opacity-20">

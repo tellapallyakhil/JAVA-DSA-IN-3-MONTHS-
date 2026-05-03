@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import {
     Target, History, Code2, Cpu, Zap, Activity,
-    Sparkles, Server, Globe, Shield, Container, ArrowRight
+    Sparkles, Server, Globe, Shield, Container, ArrowRight, BrainCircuit
 } from 'lucide-react';
 
 const features = [
@@ -48,6 +48,13 @@ const features = [
         icon: Activity,
         color: "text-emerald-400",
         bgColor: "bg-emerald-400/10"
+    },
+    {
+        title: "Aptitude Placement Hub",
+        description: "1,000+ company-mapped questions covering Quant, Logical, and Verbal. Every problem is watermarked with the recruiter who asked it (TCS, Infosys, etc.).",
+        icon: BrainCircuit,
+        color: "text-rose-400",
+        bgColor: "bg-rose-400/10"
     }
 ];
 
@@ -221,8 +228,8 @@ export default function AboutContainer() {
                                 <div className="text-[10px] text-zinc-600 font-bold uppercase tracking-widest">Patterns</div>
                             </div>
                             <div className="space-y-1">
-                                <div className="text-2xl font-black text-white">400+</div>
-                                <div className="text-[10px] text-zinc-600 font-bold uppercase tracking-widest">Problems</div>
+                                <div className="text-2xl font-black text-white">1400+</div>
+                                <div className="text-[10px] text-zinc-600 font-bold uppercase tracking-widest">Total Questions</div>
                             </div>
                         </div>
                     </div>
