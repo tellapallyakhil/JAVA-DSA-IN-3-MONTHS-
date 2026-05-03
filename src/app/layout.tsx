@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import { Github, Linkedin, Mail, Info } from 'lucide-react';
 import Link from "next/link";
@@ -7,15 +6,9 @@ import PomodoroTimer from "@/components/features/PomodoroTimer";
 import Providers from '@/components/layout/Providers';
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// System font stack used as fallback to avoid build-time network errors
+const sansFont = "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
+const monoFont = "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace";
 
 export const metadata: Metadata = {
   title: {
@@ -91,7 +84,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background text-foreground selection:bg-primary/30 flex flex-col`}
+        className="antialiased min-h-screen bg-background text-foreground selection:bg-primary/30 flex flex-col"
+        style={{ fontFamily: sansFont }}
         suppressHydrationWarning
       >
         <Providers>
