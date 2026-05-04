@@ -16,7 +16,7 @@ export default function GlobalJokes() {
         if (!techJokes || techJokes.length === 0) return;
         const interval = setInterval(() => {
             setIndex((prev) => (prev + 1) % techJokes.length);
-        }, 120000); // 2 minutes per rotation
+        }, 10000); // 10 seconds per rotation
         return () => clearInterval(interval);
     }, []);
 
