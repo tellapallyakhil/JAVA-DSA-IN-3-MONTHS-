@@ -20,20 +20,15 @@ export default function GlobalJokes() {
         return () => clearInterval(interval);
     }, []);
 
-    // Only show on dashboard pages
-    const isDashboard = pathname === "/" || pathname === "/progress" || pathname === "/profile";
-    
-    // If not a dashboard page, don't show any jokes
-    if (!isDashboard) return null;
-
     // Show more jokes on the dashboard
     const jokesLimit = 4; // 4 on each side, total 8
+    const isDashboard = pathname === "/" || pathname === "/progress" || pathname === "/profile";
 
     // Memoize jokes calculation for performance
     const leftJokes = useMemo(() => {
         const result = [];
         for (let i = 0; i < jokesLimit; i++) {
-            result.push(techJokes[(index + i) % techJokes.length]);
+            result.push(techJokes[(index + i) % (techJokes.length || 1)]);
         }
         return result;
     }, [index, jokesLimit]);
@@ -42,10 +37,13 @@ export default function GlobalJokes() {
         const result = [];
         const offset = Math.floor(techJokes.length / 2);
         for (let i = 0; i < jokesLimit; i++) {
-            result.push(techJokes[(index + i + offset) % techJokes.length]);
+            result.push(techJokes[(index + i + offset) % (techJokes.length || 1)]);
         }
         return result;
     }, [index, jokesLimit]);
+
+    // If not a dashboard page, don't show any jokes
+    if (!isDashboard) return null;
 
     return (
         <div className="hidden xl:block fixed inset-0 pointer-events-none z-[20]">
