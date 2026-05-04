@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Quote, Ghost } from "lucide-react";
 import { techJokes } from "@/data/jokes";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 export default function GlobalJokes() {
     const pathname = usePathname();
@@ -29,17 +29,23 @@ export default function GlobalJokes() {
     // Show more jokes on the dashboard
     const jokesLimit = 4; // 4 on each side, total 8
 
-    // Safety check for slicing
-    const getJokes = (start: number, count: number) => {
+    // Memoize jokes calculation for performance
+    const leftJokes = useMemo(() => {
         const result = [];
-        for (let i = 0; i < count; i++) {
-            result.push(techJokes[(start + i) % techJokes.length]);
+        for (let i = 0; i < jokesLimit; i++) {
+            result.push(techJokes[(index + i) % techJokes.length]);
         }
         return result;
-    };
+    }, [index, jokesLimit]);
 
-    const leftJokes = getJokes(index, jokesLimit);
-    const rightJokes = getJokes(index + techJokes.length / 2, jokesLimit);
+    const rightJokes = useMemo(() => {
+        const result = [];
+        const offset = Math.floor(techJokes.length / 2);
+        for (let i = 0; i < jokesLimit; i++) {
+            result.push(techJokes[(index + i + offset) % techJokes.length]);
+        }
+        return result;
+    }, [index, jokesLimit]);
 
     return (
         <div className="hidden xl:block fixed inset-0 pointer-events-none z-[20]">
