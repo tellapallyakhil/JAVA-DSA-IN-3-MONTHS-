@@ -20,30 +20,46 @@ export default function GlobalJokes() {
         return () => clearInterval(interval);
     }, []);
 
-    // Show more jokes on the dashboard
-    const jokesLimit = 4; // 4 on each side, total 8
-    const isDashboard = pathname === "/" || pathname === "/progress" || pathname === "/profile";
+    // Check if the current page is a dashboard page
+    const isDashboard = useMemo(() => {
+        if (!pathname) return false;
+        return pathname === "/" || pathname === "/progress" || pathname === "/profile";
+    }, [pathname]);
 
-    // Memoize jokes calculation for performance
+    // Constant for the number of jokes per side
+    const jokesLimit = 4;
+
+    // Safely calculate left jokes
     const leftJokes = useMemo(() => {
+        if (!techJokes || techJokes.length === 0) return [];
         const result = [];
         for (let i = 0; i < jokesLimit; i++) {
-            result.push(techJokes[(index + i) % (techJokes.length || 1)]);
+            const jokeIndex = (index + i) % techJokes.length;
+            const joke = techJokes[jokeIndex];
+            if (joke) result.push(joke);
         }
         return result;
-    }, [index, jokesLimit]);
+    }, [index]);
 
+    // Safely calculate right jokes
     const rightJokes = useMemo(() => {
+        if (!techJokes || techJokes.length === 0) return [];
         const result = [];
         const offset = Math.floor(techJokes.length / 2);
         for (let i = 0; i < jokesLimit; i++) {
-            result.push(techJokes[(index + i + offset) % (techJokes.length || 1)]);
+            const jokeIndex = (index + i + offset) % techJokes.length;
+            const joke = techJokes[jokeIndex];
+            if (joke) result.push(joke);
         }
         return result;
-    }, [index, jokesLimit]);
+    }, [index]);
 
-    // If not a dashboard page, don't show any jokes
-    if (!isDashboard) return null;
+    // Avoid hydration mismatch by returning null during SSR
+    // and only showing jokes if mounted AND on a dashboard page
+    if (!mounted || !isDashboard) return null;
+
+    // Final safety check to ensure we have jokes to map over
+    if (leftJokes.length === 0 && rightJokes.length === 0) return null;
 
     return (
         <div className="hidden xl:block fixed inset-0 pointer-events-none z-[20]">
@@ -63,7 +79,7 @@ export default function GlobalJokes() {
                     >
                         {leftJokes.map((joke, i) => (
                             <motion.div
-                                key={joke.joke}
+                                key={`${joke.joke}-${i}`}
                                 initial={{ opacity: 0, x: -30 }}
                                 animate={{ opacity: 0.35, x: 0 }}
                                 whileHover={{ opacity: 1, x: 8, scale: 1.02 }}
@@ -76,7 +92,7 @@ export default function GlobalJokes() {
                                 <div className="mt-3 flex items-center justify-between border-t border-white/5 pt-2">
                                     <span className="text-[9px] font-black text-primary/40 uppercase tracking-widest">{joke.category}</span>
                                     <span className="text-[8px] font-mono text-zinc-700">
-                                        {mounted ? `0x${((index + i) * 137 % 999).toString(16).padStart(3, '0')}` : "0x..."}
+                                        0x{((index + i) * 137 % 999).toString(16).padStart(3, '0')}
                                     </span>
                                 </div>
                             </motion.div>
@@ -101,7 +117,7 @@ export default function GlobalJokes() {
                     >
                         {rightJokes.map((joke, i) => (
                             <motion.div
-                                key={joke.joke}
+                                key={`${joke.joke}-${i}-right`}
                                 initial={{ opacity: 0, x: 30 }}
                                 animate={{ opacity: 0.35, x: 0 }}
                                 whileHover={{ opacity: 1, x: -8, scale: 1.02 }}
@@ -114,7 +130,7 @@ export default function GlobalJokes() {
                                 <div className="mt-3 flex items-center justify-between flex-row-reverse border-t border-white/5 pt-2">
                                     <span className="text-[9px] font-black text-purple-500/40 uppercase tracking-widest">{joke.category}</span>
                                     <span className="text-[8px] font-mono text-zinc-700">
-                                        {mounted ? `0x${(Math.floor(index + i + techJokes.length / 2) * 137 % 999).toString(16).padStart(3, '0')}` : "0x..."}
+                                        0x{((index + i + (techJokes?.length || 0)) * 137 % 999).toString(16).padStart(3, '0')}
                                     </span>
                                 </div>
                             </motion.div>
@@ -125,4 +141,3 @@ export default function GlobalJokes() {
         </div>
     );
 }
-
