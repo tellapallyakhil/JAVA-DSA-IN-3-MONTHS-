@@ -24,7 +24,7 @@ export default function GlobalJokes() {
     const isDashboard = pathname === "/" || pathname === "/progress" || pathname === "/profile";
     
     // If not a dashboard page, don't show any jokes
-    if (!isDashboard || pathname === "/compiler") return null;
+    if (!isDashboard) return null;
 
     // Show more jokes on the dashboard
     const jokesLimit = 4; // 4 on each side, total 8
