@@ -20,11 +20,14 @@ export default function GlobalJokes() {
         return () => clearInterval(interval);
     }, []);
 
-    // Don't show on compiler page or if it might interfere with complex editors
+    // Only show on dashboard pages
     const isDashboard = pathname === "/" || pathname === "/progress" || pathname === "/profile";
-    const jokesLimit = isDashboard ? 1 : 3;
+    
+    // If not a dashboard page, don't show any jokes
+    if (!isDashboard || pathname === "/compiler") return null;
 
-    if (pathname === "/compiler") return null;
+    // Show more jokes on the dashboard
+    const jokesLimit = 4; // 4 on each side, total 8
 
     // Safety check for slicing
     const getJokes = (start: number, count: number) => {
