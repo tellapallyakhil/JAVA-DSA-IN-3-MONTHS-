@@ -21,6 +21,9 @@ export default function GlobalJokes() {
     }, []);
 
     // Don't show on compiler page or if it might interfere with complex editors
+    const isDashboard = pathname === "/" || pathname === "/progress" || pathname === "/profile";
+    const jokesLimit = isDashboard ? 1 : 3;
+
     if (pathname === "/compiler") return null;
 
     // Safety check for slicing
@@ -32,8 +35,8 @@ export default function GlobalJokes() {
         return result;
     };
 
-    const leftJokes = getJokes(index, 3);
-    const rightJokes = getJokes(index + 3, 3);
+    const leftJokes = getJokes(index, jokesLimit);
+    const rightJokes = getJokes(index + techJokes.length / 2, jokesLimit);
 
     return (
         <div className="hidden xl:block fixed inset-0 pointer-events-none z-[20]">
@@ -104,7 +107,7 @@ export default function GlobalJokes() {
                                 <div className="mt-3 flex items-center justify-between flex-row-reverse border-t border-white/5 pt-2">
                                     <span className="text-[9px] font-black text-purple-500/40 uppercase tracking-widest">{joke.category}</span>
                                     <span className="text-[8px] font-mono text-zinc-700">
-                                        {mounted ? `0x${((index + i + 3) * 137 % 999).toString(16).padStart(3, '0')}` : "0x..."}
+                                        {mounted ? `0x${(Math.floor(index + i + techJokes.length / 2) * 137 % 999).toString(16).padStart(3, '0')}` : "0x..."}
                                     </span>
                                 </div>
                             </motion.div>
