@@ -7,6 +7,9 @@ const fetchData = async <T>(module: string): Promise<T> => {
     return data.default;
 };
 
+/**
+ * Fetches a list of aptitude questions by their unique IDs.
+ */
 export async function getQuestionsByIds(ids: string[]): Promise<Question[]> {
     const questions = await fetchData<Question[]>('questions');
     return questions.filter(q => ids.includes(q.id));
@@ -19,6 +22,9 @@ export async function getQuestionsByCompany(company: string): Promise<Question[]
     );
 }
 
+/**
+ * Returns all roadmap days (Day 1 to Day 90).
+ */
 export async function getAllDays(): Promise<DailyTask[]> {
     return await fetchData<DailyTask[]>('days');
 }
@@ -37,6 +43,9 @@ const apiCache = {
 
 const CACHE_TTL = 1000 * 60 * 5; // 5 minutes
 
+/**
+ * Fetches all coding problems from the Supabase database.
+ */
 export async function getAllProblems(): Promise<Problem[]> {
     const { data, error } = await supabase
         .from('problems')
@@ -120,6 +129,10 @@ export async function getProblemsByCompany(company: string): Promise<Problem[]> 
     }));
 }
 
+/**
+ * Extracts a unique, sorted list of all companies mentioned across all problems.
+ * Includes a 5-minute caching layer to optimize performance.
+ */
 export async function getAllCompanies(): Promise<string[]> {
     // Check cache first for instant response
     const now = Date.now();
