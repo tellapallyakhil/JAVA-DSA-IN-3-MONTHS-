@@ -52,11 +52,14 @@ export default function Navbar() {
                             href={link.href}
                             className={link.highlight
                                 ? "text-white bg-primary/20 hover:bg-primary/30 border border-primary/20 px-4 py-2 rounded-full transition-all flex items-center gap-2"
-                                : "hover:text-primary hover:text-glow transition-all flex items-center gap-2"
+                                : "hover:text-primary hover:text-glow transition-all flex items-center gap-2 relative group/nav"
                             }
                         >
                             {link.highlight && <Activity size={16} />}
                             {link.label}
+                            {!link.highlight && (
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover/nav:w-full" />
+                            )}
                         </Link>
                     ))}
 
