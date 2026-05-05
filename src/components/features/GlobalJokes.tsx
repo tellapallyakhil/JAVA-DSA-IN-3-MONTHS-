@@ -82,10 +82,15 @@ export default function GlobalJokes() {
                                 key={`${joke.joke}-${i}`}
                                 initial={{ opacity: 0, x: -30 }}
                                 animate={{ opacity: 0.35, x: 0 }}
-                                whileHover={{ opacity: 1, x: 8, scale: 1.02 }}
+                                whileHover={{ opacity: 1, x: 8, scale: 1.02, backgroundColor: "rgba(255,255,255,0.05)" }}
                                 transition={{ duration: 0.8, delay: i * 0.2 }}
-                                className="pointer-events-auto bg-white/[0.02] border-l-2 border-primary/20 p-5 backdrop-blur-sm group cursor-help transition-all shadow-xl hover:shadow-primary/5 hover:bg-white/[0.04]"
+                                className="pointer-events-auto bg-white/[0.02] border-l-2 border-primary/20 p-5 backdrop-blur-sm group cursor-help transition-all shadow-xl hover:shadow-primary/5 relative overflow-hidden"
                             >
+                                <motion.div 
+                                    className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent w-full h-full"
+                                    animate={{ x: ["-100%", "100%"] }}
+                                    transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                                />
                                 <p className="text-[11px] font-semibold text-zinc-500 group-hover:text-zinc-200 leading-relaxed italic transition-colors">
                                     "{joke.joke}"
                                 </p>
@@ -120,10 +125,15 @@ export default function GlobalJokes() {
                                 key={`${joke.joke}-${i}-right`}
                                 initial={{ opacity: 0, x: 30 }}
                                 animate={{ opacity: 0.35, x: 0 }}
-                                whileHover={{ opacity: 1, x: -8, scale: 1.02 }}
+                                whileHover={{ opacity: 1, x: -8, scale: 1.02, backgroundColor: "rgba(255,255,255,0.05)" }}
                                 transition={{ duration: 0.8, delay: i * 0.2 }}
-                                className="pointer-events-auto bg-white/[0.02] border-r-2 border-purple-500/20 p-5 backdrop-blur-sm group cursor-help transition-all text-right shadow-xl hover:shadow-purple-500/5 hover:bg-white/[0.04]"
+                                className="pointer-events-auto bg-white/[0.02] border-r-2 border-purple-500/20 p-5 backdrop-blur-sm group cursor-help transition-all text-right shadow-xl hover:shadow-purple-500/5 relative overflow-hidden"
                             >
+                                <motion.div 
+                                    className="absolute inset-0 bg-gradient-to-l from-purple-500/10 to-transparent w-full h-full"
+                                    animate={{ x: ["100%", "-100%"] }}
+                                    transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                                />
                                 <p className="text-[11px] font-semibold text-zinc-500 group-hover:text-zinc-200 leading-relaxed italic transition-colors">
                                     "{joke.joke}"
                                 </p>
