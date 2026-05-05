@@ -60,7 +60,14 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "90-Day DSA Roadmap | Free Placement Guide",
     description: "Master Java, DSA, and Interview Skills in 3 Months with our structured roadmap.",
-    creator: "@tellapallyakhil", // Placeholder based on github username
+    creator: "@tellapallyakhil",
+    images: ["/og-image.png"], // Placeholder for futuristic preview image
+  },
+  alternates: {
+    canonical: "https://java-dsa-in-3-months.vercel.app",
+  },
+  verification: {
+    google: "google-site-verification-id", // Placeholder
   },
   robots: {
     index: true,
