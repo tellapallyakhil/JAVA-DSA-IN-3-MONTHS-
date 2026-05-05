@@ -1,5 +1,8 @@
 export const techJokes = [
     // Relationship & Marriage Logic
+    { joke: "Wife: 'If you could change one thing about me, what would it be?' Me: 'I'd probably just update your README.md so I actually know how to avoid your breaking changes.'", category: "Documentation" },
+    { joke: "Husband: 'I’m feeling depressed.' Wife: 'Have you tried clearing your cache and restarting your brain?'", category: "Mental Health" },
+    { joke: "My wife said I need to be more 'accessible'. So I added aria-labels to all my hoodies.", category: "A11y" },
     { joke: "My wife told me to 'Stop acting like a computer!' I looked her in the eyes and said, 'Processing... Error 404: Emotion not found.'", category: "Hardware" },
     { joke: "Wife: 'How many times do I have to tell you to take out the trash?' Me: 'I was just waiting for the Garbage Collector to run automatically.'", category: "Java Life" },
     { joke: "My wife asked for a diamond ring. I gave her a 'new DiamondRing()'. She immediately tried to 'delete' my existence.", category: "OOP" },
