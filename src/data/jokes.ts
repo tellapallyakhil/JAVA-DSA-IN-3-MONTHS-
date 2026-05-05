@@ -43,5 +43,8 @@ export const techJokes = [
     { joke: "Bugs living in my brain rent-free since I pushed that 'quick fix' to production.", category: "Rent Free" },
     { joke: "My code is so valid until I actually run it. Then it's just straight up cooked.", category: "Cooked" },
     { joke: "When you use 'var' instead of 'let': 'L choice. No aesthetic. Zero rizz.'", category: "Review" },
-    { joke: "My code didn't just fail, it got ratioed by the compiler errors.", category: "Ratio" }
+    { joke: "My code didn't just fail, it got ratioed by the compiler errors.", category: "Ratio" },
+    { joke: "When the senior dev starts typing: 'Stand back everyone, he's cooking.'", category: "Cooking" },
+    { joke: "This error message is so passive-aggressive. It’s giving 'Fine, do what you want.'", category: "Vibes" },
+    { joke: "My CSS is so delulu. It thinks it's centered when it's clearly hanging off the page.", category: "Frontend" }
 ];
