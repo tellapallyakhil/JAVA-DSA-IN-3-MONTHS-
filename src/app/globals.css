@@ -115,6 +115,24 @@ body {
   width: 6px;
 }
 
+/* Custom Futuristic Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(9, 9, 11, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #60a5fa, #a78bfa);
+}
+
 .custom-scrollbar::-webkit-scrollbar-track {
   background: transparent;
 }
