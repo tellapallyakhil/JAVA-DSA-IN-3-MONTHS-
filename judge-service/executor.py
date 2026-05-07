@@ -26,7 +26,17 @@ def is_code_safe(code: str) -> tuple[bool, str]:
 
 
 def execute_java(code: str, stdin: str = ""):
-    # 1. Security check
+    """
+    Compiles and executes Java code within a sandboxed environment.
+    
+    Args:
+        code: The Java source code to execute.
+        stdin: Optional input to provide to the program.
+        
+    Returns:
+        A dictionary containing the execution result (success, output, error, runtime, type).
+    """
+    # 1. Static security check for restricted API patterns
     safe, reason = is_code_safe(code)
     if not safe:
         return {
