@@ -5,10 +5,17 @@
  * Prevents "Database Lock" and "Race Conditions" in high-concurrency environments.
  */
 
+/**
+ * Represents a unit of work in the synchronization queue.
+ */
 type Task = {
+    /** Unique identifier for the task (e.g., problem-id-update) */
     id: string;
+    /** The asynchronous operation to perform */
     execute: () => Promise<void>;
+    /** Number of times this task has been retried */
     retryCount: number;
+    /** Time when the task was first enqueued */
     timestamp: number;
 };
 
