@@ -211,6 +211,11 @@ The built-in compiler features a **3-engine fallback system** with automatic fai
 - 🃏 **Flashcard Deck** — Spaced repetition flashcards
 - 🔔 **Revision Reminders** — Smart recall notifications
 
+### 🛠️ Upcoming Features
+- 👥 **Group Challenges** — Compete with friends on daily DSA problems
+- 🏆 **Global Leaderboard** — Track your rank based on problem-solving speed
+- 📱 **Mobile App** — Native iOS & Android companion for quick revisions
+
 <br/>
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
