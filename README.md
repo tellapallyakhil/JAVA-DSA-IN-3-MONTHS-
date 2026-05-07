@@ -164,6 +164,9 @@ The built-in compiler features a **3-engine fallback system** with automatic fai
 - 🧩 **Pattern Detection** — Identifies Binary Search, Sliding Window, etc.
 - 🔐 **Security Sandbox** — Blocks dangerous code patterns (reflection, file I/O, etc.)
 
+> **💡 Pro Tip:** Use `CTRL + ENTER` to quickly execute your code in CyberVM.
+
+
 ---
 
 ### 🤖 AI Interview Simulator
