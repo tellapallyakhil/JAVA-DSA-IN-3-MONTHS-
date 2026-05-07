@@ -2,6 +2,8 @@
   "name": "dsa",
   "version": "0.1.0",
   "private": true,
+  "description": "AI-powered DSA preparation platform with built-in Java compiler and 90-day roadmap.",
+  "author": "Tellapalli Akhil Kumar",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
