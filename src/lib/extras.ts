@@ -15,3 +15,11 @@ export function getNotes(topic: string) {
     // @ts-ignore
     return concepts[topic] || null;
 }
+
+export function formatDate(date: Date): string {
+    return new Intl.DateTimeFormat('en-US', {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric'
+    }).format(date);
+}
